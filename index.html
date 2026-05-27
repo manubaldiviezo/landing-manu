@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<meta name="theme-color" content="#EC6730">
+
+<title>Manu Baldiviezo · Agencia de Meta Ads en Bolivia</title>
+<meta name="description" content="Te ayudamos a invertir en Facebook e Instagram con una dirección clara para vender, captar clientes y escalar. Agencia DÚO Marketing Digital.">
+
+<meta property="og:title" content="Manu Baldiviezo · Agencia de Meta Ads en Bolivia">
+<meta property="og:description" content="Estrategia, gestión y medición de Meta Ads para negocios que quieren crecer con orden. Agenda una reunión estratégica.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manuads.vercel.app">
+<meta property="og:image" content="/images/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="canonical" href="https://manuads.vercel.app">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --orange: #EC6730;
+  --orange-dark: #D55524;
+  --orange-light: #F5946A;
+  --amber: #F9B233;
+  --black: #1D1D1B;
+  --gray-900: #2A2A28;
+  --gray-700: #4A4A45;
+  --gray-500: #7A7A75;
+  --gray-300: #C8C7C0;
+  --gray-200: #E5E4DD;
+  --gray-100: #F5F4EF;
+  --gray-50: #FBFAF6;
+  --white: #FFFFFF;
+  --green: #16A34A;
+  --shadow-sm: 0 1px 2px rgba(29, 29, 27, 0.04);
+  --shadow-md: 0 4px 24px rgba(29, 29, 27, 0.06);
+  --shadow-lg: 0 12px 40px rgba(29, 29, 27, 0.08);
+  --shadow-orange: 0 8px 32px rgba(236, 103, 48, 0.25);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --max-width: 1180px;
+  --container-padding: clamp(16px, 4vw, 32px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--orange));
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+h1 { font-size: clamp(36px, 6vw, 64px); }
+h2 { font-size: clamp(28px, 4.5vw, 48px); }
+h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; }
+h4 { font-size: 18px; font-weight: 700; }
+
+p {
+  color: var(--gray-700);
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.65;
+}
+
+.lead {
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--gray-700);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.lava-text {
+  background: linear-gradient(90deg, var(--orange) 0%, var(--amber) 25%, var(--orange) 50%, var(--orange-dark) 75%, var(--orange) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: lava-flow 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes lava-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.handwritten {
+  font-family: 'Caveat', cursive;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-orange);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.7s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--orange-dark);
+  box-shadow: 0 12px 40px rgba(236, 103, 48, 0.35);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  background: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 999px;
+  border: 1.5px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--black);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  border-bottom-color: var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--white);
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+
+.logo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.logo-role {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.header-cta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(236, 103, 48, 0.25);
+  }
+
+  .header-cta:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
+  }
+}
+
+.hero {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: var(--gray-50);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(236, 103, 48, 0.08), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(249, 178, 51, 0.06), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+  }
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.hero .lead {
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-microcopy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.microcopy-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.microcopy-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+.vsl-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.vsl-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vsl-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(236, 103, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(236, 103, 48, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.vsl-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray-700);
+  z-index: 2;
+}
+
+.vsl-tag-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(236, 103, 48, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.vsl-play {
+  width: 88px;
+  height: 88px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 16px 48px rgba(236, 103, 48, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.vsl-play::before,
+.vsl-play::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+  animation: ripple 2s ease-out infinite;
+}
+
+.vsl-play::after {
+  animation-delay: 1s;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.vsl-placeholder:hover .vsl-play {
+  transform: scale(1.08);
+}
+
+.vsl-play svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--white);
+  margin-left: 4px;
+}
+
+.vsl-script {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: var(--orange);
+  font-weight: 700;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+.vsl-meta {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.vsl-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+section {
+  padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+  section { padding: 100px 0; }
+}
+
+.section-header {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.section-header.left {
+  margin-left: 0;
+  text-align: left;
+}
+
+.section-header h2 {
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+
+.section-header p {
+  font-size: clamp(16px, 1.8vw, 18px);
+}
+
+.stats-bar {
+  background: var(--black);
+  padding: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--amber), var(--orange), var(--orange-dark), var(--orange), var(--amber));
+  background-size: 200% 100%;
+  animation: lava-flow 8s linear infinite;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, var(--white) 0%, var(--amber) 50%, var(--white) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: lava-flow 8s linear infinite;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--gray-300);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.problem {
+  background: var(--white);
+}
+
+.problem-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.problem-content p {
+  font-size: clamp(16px, 1.9vw, 19px);
+  line-height: 1.65;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+
+.problem-content p.emphasis {
+  font-weight: 600;
+  color: var(--black);
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.5;
+  padding: 24px;
+  background: var(--gray-50);
+  border-left: 4px solid var(--orange);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: 28px;
+}
+
+.pillars {
+  background: var(--gray-50);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pillar {
+  background: var(--white);
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(236, 103, 48, 0.3);
+}
+
+.pillar-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-orange);
+}
+
+.pillar-icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--white);
+}
+
+.pillar h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--black);
+}
+
+.pillar p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.pillars-footer {
+  max-width: 640px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.pillars-footer p {
+  font-size: clamp(15px, 1.7vw, 17px);
+  color: var(--gray-700);
+}
+
+.cases {
+  background: var(--white);
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.case-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(236, 103, 48, 0.2);
+}
+
+.case-card.featured {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .case-card.featured {
+    grid-column: 1 / -1;
+  }
+
+  .case-card.featured .case-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .case-card.featured .case-image {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+}
+
+.case-image {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.case-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-card:hover .case-image img {
+  transform: scale(1.04);
+}
+
+.case-zoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.case-zoom:hover {
+  background: var(--white);
+  transform: scale(1.1);
+}
+
+.case-zoom svg {
+  width: 16px;
+  height: 16px;
+  color: var(--black);
+}
+
+.case-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.case-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.case-brand-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-700);
+  letter-spacing: 0.02em;
+}
+
+.case-rubro {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.case-title {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.case-title .highlight {
+  color: var(--orange);
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.case-metric {
+  padding: 14px 16px;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-100);
+}
+
+.case-metric-value {
+  font-size: clamp(16px, 1.9vw, 19px);
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.case-metric-label {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.case-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--white);
+  border: 1.5px solid var(--orange);
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.case-video-btn:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.case-video-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.reunion {
+  background: var(--gray-50);
+}
+
+.reunion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .reunion-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+}
+
+.reunion-content h2 {
+  margin-bottom: 20px;
+}
+
+.reunion-content p {
+  font-size: clamp(16px, 1.8vw, 18px);
+  margin-bottom: 16px;
+}
+
+.reunion-checklist {
+  margin-top: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.reunion-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  font-size: 15px;
+  color: var(--black);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.reunion-checklist li:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.check-icon svg {
+  width: 12px;
+  height: 12px;
+  color: var(--white);
+  stroke-width: 3;
+}
+
+.reunion-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.reunion-badge {
+  position: absolute;
+  top: -14px;
+  left: 32px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-orange);
+}
+
+.reunion-card h3 {
+  font-size: 22px;
+  margin: 8px 0 20px;
+}
+
+.reunion-card-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+.reunion-card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+
+.reunion-card-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.reunion-price {
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.reunion-price-label {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.reunion-price-value {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.reunion-price-note {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.target {
+  background: var(--white);
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .target-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.target-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+}
+
+.target-card.yes {
+  border-color: rgba(236, 103, 48, 0.3);
+  background: linear-gradient(180deg, rgba(236, 103, 48, 0.025) 0%, var(--white) 100%);
+}
+
+.target-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.target-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.target-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.target-icon.yes {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.target-icon.no {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.target-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+}
+
+.target-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.target-list {
+  list-style: none;
+  padding: 0;
+}
+
+.target-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+
+.target-list .item-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.target-list.yes .item-icon { color: var(--orange); }
+.target-list.no .item-icon { color: var(--gray-300); }
+
+.agenda {
+  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+}
+
+.agenda-header {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.agenda-header h2 {
+  margin-bottom: 16px;
+}
+
+.agenda-microcopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 24px;
+}
+
+.agenda-microcopy-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  position: relative;
+}
+
+.agenda-microcopy-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.calendly-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 720px;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .calendly-inline-widget {
+    height: 1050px;
+  }
+}
+
+.faq {
+  background: var(--white);
+}
+
+.faq-grid {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--gray-200);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+  font-size: clamp(16px, 1.9vw, 18px);
+  font-weight: 700;
+  color: var(--black);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--orange);
+}
+
+.faq-chevron {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--gray-500);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--orange);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+}
+
+.faq-answer-inner {
+  padding-bottom: 24px;
+  color: var(--gray-700);
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+footer {
+  background: var(--black);
+  color: var(--gray-300);
+  padding: 64px 0 100px;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding-bottom: 48px;
+  }
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-brand .logo-avatar {
+  border-color: var(--gray-700);
+}
+
+.footer-brand .logo-name {
+  color: var(--white);
+}
+
+.footer-brand .logo-role {
+  color: var(--gray-300);
+}
+
+.footer-contact p {
+  color: var(--gray-300);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-contact a:hover {
+  color: var(--orange-light);
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .footer-nav {
+    align-items: flex-end;
+  }
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: var(--gray-300);
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--orange-light);
+}
+
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-900);
+  font-size: 12px;
+  color: var(--gray-500);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.sticky-mobile {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 90;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--gray-200);
+  transform: translateY(120%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-mobile.visible {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .sticky-mobile {
+    display: none;
+  }
+}
+
+.sticky-mobile-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sticky-mobile-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sticky-mobile-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 2px;
+}
+
+.sticky-mobile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(236, 103, 48, 0.3);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(29, 29, 27, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--black);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-content.horizontal {
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+}
+
+.modal-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(29, 29, 27, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox-close svg {
+  width: 22px;
+  height: 22px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container header-inner">
+    <a href="#inicio" class="logo" aria-label="Manu Baldiviezo - inicio">
+      <span class="logo-avatar">
+        <img src="/images/manu-baldiviezo-avatar.jpg" alt="Manu Baldiviezo">
+      </span>
+      <span class="logo-text">
+        <span class="logo-name">Manu Baldiviezo</span>
+        <span class="logo-role">Estratega Digital · DÚO</span>
+      </span>
+    </a>
+    <a href="#agenda" class="header-cta">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Agendar reunión
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Agencia de Meta Ads en Bolivia</span>
+        <h1>Si vas a invertir en anuncios, hacelo con una <span class="lava-text">dirección clara</span> para vender y escalar.</h1>
+        <p class="lead">Te ayudamos a convertir Facebook e Instagram en un canal medible para captar clientes, mover productos o agendar reuniones. Sin probar al azar.</p>
+        <div class="hero-ctas">
+          <a href="#agenda" class="btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Agendar reunión estratégica
+          </a>
+          <a href="#resultados" class="btn-secondary">
+            Ver resultados reales
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="hero-microcopy">
+          <span class="microcopy-dot"></span>
+          <span>Reunión 1:1 de 30 min. con Manu · Sin compromiso · 100% gratis</span>
+        </div>
+      </div>
+
+      <div class="vsl-wrapper" id="vsl-container">
+        <div class="vsl-placeholder" id="vsl-trigger">
+          <div class="vsl-tag">
+            <span class="vsl-tag-dot"></span>
+            <span>Video estratégico · 3 min</span>
+          </div>
+          <div class="vsl-play" aria-label="Reproducir video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="vsl-script">Dale play →</span>
+          <span class="vsl-meta">Mirá cómo trabajamos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat fade-in">
+        <div class="stat-value">+US$50.000</div>
+        <div class="stat-label">invertidos en Meta Ads con 10.55x de retorno promedio</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-value">+25.000</div>
+        <div class="stat-label">conversaciones de WhatsApp para clientes activos</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-value">+50%</div>
+        <div class="stat-label">de aumento reportado en facturación de una clínica</div>
+      </div>
+      <div class="stat fade-in">
+        <div class="stat-value">6</div>
+        <div class="stat-label">proyectos cerrados en el primer mes para un estudio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">El problema</span>
+      <h2>El problema no es invertir en anuncios. Es hacerlo <span class="lava-text">sin una dirección clara.</span></h2>
+    </div>
+    <div class="problem-content">
+      <p>Tal vez ya promocionaste publicaciones. Tal vez ya probaste campañas. Tal vez ya invertiste dinero en Facebook o Instagram y aún así te quedaste con la duda:</p>
+      <p class="emphasis">¿Esto realmente me está ayudando a vender, o solo estoy pagando por mensajes, clics y alcance?</p>
+      <p style="margin-top: 28px;">A muchos negocios no les falta producto. No les falta esfuerzo. No les falta contenido.</p>
+      <p>Les falta claridad para saber qué oferta comunicar, qué estrategia seguir, qué mensaje usar y qué datos mirar antes de subir más presupuesto. Porque cuando no tenés dirección, cada campaña se siente como otra prueba al azar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="como-trabajamos">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Los 4 pilares</span>
+      <h2>Una campaña no crece solo por meterle más presupuesto</h2>
+      <p>Subir presupuesto puede ayudarte a crecer. Pero solo cuando sabés qué estás escalando. Antes de pedirle más resultados a tus anuncios, hay que ordenar cuatro cosas:</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar fade-in">
+        <span class="pillar-number">01</span>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Oferta</h3>
+        <p>Qué vendés, para quién es y por qué alguien debería elegirte ahora.</p>
+      </div>
+
+      <div class="pillar fade-in">
+        <span class="pillar-number">02</span>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Estrategia</h3>
+        <p>Qué camino debe seguir tu publicidad según tu negocio, presupuesto y objetivo.</p>
+      </div>
+
+      <div class="pillar fade-in">
+        <span class="pillar-number">03</span>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Comunicación</h3>
+        <p>Qué mensaje necesita ver tu cliente para interesarse, escribirte o decidir.</p>
+      </div>
+
+      <div class="pillar fade-in">
+        <span class="pillar-number">04</span>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 6-6"/></svg>
+        </div>
+        <h3>Medición</h3>
+        <p>Qué datos vamos a mirar para saber si ajustar, mantener, frenar o escalar.</p>
+      </div>
+    </div>
+
+    <div class="pillars-footer">
+      <p>Cuando estas partes están alineadas, tus anuncios dejan de ser piezas sueltas y empiezan a trabajar como un canal claro para vender.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="resultados">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Resultados reales</span>
+      <h2>Casos que demuestran cómo aplicamos los 4 pilares</h2>
+      <p>Trabajamos con negocios de distintos rubros y países. Cada caso muestra cómo ordenamos oferta, estrategia, comunicación y medición.</p>
+    </div>
+
+    <div class="cases-grid">
+
+      <div class="case-card featured fade-in">
+        <div class="case-inner">
+          <div class="case-image" data-img="/images/01-femmeninas-ads-manager-roas.webp" data-alt="Dashboard de Meta Ads de Femmeninas">
+            <img src="/images/01-femmeninas-ads-manager-roas.webp" alt="Dashboard Meta Ads Femmeninas">
+            <button class="case-zoom" aria-label="Ampliar imagen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+            </button>
+          </div>
+          <div class="case-body">
+            <div class="case-brand">
+              <span class="case-brand-name">femmeninas.cl</span>
+              <span class="case-rubro">Ecommerce · Chile</span>
+            </div>
+            <h3 class="case-title">+US$50.000 invertidos en Meta Ads con un <span class="highlight">retorno promedio de 10.55x</span></h3>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <div class="case-metric-value">US$50K+</div>
+                <div class="case-metric-label">invertidos en Meta Ads</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value">10.55x</div>
+                <div class="case-metric-label">retorno promedio</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value">+7 meses</div>
+                <div class="case-metric-label">de gestión y escala</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value">Activo</div>
+                <div class="case-metric-label">cliente actualmente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <div class="case-image" data-img="/images/02-vision-arq-ads-manager.webp" data-alt="Dashboard de Meta Ads de Vision Arq Studio">
+          <img src="/images/02-vision-arq-ads-manager.webp" alt="Dashboard Meta Ads Vision Arq">
+          <button class="case-zoom" aria-label="Ampliar imagen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </button>
+        </div>
+        <div class="case-body">
+          <div class="case-brand">
+            <span class="case-brand-name">Vision Arq Studio</span>
+            <span class="case-rubro">Arquitectura · Bolivia</span>
+          </div>
+          <h3 class="case-title">300 mensajes, 20 reuniones y <span class="highlight">6 proyectos nuevos</span> en el primer mes</h3>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">+300</div>
+              <div class="case-metric-label">mensajes recibidos</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">20</div>
+              <div class="case-metric-label">reuniones cerradas</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">6</div>
+              <div class="case-metric-label">proyectos nuevos</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">~US$200</div>
+              <div class="case-metric-label">de inversión publicitaria</div>
+            </div>
+          </div>
+          <button class="case-video-btn" data-video="uJaNMf92w10">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Ver testimonio en video
+          </button>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <div class="case-image" data-img="/images/03-climere-ads-manager-consultas.webp" data-alt="Dashboard de Meta Ads de Climere clínica estética">
+          <img src="/images/03-climere-ads-manager-consultas.webp" alt="Dashboard Meta Ads Climere">
+          <button class="case-zoom" aria-label="Ampliar imagen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </button>
+        </div>
+        <div class="case-body">
+          <div class="case-brand">
+            <span class="case-brand-name">Climere</span>
+            <span class="case-rubro">Clínica estética · Bolivia</span>
+          </div>
+          <h3 class="case-title">De contenido estratégico a un <span class="highlight">aumento del 30% al 50%</span> en facturación</h3>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">+5.000</div>
+              <div class="case-metric-label">consultas en campañas</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">+1 año</div>
+              <div class="case-metric-label">de trabajo conjunto</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">8 videos</div>
+              <div class="case-metric-label">producidos al mes</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">+30-50%</div>
+              <div class="case-metric-label">de aumento reportado</div>
+            </div>
+          </div>
+          <button class="case-video-btn" data-video="4rR8Nwn9Slw">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Ver testimonio en video
+          </button>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <div class="case-image" data-img="/images/04-nanitos-ads-manager-manychat.webp" data-alt="Dashboard de Meta Ads de Ñañitos">
+          <img src="/images/04-nanitos-ads-manager-manychat.webp" alt="Dashboard Meta Ads Ñañitos">
+          <button class="case-zoom" aria-label="Ampliar imagen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </button>
+        </div>
+        <div class="case-body">
+          <div class="case-brand">
+            <span class="case-brand-name">Ñañitos</span>
+            <span class="case-rubro">Importadora · Bolivia</span>
+          </div>
+          <h3 class="case-title">+5.000 mensajes para mover productos con <span class="highlight">contenido, anuncios y ManyChat</span></h3>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">+5.000</div>
+              <div class="case-metric-label">mensajes generados</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">US$0.08</div>
+              <div class="case-metric-label">costo por conversación</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">30</div>
+              <div class="case-metric-label">videos producidos</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">US$420</div>
+              <div class="case-metric-label">de inversión total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <div class="case-image" data-img="/images/05-progaming-ads-manager-whatsapp.webp" data-alt="Dashboard de Meta Ads de ProGaming">
+          <img src="/images/05-progaming-ads-manager-whatsapp.webp" alt="Dashboard Meta Ads ProGaming">
+          <button class="case-zoom" aria-label="Ampliar imagen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </button>
+        </div>
+        <div class="case-body">
+          <div class="case-brand">
+            <span class="case-brand-name">ProGaming EC</span>
+            <span class="case-rubro">Gaming · Ecuador</span>
+          </div>
+          <h3 class="case-title">+25.000 conversaciones por WhatsApp para un <span class="highlight">cliente activo en Ecuador</span></h3>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-value">+25K</div>
+              <div class="case-metric-label">conversaciones WhatsApp</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">US$0.15</div>
+              <div class="case-metric-label">costo por conversación</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">+425K</div>
+              <div class="case-metric-label">personas alcanzadas</div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-value">Activo</div>
+              <div class="case-metric-label">cliente actualmente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="reunion">
+  <div class="container">
+    <div class="reunion-grid">
+      <div class="reunion-content">
+        <span class="eyebrow">La reunión</span>
+        <h2>En la reunión no te mostramos teoría. <span class="lava-text">Te mostramos cómo trabajamos.</span></h2>
+        <p>Revisamos tu negocio, vemos si tiene sentido trabajar Facebook e Instagram en tu etapa actual y te mostramos nuestra metodología con resultados de clientes actuales compartiendo pantalla.</p>
+        <p>La idea es simple: ver si tu negocio está listo para trabajar con anuncios y si nosotros realmente podemos ayudarte.</p>
+        <ul class="reunion-checklist">
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Revisamos tu oferta, canal de venta y forma actual de captar clientes
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Te mostramos resultados reales de clientes activos compartiendo pantalla
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Evaluamos si tu negocio está listo para invertir en Meta Ads ahora
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Te explicamos nuestra metodología y propuesta de trabajo
+          </li>
+        </ul>
+      </div>
+
+      <div class="reunion-card">
+        <span class="reunion-badge">Reunión 1:1</span>
+        <h3>Reunión estratégica</h3>
+        <ul class="reunion-card-list">
+          <li>30 minutos por Google Meet</li>
+          <li>Directo con Manu Baldiviezo</li>
+          <li>Sin presentaciones genéricas</li>
+          <li>Sin obligación de contratar</li>
+          <li>Diagnóstico honesto de tu caso</li>
+        </ul>
+        <div class="reunion-price">
+          <div class="reunion-price-label">Inversión en la reunión</div>
+          <div class="reunion-price-value">100% gratis</div>
+          <div class="reunion-price-note">El acompañamiento mensual parte desde Bs 2.500 + inversión publicitaria.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="target">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Para quién es</span>
+      <h2>Esto es para negocios que ya tienen algo que vender y quieren <span class="lava-text">crecer con más orden</span></h2>
+    </div>
+
+    <div class="target-grid">
+      <div class="target-card yes">
+        <div class="target-header">
+          <span class="target-icon yes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <h3>Esto es para vos si:</h3>
+        </div>
+        <ul class="target-list yes">
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya tenés un negocio que vende</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tenés productos, servicios o una oferta clara</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vendés por WhatsApp, web, llamadas, reuniones o tienda física</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya creás contenido o querés empezar, pero no sabés cómo llevarlo a ventas</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya probaste anuncios pero no sabés qué está funcionando</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Podés invertir en publicidad y asumir un acompañamiento mensual</li>
+        </ul>
+      </div>
+
+      <div class="target-card no">
+        <div class="target-header">
+          <span class="target-icon no">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+          <h3>Esto no es para vos si:</h3>
+        </div>
+        <ul class="target-list no">
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Todavía no tenés claro qué vendés</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Buscás resultados mágicos en pocos días</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No tenés capacidad de responder consultas</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Solo querés publicaciones bonitas sin objetivo comercial</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No querés medir ni revisar números</li>
+          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No podés asumir un servicio mensual desde Bs 2.500 + pauta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="agenda" id="agenda">
+  <div class="container">
+    <div class="agenda-header">
+      <div class="agenda-microcopy">
+        <span class="agenda-microcopy-dot"></span>
+        <span>Agenda abierta esta semana</span>
+      </div>
+      <span class="eyebrow">Agendá tu reunión</span>
+      <h2>Tu próxima campaña <span class="lava-text">no debería ser</span> otra prueba al azar</h2>
+      <p>Elegí el día y horario que mejor te quede. La reunión es 100% gratuita, de 30 minutos, sin compromiso.</p>
+    </div>
+
+    <div class="calendly-wrapper">
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&text_color=1d1d1b&primary_color=ec6730"></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Antes de agendar, capaz tenés estas dudas</h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué pasa exactamente en la reunión?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Revisamos tu negocio (qué vendés, cómo vendés, a quién), te mostramos cómo trabajamos en Meta Ads compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cuánto cuesta trabajar con ustedes?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">El acompañamiento mensual parte desde Bs 2.500 (no incluye la inversión publicitaria, eso va directamente a Meta). El precio final depende del alcance del servicio: si necesitás solo estrategia + pauta + medición, o si también requerís guiones, dirección creativa, producción de contenido o automatización.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Mi rubro funciona con Meta Ads?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Hemos trabajado con ecommerce de moda, clínicas estéticas, estudios de arquitectura, importadoras, tiendas de gaming y más. Lo importante no es el rubro, sino que tengas algo claro para vender y capacidad de responder a las consultas que generen los anuncios. En la reunión te decimos honestamente si tu caso es viable.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿En cuánto tiempo veo resultados?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Algunos clientes ven resultados desde el primer mes (como el estudio de arquitectura que cerró 6 proyectos en 30 días). Otros requieren 2 a 3 meses de ajuste antes de escalar. No prometemos magia: prometemos dirección clara, decisiones basadas en datos y acompañamiento mes a mes.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Tengo que tener contenido propio o ustedes lo crean?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ambos modelos son posibles. Algunos clientes (como Femmeninas o ProGaming) crean su propio contenido y nosotros gestionamos estrategia, pauta y medición. Otros (como Climere o Ñañitos) requieren que también trabajemos guiones, dirección creativa o producción. En la reunión definimos qué necesita tu caso.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Trabajan con clientes fuera de Bolivia?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Actualmente tenemos clientes activos en Chile (Femmeninas) y Ecuador (ProGaming). Trabajamos 100% online por Google Meet, Slack/WhatsApp y herramientas compartidas. Si tu negocio está en otro país hispanohablante, no es problema.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué necesito tener listo antes de la reunión?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Solo claridad sobre qué vendés, cómo lo vendés hoy y qué resultado esperás. Si ya hiciste anuncios antes, traé los datos que tengas (capturas del Administrador comercial de Meta, métricas de campañas pasadas). Si nunca hiciste, mejor todavía: arrancamos limpio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-avatar">
+            <img src="/images/manu-baldiviezo-avatar.jpg" alt="Manu Baldiviezo">
+          </span>
+          <span class="logo-text">
+            <span class="logo-name">Manu Baldiviezo</span>
+            <span class="logo-role">Estratega Digital · DÚO Marketing Digital</span>
+          </span>
+        </div>
+        <div class="footer-contact">
+          <p>
+            <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">@manubaldiviezo</a><br>
+            <a href="https://wa.me/59175175144" target="_blank" rel="noopener">+591 75175144</a><br>
+            <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="#inicio">Inicio</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#agenda">Agendar reunión</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Manu Baldiviezo · DÚO Marketing Digital</span>
+      <span>Hecho en Bolivia · Estrategia que convierte</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-mobile" id="sticky-mobile">
+  <div class="sticky-mobile-text">
+    <div class="sticky-mobile-eyebrow">¿Listo para revisar tu caso?</div>
+    <div class="sticky-mobile-title">Reunión gratuita de 30 min.</div>
+  </div>
+  <a href="#agenda" class="sticky-mobile-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    Agendar
+  </a>
+</div>
+
+<div class="modal" id="video-modal" role="dialog" aria-modal="true">
+  <div class="modal-content" id="modal-content">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar video">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <iframe id="modal-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+const stickyMobile = document.getElementById('sticky-mobile');
+const agendaSection = document.getElementById('agenda');
+window.addEventListener('scroll', () => {
+  const scrolledEnough = window.scrollY > 600;
+  const agendaRect = agendaSection.getBoundingClientRect();
+  const nearAgenda = agendaRect.top < window.innerHeight * 0.5;
+  stickyMobile.classList.toggle('visible', scrolledEnough && !nearAgenda);
+}, { passive: true });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+  });
+});
+
+const VSL_ID = 'REEMPLAZAR_ID_VIDEO';
+const vslTrigger = document.getElementById('vsl-trigger');
+const vslContainer = document.getElementById('vsl-container');
+vslTrigger.addEventListener('click', () => {
+  if (VSL_ID === 'REEMPLAZAR_ID_VIDEO') {
+    alert('El video del VSL todavía no está cargado. Reemplazá VSL_ID en el código con el ID de YouTube de tu video cuando lo tengas.');
+    return;
+  }
+  const iframe = document.createElement('iframe');
+  iframe.className = 'vsl-iframe';
+  iframe.src = `https://www.youtube.com/embed/${VSL_ID}?autoplay=1&rel=0&modestbranding=1`;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  vslContainer.innerHTML = '';
+  vslContainer.appendChild(iframe);
+});
+
+const modal = document.getElementById('video-modal');
+const modalContent = document.getElementById('modal-content');
+const modalClose = document.getElementById('modal-close');
+const modalIframe = document.getElementById('modal-iframe');
+
+document.querySelectorAll('.case-video-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const videoId = btn.dataset.video;
+    modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    modalContent.classList.remove('horizontal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('active');
+  modalIframe.src = '';
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+document.querySelectorAll('.case-image').forEach(imgWrap => {
+  imgWrap.style.cursor = 'zoom-in';
+  imgWrap.addEventListener('click', (e) => {
+    if (e.target.closest('.case-video-btn')) return;
+    const src = imgWrap.dataset.img;
+    const alt = imgWrap.dataset.alt;
+    if (src) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (modal.classList.contains('active')) closeModal();
+    if (lightbox.classList.contains('active')) closeLightbox();
+  }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const targetPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
