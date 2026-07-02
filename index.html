@@ -263,6 +263,90 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   pointer-events: none;
 }
 
+/* Fondo universo/pixeles premium animado */
+.hero,
+.problema,
+#servicios {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.cosmic-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  mix-blend-mode: screen;
+}
+
+.problem-cosmos { opacity: 0.38; }
+.services-cosmos { opacity: 0.52; }
+
+.hero::after,
+.problema::after,
+#servicios::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.46;
+  background:
+    radial-gradient(circle at 18% 72%, rgba(198, 241, 53, 0.12), transparent 23%),
+    radial-gradient(circle at 78% 18%, rgba(245, 166, 35, 0.08), transparent 20%),
+    linear-gradient(120deg, transparent 0%, rgba(198, 241, 53, 0.035) 42%, transparent 68%);
+  animation: cosmicGlowPulse 8s ease-in-out infinite alternate;
+}
+
+.problema::after { opacity: 0.34; }
+#servicios::after { opacity: 0.36; }
+
+.section-funnel-bg {
+  position: absolute;
+  top: 50%;
+  right: clamp(-120px, 3vw, 80px);
+  width: min(48vw, 560px);
+  height: min(34vw, 380px);
+  min-height: 260px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.23;
+  filter: drop-shadow(0 0 36px rgba(198, 241, 53, 0.12));
+  transform: translateY(-50%);
+  mix-blend-mode: screen;
+}
+
+.hero .container,
+.problema .container,
+#servicios .container {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes cosmicGlowPulse {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.28; }
+  100% { transform: translate3d(0, -12px, 0) scale(1.035); opacity: 0.54; }
+}
+
+@media (max-width: 767px) {
+  .cosmic-canvas { opacity: 0.56; }
+  .problem-cosmos { opacity: 0.32; }
+  .services-cosmos { opacity: 0.46; }
+
+  .section-funnel-bg {
+    top: 56%;
+    left: 50%;
+    right: auto;
+    width: 118vw;
+    height: 330px;
+    opacity: 0.16;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -448,6 +532,20 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 /* ── Sections ── */
 section { padding: 92px 0; position: relative; }
 @media (min-width: 768px) { section { padding: 112px 0; } }
+
+/* Ajuste de aire entre Servicios y Método */
+#servicios {
+  padding-bottom: 54px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#metodo { padding-top: 62px; }
+
+@media (min-width: 768px) {
+  #servicios { padding-bottom: 64px; }
+  #metodo { padding-top: 74px; }
+}
 
 .sec-head { max-width: 780px; margin: 0 auto 56px; text-align: center; }
 .sec-head h2 { margin-bottom: 18px; }
@@ -1731,14 +1829,15 @@ body::before {
 <div class="progress" id="progress"></div>
 
 <section class="hero" id="inicio">
+  <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="hero-lines"></div>
   <div class="hero-glow"></div>
   <div class="container">
     <div class="hero-inner">
       <div>
         <span class="eyebrow">Agencia de Marketing Digital</span>
-        <h1>Deja de pautar a ciegas. <span class="lime">Vende con estrategia.</span></h1>
-        <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas rentable</strong> — con datos claros y medibles.</p>
+        <h1>Deja de pautar a ciegas. <span class="lime">Vende con un sistema escalable.</span></h1>
+        <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas más rentable</strong> — con datos claros y medibles.</p>
         <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo oportunidades hacia el embudo">
         <canvas id="ufunnel-c" aria-hidden="true"></canvas>
         </div>
@@ -1792,9 +1891,11 @@ body::before {
 </div>
 
 <section class="problema">
+  <canvas class="cosmic-canvas problem-cosmos" aria-hidden="true"></canvas>
+  <canvas class="section-funnel-bg" id="section-funnel-bg" aria-hidden="true"></canvas>
   <div class="container">
     <div class="problema-inner reveal">
-      <h2>¿Pagás por clics… <span class="lime">o por ventas?</span></h2>
+      <h2>¿Pagás por clics… <span class="lime">o ventas consistentes?</span></h2>
       <p>La diferencia está en saber: qué estrategia seguir, qué comunicar y qué mirar antes de escalar.</p>
     </div>
   </div>
@@ -1921,6 +2022,7 @@ body::before {
 </section>
 
 <section id="servicios">
+  <canvas class="cosmic-canvas services-cosmos" aria-hidden="true"></canvas>
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Servicios</span>
@@ -2455,6 +2557,308 @@ if (window.matchMedia('(hover: hover)').matches) {
     el.addEventListener('pointerleave', () => { el.style.transform = ''; });
   });
 }
+
+
+/* Fondo cósmico animado — pixeles en movimiento */
+(function () {
+  const canvases = document.querySelectorAll('.cosmic-canvas');
+  if (!canvases.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const palette = [
+    'rgba(198, 241, 53, 0.88)',
+    'rgba(245, 166, 35, 0.72)',
+    'rgba(232, 71, 26, 0.58)',
+    'rgba(250, 250, 248, 0.54)'
+  ];
+
+  canvases.forEach((canvas, index) => {
+    const ctx = canvas.getContext('2d');
+    let dpr = 1;
+    let w = 0;
+    let h = 0;
+    let particles = [];
+    let raf = null;
+    let t = Math.random() * 1000;
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.max(1, rect.width);
+      h = Math.max(1, rect.height);
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const density = canvas.classList.contains('hero-cosmos') ? 0.00017 : 0.00012;
+      const count = Math.min(90, Math.max(26, Math.floor(w * h * density)));
+
+      particles = Array.from({ length: count }, (_, i) => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (-0.08 + Math.random() * 0.16) * (canvas.classList.contains('hero-cosmos') ? 1.3 : 0.85),
+        vy: (-0.035 + Math.random() * 0.09) * (canvas.classList.contains('hero-cosmos') ? 1.25 : 0.9),
+        s: Math.random() < 0.72 ? 1.2 + Math.random() * 1.5 : 2.4 + Math.random() * 2.2,
+        a: 0.22 + Math.random() * 0.58,
+        tw: Math.random() * Math.PI * 2,
+        color: palette[(i + index) % palette.length]
+      }));
+    }
+
+    function draw() {
+      t += 0.012;
+      ctx.clearRect(0, 0, w, h);
+
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < -12) p.x = w + 12;
+        if (p.x > w + 12) p.x = -12;
+        if (p.y < -12) p.y = h + 12;
+        if (p.y > h + 12) p.y = -12;
+
+        const twinkle = 0.55 + Math.sin(t * 2.1 + p.tw) * 0.45;
+        const alpha = p.a * twinkle;
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = p.s > 2.5 ? 10 : 5;
+        ctx.fillRect(p.x, p.y, p.s, p.s);
+        ctx.restore();
+      }
+
+      if (!reduceMotion) raf = requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+
+    let rt;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(resize, 160);
+    }, { passive: true });
+  });
+})();
+
+/* U de fondo captando leads — visible desde la segunda sección */
+(function () {
+  const canvas = document.getElementById('section-funnel-bg');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const W = 620;
+  const H = 420;
+  const LIME = '#C6F135';
+  const GOLD = '#F5A623';
+  const ORANGE = '#E8471A';
+  const WHITE = '#FAFAF8';
+
+  let t = 0;
+  let raf = null;
+  let particles = [];
+  let squarePulse = [0, 0, 0, 0];
+
+  const squares = [
+    { x: 230, y: 54, s: 30, color: GOLD },
+    { x: 362, y: 54, s: 30, color: GOLD },
+    { x: 244, y: 96, s: 30, color: ORANGE },
+    { x: 376, y: 96, s: 30, color: ORANGE }
+  ];
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+    ctx.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+  }
+
+  function bezier(p0, p1, p2, p3, tt) {
+    const u = 1 - tt;
+    return {
+      x: u*u*u*p0.x + 3*u*u*tt*p1.x + 3*u*tt*tt*p2.x + tt*tt*tt*p3.x,
+      y: u*u*u*p0.y + 3*u*u*tt*p1.y + 3*u*tt*tt*p2.y + tt*tt*tt*p3.y
+    };
+  }
+
+  function targetPoint(i) {
+    const q = squares[i];
+    const side = Math.floor(Math.random() * 3); // arriba, izquierda o derecha. Nunca abajo.
+    const u = Math.random() * q.s;
+    if (side === 0) return { x: q.x + u, y: q.y - 5 };
+    if (side === 1) return { x: q.x - 5, y: q.y + u };
+    return { x: q.x + q.s + 5, y: q.y + u };
+  }
+
+  function createParticle(i) {
+    const targetIndex = Math.floor(Math.random() * squares.length);
+    const target = targetPoint(targetIndex);
+    const lane = i % 4;
+    let start;
+
+    if (lane === 0) start = { x: -60, y: 46 + Math.random() * 135 };
+    else if (lane === 1) start = { x: W + 60, y: 46 + Math.random() * 135 };
+    else if (lane === 2) start = { x: 150 + Math.random() * 330, y: -42 };
+    else start = { x: Math.random() < 0.5 ? 70 : W - 70, y: -28 + Math.random() * 72 };
+
+    return {
+      start,
+      target,
+      targetIndex,
+      progress: Math.random(),
+      speed: 0.002 + Math.random() * 0.0019,
+      size: 3 + Math.random() * 5,
+      alpha: 0.45 + Math.random() * 0.45,
+      seed: Math.random() * Math.PI * 2,
+      hold: 0,
+      color: targetIndex < 2 ? GOLD : ORANGE
+    };
+  }
+
+  function reset(p) {
+    Object.assign(p, createParticle(Math.floor(Math.random() * 9999)));
+    p.progress = 0;
+  }
+
+  function init() {
+    particles = Array.from({ length: 34 }, (_, i) => createParticle(i));
+    for (let i = 0; i < 180; i++) update();
+  }
+
+  function path(p, tt) {
+    const e = 1 - Math.pow(1 - tt, 3);
+    const magnet = { x: p.target.x, y: p.target.y + 8 };
+    return bezier(
+      p.start,
+      { x: p.start.x * 0.58 + magnet.x * 0.42, y: p.start.y * 0.7 + magnet.y * 0.3 },
+      { x: magnet.x + Math.sin(p.seed) * 90, y: magnet.y - 40 + Math.cos(p.seed) * 32 },
+      p.target,
+      e
+    );
+  }
+
+  function drawLead(p) {
+    const pos = path(p, p.progress);
+    const fadeIn = Math.min(1, p.progress * 5);
+    const fadeOut = Math.min(1, (1 - p.progress) * 6);
+    const alpha = Math.min(fadeIn, fadeOut) * p.alpha;
+
+    ctx.save();
+    ctx.globalAlpha = alpha * 0.22;
+    ctx.strokeStyle = p.color;
+    ctx.lineWidth = 1.6;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    for (let i = 7; i >= 0; i--) {
+      const tt = Math.max(0, p.progress - i * 0.022);
+      const tr = path(p, tt);
+      if (i === 7) ctx.moveTo(tr.x, tr.y);
+      else ctx.lineTo(tr.x, tr.y);
+    }
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = p.color;
+    ctx.shadowColor = p.color;
+    ctx.shadowBlur = 12;
+    const wobbleX = Math.sin(t * 0.035 + p.seed) * 2.2;
+    const wobbleY = Math.cos(t * 0.032 + p.seed) * 1.8;
+    ctx.fillRect(pos.x + wobbleX, pos.y + wobbleY, p.size, p.size);
+    ctx.restore();
+  }
+
+  function drawFunnel() {
+    const pulse = 0.5 + Math.sin(t * 0.025) * 0.5;
+
+    ctx.save();
+    const glow = ctx.createRadialGradient(310, 226, 0, 310, 226, 180);
+    glow.addColorStop(0, `rgba(198, 241, 53, ${0.12 + pulse * 0.06})`);
+    glow.addColorStop(0.58, 'rgba(198, 241, 53, 0.035)');
+    glow.addColorStop(1, 'rgba(198, 241, 53, 0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(90, 24, 440, 350);
+    ctx.restore();
+
+    ctx.save();
+    ctx.strokeStyle = 'rgba(250, 250, 248, 0.72)';
+    ctx.lineWidth = 52;
+    ctx.lineCap = 'butt';
+    ctx.lineJoin = 'round';
+    ctx.shadowColor = 'rgba(250, 250, 248, 0.28)';
+    ctx.shadowBlur = 24;
+    ctx.beginPath();
+    ctx.moveTo(244, 144);
+    ctx.lineTo(244, 245);
+    ctx.bezierCurveTo(244, 330, 376, 330, 376, 245);
+    ctx.lineTo(376, 144);
+    ctx.stroke();
+    ctx.restore();
+
+    squares.forEach((sq, i) => {
+      const sp = squarePulse[i];
+      ctx.save();
+      ctx.fillStyle = sq.color;
+      ctx.shadowColor = sq.color;
+      ctx.shadowBlur = 12 + sp * 22;
+      ctx.fillRect(sq.x, sq.y, sq.s, sq.s);
+      ctx.globalAlpha = 0.18 + sp * 0.2;
+      ctx.fillStyle = sq.color;
+      ctx.beginPath();
+      ctx.arc(sq.x + sq.s / 2, sq.y + sq.s / 2, sq.s * 1.1 + sp * 16, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+  }
+
+  function update() {
+    t++;
+    squarePulse = squarePulse.map(v => v * 0.92);
+
+    particles.forEach((p) => {
+      if (p.hold > 0) {
+        p.hold--;
+        if (p.hold <= 0) reset(p);
+        return;
+      }
+
+      p.progress += p.speed;
+      if (p.progress >= 1) {
+        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.48);
+        p.hold = 8 + Math.floor(Math.random() * 12);
+      }
+    });
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach((p) => { if (p.hold <= 0) drawLead(p); });
+    drawFunnel();
+  }
+
+  function tick() {
+    update();
+    render();
+    if (!reduceMotion) raf = requestAnimationFrame(tick);
+  }
+
+  resize();
+  init();
+  tick();
+
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(resize, 160);
+  }, { passive: true });
+})();
 
 /* Embudo DÚO flotante:
    Los leads entran como pixeles sólidos, siguen un rastro dinámico
