@@ -232,10 +232,16 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 
 /* ── Hero ── */
 .hero {
-  padding-top: 140px;
+  padding-top: 72px;
   padding-bottom: 72px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 48px;
+  }
 }
 
 .hero-lines {
