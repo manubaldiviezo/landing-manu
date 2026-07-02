@@ -1540,47 +1540,17 @@ body::before {
 }
 @media (max-width: 1023px) { .hero-side-label { display: none; } }
 
-/* ── Mini embudo U (hero) ── */
-.ufunnel {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 28px;
-  padding: 13px 22px 13px 15px;
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: 14px;
-  position: relative;
-  overflow: hidden;
+/* ── Embudo DÚO flotante (hero) ── */
+.ufloat {
+  width: fit-content;
+  margin: 4px 0 30px;
+  animation: float 5.5s ease-in-out infinite;
 }
-.ufunnel::after {
-  content: '';
-  position: absolute;
-  bottom: -22px; left: 24px;
-  width: 70px; height: 44px;
-  background: radial-gradient(ellipse, rgba(198, 241, 53, 0.14), transparent 70%);
-  pointer-events: none;
-}
-.ufunnel canvas { width: 62px; height: 72px; display: block; position: relative; z-index: 1; }
-.ufunnel-t { position: relative; z-index: 1; }
-.ufunnel-t b {
+.ufloat canvas {
+  width: 82px;
+  height: 95px;
   display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 21px;
-  font-weight: 900;
-  color: var(--lime);
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-  margin-bottom: 3px;
-}
-.ufunnel-t span {
-  display: block;
-  font-size: 10px;
-  color: var(--text-3);
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  line-height: 1.5;
+  filter: drop-shadow(0 12px 26px rgba(198, 241, 53, 0.13));
 }
 
 /* ── Preview Notion ── */
@@ -1711,6 +1681,9 @@ body::before {
         <span class="eyebrow">Agencia de Marketing Digital</span>
         <h1>Deja de pautar a ciegas. <span class="lime">Vende con un sistema escalable.</span></h1>
         <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas más rentable</strong> — con datos claros y medibles.</p>
+        <div class="ufloat" role="img" aria-label="El embudo DÚO: leads fríos que se convierten en clientes">
+          <canvas id="ufunnel-c" aria-hidden="true"></canvas>
+        </div>
         <div class="hero-ctas">
           <a href="#agenda" class="btn btn-lime">
             Agendar reunión
@@ -1721,13 +1694,6 @@ body::before {
         <div class="hero-micro">
           <span class="dot"></span>
           <span>30 min por Meet · Diagnóstico inicial</span>
-        </div>
-        <div class="ufunnel" role="img" aria-label="Embudo DÚO captando leads en tiempo real">
-          <canvas id="ufunnel-c" aria-hidden="true"></canvas>
-          <div class="ufunnel-t">
-            <b id="ufunnel-n">0</b>
-            <span>Leads entrando<br>al sistema DÚO</span>
-          </div>
         </div>
       </div>
 
@@ -2418,22 +2384,24 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 }
 
-/* Mini embudo U — la U del logo DÚO captando leads (hero) */
+/* Embudo DÚO flotante — la coherencia del logo en movimiento:
+   los leads llegan fríos (lima), se adhieren a los cuadros dorados (fríos/tibios),
+   se calientan y pasan a los naranjas (calientes). La U es el embudo. */
 (function () {
   const canvas = document.getElementById('ufunnel-c');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const countEl = document.getElementById('ufunnel-n');
-  // Canvas chico y sutil: anima siempre (el resto de la página sí respeta reduced-motion)
 
-  // Espacio lógico 100 × 116 (misma proporción que el canvas 62×72)
+  // Espacio lógico 100 × 116 (proporción del canvas 82×95)
   const LW = 100, LH = 116;
-  // Geometría de la U del logo: brazos 32-46 y 62-76, boca 46-62, base en y=76
   const ARM_L = 32, ARM_LI = 46, ARM_RI = 62, ARM_R = 76, ARM_TOP = 34;
   const CX = 54, BOWL_Y = 76, R_OUT = 22, R_IN = 8;
-  const GOLD = '#F5A533', ORANGE = '#EE7530', WHITE = '#FAFAF8', LIME = '#C6F135';
+  const GOLD = '#F5A533', ORANGE = '#EE7530', WHITE = '#FAFAF8';
+  // Cuadros del logo: 0-1 dorados (leads fríos/tibios), 2-3 naranjas (calientes)
+  const SQ = [[20, 3], [50, 3], [33, 16], [63, 16]], S = 13;
+  const halo = [0, 0, 0, 0];
 
-  let parts = [], count = 0, running = false, raf = null;
+  let parts = [], running = false, raf = null, t = 0;
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -2443,26 +2411,82 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.setTransform((r.width * dpr) / LW, 0, 0, (r.height * dpr) / LH, 0, 0);
   }
 
-  function spawn(n) {
-    for (let i = 0; i < n; i++) {
-      parts.push({
-        x: 38 + Math.random() * 32,
-        y: -6 - Math.random() * 34,
-        v: 0.5 + Math.random() * 0.42,
-        w: Math.random() * Math.PI * 2,
-        sz: 2.4 + Math.random() * 1.5,
-        c: Math.random() < 0.62 ? LIME : GOLD
-      });
+  // Punto aleatorio pegado al borde de un cuadro (ahí se adhieren)
+  function edgePoint(i) {
+    const [x, y] = SQ[i], side = (Math.random() * 4) | 0, u = Math.random() * S;
+    if (side === 0) return [x + u, y - 1.5];
+    if (side === 1) return [x + u, y + S + 1.5];
+    if (side === 2) return [x - 1.5, y + u];
+    return [x + S + 1.5, y + u];
+  }
+
+  function reset(p) {
+    const r = Math.random();
+    if (r < 0.38) { p.x = -8; p.y = Math.random() * 34; }
+    else if (r < 0.76) { p.x = 108; p.y = Math.random() * 34; }
+    else { p.x = Math.random() * 100; p.y = -10; }
+    p.gi = (Math.random() * 2) | 0;                       // cuadro dorado destino
+    p.oi = 2 + (Math.random() < 0.72 ? p.gi : 1 - p.gi);  // naranja (sigue la diagonal del logo)
+    const e = edgePoint(p.gi);
+    p.tx = e[0]; p.ty = e[1];
+    p.phase = 0; p.a = 1; p.mix = 0; p.timer = 0;
+    p.w = Math.random() * 6.28;
+    p.sz = 2.5 + Math.random() * 1.4;
+  }
+
+  function step() {
+    t++;
+    for (let i = 0; i < 4; i++) halo[i] *= 0.955;
+    for (const p of parts) {
+      p.w += 0.09;
+      if (p.phase === 0 || p.phase === 2) {
+        p.x += (p.tx - p.x) * 0.05 + Math.sin(p.w) * 0.15;
+        p.y += (p.ty - p.y) * 0.05 + Math.cos(p.w * 0.85) * 0.13;
+        if (p.phase === 2) p.mix = Math.min(1, p.mix + 0.035);
+        if (Math.hypot(p.tx - p.x, p.ty - p.y) < 1.5) {
+          p.x = p.tx; p.y = p.ty;
+          if (p.phase === 0) {
+            p.phase = 1;
+            p.timer = 60 + Math.random() * 90;
+            halo[p.gi] = Math.min(1, halo[p.gi] + 0.55);
+          } else {
+            p.phase = 3;
+            halo[p.oi] = Math.min(1, halo[p.oi] + 0.65);
+          }
+        }
+      } else if (p.phase === 1) {
+        // adherido al dorado: se calienta y salta al naranja
+        if (--p.timer <= 0) {
+          p.phase = 2;
+          const e = edgePoint(p.oi);
+          p.tx = e[0]; p.ty = e[1];
+        }
+      } else if (p.phase === 3) {
+        // adherido al naranja: se funde con él (cliente)
+        p.a -= 0.04;
+        if (p.a <= 0) reset(p);
+      }
     }
   }
 
-  function drawLogo() {
-    // brillo suave en la boca de la U
-    const g = ctx.createRadialGradient(CX, 66, 0, CX, 66, 26);
-    g.addColorStop(0, 'rgba(198, 241, 53, 0.16)');
+  function render() {
+    ctx.clearRect(0, 0, LW, LH);
+    // la U respira: es el embudo vivo
+    const breathe = 0.10 + 0.05 * Math.sin(t * 0.045);
+    const g = ctx.createRadialGradient(CX, 62, 0, CX, 62, 30);
+    g.addColorStop(0, 'rgba(198, 241, 53, ' + breathe.toFixed(3) + ')');
     g.addColorStop(1, 'rgba(198, 241, 53, 0)');
     ctx.fillStyle = g;
-    ctx.fillRect(CX - 26, 40, 52, 52);
+    ctx.fillRect(CX - 30, 34, 60, 60);
+    // halos: cada cuadro se enciende cuando un lead se adhiere
+    for (let i = 0; i < 4; i++) {
+      if (halo[i] < 0.02) continue;
+      const [x, y] = SQ[i];
+      ctx.fillStyle = i < 2
+        ? 'rgba(245, 165, 51, ' + (halo[i] * 0.30).toFixed(3) + ')'
+        : 'rgba(238, 117, 48, ' + (halo[i] * 0.34).toFixed(3) + ')';
+      ctx.fillRect(x - 3, y - 3, S + 6, S + 6);
+    }
     // la U blanca del logo
     ctx.fillStyle = WHITE;
     ctx.beginPath();
@@ -2476,52 +2500,33 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.lineTo(ARM_LI, ARM_TOP);
     ctx.closePath();
     ctx.fill();
-    // los 4 cuadros del logo (dorado arriba, naranja en diagonal)
+    // los 4 cuadros del logo
     ctx.fillStyle = GOLD;
-    ctx.fillRect(20, 3, 13, 13);
-    ctx.fillRect(50, 3, 13, 13);
+    ctx.fillRect(SQ[0][0], SQ[0][1], S, S);
+    ctx.fillRect(SQ[1][0], SQ[1][1], S, S);
     ctx.fillStyle = ORANGE;
-    ctx.fillRect(33, 16, 13, 13);
-    ctx.fillRect(63, 16, 13, 13);
-  }
-
-  function drawParts() {
-    for (const p of parts) { ctx.fillStyle = p.c; ctx.fillRect(p.x - p.sz / 2, p.y - p.sz / 2, p.sz, p.sz); }
-  }
-
-  function tick() {
-    ctx.clearRect(0, 0, LW, LH);
+    ctx.fillRect(SQ[2][0], SQ[2][1], S, S);
+    ctx.fillRect(SQ[3][0], SQ[3][1], S, S);
+    // los leads: lima (fríos) que van dorándose al calentarse
     for (const p of parts) {
-      p.y += p.v;
-      p.w += 0.06;
-      p.x += Math.sin(p.w) * 0.14;
-      // los brazos de la U embudan los píxeles hacia la boca
-      if (p.y > 22) {
-        const t = Math.min(1, (p.y - 22) / 16);
-        const lo = 38 + (ARM_LI + 1.8 - 38) * t;
-        const hi = 70 + (ARM_RI - 1.8 - 70) * t;
-        if (p.x < lo) p.x = lo;
-        if (p.x > hi) p.x = hi;
-      }
-      // absorbido dentro de la U → cuenta y vuelve a entrar
-      if (p.y > BOWL_Y + 2) {
-        count++;
-        p.y = -6 - Math.random() * 30;
-        p.x = 38 + Math.random() * 32;
-        p.v = 0.5 + Math.random() * 0.42;
-      }
+      const rC = Math.round(198 + 47 * p.mix);
+      const gC = Math.round(241 - 76 * p.mix);
+      const bC = Math.round(53 - 2 * p.mix);
+      ctx.fillStyle = 'rgba(' + rC + ', ' + gC + ', ' + bC + ', ' + p.a.toFixed(3) + ')';
+      ctx.fillRect(p.x - p.sz / 2, p.y - p.sz / 2, p.sz, p.sz);
     }
-    drawParts();  // píxeles detrás…
-    drawLogo();   // …la U encima: se los "traga"
-    if (countEl) countEl.textContent = count.toLocaleString('es-BO');
-    raf = requestAnimationFrame(tick);
   }
+
+  function tick() { step(); render(); raf = requestAnimationFrame(tick); }
 
   function start() {
     if (running) return;
     running = true;
     resize();
-    if (parts.length === 0) spawn(11);
+    if (parts.length === 0) {
+      for (let i = 0; i < 13; i++) { const p = {}; reset(p); parts.push(p); }
+      for (let i = 0; i < 320; i++) step();  // arranca con el ciclo ya en marcha
+    }
     tick();
   }
   function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
