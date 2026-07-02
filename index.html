@@ -1459,6 +1459,174 @@ footer {
 .lead-success h3 { font-size: 20px; margin-bottom: 8px; }
 .lead-success p { font-size: 13.5px; margin-bottom: 20px; }
 
+/* ── Grano / textura premium ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Marca DÚO (4 cuadros) ── */
+.duo-mark { position: relative; width: 22px; height: 19px; flex-shrink: 0; display: inline-block; }
+.duo-mark i { position: absolute; width: 8px; height: 8px; border-radius: 1.5px; }
+.duo-mark .g1 { top: 0; left: 0; background: var(--gold); }
+.duo-mark .g2 { top: 0; left: 11px; background: var(--gold); }
+.duo-mark .o1 { top: 11px; left: 4px; background: var(--ember); }
+.duo-mark .o2 { top: 11px; left: 15px; background: var(--ember); }
+
+/* ── Hero editorial ── */
+.hero-frame { position: relative; max-width: 384px; margin: 0 auto; }
+.hero-frame::before {
+  content: '';
+  position: absolute;
+  inset: 22px -16px -16px 22px;
+  border: 1.5px solid var(--lime-line);
+  border-radius: 18px;
+  z-index: 0;
+}
+.hero-frame .hero-photo { position: relative; z-index: 1; border-radius: 16px; }
+.hero-frame .hero-photo img {
+  filter: grayscale(0.18) contrast(1.06) brightness(0.95);
+  object-position: center 15%;
+  aspect-ratio: 4 / 4.7;
+}
+.hero-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(130% 85% at 100% 0%, rgba(198, 241, 53, 0.22), transparent 44%);
+  mix-blend-mode: screen;
+}
+.duo-stamp {
+  position: absolute;
+  top: -15px; left: -15px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  background: rgba(16, 16, 19, 0.95);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
+  animation: float 6s ease-in-out infinite;
+}
+.duo-stamp .duo-mark { width: 26px; height: 22px; }
+.duo-stamp .duo-mark i { width: 9px; height: 9px; }
+.duo-stamp .duo-mark .g2 { left: 13px; }
+.duo-stamp .duo-mark .o1 { top: 13px; left: 5px; }
+.duo-stamp .duo-mark .o2 { top: 13px; left: 18px; }
+.duo-stamp span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  line-height: 1.3;
+}
+.hero-side-label {
+  position: absolute;
+  top: 50%; right: -34px;
+  z-index: 2;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+@media (max-width: 1023px) { .hero-side-label { display: none; } }
+
+/* ── Embudo animado (prueba social) ── */
+.embudo { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; position: relative; }
+.embudo::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 22%;
+  transform: translate(-50%, -50%);
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, rgba(198, 241, 53, 0.06), transparent 68%);
+  pointer-events: none;
+}
+.embudo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 860px) { .embudo-grid { grid-template-columns: 0.9fr 1.1fr; gap: 60px; } }
+.embudo-canvas-wrap { position: relative; aspect-ratio: 1 / 1; max-width: 340px; width: 100%; margin: 0 auto; }
+.embudo-canvas-wrap canvas { width: 100%; height: 100%; display: block; cursor: pointer; touch-action: manipulation; }
+.embudo-tap { text-align: center; font-size: 11px; color: var(--text-3); margin-top: 12px; font-weight: 500; }
+.embudo-info h2 { margin-bottom: 16px; }
+.embudo-info p { margin-bottom: 24px; max-width: 460px; }
+.embudo-info p strong { color: var(--text); font-weight: 700; }
+.embudo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  margin-bottom: 20px;
+}
+.embudo-badge b { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 900; color: var(--text); display: block; line-height: 1.15; }
+.embudo-badge span { font-size: 11.5px; color: var(--text-3); }
+.embudo-live { display: flex; align-items: baseline; gap: 12px; }
+.embudo-live b { font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 5vw, 42px); font-weight: 900; color: var(--lime); line-height: 1; font-variant-numeric: tabular-nums; }
+.embudo-live span { font-size: 12px; color: var(--text-3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; max-width: 130px; line-height: 1.35; }
+
+/* ── Preview Notion ── */
+.notion-prev { background: #1A1A1A; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5); width: 100%; }
+.notion-bar { display: flex; align-items: center; gap: 5px; padding: 8px 11px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.notion-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
+.notion-body { padding: 15px 15px 17px; }
+.notion-title { display: flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 13px; text-transform: none; }
+.notion-title .emoji { font-size: 16px; }
+.notion-q { border-left: 2.5px solid var(--lime); background: rgba(255, 255, 255, 0.03); border-radius: 0 6px 6px 0; padding: 8px 11px; margin-bottom: 8px; }
+.notion-q:last-child { margin-bottom: 0; }
+.notion-q.q2 { border-left-color: var(--gold); }
+.notion-q.q3 { border-left-color: var(--ember); }
+.notion-q b { display: block; font-size: 10.5px; color: #fff; margin-bottom: 2px; font-weight: 700; }
+.notion-q span { font-size: 9.5px; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
+
+/* ── Tienda de recursos: tarjetas verticales (trío premium) ── */
+.rec-grid.trio { grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 820px) { .rec-grid.trio { grid-template-columns: repeat(3, 1fr); } }
+.rec-card.v { display: flex; flex-direction: column; padding: 0; gap: 0; overflow: hidden; align-items: stretch; }
+.rec-preview {
+  position: relative;
+  aspect-ratio: 4 / 3.05;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line-soft);
+  background: #0A0A0A;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.rec-preview.center { align-items: center; padding: 16px; }
+.rec-preview .mini-cover { max-width: none; width: 80%; margin: 18px 0 0; border-radius: 6px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5); transform: none; }
+.rec-preview .notion-prev { width: 100%; }
+.rec-card.v .rec-body { padding: 24px 24px 28px; }
+.rec-card.v .rec-body .btn { width: 100%; }
+
+/* ── GPT avatar con marca DÚO ── */
+.gpt-ava { background: var(--bg-3); border: 1px solid var(--line); }
+.gpt-ava .duo-mark { transform: scale(0.66); }
+
 /* ── WhatsApp float ── */
 .wa-float {
   position: fixed;
@@ -1539,7 +1707,7 @@ footer {
     <div class="hero-inner">
       <div>
         <span class="eyebrow">Agencia de Marketing Digital · LATAM</span>
-        <h1>Deja de pautar a ciegas. <span class="lime">Vende con un sistema.</span></h1>
+        <h1>Dejá de pautar a ciegas. <span class="lime">Vendé con un sistema.</span></h1>
         <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas más rentable</strong> — con datos, no con suerte.</p>
         <div class="hero-ctas">
           <a href="#agenda" class="btn btn-lime">
@@ -1555,19 +1723,19 @@ footer {
       </div>
 
       <div class="hero-visual">
-        <div class="hero-chip c1">
-          <div class="hero-chip-value">10.55x</div>
-          <div class="hero-chip-label">ROAS · Ecommerce Chile</div>
-        </div>
-        <div class="hero-chip c2">
-          <div class="hero-chip-value">+25.000</div>
-          <div class="hero-chip-label">conversaciones generadas</div>
-        </div>
-        <div class="hero-photo">
-          <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital y fundador de DÚO" fetchpriority="high">
-          <div class="hero-caption">
-            <div class="hero-caption-name">Manu Baldiviezo</div>
-            <div class="hero-caption-role">Estratega Digital · Fundador de DÚO</div>
+        <div class="hero-frame">
+          <span class="duo-stamp">
+            <span class="duo-mark"><i class="g1"></i><i class="g2"></i><i class="o1"></i><i class="o2"></i></span>
+            <span>DÚO<br>Marketing</span>
+          </span>
+          <span class="hero-side-label">Estratega Digital · Bolivia</span>
+          <div class="hero-photo">
+            <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital y fundador de DÚO" fetchpriority="high">
+            <div class="hero-grade"></div>
+            <div class="hero-caption">
+              <div class="hero-caption-name">Manu Baldiviezo</div>
+              <div class="hero-caption-role">Fundador de DÚO · +5 años en Meta Ads</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1593,9 +1761,9 @@ footer {
 <section class="problema">
   <div class="container">
     <div class="problema-inner reveal">
-      <h2>¿Pagas por clics… <span class="lime">o construyes ventas?</span></h2>
-      <div class="problema-quote">"¿Esto realmente me está ayudando a vender, o solo estoy pagando por mensajes, clics y alcance?"</div>
-      <p>Si te hiciste esa pregunta, no te falta presupuesto. Te falta un sistema: saber qué estrategia seguir, qué comunicar y qué datos mirar antes de escalar.</p>
+      <h2>¿Pagás por clics… <span class="lime">o construís ventas?</span></h2>
+      <div class="problema-quote">"¿Esto de verdad me está ayudando a vender, o solo estoy pagando por mensajes, clics y alcance?"</div>
+      <p>Si te hiciste esa pregunta, no te falta plata para pauta. Te falta un sistema: saber qué estrategia seguir, qué comunicar y qué mirar antes de escalar.</p>
     </div>
   </div>
 </section>
@@ -1636,11 +1804,35 @@ footer {
   </div>
 </section>
 
+<section class="embudo" id="prueba">
+  <div class="container">
+    <div class="embudo-grid reveal">
+      <div class="embudo-canvas-wrap">
+        <canvas id="embudo-canvas" aria-hidden="true"></canvas>
+        <div class="embudo-tap">Tocá el embudo para meterle tráfico ↑</div>
+      </div>
+      <div class="embudo-info">
+        <span class="eyebrow">Prueba en vivo</span>
+        <h2>Tener seguidores no es <span class="lime">tener ventas.</span></h2>
+        <p>Femmeninas llegó a <strong>983 mil seguidores</strong> en Instagram. Pero lo que paga las cuentas no son los seguidores: son los leads y las ventas que ese tráfico genera cuando entra a un embudo con método.</p>
+        <div class="embudo-badge">
+          <span class="duo-mark"><i class="g1"></i><i class="g2"></i><i class="o1"></i><i class="o2"></i></span>
+          <div><b>983.000</b><span>seguidores · @femmeninas.cl</span></div>
+        </div>
+        <div class="embudo-live">
+          <b id="embudo-count">0</b>
+          <span>leads captados en vivo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="casos" id="resultados">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Resultados reales</span>
-      <h2>El sistema, <span class="lime">en números</span></h2>
+      <h2>No es un caso aislado. <span class="lime">Es el sistema.</span></h2>
       <p>Distintos rubros, distintos países. El mismo método.</p>
     </div>
 
@@ -1863,7 +2055,7 @@ footer {
       <div class="rec-card free-card reveal">
         <div class="gpt-preview">
           <div class="gpt-head">
-            <span class="gpt-ava">D</span>
+            <span class="gpt-ava"><span class="duo-mark"><i class="g1"></i><i class="g2"></i><i class="o1"></i><i class="o2"></i></span></span>
             <div>
               <div class="gpt-name">Agente Estratega | DÚO</div>
               <div class="gpt-status">● en línea</div>
@@ -1898,16 +2090,18 @@ footer {
 
     <div class="rec-sub premium reveal">▸ Guías premium</div>
 
-    <div class="rec-grid">
+    <div class="rec-grid trio">
 
-      <div class="rec-card premium-card reveal">
-        <div class="mini-cover tilt" role="img" aria-label="Portada de la guía Estrategia de Contenido DÚO">
-          <img src="/images/duo-logo-1.png" alt="" class="mc-logo">
-          <div class="mc-title"><span class="g">ESTRATEGIA</span> DE<br>CONTENIDO</div>
-          <div class="mc-div"></div>
-          <div class="mc-eye">Guía Completa · Fórmula DÚO3X</div>
-          <div class="mc-desc">El paso a paso para construir una estrategia de contenido que sostiene tus ventas.</div>
-          <div class="mc-foot"><span>DÚO Marketing</span><span>USD 15</span></div>
+      <div class="rec-card v premium-card reveal">
+        <div class="rec-preview">
+          <div class="mini-cover" role="img" aria-label="Portada de la guía Estrategia de Contenido DÚO">
+            <img src="/images/duo-logo-1.png" alt="" class="mc-logo">
+            <div class="mc-title"><span class="g">ESTRATEGIA</span> DE<br>CONTENIDO</div>
+            <div class="mc-div"></div>
+            <div class="mc-eye">Guía Completa · DÚO3X</div>
+            <div class="mc-desc">El paso a paso para una estrategia de contenido que sostiene tus ventas.</div>
+            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 15</span></div>
+          </div>
         </div>
         <div class="rec-body">
           <div class="rec-pills">
@@ -1915,40 +2109,68 @@ footer {
             <span class="rec-pill tipo">Guía PDF</span>
           </div>
           <h3>Estrategia de Contenido DÚO</h3>
-          <p>Deja de publicar por publicar. El paso a paso para construir una estrategia que sostiene tus ventas, en orgánico y en pauta.</p>
+          <p>Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en orgánico y en pauta.</p>
           <ul class="rec-feats">
-            <li>El árbol de coherencia: pilares, líneas narrativas y formatos</li>
+            <li>El árbol de coherencia: pilares, líneas y formatos</li>
             <li>Investigación de referentes y detonadores virales</li>
-            <li>Cómo analizar videos ganadores paso a paso</li>
-            <li>El método para generar ideas con potencial antes de grabar</li>
+            <li>Cómo identificar ideas ganadoras antes de grabar</li>
           </ul>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
-      <div class="rec-card premium-card reveal">
-        <div class="mini-cover tilt" role="img" aria-label="Portada de la guía FÓRMULA DÚO de guionización estratégica">
-          <div class="mc-eye">Guía Estratégica · Guionización</div>
-          <div class="mc-title"><span class="g">FÓRMULA<br>DÚO3X</span></div>
-          <div class="mc-sub">Guionización Estratégica</div>
-          <div class="mc-div"></div>
-          <div class="mc-desc">El sistema de 8 pasos para crear guiones que capturan atención, generan confianza y convierten.</div>
-          <div class="mc-foot"><span>DÚO Marketing</span><span>USD 25</span></div>
+      <div class="rec-card v premium-card reveal">
+        <div class="rec-preview">
+          <div class="mini-cover" role="img" aria-label="Portada de la guía FÓRMULA DÚO3X de guionización estratégica">
+            <div class="mc-eye">Guía Estratégica · Guionización</div>
+            <div class="mc-title"><span class="g">FÓRMULA<br>DÚO3X</span></div>
+            <div class="mc-sub">Guionización Estratégica</div>
+            <div class="mc-div"></div>
+            <div class="mc-desc">El sistema de 8 pasos para crear guiones que capturan atención y convierten.</div>
+            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 25</span></div>
+          </div>
         </div>
         <div class="rec-body">
           <div class="rec-pills">
             <span class="rec-pill precio">USD 25</span>
             <span class="rec-pill tipo">Guía PDF</span>
           </div>
-          <h3>Fórmula DÚO</h3>
-          <p>Guioniza con método, no con inspiración. El sistema de 8 pasos para crear videos que capturan atención y convierten.</p>
+          <h3>FÓRMULA DÚO3X</h3>
+          <p>Guionizá con método, no con inspiración. El sistema de 8 pasos para videos que enganchan y venden.</p>
           <ul class="rec-feats">
-            <li>+20 estructuras narrativas: venta, valor, viralidad y storytelling</li>
+            <li>+20 estructuras narrativas para venta, valor y viralidad</li>
             <li>+25 estilos de ganchos verbales, visuales y textuales</li>
-            <li>Checklist de validación de idea con 9 criterios</li>
-            <li>Funciona en orgánico y en pauta · potencia al Agente DÚO</li>
+            <li>Sirve en orgánico y en pauta · potencia al Agente DÚO</li>
           </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO*%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="rec-card v premium-card reveal">
+        <div class="rec-preview center">
+          <div class="notion-prev" role="img" aria-label="Vista previa de la Bitácora 3Q en Notion">
+            <div class="notion-bar"><i></i><i></i><i></i></div>
+            <div class="notion-body">
+              <div class="notion-title"><span class="emoji">📊</span> Bitácora de Campañas</div>
+              <div class="notion-q q1"><b>1 · ¿Qué pasó?</b><span>El ROAS cayó de 8x a 4x esta semana.</span></div>
+              <div class="notion-q q2"><b>2 · ¿Por qué pasó?</b><span>Público saturado y bajó el CTR del creativo.</span></div>
+              <div class="notion-q q3"><b>3 · ¿Qué hacer?</b><span>Refrescar creativo y ampliar audiencia.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="rec-body">
+          <div class="rec-pills">
+            <span class="rec-pill precio">USD 25</span>
+            <span class="rec-pill tipo">Notion</span>
+          </div>
+          <h3>Bitácora 3Q · Optimización</h3>
+          <p>Una plantilla en Notion para entender tus métricas con método y no a ojo, campaña por campaña.</p>
+          <ul class="rec-feats">
+            <li>Metodología 3Q: qué pasó, por qué pasó y qué hacer</li>
+            <li>Parámetros para leer cada métrica y decidir</li>
+            <li>Historial de decisiones · lista para duplicar</li>
+          </ul>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
@@ -2208,6 +2430,129 @@ if (window.matchMedia('(hover: hover)').matches) {
     el.addEventListener('pointerleave', () => { el.style.transform = ''; });
   });
 }
+
+/* Embudo animado — la Ú de DÚO que convierte tráfico en leads */
+(function () {
+  const canvas = document.getElementById('embudo-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const countEl = document.getElementById('embudo-count');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W = 0, H = 0, parts = [], converted = 0, running = false, raf = null;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  // Semi-ancho del canal para una altura normalizada yn (embudo/U)
+  function halfW(yn) {
+    const top = 0.40, neck = 0.055, yTop = 0.14, yNeck = 0.82;
+    if (yn <= yTop) return top;
+    if (yn >= yNeck) return neck;
+    return top - (top - neck) * ((yn - yTop) / (yNeck - yTop));
+  }
+
+  function spawn(n) {
+    for (let i = 0; i < n; i++) {
+      parts.push({
+        xn: 0.5 + (Math.random() - 0.5) * 0.72,
+        yn: -0.04 - Math.random() * 0.12,
+        v: 0.0042 + Math.random() * 0.0045,
+        sz: 2 + Math.random() * 2.4,
+        c: Math.random() < 0.5 ? '#C6F135' : '#F5A623'
+      });
+    }
+  }
+
+  function drawFunnel() {
+    ctx.clearRect(0, 0, W, H);
+    const cx = W * 0.5, steps = 44;
+    // paredes del embudo
+    ctx.lineWidth = Math.max(2.2, W * 0.013);
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'rgba(198, 241, 53, 0.5)';
+    for (const side of [-1, 1]) {
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const yn = 0.14 + (i / steps) * (0.94 - 0.14);
+        const x = cx + side * halfW(yn) * W;
+        const y = yn * H;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // acento de la Ú (´)
+    ctx.strokeStyle = 'rgba(245, 166, 35, 0.9)';
+    ctx.lineWidth = Math.max(2.6, W * 0.017);
+    ctx.beginPath();
+    ctx.moveTo(cx + W * 0.015, H * 0.11);
+    ctx.lineTo(cx + W * 0.12, H * 0.02);
+    ctx.stroke();
+    // brillo del cuello (donde convierte)
+    const g = ctx.createRadialGradient(cx, H * 0.88, 0, cx, H * 0.88, W * 0.14);
+    g.addColorStop(0, 'rgba(198, 241, 53, 0.28)');
+    g.addColorStop(1, 'rgba(198, 241, 53, 0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(cx - W * 0.14, H * 0.74, W * 0.28, H * 0.26);
+  }
+
+  function tick() {
+    drawFunnel();
+    for (const p of parts) {
+      p.yn += p.v;
+      const hw = halfW(Math.max(0, p.yn));
+      const off = p.xn - 0.5;
+      if (Math.abs(off) > hw) p.xn = 0.5 + Math.sign(off) * hw;
+      const x = p.xn * W, y = p.yn * H;
+      ctx.fillStyle = p.c;
+      ctx.fillRect(x - p.sz / 2, y - p.sz / 2, p.sz, p.sz);
+      if (p.yn > 0.94) { converted++; p.yn = -0.04 - Math.random() * 0.1; p.xn = 0.5 + (Math.random() - 0.5) * 0.72; }
+    }
+    if (countEl) countEl.textContent = converted.toLocaleString('es-BO');
+    raf = requestAnimationFrame(tick);
+  }
+
+  function drawStatic() {
+    resize();
+    if (parts.length === 0) spawn(34);
+    for (const p of parts) {
+      p.yn = Math.random() * 0.9;
+      p.xn = 0.5 + (Math.random() - 0.5) * halfW(p.yn) * 2;
+    }
+    converted = 428;
+    drawFunnel();
+    for (const p of parts) { ctx.fillStyle = p.c; ctx.fillRect(p.xn * W - p.sz / 2, p.yn * H - p.sz / 2, p.sz, p.sz); }
+    if (countEl) countEl.textContent = converted.toLocaleString('es-BO');
+  }
+
+  function start() {
+    if (reduce) { drawStatic(); return; }
+    if (running) return;
+    running = true;
+    resize();
+    if (parts.length === 0) spawn(46);
+    tick();
+  }
+  function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
+
+  let rt;
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (reduce) drawStatic(); else if (running) resize(); }, 150); });
+  canvas.addEventListener('click', () => { if (reduce) return; start(); if (parts.length < 140) spawn(14); });
+
+  // Arranca cuando entra en viewport; con respaldos por si el observer no dispara.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) start(); else stop(); });
+    }, { threshold: 0.15 }).observe(canvas);
+  }
+  window.addEventListener('scroll', () => start(), { passive: true, once: true });
+  window.addEventListener('load', () => setTimeout(start, 500));
+})();
 
 /* Video modal */
 const videoModal = document.getElementById('video-modal');
