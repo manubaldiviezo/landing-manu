@@ -1543,43 +1543,53 @@ body::before {
 /* ── Embudo DÚO flotante (hero) ── */
 .ufloat {
   width: fit-content;
-  margin: 6px 0 30px;
+  margin: 12px 0 36px;
   position: relative;
   animation: uFloat 5.8s ease-in-out infinite;
+  transform-origin: center center;
+  overflow: visible;
 }
 
 .ufloat::before {
   content: '';
   position: absolute;
-  inset: 12px 6px 8px 6px;
-  background: radial-gradient(circle, rgba(198, 241, 53, 0.12), transparent 68%);
-  filter: blur(14px);
+  inset: -10px -12px -8px -12px;
+  background: radial-gradient(circle, rgba(198, 241, 53, 0.14), transparent 68%);
+  filter: blur(18px);
   opacity: 0.8;
   pointer-events: none;
 }
 
 .ufloat canvas {
-  width: 96px;
-  height: 96px;
+  width: 136px;
+  height: 154px;
   display: block;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 14px 28px rgba(198, 241, 53, 0.16));
+  filter:
+    drop-shadow(0 18px 32px rgba(198, 241, 53, 0.18))
+    drop-shadow(0 0 16px rgba(245, 166, 35, 0.09));
 }
 
 @keyframes uFloat {
   0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
-  50% { transform: translate3d(0, -7px, 0) rotate(1deg); }
+  50% { transform: translate3d(0, -6px, 0) rotate(1deg); }
+}
+
+@media (max-width: 767px) {
+  .ufloat {
+    margin: 18px auto 34px;
+  }
 }
 
 @media (max-width: 520px) {
   .ufloat {
-    margin-bottom: 26px;
+    margin: 18px auto 34px;
   }
 
   .ufloat canvas {
-    width: 86px;
-    height: 86px;
+    width: 132px;
+    height: 150px;
   }
 }
 
@@ -1658,11 +1668,29 @@ body::before {
   align-items: center;
   justify-content: center;
   box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
-  transition: transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.92);
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s,
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wa-float.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.35s ease,
+    visibility 0s,
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wa-float svg { width: 29px; height: 29px; color: #fff; }
-.wa-float:hover { transform: scale(1.08); }
+.wa-float.visible:hover { transform: translateY(0) scale(1.08); }
 
 .wa-float::before {
   content: '';
@@ -2368,20 +2396,34 @@ const SUPABASE_ANON_KEY = 'REEMPLAZAR_SUPABASE_ANON_KEY';
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Scroll: header + progress + sticky */
+/* Scroll: header + progress + sticky + WhatsApp */
 const header = document.getElementById('header');
 const progress = document.getElementById('progress');
 const stickyM = document.getElementById('sticky-m');
 const agendaSection = document.getElementById('agenda');
+const waFloat = document.querySelector('.wa-float');
+const thirdSection = document.getElementById('resultados');
 
-window.addEventListener('scroll', () => {
+function handlePageScroll() {
   const y = window.scrollY;
   if (header) header.classList.toggle('scrolled', y > 10);
+
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-  const nearAgenda = agendaSection.getBoundingClientRect().top < window.innerHeight * 0.5;
+
+  const nearAgenda = agendaSection && agendaSection.getBoundingClientRect().top < window.innerHeight * 0.5;
   stickyM.classList.toggle('visible', y > 600 && !nearAgenda);
-}, { passive: true });
+
+  /* El botón de WhatsApp aparece desde la tercera sección (#resultados). */
+  if (waFloat && thirdSection) {
+    const thirdTop = thirdSection.getBoundingClientRect().top;
+    waFloat.classList.toggle('visible', thirdTop < window.innerHeight * 0.78);
+  }
+}
+
+window.addEventListener('scroll', handlePageScroll, { passive: true });
+window.addEventListener('resize', handlePageScroll, { passive: true });
+handlePageScroll();
 
 /* Reveal on scroll */
 const io = new IntersectionObserver((entries) => {
@@ -2414,36 +2456,49 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 }
 
-/* Embudo DÚO flotante — U magnética:
-   Los leads no se pegan como abejas. Siguen una huella/rastro hacia la U,
-   como si el embudo estuviera atrayendo oportunidades en movimiento. */
+/* Embudo DÚO flotante:
+   Los leads entran como pixeles sólidos, siguen un rastro dinámico
+   y se adhieren a los 4 cuadrados superiores del logo sin generar brillo pixelado.
+   Hay más aire arriba para que el movimiento y el glow no se corten. */
 (function () {
   const canvas = document.getElementById('ufunnel-c');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
 
-  const W = 120;
-  const H = 120;
+  const W = 180;
+  const H = 210;
 
-  const LIME = '#C6F135';
   const GOLD = '#F5A623';
   const ORANGE = '#E8471A';
   const WHITE = '#FAFAF8';
+  const LIME = '#C6F135';
 
-  let dpr = 1;
   let raf = null;
   let running = false;
   let time = 0;
-  let scrollBoost = 0;
-  let lastY = window.scrollY || 0;
+
+  let scrollEnergy = 0;
+  let lastScrollY = window.scrollY || 0;
 
   const particles = [];
-  const TOTAL = 18;
+  const impacts = [];
+  const TOTAL = 24;
+
+  // Los 4 cuadrados del logo más cerca de la U.
+  // Los naranjas quedan alineados con las franjas blancas de la U.
+  const squares = [
+    { x: 43, y: 43, s: 15, color: GOLD },
+    { x: 96, y: 43, s: 15, color: GOLD },
+    { x: 58, y: 68, s: 15, color: ORANGE },
+    { x: 107, y: 68, s: 15, color: ORANGE }
+  ];
+
+  const squarePulse = [0, 0, 0, 0];
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvas.width = Math.round(rect.width * dpr);
     canvas.height = Math.round(rect.height * dpr);
@@ -2456,214 +2511,345 @@ if (window.matchMedia('(hover: hover)').matches) {
       0,
       0
     );
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
   }
 
-  function lerp(a, b, t) {
-    return a + (b - a) * t;
-  }
-
-  function easeInOut(t) {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function ease(t) {
+    return 1 - Math.pow(1 - t, 3);
   }
 
   function bezier(p0, p1, p2, p3, t) {
     const u = 1 - t;
     const tt = t * t;
     const uu = u * u;
-    const uuu = uu * u;
-    const ttt = tt * t;
 
     return {
-      x: uuu * p0.x + 3 * uu * t * p1.x + 3 * u * tt * p2.x + ttt * p3.x,
-      y: uuu * p0.y + 3 * uu * t * p1.y + 3 * u * tt * p2.y + ttt * p3.y
+      x:
+        uu * u * p0.x +
+        3 * uu * t * p1.x +
+        3 * u * tt * p2.x +
+        tt * t * p3.x,
+      y:
+        uu * u * p0.y +
+        3 * uu * t * p1.y +
+        3 * u * tt * p2.y +
+        tt * t * p3.y
     };
   }
 
-  function trailPoint(side, t, offset) {
-    const e = easeInOut(t);
+  function squareTarget(index) {
+    const q = squares[index];
 
-    if (side === 'left') {
-      return bezier(
-        { x: -18, y: 30 + offset },
-        { x: 18, y: 28 + offset * 0.25 },
-        { x: 26, y: 72 },
-        { x: 54, y: 78 },
-        e
-      );
-    }
+    // Los leads se adhieren desde arriba y los costados de los cuadrados,
+    // no desde abajo, para que no parezca que suben desde debajo de la U.
+    const side = Math.floor(Math.random() * 3);
+    const u = Math.random() * q.s;
 
-    if (side === 'right') {
-      return bezier(
-        { x: 138, y: 28 + offset },
-        { x: 98, y: 30 + offset * 0.25 },
-        { x: 94, y: 72 },
-        { x: 66, y: 78 },
-        e
-      );
-    }
-
-    return bezier(
-      { x: 60 + offset, y: -18 },
-      { x: 58 + offset * 0.2, y: 24 },
-      { x: 44, y: 40 },
-      { x: 60, y: 76 },
-      e
-    );
+    if (side === 0) return { x: q.x + u, y: q.y - 2.4 };
+    if (side === 1) return { x: q.x - 2.4, y: q.y + u };
+    return { x: q.x + q.s + 2.4, y: q.y + u };
   }
 
   function createParticle(i) {
-    const sides = ['left', 'right', 'top'];
-    const side = sides[i % sides.length];
+    const route = i % 5;
+    const targetIndex = Math.floor(Math.random() * squares.length);
+    const target = squareTarget(targetIndex);
+
+    let start;
+
+    if (route === 0) {
+      // Costado izquierdo, altura de los cuadrados.
+      start = { x: -22, y: 24 + Math.random() * 64 };
+    } else if (route === 1) {
+      // Costado derecho, altura de los cuadrados.
+      start = { x: W + 22, y: 24 + Math.random() * 64 };
+    } else if (route === 2) {
+      // Desde arriba, con aire suficiente para que no se corte.
+      start = { x: 28 + Math.random() * 124, y: 5 + Math.random() * 12 };
+    } else if (route === 3) {
+      // Diagonal superior izquierda, nunca desde abajo.
+      start = { x: -18, y: 8 + Math.random() * 44 };
+    } else {
+      // Diagonal superior derecha, nunca desde abajo.
+      start = { x: W + 18, y: 8 + Math.random() * 44 };
+    }
 
     return {
-      side,
+      start,
+      target,
+      targetIndex,
       progress: Math.random(),
-      speed: 0.0026 + Math.random() * 0.0022,
-      size: 2.2 + Math.random() * 1.5,
-      offset: -10 + Math.random() * 20,
-      delay: Math.random() * 0.7,
-      alpha: 0.55 + Math.random() * 0.45,
-      drift: Math.random() * Math.PI * 2
+      speed: 0.0028 + Math.random() * 0.0025,
+      size: 2.4 + Math.random() * 3.6,
+      alpha: 0.62 + Math.random() * 0.38,
+      jitter: Math.random() * Math.PI * 2,
+      hold: 0,
+      color: targetIndex < 2 ? GOLD : ORANGE
     };
+  }
+
+  function resetParticle(p) {
+    const fresh = createParticle(Math.floor(Math.random() * 9999));
+    Object.assign(p, fresh);
+    p.progress = 0;
   }
 
   function initParticles() {
     particles.length = 0;
+
     for (let i = 0; i < TOTAL; i++) {
       particles.push(createParticle(i));
     }
   }
 
-  function drawU() {
-    const pulse = 0.5 + Math.sin(time * 0.045) * 0.5;
+  function particlePath(p, t) {
+    const e = ease(t);
 
-    // Glow interno del embudo
-    const glow = ctx.createRadialGradient(60, 70, 0, 60, 70, 48);
-    glow.addColorStop(0, `rgba(198, 241, 53, ${0.13 + pulse * 0.05})`);
-    glow.addColorStop(0.55, 'rgba(198, 241, 53, 0.045)');
-    glow.addColorStop(1, 'rgba(198, 241, 53, 0)');
+    // Imán visual hacia los cuadrados: la curva pasa por arriba/costados,
+    // no por debajo del embudo.
+    const magnetX = 82 + Math.sin(p.jitter) * 28;
+    const magnetY = 48 + Math.cos(p.jitter) * 18;
 
-    ctx.fillStyle = glow;
-    ctx.fillRect(8, 10, 104, 100);
-
-    // Rastro sutil dentro de la U
-    ctx.save();
-    ctx.globalAlpha = 0.42;
-    ctx.strokeStyle = 'rgba(198, 241, 53, 0.22)';
-    ctx.lineWidth = 2;
-    ctx.lineCap = 'round';
-    ctx.setLineDash([5, 8]);
-    ctx.lineDashOffset = -time * 0.28;
-
-    ctx.beginPath();
-    ctx.moveTo(42, 34);
-    ctx.lineTo(42, 66);
-    ctx.bezierCurveTo(42, 86, 78, 86, 78, 66);
-    ctx.lineTo(78, 34);
-    ctx.stroke();
-    ctx.restore();
-
-    // U principal: más compacta y menos estirada
-    ctx.save();
-    ctx.strokeStyle = WHITE;
-    ctx.lineWidth = 13;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    ctx.beginPath();
-    ctx.moveTo(42, 34);
-    ctx.lineTo(42, 66);
-    ctx.bezierCurveTo(42, 88, 78, 88, 78, 66);
-    ctx.lineTo(78, 34);
-    ctx.stroke();
-    ctx.restore();
-
-    // Corte interno para darle forma de embudo limpio
-    ctx.save();
-    ctx.strokeStyle = 'rgba(11, 11, 13, 0.85)';
-    ctx.lineWidth = 3.5;
-    ctx.lineCap = 'round';
-
-    ctx.beginPath();
-    ctx.moveTo(60, 34);
-    ctx.lineTo(60, 76);
-    ctx.stroke();
-    ctx.restore();
-
-    // Cuadros superiores inspirados en el logo, más pequeños y elegantes
-    drawSquare(35, 13, 10, GOLD, pulse);
-    drawSquare(62, 13, 10, GOLD, pulse * 0.75);
-    drawSquare(48, 26, 10, ORANGE, pulse * 0.9);
-    drawSquare(75, 26, 10, ORANGE, pulse * 0.65);
+    return bezier(
+      p.start,
+      {
+        x: p.start.x * 0.62 + magnetX * 0.38,
+        y: p.start.y * 0.72 + magnetY * 0.28
+      },
+      {
+        x: magnetX,
+        y: magnetY
+      },
+      p.target,
+      e
+    );
   }
 
-  function drawSquare(x, y, s, color, pulse) {
+  function drawPixel(x, y, size, color, alpha, glow = true) {
+    const px = Math.round(x - size / 2);
+    const py = Math.round(y - size / 2);
+    const ps = Math.max(2, Math.round(size));
+
     ctx.save();
-
-    ctx.shadowColor = color;
-    ctx.shadowBlur = 8 + pulse * 6;
-
+    ctx.globalAlpha = alpha;
     ctx.fillStyle = color;
-    ctx.fillRect(x, y, s, s);
 
-    ctx.globalAlpha = 0.25 + pulse * 0.18;
-    ctx.fillRect(x - 2, y - 2, s + 4, s + 4);
+    if (glow) {
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 7;
+    }
 
+    ctx.fillRect(px, py, ps, ps);
     ctx.restore();
   }
 
-  function drawParticle(p) {
-    const progress = (p.progress + p.delay) % 1;
-    const point = trailPoint(p.side, progress, p.offset);
+  function drawParticle(p, scaleBoost) {
+    const progress = Math.min(1, p.progress);
+    const pos = particlePath(p, progress);
 
-    const wobble = Math.sin(time * 0.06 + p.drift) * 1.4;
-    const x = point.x + wobble;
-    const y = point.y + Math.cos(time * 0.052 + p.drift) * 1.1;
+    const fadeIn = Math.min(1, progress * 5);
+    const fadeOut = Math.min(1, (1 - progress) * 7);
+    const alpha = Math.max(0, Math.min(fadeIn, fadeOut)) * p.alpha;
 
-    const fadeIn = Math.min(1, progress * 4);
-    const fadeOut = Math.min(1, (1 - progress) * 5);
-    const alpha = Math.min(fadeIn, fadeOut) * p.alpha;
+    const wobbleX = Math.sin(time * 0.08 + p.jitter) * 1.15;
+    const wobbleY = Math.cos(time * 0.07 + p.jitter) * 1.0;
 
-    const hot = Math.max(0, progress - 0.55) / 0.45;
+    const x = pos.x + wobbleX;
+    const y = pos.y + wobbleY;
 
-    const r = Math.round(198 + (245 - 198) * hot);
-    const g = Math.round(241 + (166 - 241) * hot);
-    const b = Math.round(53 + (35 - 53) * hot);
-
-    // Rastro detrás del lead
     ctx.save();
+
+    // Todo el sistema crece ligeramente al scrollear.
+    ctx.translate(W / 2, H / 2);
+    ctx.scale(1 + scaleBoost, 1 + scaleBoost);
+    ctx.translate(-W / 2, -H / 2);
+
+    // Rastro fino y limpio, sin manchas cuadradas.
     ctx.globalAlpha = alpha * 0.28;
-    ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
+    ctx.strokeStyle = p.color;
     ctx.lineWidth = 1.25;
     ctx.lineCap = 'round';
 
     ctx.beginPath();
 
-    for (let i = 6; i >= 0; i--) {
-      const tt = Math.max(0, progress - i * 0.018);
-      const trail = trailPoint(p.side, tt, p.offset);
-      const tx = trail.x + Math.sin(time * 0.06 + p.drift - i * 0.25) * 1.1;
-      const ty = trail.y + Math.cos(time * 0.052 + p.drift - i * 0.25) * 0.9;
+    for (let i = 8; i >= 0; i--) {
+      const tt = Math.max(0, progress - i * 0.023);
+      const trail = particlePath(p, tt);
 
-      if (i === 6) ctx.moveTo(tx, ty);
+      const tx = trail.x + Math.sin(time * 0.08 + p.jitter - i * 0.42) * 0.65;
+      const ty = trail.y + Math.cos(time * 0.07 + p.jitter - i * 0.42) * 0.65;
+
+      if (i === 8) ctx.moveTo(tx, ty);
       else ctx.lineTo(tx, ty);
     }
 
     ctx.stroke();
-    ctx.restore();
 
-    // Lead principal
+    // Lead principal: pixel sólido.
+    drawPixel(x, y, p.size, p.color, alpha, true);
+
+    // Pixel secundario, discreto.
+    if (p.size > 4.5) {
+      drawPixel(x + p.size * 0.72, y - p.size * 0.48, p.size * 0.38, p.color, alpha * 0.62, true);
+    }
+
+    ctx.restore();
+  }
+
+  function drawSoftGlow(cx, cy, radius, color, alpha) {
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+
+    if (color === GOLD) {
+      g.addColorStop(0, `rgba(245, 166, 35, ${alpha})`);
+      g.addColorStop(0.55, `rgba(245, 166, 35, ${alpha * 0.22})`);
+    } else {
+      g.addColorStop(0, `rgba(232, 71, 26, ${alpha})`);
+      g.addColorStop(0.55, `rgba(232, 71, 26, ${alpha * 0.22})`);
+    }
+
+    g.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
     ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-    ctx.shadowColor = `rgb(${r}, ${g}, ${b})`;
-    ctx.shadowBlur = 8;
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawSolidSquare(sq, pulse) {
+    const cx = sq.x + sq.s / 2;
+    const cy = sq.y + sq.s / 2;
+
+    // Glow redondo y suave, no un rectángulo agrandado.
+    drawSoftGlow(cx, cy, 24 + pulse * 8, sq.color, 0.16 + pulse * 0.16);
+
+    ctx.save();
+    ctx.shadowColor = sq.color;
+    ctx.shadowBlur = 12 + pulse * 14;
+
+    // Cuadro base sólido.
+    ctx.fillStyle = sq.color;
+    ctx.fillRect(sq.x, sq.y, sq.s, sq.s);
+
+    // Pequeño brillo interno para que se vea premium, no pixelado.
+    ctx.shadowBlur = 0;
+    ctx.globalAlpha = 0.28;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(sq.x + 2, sq.y + 2, sq.s - 4, 2);
+
+    ctx.globalAlpha = 0.16;
+    ctx.fillRect(sq.x + 2, sq.y + 2, 2, sq.s - 4);
+
+    ctx.restore();
+  }
+
+  function drawImpactPixels(scaleBoost) {
+    ctx.save();
+
+    ctx.translate(W / 2, H / 2);
+    ctx.scale(1 + scaleBoost, 1 + scaleBoost);
+    ctx.translate(-W / 2, -H / 2);
+
+    for (const imp of impacts) {
+      drawPixel(imp.x, imp.y, imp.size, imp.color, Math.min(0.85, imp.life), true);
+    }
+
+    ctx.restore();
+  }
+
+  function drawU(scaleBoost) {
+    const pulse = 0.5 + Math.sin(time * 0.045) * 0.5;
+
+    ctx.save();
+
+    ctx.translate(W / 2, H / 2);
+    ctx.scale(1 + scaleBoost, 1 + scaleBoost);
+    ctx.translate(-W / 2, -H / 2);
+
+    // Glow general del embudo, suave y redondo.
+    const glow = ctx.createRadialGradient(90, 125, 0, 90, 125, 82);
+    glow.addColorStop(0, `rgba(198, 241, 53, ${0.12 + pulse * 0.05})`);
+    glow.addColorStop(0.58, 'rgba(198, 241, 53, 0.035)');
+    glow.addColorStop(1, 'rgba(198, 241, 53, 0)');
+
+    ctx.fillStyle = glow;
+    ctx.fillRect(12, 56, 156, 138);
+
+    // Huella interna animada. La línea acompaña la forma de la U sin cortar sus remates.
+    ctx.save();
+    ctx.globalAlpha = 0.28;
+    ctx.strokeStyle = 'rgba(198, 241, 53, 0.24)';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.setLineDash([5, 9]);
+    ctx.lineDashOffset = -time * 0.42;
 
     ctx.beginPath();
-    ctx.arc(x, y, p.size, 0, Math.PI * 2);
+    ctx.moveTo(68, 91);
+    ctx.lineTo(68, 128);
+    ctx.bezierCurveTo(68, 158, 112, 158, 112, 128);
+    ctx.lineTo(112, 91);
+    ctx.stroke();
+    ctx.restore();
+
+    // U principal del logo: remates superiores rectos, cuerpo sólido y base curva.
+    // Se dibuja como forma rellena, no como trazo, para evitar extremos redondeados.
+    ctx.save();
+    ctx.fillStyle = WHITE;
+    ctx.beginPath();
+    ctx.moveTo(57, 88);
+    ctx.lineTo(74, 88);
+    ctx.lineTo(74, 126);
+    ctx.bezierCurveTo(74, 146, 106, 146, 106, 126);
+    ctx.lineTo(106, 88);
+    ctx.lineTo(123, 88);
+    ctx.lineTo(123, 127);
+    ctx.bezierCurveTo(123, 166, 57, 166, 57, 127);
+    ctx.closePath();
     ctx.fill();
+    ctx.restore();
+
+    // Luz blanca suave para que la U se vea sólida/premium, sin pixelar.
+    ctx.save();
+    ctx.globalAlpha = 0.18 + pulse * 0.06;
+    ctx.shadowColor = WHITE;
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = WHITE;
+    ctx.beginPath();
+    ctx.moveTo(57, 88);
+    ctx.lineTo(74, 88);
+    ctx.lineTo(74, 126);
+    ctx.bezierCurveTo(74, 146, 106, 146, 106, 126);
+    ctx.lineTo(106, 88);
+    ctx.lineTo(123, 88);
+    ctx.lineTo(123, 127);
+    ctx.bezierCurveTo(123, 166, 57, 166, 57, 127);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+
+    // Sombra interna sutil para separar visualmente los brazos.
+    ctx.save();
+    ctx.globalAlpha = 0.42;
+    ctx.strokeStyle = 'rgba(11, 11, 13, 0.68)';
+    ctx.lineWidth = 2.8;
+    ctx.lineCap = 'round';
+
+    ctx.beginPath();
+    ctx.moveTo(90, 91);
+    ctx.lineTo(90, 136);
+    ctx.stroke();
+    ctx.restore();
+
+    // Cuadros superiores sólidos con brillo suave. Los naranjas quedan cerca y alineados a la U.
+    squares.forEach((sq, index) => {
+      const p = squarePulse[index];
+      const activePulse = pulse * 0.24 + p;
+      drawSolidSquare(sq, activePulse);
+    });
 
     ctx.restore();
   }
@@ -2671,37 +2857,69 @@ if (window.matchMedia('(hover: hover)').matches) {
   function update() {
     time++;
 
-    scrollBoost *= 0.92;
+    scrollEnergy *= 0.9;
 
-    for (const p of particles) {
-      p.progress += p.speed + scrollBoost * 0.00045;
-
-      if (p.progress > 1) {
-        const fresh = createParticle(Math.floor(Math.random() * 999));
-        Object.assign(p, fresh);
-        p.progress = 0;
-      }
+    for (let i = 0; i < squarePulse.length; i++) {
+      squarePulse[i] *= 0.91;
     }
+
+    for (let i = impacts.length - 1; i >= 0; i--) {
+      impacts[i].life *= 0.9;
+      if (impacts[i].life < 0.05) impacts.splice(i, 1);
+    }
+
+    particles.forEach((p) => {
+      if (p.hold > 0) {
+        p.hold--;
+
+        if (p.hold <= 0) resetParticle(p);
+        return;
+      }
+
+      p.progress += p.speed + scrollEnergy * 0.00055;
+
+      if (p.progress >= 1) {
+        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.5);
+
+        impacts.push({
+          x: p.target.x,
+          y: p.target.y,
+          size: Math.max(2.5, p.size * 0.82),
+          color: p.color,
+          life: 1
+        });
+
+        if (impacts.length > 14) impacts.shift();
+
+        p.hold = 8 + Math.floor(Math.random() * 14);
+      }
+    });
   }
 
   function render() {
     ctx.clearRect(0, 0, W, H);
 
-    // Primero los rastros/leads, luego la U para que parezca que los atrae
-    for (const p of particles) drawParticle(p);
+    const scaleBoost = Math.min(0.14, scrollEnergy * 0.014);
 
-    drawU();
+    // Leads primero, después impactos y logo sólido encima.
+    particles.forEach((p) => {
+      if (p.hold <= 0) drawParticle(p, scaleBoost);
+    });
 
-    // Pequeña atracción central, como punto de entrada
-    const pulse = 0.5 + Math.sin(time * 0.06) * 0.5;
+    drawImpactPixels(scaleBoost);
+    drawU(scaleBoost);
+
+    // Brillo de presencia general, muy suave.
+    const pulse = 0.5 + Math.sin(time * 0.055) * 0.5;
     ctx.save();
-    ctx.globalAlpha = 0.35 + pulse * 0.25;
-    ctx.fillStyle = LIME;
-    ctx.shadowColor = LIME;
-    ctx.shadowBlur = 12;
+    ctx.globalAlpha = 0.13 + pulse * 0.05;
+    ctx.strokeStyle = LIME;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([2, 10]);
+    ctx.lineDashOffset = -time * 0.38;
     ctx.beginPath();
-    ctx.arc(60, 79, 2.2 + pulse * 0.7, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.arc(90, 94, 60, 0, Math.PI * 2);
+    ctx.stroke();
     ctx.restore();
   }
 
@@ -2713,15 +2931,15 @@ if (window.matchMedia('(hover: hover)').matches) {
 
   function start() {
     if (running) return;
-    running = true;
 
+    running = true;
     resize();
 
     if (!particles.length) {
       initParticles();
 
-      // Arranca ya con movimiento visible
-      for (let i = 0; i < 120; i++) update();
+      // Arranca con la escena ya viva.
+      for (let i = 0; i < 130; i++) update();
     }
 
     tick();
@@ -2742,17 +2960,18 @@ if (window.matchMedia('(hover: hover)').matches) {
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY || 0;
-    const delta = Math.abs(y - lastY);
-    lastY = y;
+    const delta = Math.abs(y - lastScrollY);
+    lastScrollY = y;
 
-    scrollBoost = Math.min(8, scrollBoost + delta * 0.035);
+    // Al scrollear: más energía, más velocidad y crecimiento leve.
+    scrollEnergy = Math.min(10, scrollEnergy + delta * 0.04);
   }, { passive: true });
 
   start();
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) start();
         else stop();
       });
