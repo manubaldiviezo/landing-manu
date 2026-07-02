@@ -1543,14 +1543,44 @@ body::before {
 /* ── Embudo DÚO flotante (hero) ── */
 .ufloat {
   width: fit-content;
-  margin: 4px 0 30px;
-  animation: float 5.5s ease-in-out infinite;
+  margin: 6px 0 30px;
+  position: relative;
+  animation: uFloat 5.8s ease-in-out infinite;
 }
+
+.ufloat::before {
+  content: '';
+  position: absolute;
+  inset: 12px 6px 8px 6px;
+  background: radial-gradient(circle, rgba(198, 241, 53, 0.12), transparent 68%);
+  filter: blur(14px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .ufloat canvas {
-  width: 82px;
-  height: 95px;
+  width: 96px;
+  height: 96px;
   display: block;
-  filter: drop-shadow(0 12px 26px rgba(198, 241, 53, 0.13));
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 14px 28px rgba(198, 241, 53, 0.16));
+}
+
+@keyframes uFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+  50% { transform: translate3d(0, -7px, 0) rotate(1deg); }
+}
+
+@media (max-width: 520px) {
+  .ufloat {
+    margin-bottom: 26px;
+  }
+
+  .ufloat canvas {
+    width: 86px;
+    height: 86px;
+  }
 }
 
 /* ── Preview Notion ── */
@@ -1681,8 +1711,8 @@ body::before {
         <span class="eyebrow">Agencia de Marketing Digital</span>
         <h1>Deja de pautar a ciegas. <span class="lime">Vende con un sistema escalable.</span></h1>
         <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas más rentable</strong> — con datos claros y medibles.</p>
-        <div class="ufloat" role="img" aria-label="El embudo DÚO: leads fríos que se convierten en clientes">
-          <canvas id="ufunnel-c" aria-hidden="true"></canvas>
+        <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo oportunidades hacia el embudo">
+        <canvas id="ufunnel-c" aria-hidden="true"></canvas>
         </div>
         <div class="hero-ctas">
           <a href="#agenda" class="btn btn-lime">
@@ -2384,162 +2414,349 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 }
 
-/* Embudo DÚO flotante — la coherencia del logo en movimiento:
-   los leads llegan fríos (lima), se adhieren a los cuadros dorados (fríos/tibios),
-   se calientan y pasan a los naranjas (calientes). La U es el embudo. */
+/* Embudo DÚO flotante — U magnética:
+   Los leads no se pegan como abejas. Siguen una huella/rastro hacia la U,
+   como si el embudo estuviera atrayendo oportunidades en movimiento. */
 (function () {
   const canvas = document.getElementById('ufunnel-c');
   if (!canvas) return;
+
   const ctx = canvas.getContext('2d');
 
-  // Espacio lógico 100 × 116 (proporción del canvas 82×95)
-  const LW = 100, LH = 116;
-  const ARM_L = 32, ARM_LI = 46, ARM_RI = 62, ARM_R = 76, ARM_TOP = 34;
-  const CX = 54, BOWL_Y = 76, R_OUT = 22, R_IN = 8;
-  const GOLD = '#F5A533', ORANGE = '#EE7530', WHITE = '#FAFAF8';
-  // Cuadros del logo: 0-1 dorados (leads fríos/tibios), 2-3 naranjas (calientes)
-  const SQ = [[20, 3], [50, 3], [33, 16], [63, 16]], S = 13;
-  const halo = [0, 0, 0, 0];
+  const W = 120;
+  const H = 120;
 
-  let parts = [], running = false, raf = null, t = 0;
+  const LIME = '#C6F135';
+  const GOLD = '#F5A623';
+  const ORANGE = '#E8471A';
+  const WHITE = '#FAFAF8';
+
+  let dpr = 1;
+  let raf = null;
+  let running = false;
+  let time = 0;
+  let scrollBoost = 0;
+  let lastY = window.scrollY || 0;
+
+  const particles = [];
+  const TOTAL = 18;
 
   function resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const r = canvas.getBoundingClientRect();
-    canvas.width = Math.round(r.width * dpr);
-    canvas.height = Math.round(r.height * dpr);
-    ctx.setTransform((r.width * dpr) / LW, 0, 0, (r.height * dpr) / LH, 0, 0);
+    const rect = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+
+    ctx.setTransform(
+      canvas.width / W,
+      0,
+      0,
+      canvas.height / H,
+      0,
+      0
+    );
   }
 
-  // Punto aleatorio pegado al borde de un cuadro (ahí se adhieren)
-  function edgePoint(i) {
-    const [x, y] = SQ[i], side = (Math.random() * 4) | 0, u = Math.random() * S;
-    if (side === 0) return [x + u, y - 1.5];
-    if (side === 1) return [x + u, y + S + 1.5];
-    if (side === 2) return [x - 1.5, y + u];
-    return [x + S + 1.5, y + u];
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
   }
 
-  function reset(p) {
-    const r = Math.random();
-    if (r < 0.38) { p.x = -8; p.y = Math.random() * 34; }
-    else if (r < 0.76) { p.x = 108; p.y = Math.random() * 34; }
-    else { p.x = Math.random() * 100; p.y = -10; }
-    p.gi = (Math.random() * 2) | 0;                       // cuadro dorado destino
-    p.oi = 2 + (Math.random() < 0.72 ? p.gi : 1 - p.gi);  // naranja (sigue la diagonal del logo)
-    const e = edgePoint(p.gi);
-    p.tx = e[0]; p.ty = e[1];
-    p.phase = 0; p.a = 1; p.mix = 0; p.timer = 0;
-    p.w = Math.random() * 6.28;
-    p.sz = 2.5 + Math.random() * 1.4;
+  function easeInOut(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
-  function step() {
-    t++;
-    for (let i = 0; i < 4; i++) halo[i] *= 0.955;
-    for (const p of parts) {
-      p.w += 0.09;
-      if (p.phase === 0 || p.phase === 2) {
-        p.x += (p.tx - p.x) * 0.05 + Math.sin(p.w) * 0.15;
-        p.y += (p.ty - p.y) * 0.05 + Math.cos(p.w * 0.85) * 0.13;
-        if (p.phase === 2) p.mix = Math.min(1, p.mix + 0.035);
-        if (Math.hypot(p.tx - p.x, p.ty - p.y) < 1.5) {
-          p.x = p.tx; p.y = p.ty;
-          if (p.phase === 0) {
-            p.phase = 1;
-            p.timer = 60 + Math.random() * 90;
-            halo[p.gi] = Math.min(1, halo[p.gi] + 0.55);
-          } else {
-            p.phase = 3;
-            halo[p.oi] = Math.min(1, halo[p.oi] + 0.65);
-          }
-        }
-      } else if (p.phase === 1) {
-        // adherido al dorado: se calienta y salta al naranja
-        if (--p.timer <= 0) {
-          p.phase = 2;
-          const e = edgePoint(p.oi);
-          p.tx = e[0]; p.ty = e[1];
-        }
-      } else if (p.phase === 3) {
-        // adherido al naranja: se funde con él (cliente)
-        p.a -= 0.04;
-        if (p.a <= 0) reset(p);
+  function bezier(p0, p1, p2, p3, t) {
+    const u = 1 - t;
+    const tt = t * t;
+    const uu = u * u;
+    const uuu = uu * u;
+    const ttt = tt * t;
+
+    return {
+      x: uuu * p0.x + 3 * uu * t * p1.x + 3 * u * tt * p2.x + ttt * p3.x,
+      y: uuu * p0.y + 3 * uu * t * p1.y + 3 * u * tt * p2.y + ttt * p3.y
+    };
+  }
+
+  function trailPoint(side, t, offset) {
+    const e = easeInOut(t);
+
+    if (side === 'left') {
+      return bezier(
+        { x: -18, y: 30 + offset },
+        { x: 18, y: 28 + offset * 0.25 },
+        { x: 26, y: 72 },
+        { x: 54, y: 78 },
+        e
+      );
+    }
+
+    if (side === 'right') {
+      return bezier(
+        { x: 138, y: 28 + offset },
+        { x: 98, y: 30 + offset * 0.25 },
+        { x: 94, y: 72 },
+        { x: 66, y: 78 },
+        e
+      );
+    }
+
+    return bezier(
+      { x: 60 + offset, y: -18 },
+      { x: 58 + offset * 0.2, y: 24 },
+      { x: 44, y: 40 },
+      { x: 60, y: 76 },
+      e
+    );
+  }
+
+  function createParticle(i) {
+    const sides = ['left', 'right', 'top'];
+    const side = sides[i % sides.length];
+
+    return {
+      side,
+      progress: Math.random(),
+      speed: 0.0026 + Math.random() * 0.0022,
+      size: 2.2 + Math.random() * 1.5,
+      offset: -10 + Math.random() * 20,
+      delay: Math.random() * 0.7,
+      alpha: 0.55 + Math.random() * 0.45,
+      drift: Math.random() * Math.PI * 2
+    };
+  }
+
+  function initParticles() {
+    particles.length = 0;
+    for (let i = 0; i < TOTAL; i++) {
+      particles.push(createParticle(i));
+    }
+  }
+
+  function drawU() {
+    const pulse = 0.5 + Math.sin(time * 0.045) * 0.5;
+
+    // Glow interno del embudo
+    const glow = ctx.createRadialGradient(60, 70, 0, 60, 70, 48);
+    glow.addColorStop(0, `rgba(198, 241, 53, ${0.13 + pulse * 0.05})`);
+    glow.addColorStop(0.55, 'rgba(198, 241, 53, 0.045)');
+    glow.addColorStop(1, 'rgba(198, 241, 53, 0)');
+
+    ctx.fillStyle = glow;
+    ctx.fillRect(8, 10, 104, 100);
+
+    // Rastro sutil dentro de la U
+    ctx.save();
+    ctx.globalAlpha = 0.42;
+    ctx.strokeStyle = 'rgba(198, 241, 53, 0.22)';
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.setLineDash([5, 8]);
+    ctx.lineDashOffset = -time * 0.28;
+
+    ctx.beginPath();
+    ctx.moveTo(42, 34);
+    ctx.lineTo(42, 66);
+    ctx.bezierCurveTo(42, 86, 78, 86, 78, 66);
+    ctx.lineTo(78, 34);
+    ctx.stroke();
+    ctx.restore();
+
+    // U principal: más compacta y menos estirada
+    ctx.save();
+    ctx.strokeStyle = WHITE;
+    ctx.lineWidth = 13;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    ctx.beginPath();
+    ctx.moveTo(42, 34);
+    ctx.lineTo(42, 66);
+    ctx.bezierCurveTo(42, 88, 78, 88, 78, 66);
+    ctx.lineTo(78, 34);
+    ctx.stroke();
+    ctx.restore();
+
+    // Corte interno para darle forma de embudo limpio
+    ctx.save();
+    ctx.strokeStyle = 'rgba(11, 11, 13, 0.85)';
+    ctx.lineWidth = 3.5;
+    ctx.lineCap = 'round';
+
+    ctx.beginPath();
+    ctx.moveTo(60, 34);
+    ctx.lineTo(60, 76);
+    ctx.stroke();
+    ctx.restore();
+
+    // Cuadros superiores inspirados en el logo, más pequeños y elegantes
+    drawSquare(35, 13, 10, GOLD, pulse);
+    drawSquare(62, 13, 10, GOLD, pulse * 0.75);
+    drawSquare(48, 26, 10, ORANGE, pulse * 0.9);
+    drawSquare(75, 26, 10, ORANGE, pulse * 0.65);
+  }
+
+  function drawSquare(x, y, s, color, pulse) {
+    ctx.save();
+
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 8 + pulse * 6;
+
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, s, s);
+
+    ctx.globalAlpha = 0.25 + pulse * 0.18;
+    ctx.fillRect(x - 2, y - 2, s + 4, s + 4);
+
+    ctx.restore();
+  }
+
+  function drawParticle(p) {
+    const progress = (p.progress + p.delay) % 1;
+    const point = trailPoint(p.side, progress, p.offset);
+
+    const wobble = Math.sin(time * 0.06 + p.drift) * 1.4;
+    const x = point.x + wobble;
+    const y = point.y + Math.cos(time * 0.052 + p.drift) * 1.1;
+
+    const fadeIn = Math.min(1, progress * 4);
+    const fadeOut = Math.min(1, (1 - progress) * 5);
+    const alpha = Math.min(fadeIn, fadeOut) * p.alpha;
+
+    const hot = Math.max(0, progress - 0.55) / 0.45;
+
+    const r = Math.round(198 + (245 - 198) * hot);
+    const g = Math.round(241 + (166 - 241) * hot);
+    const b = Math.round(53 + (35 - 53) * hot);
+
+    // Rastro detrás del lead
+    ctx.save();
+    ctx.globalAlpha = alpha * 0.28;
+    ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
+    ctx.lineWidth = 1.25;
+    ctx.lineCap = 'round';
+
+    ctx.beginPath();
+
+    for (let i = 6; i >= 0; i--) {
+      const tt = Math.max(0, progress - i * 0.018);
+      const trail = trailPoint(p.side, tt, p.offset);
+      const tx = trail.x + Math.sin(time * 0.06 + p.drift - i * 0.25) * 1.1;
+      const ty = trail.y + Math.cos(time * 0.052 + p.drift - i * 0.25) * 0.9;
+
+      if (i === 6) ctx.moveTo(tx, ty);
+      else ctx.lineTo(tx, ty);
+    }
+
+    ctx.stroke();
+    ctx.restore();
+
+    // Lead principal
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+    ctx.shadowColor = `rgb(${r}, ${g}, ${b})`;
+    ctx.shadowBlur = 8;
+
+    ctx.beginPath();
+    ctx.arc(x, y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function update() {
+    time++;
+
+    scrollBoost *= 0.92;
+
+    for (const p of particles) {
+      p.progress += p.speed + scrollBoost * 0.00045;
+
+      if (p.progress > 1) {
+        const fresh = createParticle(Math.floor(Math.random() * 999));
+        Object.assign(p, fresh);
+        p.progress = 0;
       }
     }
   }
 
   function render() {
-    ctx.clearRect(0, 0, LW, LH);
-    // la U respira: es el embudo vivo
-    const breathe = 0.10 + 0.05 * Math.sin(t * 0.045);
-    const g = ctx.createRadialGradient(CX, 62, 0, CX, 62, 30);
-    g.addColorStop(0, 'rgba(198, 241, 53, ' + breathe.toFixed(3) + ')');
-    g.addColorStop(1, 'rgba(198, 241, 53, 0)');
-    ctx.fillStyle = g;
-    ctx.fillRect(CX - 30, 34, 60, 60);
-    // halos: cada cuadro se enciende cuando un lead se adhiere
-    for (let i = 0; i < 4; i++) {
-      if (halo[i] < 0.02) continue;
-      const [x, y] = SQ[i];
-      ctx.fillStyle = i < 2
-        ? 'rgba(245, 165, 51, ' + (halo[i] * 0.30).toFixed(3) + ')'
-        : 'rgba(238, 117, 48, ' + (halo[i] * 0.34).toFixed(3) + ')';
-      ctx.fillRect(x - 3, y - 3, S + 6, S + 6);
-    }
-    // la U blanca del logo
-    ctx.fillStyle = WHITE;
+    ctx.clearRect(0, 0, W, H);
+
+    // Primero los rastros/leads, luego la U para que parezca que los atrae
+    for (const p of particles) drawParticle(p);
+
+    drawU();
+
+    // Pequeña atracción central, como punto de entrada
+    const pulse = 0.5 + Math.sin(time * 0.06) * 0.5;
+    ctx.save();
+    ctx.globalAlpha = 0.35 + pulse * 0.25;
+    ctx.fillStyle = LIME;
+    ctx.shadowColor = LIME;
+    ctx.shadowBlur = 12;
     ctx.beginPath();
-    ctx.moveTo(ARM_L, ARM_TOP);
-    ctx.lineTo(ARM_L, BOWL_Y);
-    ctx.arc(CX, BOWL_Y, R_OUT, Math.PI, 0, true);
-    ctx.lineTo(ARM_R, ARM_TOP);
-    ctx.lineTo(ARM_RI, ARM_TOP);
-    ctx.lineTo(ARM_RI, BOWL_Y);
-    ctx.arc(CX, BOWL_Y, R_IN, 0, Math.PI, false);
-    ctx.lineTo(ARM_LI, ARM_TOP);
-    ctx.closePath();
+    ctx.arc(60, 79, 2.2 + pulse * 0.7, 0, Math.PI * 2);
     ctx.fill();
-    // los 4 cuadros del logo
-    ctx.fillStyle = GOLD;
-    ctx.fillRect(SQ[0][0], SQ[0][1], S, S);
-    ctx.fillRect(SQ[1][0], SQ[1][1], S, S);
-    ctx.fillStyle = ORANGE;
-    ctx.fillRect(SQ[2][0], SQ[2][1], S, S);
-    ctx.fillRect(SQ[3][0], SQ[3][1], S, S);
-    // los leads: lima (fríos) que van dorándose al calentarse
-    for (const p of parts) {
-      const rC = Math.round(198 + 47 * p.mix);
-      const gC = Math.round(241 - 76 * p.mix);
-      const bC = Math.round(53 - 2 * p.mix);
-      ctx.fillStyle = 'rgba(' + rC + ', ' + gC + ', ' + bC + ', ' + p.a.toFixed(3) + ')';
-      ctx.fillRect(p.x - p.sz / 2, p.y - p.sz / 2, p.sz, p.sz);
-    }
+    ctx.restore();
   }
 
-  function tick() { step(); render(); raf = requestAnimationFrame(tick); }
+  function tick() {
+    update();
+    render();
+    raf = requestAnimationFrame(tick);
+  }
 
   function start() {
     if (running) return;
     running = true;
+
     resize();
-    if (parts.length === 0) {
-      for (let i = 0; i < 13; i++) { const p = {}; reset(p); parts.push(p); }
-      for (let i = 0; i < 320; i++) step();  // arranca con el ciclo ya en marcha
+
+    if (!particles.length) {
+      initParticles();
+
+      // Arranca ya con movimiento visible
+      for (let i = 0; i < 120; i++) update();
     }
+
     tick();
   }
-  function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
 
-  let rt;
-  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (running) resize(); }, 150); });
+  function stop() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+  }
 
-  // El hero es lo primero visible: arranca ya, y pausa al salir de pantalla
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (running) resize();
+    }, 120);
+  });
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || 0;
+    const delta = Math.abs(y - lastY);
+    lastY = y;
+
+    scrollBoost = Math.min(8, scrollBoost + delta * 0.035);
+  }, { passive: true });
+
   start();
+
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver((es) => {
-      es.forEach(e => { if (e.isIntersecting) start(); else stop(); });
-    }, { threshold: 0.1 }).observe(canvas);
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) start();
+        else stop();
+      });
+    }, { threshold: 0.08 }).observe(canvas);
   }
 })();
 
