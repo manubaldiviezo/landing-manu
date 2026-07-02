@@ -3,358 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-<meta name="theme-color" content="#EC6730">
+<meta name="theme-color" content="#0B0B0D">
 
-<title>Manu Baldiviezo · Agencia de Publicidad</title>
-<meta name="description" content="Te ayudamos a invertir en Facebook e Instagram con una dirección clara para vender, captar clientes y escalar. Agencia DÚO Marketing Digital.">
+<title>Manu Baldiviezo · Sistemas de venta con Meta Ads | DÚO</title>
+<meta name="description" content="Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica. Agencia, asesoría 1:1 y recursos con metodología DÚO.">
 
-<meta property="og:title" content="Manu Baldiviezo · Agencia de Meta Ads">
-<meta property="og:description" content="Estrategia y gestión de Meta Ads para negocios que quieren crecer con dirección. Agenda una reunión estratégica.">
+<meta property="og:title" content="Manu Baldiviezo · Estratega Digital | DÚO">
+<meta property="og:description" content="Deja de pautar a ciegas. Vende con un sistema: estrategia, anuncios y contenido que convierten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manuads.vercel.app">
-<meta property="og:image" content="/images/og-image.jpg">
+<meta property="og:image" content="/images/manu-baldiviezo-perfil.jpg">
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://manuads.vercel.app">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --orange: #EC6730;
-  --orange-dark: #D55524;
-  --orange-light: #F5946A;
-  --amber: #F9B233;
-  --black: #1D1D1B;
-  --gray-900: #2A2A28;
-  --gray-700: #4A4A45;
-  --gray-500: #7A7A75;
-  --gray-300: #C8C7C0;
-  --gray-200: #E5E4DD;
-  --gray-100: #F5F4EF;
-  --gray-50: #FBFAF6;
-  --white: #FFFFFF;
-  --green: #16A34A;
-  --shadow-sm: 0 1px 2px rgba(29, 29, 27, 0.04);
-  --shadow-md: 0 4px 24px rgba(29, 29, 27, 0.06);
-  --shadow-lg: 0 12px 40px rgba(29, 29, 27, 0.08);
-  --shadow-orange: 0 8px 32px rgba(236, 103, 48, 0.25);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --bg: #0B0B0D;
+  --bg-2: #101013;
+  --bg-3: #141418;
+  --lime: #C6F135;
+  --lime-soft: rgba(198, 241, 53, 0.12);
+  --lime-line: rgba(198, 241, 53, 0.35);
+  --gold: #F5A623;
+  --ember: #E8471A;
+  --grad-premium: linear-gradient(92deg, #F5A623, #E8471A);
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.055);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --text: #FAFAF8;
+  --text-2: #B8B8B2;
+  --text-3: #7D7D78;
+  --green: #34D27B;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
   --max-width: 1180px;
-  --container-padding: clamp(16px, 4vw, 32px);
+  --pad: clamp(18px, 4vw, 32px);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--black);
-  background: var(--white);
+  color: var(--text);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input { font-family: inherit; }
+
+::selection { background: rgba(198, 241, 53, 0.4); color: #0B0B0D; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--pad); }
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--text);
+  text-transform: uppercase;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+h1 { font-size: clamp(40px, 7.5vw, 78px); }
+h2 { font-size: clamp(27px, 4.6vw, 48px); }
+h3 { font-size: clamp(17px, 2.2vw, 22px); letter-spacing: -0.01em; }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
+p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
+.lime { color: var(--lime); }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 20px;
-}
-
-.eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--amber), var(--orange));
-  border-radius: 2px;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--black);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lime);
+  background: var(--lime-soft);
+  border: 1px solid var(--lime-line);
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 24px;
 }
 
-h1 { font-size: clamp(36px, 6vw, 64px); }
-h2 { font-size: clamp(28px, 4.5vw, 48px); }
-h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; }
-h4 { font-size: 18px; font-weight: 700; }
-
-p {
-  color: var(--gray-700);
-  font-size: clamp(15px, 1.6vw, 17px);
-  line-height: 1.65;
+/* ── Scroll progress ── */
+.progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: var(--lime);
+  z-index: 200;
+  transition: width 0.1s linear;
 }
 
-.lead {
-  font-size: clamp(17px, 2vw, 20px);
-  color: var(--gray-700);
-  line-height: 1.55;
-  font-weight: 400;
-}
-
-.lava-text {
-  background: linear-gradient(90deg, var(--orange) 0%, var(--amber) 25%, var(--orange) 50%, var(--orange-dark) 75%, var(--orange) 100%);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: lava-flow 6s linear infinite;
-  display: inline-block;
-  line-height: 1.2;
-  padding-bottom: 0.12em;
-}
-
-@keyframes lava-flow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-.handwritten {
-  font-family: 'Caveat', cursive;
-  color: var(--orange);
-  font-weight: 700;
-}
-
-.btn-primary {
+/* ── Buttons ── */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 28px;
-  background: var(--orange);
-  color: var(--white);
+  padding: 17px 30px;
   font-weight: 700;
   font-size: 15px;
-  border-radius: 999px;
+  border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-orange);
-  position: relative;
-  overflow: hidden;
   white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.7s ease;
+.btn-lime {
+  background: var(--lime);
+  color: #0B0B0D;
+  box-shadow: 0 8px 32px rgba(198, 241, 53, 0.22);
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  background: var(--orange-dark);
-  box-shadow: 0 12px 40px rgba(236, 103, 48, 0.35);
+.btn-lime:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(198, 241, 53, 0.35); }
+
+.btn-ghost {
+  border: 1.5px solid var(--line);
+  color: var(--text);
 }
 
-.btn-primary:hover::before {
-  left: 100%;
+.btn-ghost:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+
+.btn-premium {
+  background: var(--grad-premium);
+  color: #0B0B0D;
+  box-shadow: 0 8px 30px rgba(232, 71, 26, 0.28);
 }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px 26px;
-  background: var(--white);
-  color: var(--black);
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 999px;
-  border: 1.5px solid var(--gray-200);
-  transition: all 0.3s ease;
-}
+.btn-premium:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(232, 71, 26, 0.4); }
 
-.btn-secondary:hover {
-  border-color: var(--black);
-  transform: translateY(-2px);
-}
+.btn svg { width: 17px; height: 17px; flex-shrink: 0; }
 
-.btn-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
+/* ── Header ── */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(11, 11, 13, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
-@media (max-width: 767px) {
-  header {
-    position: absolute;
-  }
-}
-  
-header.scrolled {
-  border-bottom-color: var(--gray-200);
-  box-shadow: var(--shadow-sm);
-}
+
+@media (max-width: 767px) { header { position: absolute; } }
+
+header.scrolled { border-bottom-color: var(--line-soft); }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  gap: 18px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.logo img { height: 30px; width: auto; }
 
-.logo-avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--white);
-  box-shadow: var(--shadow-md);
-  flex-shrink: 0;
-}
-
-.logo-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--black);
-}
+.logo-sep { width: 1px; height: 22px; background: var(--line); }
 
 .logo-role {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gray-500);
-  margin-top: 2px;
+  color: var(--text-3);
+  line-height: 1.4;
 }
 
-.header-cta {
-  display: none;
+.header-nav { display: none; }
+
+@media (min-width: 900px) {
+  .header-nav { display: flex; align-items: center; gap: 26px; margin-left: auto; }
+  .header-nav a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    transition: color 0.2s ease;
+  }
+  .header-nav a:hover { color: var(--lime); }
 }
+
+.header-cta { display: none; }
 
 @media (min-width: 768px) {
   .header-cta {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    background: var(--orange);
-    color: var(--white);
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 999px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(236, 103, 48, 0.25);
+    padding: 11px 20px;
+    background: var(--lime);
+    color: #0B0B0D;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    border-radius: 5px;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
   }
-
-  .header-cta:hover {
-    background: var(--orange-dark);
-    transform: translateY(-1px);
-  }
+  .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(198, 241, 53, 0.3); }
 }
 
+/* ── Hero ── */
 .hero {
-  padding-top: 120px;
-  padding-bottom: 80px;
-  background: var(--gray-50);
+  padding-top: 140px;
+  padding-bottom: 72px;
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-lines {
   position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(236, 103, 48, 0.08), transparent 70%);
-  border-radius: 50%;
+  top: 0; right: 0;
+  width: 55%; height: 70%;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 22px, rgba(255,255,255,0.028) 22px, rgba(255,255,255,0.028) 23px);
+  mask-image: linear-gradient(215deg, black 20%, transparent 70%);
+  -webkit-mask-image: linear-gradient(215deg, black 20%, transparent 70%);
   pointer-events: none;
 }
 
-.hero::after {
-  content: '';
+.hero-glow {
   position: absolute;
-  bottom: -200px;
-  left: -200px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(249, 178, 51, 0.06), transparent 70%);
+  bottom: -260px; left: -160px;
+  width: 620px; height: 620px;
+  background: radial-gradient(circle, rgba(198, 241, 53, 0.07), transparent 68%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -363,57 +261,45 @@ header.scrolled {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 48px;
+  gap: 52px;
   align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .hero-inner {
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px;
-  }
+@media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.2fr 0.8fr; gap: 64px; } }
+
+.hero h1 { margin-bottom: 24px; }
+.hero h1 .lime { display: inline; }
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 34px;
 }
 
-.hero-content {
-  max-width: 640px;
-}
+.hero-sub strong { color: var(--text); font-weight: 600; }
 
-.hero h1 {
-  margin-bottom: 24px;
-  text-wrap: balance;
-}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 26px; }
 
-.hero .lead {
-  margin-bottom: 32px;
-  max-width: 540px;
-}
-
-.hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.hero-microcopy {
+.hero-micro {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   font-size: 13px;
-  color: var(--gray-500);
+  color: var(--text-3);
   font-weight: 500;
 }
 
-.microcopy-dot {
-  width: 8px;
-  height: 8px;
+.dot {
+  width: 8px; height: 8px;
   background: var(--green);
   border-radius: 50%;
   flex-shrink: 0;
   position: relative;
 }
 
-.microcopy-dot::after {
+.dot::after {
   content: '';
   position: absolute;
   inset: -2px;
@@ -425,1531 +311,1513 @@ header.scrolled {
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.5); opacity: 0; }
+  50% { transform: scale(1.7); opacity: 0; }
 }
 
-.vsl-wrapper {
+.hero-visual { position: relative; max-width: 420px; margin: 0 auto; width: 100%; }
+
+.hero-photo {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--line);
 }
 
-.vsl-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.vsl-placeholder::before {
+.hero-photo::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(236, 103, 48, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(236, 103, 48, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background: linear-gradient(180deg, transparent 52%, rgba(11, 11, 13, 0.92) 100%);
+  z-index: 1;
   pointer-events: none;
 }
 
-.vsl-tag {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gray-700);
-  z-index: 2;
-}
-
-.vsl-tag-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--orange);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(236, 103, 48, 0.2);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.vsl-play {
-  width: 88px;
-  height: 88px;
-  background: var(--orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 16px 48px rgba(236, 103, 48, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.vsl-play::before,
-.vsl-play::after {
+.hero-photo::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid var(--orange);
-  animation: ripple 2s ease-out infinite;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid rgba(198, 241, 53, 0.25);
+  border-radius: 10px;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.vsl-play::after {
-  animation-delay: 1s;
-}
+.hero-photo img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; }
 
-@keyframes ripple {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.6); opacity: 0; }
-}
-
-.vsl-placeholder:hover .vsl-play {
-  transform: scale(1.08);
-}
-
-.vsl-play svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--white);
-  margin-left: 4px;
-}
-
-.vsl-script {
+.hero-caption {
   position: absolute;
-  bottom: 20px;
-  right: 24px;
-  font-family: 'Caveat', cursive;
-  font-size: 26px;
-  color: var(--orange);
-  font-weight: 700;
-  transform: rotate(-3deg);
+  bottom: 24px; left: 26px; right: 26px;
   z-index: 2;
 }
 
-.vsl-meta {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 11px;
-  color: var(--gray-500);
-  font-weight: 600;
-  letter-spacing: 0.1em;
+.hero-caption-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
   text-transform: uppercase;
-  z-index: 2;
+  letter-spacing: 0.01em;
 }
 
-.vsl-iframe {
+.hero-caption-role { font-size: 12px; color: var(--lime); margin-top: 3px; font-weight: 600; }
+
+.hero-chip {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  background: rgba(16, 16, 19, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 16px;
+  z-index: 3;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5);
 }
 
-section {
-  padding: 80px 0;
+.hero-chip-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--lime);
+  line-height: 1.15;
 }
 
-@media (min-width: 768px) {
-  section { padding: 100px 0; }
+.hero-chip-label { font-size: 10px; color: var(--text-3); font-weight: 600; letter-spacing: 0.03em; }
+
+.hero-chip.c1 { top: 22px; right: -12px; animation: float 5.5s ease-in-out infinite; }
+.hero-chip.c2 { bottom: 92px; left: -16px; animation: float 6.5s ease-in-out 0.9s infinite; }
+
+@media (max-width: 500px) {
+  .hero-chip.c1 { right: 6px; }
+  .hero-chip.c2 { left: 6px; }
 }
 
-.section-header {
-  max-width: 720px;
-  margin: 0 auto 56px;
-  text-align: center;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.section-header.left {
-  margin-left: 0;
-  text-align: left;
-}
-
-.section-header h2 {
-  margin-bottom: 20px;
-  text-wrap: balance;
-}
-
-.section-header p {
-  font-size: clamp(16px, 1.8vw, 18px);
-}
-
-.stats-bar {
-  background: var(--black);
-  padding: 56px 0;
-  position: relative;
+/* ── Marquee ── */
+.marquee {
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--bg-2);
   overflow: hidden;
+  padding: 18px 0;
 }
 
-.stats-bar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--amber), var(--orange), var(--orange-dark), var(--orange), var(--amber));
-  background-size: 200% 100%;
-  animation: lava-flow 8s linear infinite;
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.marquee-item b { color: var(--lime); font-weight: 900; }
+
+.marquee-item::after {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--lime);
+  transform: rotate(45deg);
+  margin-left: 28px;
+}
+
+/* ── Sections ── */
+section { padding: 92px 0; position: relative; }
+@media (min-width: 768px) { section { padding: 112px 0; } }
+
+.sec-head { max-width: 780px; margin: 0 auto 56px; text-align: center; }
+.sec-head h2 { margin-bottom: 18px; }
+.sec-head p { font-size: clamp(15px, 1.8vw, 17.5px); max-width: 620px; margin: 0 auto; }
+
+/* ── Stats ── */
+.stats { padding: 0; background: var(--bg); }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px 24px;
+  border-left: 1px solid var(--line-soft);
 }
 
-@media (min-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .stat {
+  padding: 46px 22px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
   text-align: center;
 }
+
+@media (min-width: 768px) { .stat { border-bottom: none; padding: 56px 24px; } }
 
 .stat-value {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 8px;
-  background: linear-gradient(90deg, var(--white) 0%, var(--amber) 50%, var(--white) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: lava-flow 8s linear infinite;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(27px, 3.8vw, 42px);
+  font-weight: 900;
+  color: var(--lime);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 10px;
 }
 
-.stat-label {
-  font-size: 12px;
-  color: var(--gray-300);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
+.stat-label { font-size: 12px; color: var(--text-3); font-weight: 500; line-height: 1.5; max-width: 210px; margin: 0 auto; }
+
+/* ── Problema ── */
+.problema { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+
+.problema-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+
+.problema h2 { margin-bottom: 28px; }
+
+.problema-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(17px, 2.4vw, 23px);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.45;
+  padding: 26px 30px;
+  background: var(--lime-soft);
+  border: 1px solid var(--lime-line);
+  border-radius: var(--radius-md);
+  margin: 0 auto 26px;
+  max-width: 680px;
 }
 
-.problem {
-  background: var(--white);
-}
+.problema p { max-width: 640px; margin: 0 auto; }
 
-.problem-content {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.problem-content p {
-  font-size: clamp(16px, 1.9vw, 19px);
-  line-height: 1.65;
-  color: var(--gray-700);
-  margin-bottom: 16px;
-}
-
-.problem-content p.emphasis {
-  font-weight: 600;
-  color: var(--black);
-  font-size: clamp(18px, 2.2vw, 22px);
-  line-height: 1.5;
-  padding: 24px;
-  background: var(--gray-50);
-  border-left: 4px solid var(--orange);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-top: 28px;
-}
-
-.pillars {
-  background: var(--gray-50);
-}
-
-.pillars-grid {
+/* ── Método ── */
+.metodo-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  max-width: 1100px;
-  margin: 0 auto;
+  gap: 14px;
 }
 
-@media (min-width: 640px) {
-  .pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (min-width: 640px) { .metodo-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .metodo-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.pilar {
+  background: var(--card);
+  padding: 32px 26px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-soft);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
+
+.pilar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pilar:hover { background: var(--card-hover); border-color: var(--lime-line); transform: translateY(-5px); }
+.pilar:hover::before { transform: scaleX(1); }
+
+.pilar-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--lime);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.pilar h3 { margin-bottom: 8px; }
+
+.pilar p { font-size: 14px; line-height: 1.6; }
+
+.metodo-footer { max-width: 620px; margin: 44px auto 0; text-align: center; }
+
+/* ── Casos ── */
+.casos { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+
+.casos-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(86%, 380px);
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 22px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--lime) transparent;
+}
+
+.casos-scroll::-webkit-scrollbar { height: 4px; }
+.casos-scroll::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
+.casos-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
 
 @media (min-width: 1024px) {
-  .pillars-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.pillar {
-  background: var(--white);
-  padding: 32px 28px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.pillar:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(236, 103, 48, 0.3);
-}
-
-.pillar-number {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 12px;
-  color: var(--gray-500);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.pillar-icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--orange), var(--amber));
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-orange);
-}
-
-.pillar-icon svg {
-  width: 26px;
-  height: 26px;
-  color: var(--white);
-}
-
-.pillar h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: var(--black);
-}
-
-.pillar p {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--gray-700);
-  margin: 0;
-}
-
-.pillars-footer {
-  max-width: 640px;
-  margin: 40px auto 0;
-  text-align: center;
-}
-
-.pillars-footer p {
-  font-size: clamp(15px, 1.7vw, 17px);
-  color: var(--gray-700);
-}
-
-.cases {
-  background: var(--white);
-}
-
-.cases-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .cases-grid {
+  .casos-scroll {
+    grid-auto-flow: row;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: unset;
+    overflow: visible;
+    padding-bottom: 4px;
   }
 }
 
-.case-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
+.caso {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  scroll-snap-align: start;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
 }
 
-.case-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(236, 103, 48, 0.2);
-}
+.caso:hover { transform: translateY(-5px); border-color: var(--lime-line); }
 
-.case-card.featured {
-  grid-column: 1 / -1;
-}
-
-@media (min-width: 768px) {
-  .case-card.featured {
-    grid-column: 1 / -1;
-  }
-
-  .case-card.featured .case-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
-  .case-card.featured .case-image {
-    aspect-ratio: auto;
-    min-height: 100%;
-  }
-}
-
-.case-image {
+.caso-img {
   position: relative;
-  aspect-ratio: 16 / 11;
-  background: var(--gray-100);
+  aspect-ratio: 16 / 9.5;
+  background: var(--bg-3);
   overflow: hidden;
+  cursor: zoom-in;
 }
 
-.case-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.caso-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.caso:hover .caso-img img { transform: scale(1.04); }
 
-.case-card:hover .case-image img {
-  transform: scale(1.04);
-}
-
-.case-zoom {
+.caso-zoom {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  border-radius: 50%;
+  top: 10px; right: 10px;
+  width: 34px; height: 34px;
+  background: rgba(11, 11, 13, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 2;
+  transition: all 0.25s ease;
 }
 
-.case-zoom:hover {
-  background: var(--white);
-  transform: scale(1.1);
-}
+.caso-zoom:hover { border-color: var(--lime); }
+.caso-zoom svg { width: 15px; height: 15px; color: var(--text); }
 
-.case-zoom svg {
-  width: 16px;
-  height: 16px;
-  color: var(--black);
-}
+.caso-body { padding: 24px; display: flex; flex-direction: column; flex: 1; gap: 14px; }
 
-.case-body {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
+.caso-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 
-.case-brand {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
+.caso-brand { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800; color: var(--text); }
 
-.case-brand-name {
-  font-size: 13px;
+.caso-tag {
+  font-size: 10px;
   font-weight: 700;
-  color: var(--gray-700);
-  letter-spacing: 0.02em;
-}
-
-.case-rubro {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--gray-500);
-  letter-spacing: 0.04em;
-  padding: 4px 10px;
-  background: var(--gray-100);
-  border-radius: 999px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
 }
 
-.case-title {
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 700;
-  color: var(--black);
-  line-height: 1.25;
-  margin-bottom: 20px;
-  letter-spacing: -0.015em;
-}
-
-.case-title .highlight {
-  color: var(--orange);
-}
-
-.case-metrics {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.case-metric {
-  padding: 14px 16px;
-  background: var(--gray-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--gray-100);
-}
-
-.case-metric-value {
+.caso-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(16px, 1.9vw, 19px);
   font-weight: 800;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 4px;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
-.case-metric-label {
-  font-size: 11px;
-  color: var(--gray-500);
-  font-weight: 600;
-  line-height: 1.3;
+.caso-title b { color: var(--lime); font-weight: 800; }
+
+.caso-metrics { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.caso-metric {
+  flex: 1;
+  min-width: 90px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
 }
 
-.case-video-btn {
+.caso-metric b {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--lime);
+  line-height: 1.15;
+  margin-bottom: 3px;
+}
+
+.caso-metric span { font-size: 10.5px; color: var(--text-3); font-weight: 500; line-height: 1.3; display: block; }
+
+.caso-video {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
-  background: var(--white);
-  border: 1.5px solid var(--orange);
-  color: var(--orange);
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   margin-top: auto;
   align-self: flex-start;
+  padding: 9px 16px;
+  border: 1.5px solid var(--lime-line);
+  color: var(--lime);
+  font-size: 12.5px;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
-.case-video-btn:hover {
-  background: var(--orange);
-  color: var(--white);
-}
+.caso-video:hover { background: var(--lime); color: #0B0B0D; }
+.caso-video svg { width: 12px; height: 12px; }
 
-.case-video-btn svg {
-  width: 14px;
-  height: 14px;
-}
-
-.reunion {
-  background: var(--gray-50);
-}
-
-.reunion-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .reunion-grid {
-    grid-template-columns: 1.1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-}
-
-.reunion-content h2 {
-  margin-bottom: 20px;
-}
-
-.reunion-content p {
-  font-size: clamp(16px, 1.8vw, 18px);
-  margin-bottom: 16px;
-}
-
-.reunion-checklist {
-  margin-top: 28px;
-  list-style: none;
-  padding: 0;
-}
-
-.reunion-checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 12px 0;
-  font-size: 15px;
-  color: var(--black);
-  font-weight: 500;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.reunion-checklist li:last-child {
-  border-bottom: none;
-}
-
-.check-icon {
-  width: 22px;
-  height: 22px;
-  background: var(--orange);
-  border-radius: 50%;
+.casos-hint {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-3);
 }
 
-.check-icon svg {
-  width: 12px;
-  height: 12px;
-  color: var(--white);
-  stroke-width: 3;
+@media (min-width: 1024px) { .casos-hint { display: none; } }
+
+/* ── Servicios ── */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 
-.reunion-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 36px 32px;
-  border: 1px solid var(--gray-200);
-  box-shadow: var(--shadow-md);
+@media (min-width: 900px) { .servicios-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.servicio {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  transition: all 0.35s ease;
 }
 
-.reunion-badge {
+.servicio:hover { transform: translateY(-5px); background: var(--card-hover); }
+
+.servicio.destacado { border-color: var(--lime-line); background: linear-gradient(180deg, rgba(198, 241, 53, 0.055) 0%, var(--card) 40%); }
+
+.servicio-badge {
   position: absolute;
-  top: -14px;
-  left: 32px;
-  background: var(--orange);
-  color: var(--white);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  top: -12px; left: 28px;
+  background: var(--lime);
+  color: #0B0B0D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 8px 16px;
-  border-radius: 999px;
-  box-shadow: var(--shadow-orange);
+  padding: 6px 14px;
+  border-radius: 4px;
 }
 
-.reunion-card h3 {
-  font-size: 22px;
-  margin: 8px 0 20px;
+.servicio-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
 }
 
-.reunion-card-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 28px;
-}
+.servicio h3 { margin-bottom: 12px; font-size: clamp(19px, 2.3vw, 23px); }
 
-.reunion-card-list li {
+.servicio-desc { font-size: 14px; line-height: 1.6; margin-bottom: 22px; }
+
+.servicio-list { list-style: none; margin-bottom: 28px; }
+
+.servicio-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
-  font-size: 14px;
-  color: var(--gray-700);
+  gap: 11px;
+  padding: 8px 0;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-.reunion-card-list li::before {
+.servicio-list li:last-child { border-bottom: none; }
+
+.servicio-list li::before {
   content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--orange);
-  border-radius: 50%;
-  margin-top: 8px;
-  flex-shrink: 0;
+  width: 14px; height: 14px;
+  min-width: 14px;
+  margin-top: 4px;
+  background: var(--lime);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
-.reunion-price {
-  padding-top: 24px;
-  border-top: 1px solid var(--gray-200);
-}
+.servicio-foot { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line-soft); }
 
-.reunion-price-label {
-  font-size: 11px;
-  color: var(--gray-500);
+.servicio-price-label {
+  font-size: 10px;
+  color: var(--text-3);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
 
-.reunion-price-value {
-  font-size: clamp(22px, 2.6vw, 28px);
-  font-weight: 800;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+.servicio-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(19px, 2.3vw, 23px);
+  font-weight: 900;
+  margin-bottom: 3px;
 }
 
-.reunion-price-note {
-  font-size: 13px;
-  color: var(--gray-500);
+.servicio-note { font-size: 12.5px; color: var(--text-3); margin-bottom: 20px; }
+
+.servicio .btn { width: 100%; padding: 15px 20px; font-size: 14px; }
+
+/* ── Recursos ── */
+.recursos { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; }
+
+.rec-sub {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 54px 0 22px;
 }
 
-.target {
-  background: var(--white);
+.rec-sub:first-of-type { margin-top: 0; }
+.rec-sub::after { content: ''; flex: 1; height: 1px; background: var(--line-soft); }
+.rec-sub.free { color: var(--lime); }
+.rec-sub.premium {
+  background: var(--grad-premium);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+.rec-sub.premium::after { background: linear-gradient(90deg, rgba(232,71,26,0.3), var(--line-soft)); }
 
-.target-grid {
+.rec-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 1000px;
+  gap: 18px;
+}
+
+@media (min-width: 820px) { .rec-grid { grid-template-columns: 1fr 1fr; } }
+
+.rec-card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: grid;
+  gap: 24px;
+  transition: all 0.35s ease;
+  align-items: start;
+}
+
+@media (min-width: 560px) { .rec-card { grid-template-columns: 168px 1fr; } }
+
+.rec-card:hover { background: var(--card-hover); transform: translateY(-4px); }
+.rec-card.free-card:hover { border-color: var(--lime-line); }
+.rec-card.premium-card:hover { border-color: rgba(245, 166, 35, 0.4); }
+
+.rec-cover {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s ease;
+  max-width: 200px;
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .target-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.rec-cover img { width: 100%; display: block; }
+
+/* Mini book covers (réplica fiel de las portadas reales) */
+.mini-cover {
+  aspect-ratio: 210 / 297;
+  background: #0A0A0A;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 12px;
+  max-width: 200px;
+  margin: 0 auto;
+  width: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s ease;
 }
 
-.target-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px;
-  transition: all 0.3s ease;
+.mini-cover::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.18) 0%, transparent 70%);
 }
 
-.target-card.yes {
-  border-color: rgba(236, 103, 48, 0.3);
-  background: linear-gradient(180deg, rgba(236, 103, 48, 0.025) 0%, var(--white) 100%);
+.mini-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; left: -30px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 71, 26, 0.14) 0%, transparent 70%);
 }
 
-.target-card:hover {
-  box-shadow: var(--shadow-md);
+.mc-logo { height: 14px; width: auto; margin-bottom: 14px; position: relative; z-index: 1; }
+
+.mc-eye {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.5px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
 }
 
-.target-header {
+.mc-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.mc-title .g {
+  background: linear-gradient(135deg, var(--gold), var(--ember));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mc-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.mc-div {
+  width: 26px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--ember));
+  border-radius: 2px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.mc-desc {
+  font-size: 6.5px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.6;
+  max-width: 140px;
+  position: relative;
+  z-index: 1;
+}
+
+.mc-foot {
+  position: absolute;
+  bottom: 10px; left: 14px; right: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+
+/* GPT chat preview */
+.gpt-preview {
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  max-width: 200px;
+  margin: 0 auto;
+  aspect-ratio: 168 / 218;
+  display: flex;
+  flex-direction: column;
+}
+
+.gpt-head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--gray-200);
+  gap: 7px;
+  padding: 9px 11px;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.target-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+.gpt-ava {
+  width: 20px; height: 20px;
+  background: var(--lime);
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 900;
+  color: #0B0B0D;
 }
 
-.target-icon.yes {
-  background: var(--orange);
-  color: var(--white);
+.gpt-name { font-size: 8.5px; font-weight: 700; color: var(--text); line-height: 1.2; }
+.gpt-status { font-size: 7px; color: var(--green); }
+
+.gpt-msgs { padding: 10px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+
+.gpt-msg {
+  font-size: 8.5px;
+  line-height: 1.45;
+  padding: 7px 9px;
+  border-radius: 8px;
+  max-width: 88%;
 }
 
-.target-icon.no {
-  background: var(--gray-200);
-  color: var(--gray-700);
+.gpt-msg.user {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-2);
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
 }
 
-.target-icon svg {
-  width: 16px;
-  height: 16px;
-  stroke-width: 3;
+.gpt-msg.bot {
+  background: var(--lime-soft);
+  border: 1px solid rgba(198, 241, 53, 0.2);
+  color: var(--text);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
 }
 
-.target-card h3 {
-  font-size: 18px;
-  font-weight: 700;
+.gpt-typing { display: flex; gap: 3px; padding: 6px 9px; align-self: flex-start; }
+.gpt-typing i {
+  width: 4px; height: 4px;
+  background: var(--lime);
+  border-radius: 50%;
+  animation: typing 1.2s ease-in-out infinite;
+}
+.gpt-typing i:nth-child(2) { animation-delay: 0.2s; }
+.gpt-typing i:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-3px); opacity: 1; }
 }
 
-.target-list {
-  list-style: none;
-  padding: 0;
+.rec-body { display: flex; flex-direction: column; min-width: 0; }
+
+.rec-pills { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+
+.rec-pill {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
 }
 
-.target-list li {
+.rec-pill.gratis { color: var(--lime); background: var(--lime-soft); border: 1px solid var(--lime-line); }
+.rec-pill.tipo { color: var(--text-3); border: 1px solid var(--line-soft); }
+.rec-pill.precio {
+  font-size: 12px;
+  color: #0B0B0D;
+  background: var(--grad-premium);
+  box-shadow: 0 4px 16px rgba(232, 71, 26, 0.3);
+}
+
+.rec-body h3 { margin-bottom: 10px; font-size: clamp(17px, 2vw, 20px); }
+
+.rec-body > p { font-size: 13.5px; line-height: 1.6; margin-bottom: 16px; }
+
+.rec-feats { list-style: none; margin-bottom: 22px; }
+
+.rec-feats li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--gray-700);
+  gap: 9px;
+  padding: 4.5px 0;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.45;
 }
 
-.target-list .item-icon {
-  width: 18px;
-  height: 18px;
+.rec-feats li::before {
+  content: '';
+  width: 4px; height: 4px;
+  min-width: 4px;
+  background: var(--lime);
+  margin-top: 7px;
+  transform: rotate(45deg);
+}
+
+.premium-card .rec-feats li::before { background: var(--gold); }
+
+.rec-body .btn { align-self: flex-start; margin-top: auto; padding: 13px 24px; font-size: 13.5px; }
+
+.rec-note {
+  margin-top: 30px;
+  padding: 20px 26px;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--lime);
+  border-radius: 8px;
+}
+
+.rec-note p { font-size: 13.5px; line-height: 1.65; }
+.rec-note strong { color: var(--text); font-weight: 600; }
+
+/* ── Web strip ── */
+.web-strip {
+  padding: 0;
+  background: var(--lime);
+}
+
+.web-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px var(--pad);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.web-strip-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(16px, 2.2vw, 22px);
+  color: #0B0B0D;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.web-strip-sub { font-size: 13px; color: rgba(11, 11, 13, 0.7); font-weight: 600; margin-top: 3px; }
+
+.web-strip .btn {
+  background: #0B0B0D;
+  color: var(--lime);
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
-.target-list.yes .item-icon { color: var(--orange); }
-.target-list.no .item-icon { color: var(--gray-300); }
+.web-strip .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(11, 11, 13, 0.4); }
 
-.agenda {
-  background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
-}
-
-.agenda-header {
-  max-width: 720px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-
-.agenda-header h2 {
-  margin-bottom: 16px;
-}
-
-.agenda-microcopy {
+/* ── Agenda ── */
+.agenda-micro {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   padding: 8px 16px;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 999px;
-  font-size: 13px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--gray-700);
-  margin-bottom: 24px;
+  color: var(--text-2);
+  margin-bottom: 22px;
 }
 
-.agenda-microcopy-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--green);
-  border-radius: 50%;
-  position: relative;
-}
-
-.agenda-microcopy-dot::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  background: var(--green);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.calendly-wrapper {
+.calendly-wrap {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--line);
 }
 
-.calendly-inline-widget {
-  min-width: 320px;
-  height: 720px;
-  width: 100%;
-}
+.calendly-inline-widget { min-width: 320px; height: 720px; width: 100%; }
+@media (max-width: 767px) { .calendly-inline-widget { height: 700px; } }
 
-@media (max-width: 767px) {
-  .calendly-inline-widget {
-    height: 700px;
-  }
-}
+/* ── FAQ ── */
+.faq { background: var(--bg-2); border-top: 1px solid var(--line-soft); }
 
-.faq {
-  background: var(--white);
-}
+.faq-list { max-width: 780px; margin: 0 auto; }
 
-.faq-grid {
-  max-width: 760px;
-  margin: 0 auto;
-}
+.faq-item { border-bottom: 1px solid var(--line-soft); }
+.faq-item:first-child { border-top: 1px solid var(--line-soft); }
 
-.faq-item {
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.faq-item:first-child {
-  border-top: 1px solid var(--gray-200);
-}
-
-.faq-question {
+.faq-q {
   width: 100%;
   padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   text-align: left;
-  font-size: clamp(16px, 1.9vw, 18px);
-  font-weight: 700;
-  color: var(--black);
-  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(14.5px, 1.8vw, 16.5px);
+  font-weight: 800;
   transition: color 0.2s ease;
 }
 
-.faq-question:hover {
-  color: var(--orange);
-}
+.faq-q:hover { color: var(--lime); }
 
-.faq-chevron {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-  color: var(--gray-500);
-}
+.faq-chev { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.3s ease; color: var(--text-3); }
+.faq-item.active .faq-chev { transform: rotate(180deg); color: var(--lime); }
 
-.faq-item.active .faq-chevron {
-  transform: rotate(180deg);
-  color: var(--orange);
-}
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.faq-item.active .faq-a { max-height: 400px; }
+.faq-a-inner { padding-bottom: 24px; color: var(--text-2); line-height: 1.7; font-size: 14px; }
 
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-item.active .faq-answer {
-  max-height: 400px;
-}
-
-.faq-answer-inner {
-  padding-bottom: 24px;
-  color: var(--gray-700);
-  line-height: 1.65;
-  font-size: 15px;
-}
-
+/* ── Footer ── */
 footer {
-  background: var(--black);
-  color: var(--gray-300);
-  padding: 64px 0 100px;
+  border-top: 1px solid var(--line-soft);
+  padding: 60px 0 104px;
 }
 
-@media (min-width: 768px) {
-  footer {
-    padding-bottom: 48px;
-  }
-}
+@media (min-width: 768px) { footer { padding-bottom: 48px; } }
 
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
+.footer-inner { display: grid; grid-template-columns: 1fr; gap: 34px; }
 
-@media (min-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1.5fr 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-}
+@media (min-width: 768px) { .footer-inner { grid-template-columns: 1.5fr 1fr; align-items: start; } }
 
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
+.footer-logo { height: 26px; width: auto; margin-bottom: 18px; }
 
-.footer-brand .logo-avatar {
-  border-color: var(--gray-700);
-}
+.footer-tagline { font-size: 13.5px; color: var(--text-3); max-width: 320px; margin-bottom: 18px; }
 
-.footer-brand .logo-name {
-  color: var(--white);
-}
+.footer-contact p { color: var(--text-3); font-size: 14px; line-height: 1.85; }
+.footer-contact a:hover { color: var(--lime); }
 
-.footer-brand .logo-role {
-  color: var(--gray-300);
-}
-
-.footer-contact p {
-  color: var(--gray-300);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.footer-contact a:hover {
-  color: var(--orange-light);
-}
-
-.footer-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-@media (min-width: 768px) {
-  .footer-nav {
-    align-items: flex-end;
-  }
-}
-
-.footer-nav a {
-  font-size: 14px;
-  color: var(--gray-300);
-  transition: color 0.2s ease;
-}
-
-.footer-nav a:hover {
-  color: var(--orange-light);
-}
+.footer-nav { display: flex; flex-direction: column; gap: 10px; }
+@media (min-width: 768px) { .footer-nav { align-items: flex-end; } }
+.footer-nav a { font-size: 14px; color: var(--text-3); transition: color 0.2s ease; }
+.footer-nav a:hover { color: var(--lime); }
 
 .footer-bottom {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid var(--gray-900);
+  border-top: 1px solid var(--line-soft);
   font-size: 12px;
-  color: var(--gray-500);
+  color: var(--text-3);
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
 }
 
-.sticky-mobile {
+/* ── Sticky mobile CTA ── */
+.sticky-m {
   position: fixed;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
+  bottom: 12px; left: 12px; right: 12px;
   z-index: 90;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 12px 16px;
+  background: rgba(16, 16, 19, 0.97);
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--gray-200);
-  transform: translateY(120%);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6);
+  transform: translateY(130%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sticky-mobile.visible {
-  transform: translateY(0);
-}
+.sticky-m.visible { transform: translateY(0); }
+@media (min-width: 768px) { .sticky-m { display: none; } }
 
-@media (min-width: 768px) {
-  .sticky-mobile {
-    display: none;
-  }
-}
+.sticky-m-text { flex: 1; min-width: 0; }
+.sticky-m-eyebrow { font-size: 9.5px; font-weight: 700; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; }
+.sticky-m-title { font-size: 13px; font-weight: 700; margin-top: 2px; }
 
-.sticky-mobile-text {
-  flex: 1;
-  min-width: 0;
-}
-
-.sticky-mobile-eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--gray-500);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.sticky-mobile-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--black);
-  margin-top: 2px;
-}
-
-.sticky-mobile-btn {
+.sticky-m-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 18px;
-  background: var(--orange);
-  color: var(--white);
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 999px;
+  padding: 11px 18px;
+  background: var(--lime);
+  color: #0B0B0D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
+  font-weight: 900;
+  border-radius: 8px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(236, 103, 48, 0.3);
 }
 
-.modal {
+/* ── Modals ── */
+.overlay {
   position: fixed;
   inset: 0;
-  z-index: 200;
-  background: rgba(29, 29, 27, 0.92);
+  z-index: 210;
+  background: rgba(5, 5, 6, 0.94);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 18px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
-.modal.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0s;
-}
+.overlay.active { opacity: 1; visibility: visible; transition: opacity 0.3s ease, visibility 0s; }
 
-.modal-content {
+.video-box {
   position: relative;
   width: 100%;
   max-width: 400px;
   aspect-ratio: 9 / 16;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   overflow: hidden;
-  background: var(--black);
-  box-shadow: var(--shadow-lg);
+  background: #000;
+  border: 1px solid var(--line);
 }
 
-.modal-content.horizontal {
-  max-width: 960px;
-  aspect-ratio: 16 / 9;
-}
-
-.modal-close {
+.overlay-close {
   position: absolute;
-  top: -48px;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--white);
+  top: -46px; right: 0;
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: background 0.2s ease;
 }
 
-.modal-close:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
+.overlay-close:hover { background: rgba(255, 255, 255, 0.2); }
+.overlay-close svg { width: 18px; height: 18px; }
+.video-box iframe { width: 100%; height: 100%; border: none; }
 
-.modal-close svg {
-  width: 20px;
-  height: 20px;
-}
+.lightbox-img { max-width: 94vw; max-height: 88vh; object-fit: contain; border-radius: 10px; border: 1px solid var(--line); cursor: zoom-out; }
 
-.modal iframe {
+/* Lead modal */
+.lead-box {
+  position: relative;
   width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(29, 29, 27, 0.95);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-  cursor: zoom-out;
-}
-
-.lightbox.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0s;
-}
-
-.lightbox img {
-  max-width: 95vw;
-  max-height: 90vh;
-  object-fit: contain;
+  max-width: 780px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: grid;
 }
 
-.lightbox-close {
+@media (min-width: 700px) { .lead-box { grid-template-columns: 300px 1fr; } }
+
+.lead-cover-side {
+  display: none;
+  background: #0B0B0D;
+  padding: 34px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--line-soft);
+}
+
+@media (min-width: 700px) { .lead-cover-side { display: flex; } }
+
+.lead-cover-side img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  transform: rotate(-3deg);
+}
+
+.lead-form-side { padding: 38px 34px; }
+
+.lead-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--white);
+  top: 14px; right: 14px;
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease;
 }
 
-.lightbox-close svg {
-  width: 22px;
-  height: 22px;
+.lead-close:hover { background: rgba(255, 255, 255, 0.14); }
+.lead-close svg { width: 16px; height: 16px; }
+
+.lead-pill {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0B0B0D;
+  background: var(--lime);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
-.fade-in {
+.lead-form-side h3 { font-size: 22px; margin-bottom: 8px; }
+.lead-form-side > p { font-size: 13.5px; margin-bottom: 24px; line-height: 1.6; }
+
+.lead-field { margin-bottom: 14px; }
+
+.lead-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 7px;
+}
+
+.lead-field input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.lead-field input:focus { outline: none; border-color: var(--lime); }
+.lead-field input::placeholder { color: var(--text-3); }
+
+.lead-submit { width: 100%; margin-top: 8px; }
+
+.lead-privacy { font-size: 11.5px; color: var(--text-3); text-align: center; margin-top: 14px; }
+
+.lead-success { text-align: center; padding: 20px 0; display: none; }
+
+.lead-success-icon {
+  width: 60px; height: 60px;
+  background: var(--lime-soft);
+  border: 1.5px solid var(--lime-line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.lead-success-icon svg { width: 26px; height: 26px; color: var(--lime); }
+.lead-success h3 { font-size: 20px; margin-bottom: 8px; }
+.lead-success p { font-size: 13.5px; margin-bottom: 20px; }
+
+/* ── WhatsApp float ── */
+.wa-float {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 95;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.wa-float svg { width: 29px; height: 29px; color: #fff; }
+.wa-float:hover { transform: scale(1.08); }
+
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: ripple 2.2s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@media (max-width: 767px) {
+  .wa-float { bottom: 86px; right: 14px; width: 50px; height: 50px; }
+  .wa-float svg { width: 25px; height: 25px; }
+}
+
+/* ── Reveal ── */
+.reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
 
+<div class="progress" id="progress"></div>
+
 <header id="header">
   <div class="container header-inner">
-    <a href="#inicio" class="logo" aria-label="Manu Baldiviezo - inicio">
-      <span class="logo-avatar">
-        <img src="/images/manu-baldiviezo-avatar.jpg" alt="Manu Baldiviezo">
-      </span>
-      <span class="logo-text">
-        <span class="logo-name">Manu Baldiviezo</span>
-        <span class="logo-role">Estratega Digital · DÚO</span>
-      </span>
+    <a href="#inicio" class="logo" aria-label="DÚO Marketing Digital - inicio">
+      <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital">
+      <span class="logo-sep"></span>
+      <span class="logo-role">Manu Baldiviezo<br>Estratega Digital</span>
     </a>
-    <a href="#agenda" class="header-cta">
-      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      Agendar reunión
-    </a>
+    <nav class="header-nav" aria-label="Navegación principal">
+      <a href="#resultados">Resultados</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#metodo">Método</a>
+    </nav>
+    <a href="#agenda" class="header-cta">Agendar reunión</a>
   </div>
 </header>
 
 <section class="hero" id="inicio">
+  <div class="hero-lines"></div>
+  <div class="hero-glow"></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-content">
-        <span class="eyebrow">Agencia de Publicidad | Bolivia</span>
-        <h1>Si vas a invertir en anuncios, hacelo con una <span class="lava-text">estrategia clara</span> para vender y escalar.</h1>
-        <p class="lead">Te ayudamos a convertir Facebook e Instagram en un canal para captar clientes, mover productos o agendar reuniones.</p>
+      <div>
+        <span class="eyebrow">Agencia de Marketing Digital · LATAM</span>
+        <h1>Deja de pautar a ciegas. <span class="lime">Vende con un sistema.</span></h1>
+        <p class="hero-sub">Estrategia, anuncios y contenido que convierten Meta Ads en tu <strong>canal de ventas más rentable</strong> — con datos, no con suerte.</p>
         <div class="hero-ctas">
-          <a href="#agenda" class="btn-primary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Agendar reunión estratégica
+          <a href="#agenda" class="btn btn-lime">
+            Agendar reunión gratis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#resultados" class="btn-secondary">
-            Ver resultados actuales
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <a href="#recursos" class="btn btn-ghost">Recursos gratis</a>
         </div>
-        <div class="hero-microcopy">
-          <span class="microcopy-dot"></span>
-          <span>Reunión 1:1 de 30 min. · Sin compromiso · 100% gratis</span>
+        <div class="hero-micro">
+          <span class="dot"></span>
+          <span>30 min por Meet · Sin compromiso · Diagnóstico honesto</span>
         </div>
       </div>
 
-      <div class="vsl-wrapper" id="vsl-container" style="display: none;">
-        <div class="vsl-placeholder" id="vsl-trigger">
-          <div class="vsl-tag">
-            <span class="vsl-tag-dot"></span>
-            <span>Video estratégico · 3 min</span>
+      <div class="hero-visual">
+        <div class="hero-chip c1">
+          <div class="hero-chip-value">10.55x</div>
+          <div class="hero-chip-label">ROAS · Ecommerce Chile</div>
+        </div>
+        <div class="hero-chip c2">
+          <div class="hero-chip-value">+25.000</div>
+          <div class="hero-chip-label">conversaciones generadas</div>
+        </div>
+        <div class="hero-photo">
+          <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital y fundador de DÚO" fetchpriority="high">
+          <div class="hero-caption">
+            <div class="hero-caption-name">Manu Baldiviezo</div>
+            <div class="hero-caption-role">Estratega Digital · Fundador de DÚO</div>
           </div>
-          <div class="vsl-play" aria-label="Reproducir video">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="vsl-script">Dale play →</span>
-          <span class="vsl-meta">Mira cómo trabajamos</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="stats-bar">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
+    <span class="marquee-item"><b>10.55x</b> de retorno promedio</span>
+    <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
+    <span class="marquee-item"><b>5</b> países en LATAM</span>
+    <span class="marquee-item"><b>+5</b> años creando anuncios</span>
+    <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
+    <span class="marquee-item"><b>10.55x</b> de retorno promedio</span>
+    <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
+    <span class="marquee-item"><b>5</b> países en LATAM</span>
+    <span class="marquee-item"><b>+5</b> años creando anuncios</span>
+  </div>
+</div>
+
+<section class="problema">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat fade-in">
-        <div class="stat-value">+US$50.000</div>
-        <div class="stat-label">gestionados en E-commerce con 10.5x de retorno durante +7 meses en Chile</div>
-      </div>
-      <div class="stat fade-in">
-        <div class="stat-value">+25.000</div>
-        <div class="stat-label">conversaciones por WhatsApp generadas a USD 0,15 por mensaje en Ecuador</div>
-      </div>
-      <div class="stat fade-in">
-        <div class="stat-value">+50%</div>
-        <div class="stat-label">en ventas de una clínica estética en el segundo mes en Bolivia</div>
-      </div>
-      <div class="stat fade-in">
-        <div class="stat-value">+5 años</div>
-        <div class="stat-label">creando anuncios en Facebook e Instagram</div>
-       </div>
-      </div>
+    <div class="problema-inner reveal">
+      <h2>¿Pagas por clics… <span class="lime">o construyes ventas?</span></h2>
+      <div class="problema-quote">"¿Esto realmente me está ayudando a vender, o solo estoy pagando por mensajes, clics y alcance?"</div>
+      <p>Si te hiciste esa pregunta, no te falta presupuesto. Te falta un sistema: saber qué estrategia seguir, qué comunicar y qué datos mirar antes de escalar.</p>
     </div>
   </div>
 </section>
 
-<section class="problem">
+<section id="metodo">
   <div class="container">
-    <div class="section-header">
-      <h2>El problema no es saber como crear anuncios. Es hacerlo <span class="lava-text">sin una metodología sólida.</span></h2>
-    </div>
-    <div class="problem-content">
-      <p>Tal vez ya promocionaste publicaciones. Tal vez ya probaste campañas. Y aún así te preguntas:</p>
-      <p class="emphasis">¿Esto realmente me está ayudando a vender, o solo estoy pagando por mensajes, clics y alcance?</p>
-      <p style="margin-top: 28px;">A muchos negocios solo les falta una metodología para saber qué estrategia seguir, qué comunicar y qué datos mirar antes de escalar. Porque cuando no tienes dirección, cada campaña se siente como otra prueba al azar.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pillars" id="como-trabajamos">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Los 4 pilares en DÚO</span>
-      <h2>Un negocio no crece solo por meterle más presupuesto a los anuncios</h2>
-      <p>Subir presupuesto puede ayudar. Pero solo cuando sabes qué estás escalando. Antes de pedirle más resultados a tus anuncios, hay que ordenar cuatro cosas:</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">El método DÚO</span>
+      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
     </div>
 
-    <div class="pillars-grid">
-      <div class="pillar fade-in">
-        <span class="pillar-number">01</span>
-        <div class="pillar-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-        </div>
+    <div class="metodo-grid">
+      <div class="pilar reveal">
+        <span class="pilar-num">/01</span>
         <h3>Oferta</h3>
-        <p>Qué vendés, para quién es y por qué alguien debería elegirte ahora.</p>
+        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
       </div>
-
-      <div class="pillar fade-in">
-        <span class="pillar-number">02</span>
-        <div class="pillar-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/><circle cx="12" cy="12" r="10"/></svg>
-        </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/02</span>
         <h3>Estrategia</h3>
-        <p>Qué camino debe seguir tu publicidad según tu negocio, presupuesto y objetivo.</p>
+        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
       </div>
-
-      <div class="pillar fade-in">
-        <span class="pillar-number">03</span>
-        <div class="pillar-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/03</span>
         <h3>Comunicación</h3>
-        <p>Qué mensaje necesita ver tu cliente para interesarse, escribirte o decidir.</p>
+        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
       </div>
-
-      <div class="pillar fade-in">
-        <span class="pillar-number">04</span>
-        <div class="pillar-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 6-6"/></svg>
-        </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/04</span>
         <h3>Medición</h3>
-        <p>Qué datos vamos a analizar para saber si ajustar, mantener, frenar o escalar.</p>
+        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
       </div>
     </div>
 
-    <div class="pillars-footer">
-      <p>Cuando estas partes están alineadas, tus anuncios dejan de ser piezas sueltas y empiezan a trabajar como un embudo de ventas.</p>
+    <div class="metodo-footer reveal">
+      <p>Cuando las cuatro están alineadas, tus anuncios dejan de ser piezas sueltas y trabajan como un sistema de ventas.</p>
     </div>
   </div>
 </section>
 
-<section class="cases" id="resultados">
+<section class="casos" id="resultados">
   <div class="container">
-    <div class="section-header">
+    <div class="sec-head reveal">
       <span class="eyebrow">Resultados reales</span>
-      <h2>Casos que demuestran cómo aplicamos los 4 pilares</h2>
-      <p>Trabajamos con negocios de distintos rubros y países. Cada caso muestra cómo ordenamos oferta, estrategia, comunicación y medición.</p>
+      <h2>El sistema, <span class="lime">en números</span></h2>
+      <p>Distintos rubros, distintos países. El mismo método.</p>
     </div>
 
-    <div class="cases-grid">
+    <div class="casos-scroll" id="casos-scroll">
 
-      <div class="case-card featured fade-in">
-        <div class="case-inner">
-          <div class="case-image" data-img="/images/01-femmeninas-ads-manager-roas.webp" data-alt="Dashboard de Meta Ads de Femmeninas">
-            <img src="/images/01-femmeninas-ads-manager-roas.webp" alt="Dashboard Meta Ads Femmeninas">
-            <button class="case-zoom" aria-label="Ampliar imagen">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
-            </button>
+      <div class="caso reveal">
+        <div class="caso-img" data-img="/images/01-femmeninas-ads-manager-roas.webp" data-alt="Dashboard de Meta Ads de Femmeninas">
+          <img src="/images/01-femmeninas-ads-manager-roas.webp" alt="Dashboard Meta Ads Femmeninas" loading="lazy">
+          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
+        </div>
+        <div class="caso-body">
+          <div class="caso-top">
+            <span class="caso-brand">femmeninas.cl</span>
+            <span class="caso-tag">Ecommerce · Chile</span>
           </div>
-          <div class="case-body">
-            <div class="case-brand">
-              <span class="case-brand-name">femmeninas.cl</span>
-              <span class="case-rubro">Ecommerce · Chile</span>
-            </div>
-            <h3 class="case-title">+US$50.000 gestionados en Meta Ads con un <span class="highlight">retorno promedio de 10.55x</span></h3>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <div class="case-metric-value">US$50K+</div>
-                <div class="case-metric-label">gestionados en Meta Ads</div>
-              </div>
-              <div class="case-metric">
-                <div class="case-metric-value">10.55x</div>
-                <div class="case-metric-label">retorno (ROAS)</div>
-              </div>
-              <div class="case-metric">
-                <div class="case-metric-value">+7 meses</div>
-                <div class="case-metric-label">de optimización y escala</div>
-              </div>
-            </div>
+          <div class="caso-title">+US$50.000 gestionados con <b>retorno de 10.55x</b> durante 7 meses</div>
+          <div class="caso-metrics">
+            <div class="caso-metric"><b>US$50K+</b><span>gestionados</span></div>
+            <div class="caso-metric"><b>10.55x</b><span>ROAS</span></div>
+            <div class="caso-metric"><b>+7 meses</b><span>escalando</span></div>
           </div>
         </div>
       </div>
 
-      <div class="case-card fade-in">
-        <div class="case-image" data-img="/images/02-vision-arq-ads-manager.webp" data-alt="Dashboard de Meta Ads de Vision Arq Studio">
-          <img src="/images/02-vision-arq-ads-manager.webp" alt="Dashboard Meta Ads Vision Arq">
-          <button class="case-zoom" aria-label="Ampliar imagen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
-          </button>
+      <div class="caso reveal">
+        <div class="caso-img" data-img="/images/02-vision-arq-ads-manager.webp" data-alt="Dashboard de Meta Ads de Vision Arq Studio">
+          <img src="/images/02-vision-arq-ads-manager.webp" alt="Dashboard Meta Ads Vision Arq" loading="lazy">
+          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </div>
-        <div class="case-body">
-          <div class="case-brand">
-            <span class="case-brand-name">Vision Arq Studio</span>
-            <span class="case-rubro">Arquitectura · Bolivia</span>
+        <div class="caso-body">
+          <div class="caso-top">
+            <span class="caso-brand">Vision Arq Studio</span>
+            <span class="caso-tag">Arquitectura · Bolivia</span>
           </div>
-          <h3 class="case-title">300 mensajes, 20 reuniones y <span class="highlight">6 proyectos nuevos</span> en el primer mes</h3>
-          <div class="case-metrics">
-            <div class="case-metric">
-              <div class="case-metric-value">+300</div>
-              <div class="case-metric-label">mensajes recibidos</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">20</div>
-              <div class="case-metric-label">reuniones cerradas</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">6</div>
-              <div class="case-metric-label">proyectos nuevos</div>
-            </div>
+          <div class="caso-title"><b>6 proyectos cerrados</b> en el primer mes de campañas</div>
+          <div class="caso-metrics">
+            <div class="caso-metric"><b>+300</b><span>mensajes</span></div>
+            <div class="caso-metric"><b>20</b><span>reuniones</span></div>
+            <div class="caso-metric"><b>6</b><span>proyectos</span></div>
           </div>
-          <button class="case-video-btn" data-video="uJaNMf92w10">
+          <button class="caso-video" data-video="uJaNMf92w10">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio en video
+            Ver testimonio
           </button>
         </div>
       </div>
 
-      <div class="case-card fade-in">
-        <div class="case-image" data-img="/images/03-climere-ads-manager-consultas.webp" data-alt="Dashboard de Meta Ads de Climere clínica estética">
-          <img src="/images/03-climere-ads-manager-consultas.webp" alt="Dashboard Meta Ads Climere">
-          <button class="case-zoom" aria-label="Ampliar imagen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
-          </button>
+      <div class="caso reveal">
+        <div class="caso-img" data-img="/images/03-climere-ads-manager-consultas.webp" data-alt="Dashboard de Meta Ads de Climere clínica estética">
+          <img src="/images/03-climere-ads-manager-consultas.webp" alt="Dashboard Meta Ads Climere" loading="lazy">
+          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </div>
-        <div class="case-body">
-          <div class="case-brand">
-            <span class="case-brand-name">Climere</span>
-            <span class="case-rubro">Clínica estética · Bolivia</span>
+        <div class="caso-body">
+          <div class="caso-top">
+            <span class="caso-brand">Climere</span>
+            <span class="caso-tag">Clínica estética · Bolivia</span>
           </div>
-          <h3 class="case-title">De contenido estratégico a un <span class="highlight">aumento del 30% al 50%</span> en ventas</h3>
-          <div class="case-metrics">
-            <div class="case-metric">
-              <div class="case-metric-value">+5.000</div>
-              <div class="case-metric-label">mensajes en campañas</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">+1 año</div>
-              <div class="case-metric-label">de trabajo conjunto</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">+30-50%</div>
-              <div class="case-metric-label">de aumento en ventas</div>
-            </div>
+          <div class="caso-title">Ventas <b>+30% a +50%</b> con contenido estratégico y campañas</div>
+          <div class="caso-metrics">
+            <div class="caso-metric"><b>+5.000</b><span>mensajes</span></div>
+            <div class="caso-metric"><b>+1 año</b><span>juntos</span></div>
+            <div class="caso-metric"><b>+50%</b><span>en ventas</span></div>
           </div>
-          <button class="case-video-btn" data-video="4rR8Nwn9Slw">
+          <button class="caso-video" data-video="4rR8Nwn9Slw">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio en video
+            Ver testimonio
           </button>
         </div>
       </div>
 
-      <div class="case-card fade-in">
-        <div class="case-image" data-img="/images/04-nanitos-ads-manager-manychat.webp" data-alt="Dashboard de Meta Ads de Ñañitos">
-          <img src="/images/04-nanitos-ads-manager-manychat.webp" alt="Dashboard Meta Ads Ñañitos">
-          <button class="case-zoom" aria-label="Ampliar imagen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
-          </button>
+      <div class="caso reveal">
+        <div class="caso-img" data-img="/images/05-progaming-ads-manager-whatsapp.webp" data-alt="Dashboard de Meta Ads de ProGaming">
+          <img src="/images/05-progaming-ads-manager-whatsapp.webp" alt="Dashboard Meta Ads ProGaming" loading="lazy">
+          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </div>
-        <div class="case-body">
-          <div class="case-brand">
-            <span class="case-brand-name">Juguetería Ñañitos</span>
-            <span class="case-rubro">Importadora · Bolivia</span>
+        <div class="caso-body">
+          <div class="caso-top">
+            <span class="caso-brand">ProGaming EC</span>
+            <span class="caso-tag">Gaming · Ecuador</span>
           </div>
-          <h3 class="case-title">+5.000 mensajes para mover productos con <span class="highlight">contenido estratégico y campañas</span></h3>
-          <div class="case-metrics">
-            <div class="case-metric">
-              <div class="case-metric-value">+5.000</div>
-              <div class="case-metric-label">mensajes generados</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">US$0.08</div>
-              <div class="case-metric-label">costo por conversación</div>   
-            </div>
+          <div class="caso-title"><b>+25.000 prospectos</b> por WhatsApp a US$0.15 cada uno</div>
+          <div class="caso-metrics">
+            <div class="caso-metric"><b>+25K</b><span>conversaciones</span></div>
+            <div class="caso-metric"><b>US$0.15</b><span>por contacto</span></div>
+            <div class="caso-metric"><b>+425K</b><span>alcanzados</span></div>
           </div>
         </div>
       </div>
 
-      <div class="case-card fade-in">
-        <div class="case-image" data-img="/images/05-progaming-ads-manager-whatsapp.webp" data-alt="Dashboard de Meta Ads de ProGaming">
-          <img src="/images/05-progaming-ads-manager-whatsapp.webp" alt="Dashboard Meta Ads ProGaming">
-          <button class="case-zoom" aria-label="Ampliar imagen">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
-          </button>
+      <div class="caso reveal">
+        <div class="caso-img" data-img="/images/04-nanitos-ads-manager-manychat.webp" data-alt="Dashboard de Meta Ads de Ñañitos">
+          <img src="/images/04-nanitos-ads-manager-manychat.webp" alt="Dashboard Meta Ads Ñañitos" loading="lazy">
+          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
         </div>
-        <div class="case-body">
-          <div class="case-brand">
-            <span class="case-brand-name">ProGaming EC</span>
-            <span class="case-rubro">Gaming · Ecuador</span>
+        <div class="caso-body">
+          <div class="caso-top">
+            <span class="caso-brand">Juguetería Ñañitos</span>
+            <span class="caso-tag">Importadora · Bolivia</span>
           </div>
-          <h3 class="case-title">+25.000 prospectos por WhatsApp generados en <span class="highlight">1 año de servicio</span></h3>
-          <div class="case-metrics">
-            <div class="case-metric">
-              <div class="case-metric-value">+25K</div>
-              <div class="case-metric-label">conversaciones WhatsApp</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">US$0.15</div>
-              <div class="case-metric-label">costo por conversación</div>
-            </div>
-            <div class="case-metric">
-              <div class="case-metric-value">+425K</div>
-              <div class="case-metric-label">personas alcanzadas</div>
-            </div>
+          <div class="caso-title"><b>+5.000 mensajes</b> a US$0.08 para mover inventario</div>
+          <div class="caso-metrics">
+            <div class="caso-metric"><b>+5.000</b><span>mensajes</span></div>
+            <div class="caso-metric"><b>US$0.08</b><span>por contacto</span></div>
           </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="casos-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Desliza para ver más casos
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Tres formas de <span class="lime">trabajar juntos</span></h2>
+      <p>Delegá todo, aprendé el sistema, o lanzá tu página de captura.</p>
+    </div>
+
+    <div class="servicios-grid">
+
+      <div class="servicio destacado reveal">
+        <span class="servicio-badge">Más solicitado</span>
+        <span class="servicio-tag">Agencia · Done for you</span>
+        <h3>Gestión de Meta Ads</h3>
+        <p class="servicio-desc">Tu publicidad de punta a punta: nosotros ejecutamos, tú ves los reportes y las ventas.</p>
+        <ul class="servicio-list">
+          <li>Estrategia según tu oferta y etapa</li>
+          <li>Estructura de campañas EL SISTEMA</li>
+          <li>Optimización continua de pauta</li>
+          <li>Reporte mensual con lectura clara</li>
+        </ul>
+        <div class="servicio-foot">
+          <div class="servicio-price-label">Inversión mensual</div>
+          <div class="servicio-price">Desde $250 <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 2.350</span></div>
+          <div class="servicio-note">La pauta va directo a Meta, aparte.</div>
+          <a href="#agenda" class="btn btn-lime">Agendar reunión gratis</a>
+        </div>
+      </div>
+
+      <div class="servicio reveal">
+        <span class="servicio-tag">Asesoría · 1 a 1 por Meet</span>
+        <h3>Asesoría Estratégica</h3>
+        <p class="servicio-desc">Te enseño la metodología DÚO completa, aplicada a tu negocio, para que la ejecutes con criterio.</p>
+        <ul class="servicio-list">
+          <li>EL SISTEMA de campañas explicado a fondo</li>
+          <li>Estrategia de contenido y árbol de coherencia</li>
+          <li>Guionización con estructuras y ganchos</li>
+          <li>Plan de acción para tu caso, no teoría</li>
+        </ul>
+        <div class="servicio-foot">
+          <div class="servicio-price-label">Modalidad</div>
+          <div class="servicio-price">Sesiones en vivo</div>
+          <div class="servicio-note">Cupos limitados por semana.</div>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20Estrat%C3%A9gica%201%3A1*%20por%20Meet." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="servicio reveal">
+        <span class="servicio-tag">Web · Páginas de captura</span>
+        <h3>Landing Pages</h3>
+        <p class="servicio-desc">Páginas como esta: diseñadas para captar leads y vender, listas para tus campañas.</p>
+        <ul class="servicio-list">
+          <li>Diseño profesional a tu marca</li>
+          <li>Optimizada para móvil y velocidad</li>
+          <li>Conectada a WhatsApp o agenda</li>
+          <li>Lista para recibir tráfico de pauta</li>
+        </ul>
+        <div class="servicio-foot">
+          <div class="servicio-price-label">Inversión única</div>
+          <div class="servicio-price">Desde $150 <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.500</span></div>
+          <div class="servicio-note">Entrega rápida, dominio aparte.</div>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-ghost">Quiero mi página</a>
         </div>
       </div>
 
@@ -1957,193 +1825,223 @@ footer {
   </div>
 </section>
 
-<section class="reunion">
+<section class="recursos" id="recursos">
   <div class="container">
-    <div class="reunion-grid">
-      <div class="reunion-content">
-        <span class="eyebrow">La reunión</span>
-        <h2>En la reunión no te mostramos teoría. <span class="lava-text">Te muestro cómo trabajamos.</span></h2>
-        <p>Analizamos si tiene sentido vender con anuncios en tu etapa actual y te mostramos nuestra metodología con resultados de clientes actuales.</p>
-        <p>La idea es simple: ver si tu negocio está listo para escalar con anuncios y si nosotros realmente podemos ayudarte.</p>
-        <ul class="reunion-checklist">
-          <li>
-            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Revisamos tu oferta, canal de venta y forma actual de captar clientes
-          </li>
-          <li>
-            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Te mostramos resultados reales de clientes activos compartiendo pantalla
-          </li>
-          <li>
-            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Evaluamos si tu negocio está listo para invertir en Meta Ads ahora
-          </li>
-          <li>
-            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Te explicamos nuestra metodología y propuesta de trabajo
-          </li>
-        </ul>
-      </div>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Recursos DÚO</span>
+      <h2>La metodología, <span class="lime">en tus manos</span></h2>
+      <p>Si llegaste desde TikTok o Instagram, esto es para vos. Lo que uso todos los días con clientes, listo para aplicar.</p>
+    </div>
 
-      <div class="reunion-card">
-        <span class="reunion-badge">Reunión 1:1</span>
-        <h3>Reunión estratégica</h3>
-        <ul class="reunion-card-list">
-          <li>30 minutos por Google Meet</li>
-          <li>Directo con Emanuel Baldiviezo</li>
-          <li>Sin presentaciones genéricas</li>
-          <li>Sin obligación de contratar</li>
-          <li>Diagnóstico honesto de tu caso</li>
-        </ul>
-        <div class="reunion-price">
-          <div class="reunion-price-label">Inversión en la reunión</div>
-          <div class="reunion-price-value">100% gratis</div>
-          <div class="reunion-price-note">Nuestro servicio mensual parte desde Bs 2.350 o USD 250.</div>
+    <div class="rec-sub free reveal">▸ Gratis para seguidores</div>
+
+    <div class="rec-grid">
+
+      <div class="rec-card free-card reveal">
+        <div class="rec-cover tilt">
+          <img src="/images/portada-el-sistema.png" alt="Portada del PDF EL SISTEMA de DÚO" loading="lazy">
+        </div>
+        <div class="rec-body">
+          <div class="rec-pills">
+            <span class="rec-pill gratis">Gratis</span>
+            <span class="rec-pill tipo">PDF · Meta Ads</span>
+          </div>
+          <h3>El Sistema</h3>
+          <p>La estructura de 2 campañas con la que gestionamos más de $50.000 USD en Meta Ads — y por qué la mayoría la usa al revés.</p>
+          <ul class="rec-feats">
+            <li>La estructura exacta, paso a paso</li>
+            <li>Por qué la mayoría pauta al revés</li>
+            <li>El método detrás de los casos de arriba</li>
+          </ul>
+          <button class="btn btn-lime" id="open-lead">
+            Descargar gratis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </button>
         </div>
       </div>
+
+      <div class="rec-card free-card reveal">
+        <div class="gpt-preview">
+          <div class="gpt-head">
+            <span class="gpt-ava">D</span>
+            <div>
+              <div class="gpt-name">Agente Estratega | DÚO</div>
+              <div class="gpt-status">● en línea</div>
+            </div>
+          </div>
+          <div class="gpt-msgs">
+            <div class="gpt-msg user">¿Qué contenido publico esta semana para vender más?</div>
+            <div class="gpt-msg bot">Primero definamos tu pilar. ¿Tu objetivo es captar mensajes o venta directa? Te armo la estrategia →</div>
+            <div class="gpt-typing"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="rec-body">
+          <div class="rec-pills">
+            <span class="rec-pill gratis">Gratis</span>
+            <span class="rec-pill tipo">GPT · ChatGPT</span>
+          </div>
+          <h3>Agente Estratega Digital</h3>
+          <p>Mi GPT entrenado con la metodología DÚO. Piensa tu estrategia, contenido y anuncios como un estratega — disponible 24/7.</p>
+          <ul class="rec-feats">
+            <li>Entrenado con los frameworks DÚO</li>
+            <li>Potenciado al máximo con las guías premium</li>
+            <li>Gratis con tu cuenta de ChatGPT</li>
+          </ul>
+          <a href="https://chatgpt.com/g/g-68489f37706881918afe718012412a33-duo-agente-estratega-digital" target="_blank" rel="noopener" class="btn btn-ghost">
+            Probar el agente
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rec-sub premium reveal">▸ Guías premium</div>
+
+    <div class="rec-grid">
+
+      <div class="rec-card premium-card reveal">
+        <div class="mini-cover tilt" role="img" aria-label="Portada de la guía Estrategia de Contenido DÚO">
+          <img src="/images/duo-logo-1.png" alt="" class="mc-logo">
+          <div class="mc-title"><span class="g">ESTRATEGIA</span> DE<br>CONTENIDO</div>
+          <div class="mc-div"></div>
+          <div class="mc-eye">Guía Completa · Fórmula DÚO3X</div>
+          <div class="mc-desc">El paso a paso para construir una estrategia de contenido que sostiene tus ventas.</div>
+          <div class="mc-foot"><span>DÚO Marketing</span><span>USD 15</span></div>
+        </div>
+        <div class="rec-body">
+          <div class="rec-pills">
+            <span class="rec-pill precio">USD 15</span>
+            <span class="rec-pill tipo">Guía PDF</span>
+          </div>
+          <h3>Estrategia de Contenido DÚO</h3>
+          <p>Deja de publicar por publicar. El paso a paso para construir una estrategia que sostiene tus ventas, en orgánico y en pauta.</p>
+          <ul class="rec-feats">
+            <li>El árbol de coherencia: pilares, líneas narrativas y formatos</li>
+            <li>Investigación de referentes y detonadores virales</li>
+            <li>Cómo analizar videos ganadores paso a paso</li>
+            <li>El método para generar ideas con potencial antes de grabar</li>
+          </ul>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="rec-card premium-card reveal">
+        <div class="mini-cover tilt" role="img" aria-label="Portada de la guía FÓRMULA DÚO de guionización estratégica">
+          <div class="mc-eye">Guía Estratégica · Guionización</div>
+          <div class="mc-title"><span class="g">FÓRMULA<br>DÚO3X</span></div>
+          <div class="mc-sub">Guionización Estratégica</div>
+          <div class="mc-div"></div>
+          <div class="mc-desc">El sistema de 8 pasos para crear guiones que capturan atención, generan confianza y convierten.</div>
+          <div class="mc-foot"><span>DÚO Marketing</span><span>USD 25</span></div>
+        </div>
+        <div class="rec-body">
+          <div class="rec-pills">
+            <span class="rec-pill precio">USD 25</span>
+            <span class="rec-pill tipo">Guía PDF</span>
+          </div>
+          <h3>Fórmula DÚO</h3>
+          <p>Guioniza con método, no con inspiración. El sistema de 8 pasos para crear videos que capturan atención y convierten.</p>
+          <ul class="rec-feats">
+            <li>+20 estructuras narrativas: venta, valor, viralidad y storytelling</li>
+            <li>+25 estilos de ganchos verbales, visuales y textuales</li>
+            <li>Checklist de validación de idea con 9 criterios</li>
+            <li>Funciona en orgánico y en pauta · potencia al Agente DÚO</li>
+          </ul>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO*%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rec-note reveal">
+      <p><strong>El ecosistema DÚO:</strong> las guías te dan la metodología, el <strong>Agente Estratega</strong> te ayuda a ejecutarla 24/7, y en la <strong>Asesoría 1:1</strong> te explico todo el sistema aplicado a tu negocio.</p>
     </div>
   </div>
 </section>
 
-<section class="target">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Para quién es</span>
-      <h2>Esto es para negocios que ya tienen una porpuesta de valor y quieren <span class="lava-text">crecer con una estrategia sólida</span></h2>
+<div class="web-strip">
+  <div class="web-strip-inner">
+    <div>
+      <div class="web-strip-text">¿Te gustó esta página? La hicimos nosotros.</div>
+      <div class="web-strip-sub">Páginas de captura profesionales desde $150 USD / Bs 1.500</div>
     </div>
-
-    <div class="target-grid">
-      <div class="target-card yes">
-        <div class="target-header">
-          <span class="target-icon yes">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
-          </span>
-          <h3>Esto es para vos si:</h3>
-        </div>
-        <ul class="target-list yes">
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya tienes un negocio que vende</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tienes productos, servicios o una propuesta clara</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vendes por WhatsApp, web, llamadas, reuniones o tienda física</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya creas contenido o quieres empezar, pero no sabes como llevarlo a ventas</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ya probaste anuncios pero no sabes qué está funcionando</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Estas dispuesto a invertir en publicidad y asumir un acompañamiento mensual de 3 meses</li>
-        </ul>
-      </div>
-
-      <div class="target-card no">
-        <div class="target-header">
-          <span class="target-icon no">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </span>
-          <h3>Esto no es para vos si:</h3>
-        </div>
-        <ul class="target-list no">
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Todavía no tienes claro qué vendes</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Buscas resultados mágicos en pocos días</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No tienes capacidad de responder consultas</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Solo quieres publicaciones bonitas sin objetivo comercial</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No quieres medir ni revisar números</li>
-          <li><svg class="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No puedes asumir un servicio mensual desde Bs 2.500 + pauta</li>
-        </ul>
-      </div>
-    </div>
+    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20web%20y%20quiero%20una%20*landing%20page*%20as%C3%AD%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn">Quiero la mía</a>
   </div>
-</section>
+</div>
 
-<section class="agenda" id="agenda">
+<section id="agenda">
   <div class="container">
-    <div class="agenda-header">
-      <div class="agenda-microcopy">
-        <span class="agenda-microcopy-dot"></span>
+    <div class="sec-head reveal">
+      <div class="agenda-micro">
+        <span class="dot"></span>
         <span>Agenda abierta esta semana</span>
       </div>
-      <h2>Tu próxima campaña <span class="lava-text">no debería ser</span> otra prueba al azar</h2>
-      <p>Elige el día y horario que mejor te quede. La reunión es 100% gratuita, de 30 minutos, sin compromiso.</p>
+      <h2>Tu próxima campaña no debería ser <span class="lime">otra prueba al azar</span></h2>
+      <p>30 minutos, 1:1 por Meet, 100% gratis. Revisamos tu caso y te decimos con honestidad si podemos ayudarte.</p>
     </div>
 
-    <div class="calendly-wrapper">
+    <div class="calendly-wrap reveal">
       <div class="calendly-inline-widget"
-           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&text_color=1d1d1b&primary_color=ec6730"></div>
+           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101013&text_color=fafaf8&primary_color=c6f135"></div>
     </div>
   </div>
 </section>
 
 <section class="faq">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Preguntas frecuentes</span>
-      <h2>Antes de agendar, seguro tienes estas dudas</h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Lo que seguro <span class="lime">te estás preguntando</span></h2>
     </div>
 
-    <div class="faq-grid">
+    <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question">
-          <span>¿Qué pasa exactamente en la reunión?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        <button class="faq-q">
+          <span>¿Qué pasa exactamente en la reunión gratuita?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Revisamos tu negocio (qué vendés, cómo vendés, a quién), te mostramos cómo trabajamos en Meta Ads compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">Revisamos tu negocio (qué vendes, cómo y a quién), te muestro cómo trabajamos compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-q">
+          <span>¿Cuál es la diferencia entre la agencia y la asesoría 1:1?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por ti: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que tú o tu equipo la ejecuten. ¿Quieres delegar? Agencia. ¿Quieres aprender? Asesoría.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
           <span>¿Cuánto cuesta trabajar con ustedes?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">El acompañamiento mensual parte desde Bs 2.350 (no incluye la inversión publicitaria, eso va directamente a Meta). El precio final depende del alcance del servicio: si necesitás solo estrategia + pauta + medición, o si también requerís guiones, dirección creativa, producción de contenido o automatización.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">El acompañamiento de agencia parte desde $250 USD / Bs 2.350 al mes (la inversión publicitaria va directo a Meta, aparte). El precio final depende del alcance: solo estrategia + pauta + medición, o también guiones, dirección creativa y contenido. Las landing pages parten desde $150 USD / Bs 1.500, pago único.</div></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-q">
+          <span>¿Cómo recibo las guías premium después de comprarlas?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Al tocar el botón de compra se abre un chat de WhatsApp conmigo. Coordinamos el pago por el medio que te quede más cómodo (transferencia, QR, PayPal) y te envío el PDF directamente. Sin plataformas de por medio.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
           <span>¿Mi rubro funciona con Meta Ads?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Hemos trabajado con ecommerce de moda, clínicas estéticas, estudios de arquitectura, importadoras, tiendas de gaming y más. Lo importante no es el rubro, sino que tengas algo claro para vender y capacidad de responder a las consultas que generen los anuncios. En la reunión te decimos honestamente si tu caso es viable.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">Hemos trabajado con ecommerce de moda, clínicas estéticas, arquitectura, importadoras y gaming. Lo importante no es el rubro: es que tengas algo claro para vender y capacidad de responder consultas. En la reunión te digo con honestidad si tu caso es viable.</div></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>¿En cuánto tiempo veo resultados?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Algunos clientes ven resultados desde el primer mes (como el estudio de arquitectura que cerró 6 proyectos en 30 días). Otros requieren 2 a 3 meses de ajuste antes de escalar. No prometemos magia: prometemos dirección clara, decisiones basadas en datos y acompañamiento mes a mes.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>¿Tengo que tener contenido propio o ustedes lo crean?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Ambos modelos son posibles. Algunos clientes (como Femmeninas o ProGaming) crean su propio contenido y nosotros gestionamos estrategia, pauta y medición. Otros (como Climere o Ñañitos) requieren que también trabajemos guiones, dirección creativa o producción. En la reunión definimos qué necesita tu caso.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
+        <button class="faq-q">
           <span>¿Trabajan con clientes fuera de Bolivia?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Sí. Actualmente tenemos clientes activos en Chile (Femmeninas), Ecuador (ProGaming), Colombia y Argentina. Trabajamos 100% online por Google Meet, Slack/WhatsApp y herramientas compartidas. Si tu negocio está en otro país hispanohablante, no es problema.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>¿Qué necesito tener listo antes de la reunión?</span>
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Solo claridad sobre qué vendes, cómo lo vendes hoy y qué resultado esperas. Si ya hiciste anuncios antes, trae los datos que tengas (capturas del Administrador comercial de Meta, métricas de campañas pasadas). Si nunca hiciste, mejor todavía: arrancamos limpio.</div>
-        </div>
+        <div class="faq-a"><div class="faq-a-inner">Sí. Tenemos clientes activos en Chile, Ecuador, Colombia y Argentina. Trabajamos 100% online por Meet, WhatsApp y herramientas compartidas.</div></div>
       </div>
     </div>
   </div>
@@ -2153,15 +2051,8 @@ footer {
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-brand">
-          <span class="logo-avatar">
-            <img src="/images/manu-baldiviezo-avatar.jpg" alt="Manu Baldiviezo">
-          </span>
-          <span class="logo-text">
-            <span class="logo-name">Manu Baldiviezo</span>
-            <span class="logo-role">Estratega Digital · DÚO Marketing Digital</span>
-          </span>
-        </div>
+        <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital" class="footer-logo">
+        <p class="footer-tagline">Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica.</p>
         <div class="footer-contact">
           <p>
             <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">@manubaldiviezo</a><br>
@@ -2174,7 +2065,8 @@ footer {
       <nav class="footer-nav" aria-label="Navegación del pie de página">
         <a href="#inicio">Inicio</a>
         <a href="#resultados">Resultados</a>
-        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#recursos">Recursos</a>
         <a href="#agenda">Agendar reunión</a>
       </nav>
     </div>
@@ -2186,129 +2078,169 @@ footer {
   </div>
 </footer>
 
-<div class="sticky-mobile" id="sticky-mobile">
-  <div class="sticky-mobile-text">
-    <div class="sticky-mobile-eyebrow">¿Listo para revisar tu caso?</div>
-    <div class="sticky-mobile-title">Reunión gratuita de 30 min.</div>
+<div class="sticky-m" id="sticky-m">
+  <div class="sticky-m-text">
+    <div class="sticky-m-eyebrow">¿Revisamos tu caso?</div>
+    <div class="sticky-m-title">Reunión gratis de 30 min.</div>
   </div>
-  <a href="#agenda" class="sticky-mobile-btn">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-    Agendar
-  </a>
+  <a href="#agenda" class="sticky-m-btn">Agendar</a>
 </div>
 
-<div class="modal" id="video-modal" role="dialog" aria-modal="true">
-  <div class="modal-content" id="modal-content">
-    <button class="modal-close" id="modal-close" aria-label="Cerrar video">
+<!-- Video modal -->
+<div class="overlay" id="video-modal" role="dialog" aria-modal="true">
+  <div class="video-box">
+    <button class="overlay-close" id="video-close" aria-label="Cerrar video">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <iframe id="modal-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="video-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <img id="lightbox-img" src="" alt="">
+<!-- Lightbox -->
+<div class="overlay" id="lightbox" role="dialog" aria-modal="true">
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
+
+<!-- Lead capture modal -->
+<div class="overlay" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title">
+  <div class="lead-box">
+    <button class="lead-close" id="lead-close" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lead-cover-side">
+      <img src="/images/portada-el-sistema.png" alt="Portada de EL SISTEMA">
+    </div>
+    <div class="lead-form-side">
+      <div id="lead-form-view">
+        <span class="lead-pill">Recurso gratuito</span>
+        <h3 id="lead-title">Descarga EL SISTEMA</h3>
+        <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en Meta Ads. Dime a dónde te lo envío:</p>
+        <form id="lead-form" novalidate>
+          <div class="lead-field">
+            <label for="lead-name">Tu nombre</label>
+            <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamas?" required autocomplete="name">
+          </div>
+          <div class="lead-field">
+            <label for="lead-email">Tu email</label>
+            <input type="email" id="lead-email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn btn-lime lead-submit" id="lead-submit">
+            Descargar el PDF ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </button>
+        </form>
+        <p class="lead-privacy">Cero spam. Solo recursos y estrategias que funcionan.</p>
+      </div>
+      <div class="lead-success" id="lead-success">
+        <div class="lead-success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>¡Listo! Descargando…</h3>
+        <p>Si no inicia sola, tócalo acá abajo. Nos vemos dentro del sistema 🚀</p>
+        <a href="/recursos/EL-SISTEMA-DUO.pdf" download class="btn btn-lime">Descargar EL SISTEMA</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20web%20y%20quiero%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20trabajar%20mi%20publicidad%20en%20Meta%20Ads."
+   target="_blank" rel="noopener"
+   class="wa-float" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 01-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.42 9.42 0 01-1.45-5.03c0-5.21 4.25-9.45 9.47-9.45 2.53 0 4.9.99 6.69 2.77a9.4 9.4 0 012.77 6.69c0 5.21-4.25 9.45-9.46 9.45zm8.05-17.5A11.36 11.36 0 0012.04.5C5.77.5.67 5.6.67 11.87c0 2.01.52 3.97 1.52 5.7L.57 23.5l6.07-1.59a11.34 11.34 0 005.4 1.38h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.9-3.33-8.05z"/>
+  </svg>
+</a>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
+/* ══════════ CONFIG: Supabase ══════════
+   1. Crea un proyecto en supabase.com
+   2. Ejecuta el SQL de la tabla `leads` (ver README)
+   3. Pega aquí la URL y la anon key            */
+const SUPABASE_URL = 'REEMPLAZAR_SUPABASE_URL';
+const SUPABASE_ANON_KEY = 'REEMPLAZAR_SUPABASE_ANON_KEY';
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* Scroll: header + progress + sticky */
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
-
-const stickyMobile = document.getElementById('sticky-mobile');
+const progress = document.getElementById('progress');
+const stickyM = document.getElementById('sticky-m');
 const agendaSection = document.getElementById('agenda');
+
 window.addEventListener('scroll', () => {
-  const scrolledEnough = window.scrollY > 600;
-  const agendaRect = agendaSection.getBoundingClientRect();
-  const nearAgenda = agendaRect.top < window.innerHeight * 0.5;
-  stickyMobile.classList.toggle('visible', scrolledEnough && !nearAgenda);
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 10);
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  const nearAgenda = agendaSection.getBoundingClientRect().top < window.innerHeight * 0.5;
+  stickyM.classList.toggle('visible', y > 600 && !nearAgenda);
 }, { passive: true });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+/* Reveal on scroll */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* FAQ accordion */
 document.querySelectorAll('.faq-item').forEach(item => {
-  const question = item.querySelector('.faq-question');
-  question.addEventListener('click', () => {
-    const wasActive = item.classList.contains('active');
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const was = item.classList.contains('active');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!wasActive) item.classList.add('active');
+    if (!was) item.classList.add('active');
   });
 });
 
-const VSL_ID = 'REEMPLAZAR_ID_VIDEO';
-const vslTrigger = document.getElementById('vsl-trigger');
-const vslContainer = document.getElementById('vsl-container');
-vslTrigger.addEventListener('click', () => {
-  if (VSL_ID === 'REEMPLAZAR_ID_VIDEO') {
-    alert('El video del VSL todavía no está cargado. Reemplazá VSL_ID en el código con el ID de YouTube de tu video cuando lo tengas.');
-    return;
-  }
-  const iframe = document.createElement('iframe');
-  iframe.className = 'vsl-iframe';
-  iframe.src = `https://www.youtube.com/embed/${VSL_ID}?autoplay=1&rel=0&modestbranding=1`;
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen = true;
-  vslContainer.innerHTML = '';
-  vslContainer.appendChild(iframe);
-});
+/* 3D tilt on covers (desktop pointers only) */
+if (window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.tilt').forEach(el => {
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.03)`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
 
-const modal = document.getElementById('video-modal');
-const modalContent = document.getElementById('modal-content');
-const modalClose = document.getElementById('modal-close');
-const modalIframe = document.getElementById('modal-iframe');
+/* Video modal */
+const videoModal = document.getElementById('video-modal');
+const videoIframe = document.getElementById('video-iframe');
 
-document.querySelectorAll('.case-video-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const videoId = btn.dataset.video;
-    modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    modalContent.classList.remove('horizontal');
-    modal.classList.add('active');
+document.querySelectorAll('.caso-video').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    videoIframe.src = `https://www.youtube.com/embed/${btn.dataset.video}?autoplay=1&rel=0`;
+    videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 });
 
-function closeModal() {
-  modal.classList.remove('active');
-  modalIframe.src = '';
+function closeVideo() {
+  videoModal.classList.remove('active');
+  videoIframe.src = '';
   document.body.style.overflow = '';
 }
 
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.getElementById('video-close').addEventListener('click', closeVideo);
+videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideo(); });
 
+/* Lightbox */
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-const lightboxClose = document.getElementById('lightbox-close');
 
-document.querySelectorAll('.case-image').forEach(imgWrap => {
-  imgWrap.style.cursor = 'zoom-in';
-  imgWrap.addEventListener('click', (e) => {
-    if (e.target.closest('.case-video-btn')) return;
-    const src = imgWrap.dataset.img;
-    const alt = imgWrap.dataset.alt;
-    if (src) {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || '';
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+document.querySelectorAll('.caso-img').forEach(w => {
+  w.addEventListener('click', () => {
+    lightboxImg.src = w.dataset.img;
+    lightboxImg.alt = w.dataset.alt || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
 });
 
@@ -2317,43 +2249,86 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', closeLightbox);
 
+/* Lead capture modal */
+const leadModal = document.getElementById('lead-modal');
+const leadForm = document.getElementById('lead-form');
+const leadFormView = document.getElementById('lead-form-view');
+const leadSuccess = document.getElementById('lead-success');
+const leadSubmit = document.getElementById('lead-submit');
+
+document.getElementById('open-lead').addEventListener('click', () => {
+  leadModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('lead-name').focus(), 300);
+});
+
+function closeLead() {
+  leadModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lead-close').addEventListener('click', closeLead);
+leadModal.addEventListener('click', (e) => { if (e.target === leadModal) closeLead(); });
+
+leadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('lead-name').value.trim();
+  const email = document.getElementById('lead-email').value.trim();
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    leadForm.reportValidity();
+    return;
+  }
+  leadSubmit.disabled = true;
+  leadSubmit.style.opacity = '0.6';
+
+  if (SUPABASE_URL.startsWith('https://')) {
+    try {
+      await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ name, email, resource: 'el-sistema', source: 'landing' })
+      });
+    } catch (err) { /* la descarga no se bloquea si falla el registro */ }
+  }
+
+  leadFormView.style.display = 'none';
+  leadSuccess.style.display = 'block';
+
+  const a = document.createElement('a');
+  a.href = '/recursos/EL-SISTEMA-DUO.pdf';
+  a.download = 'EL-SISTEMA-DUO.pdf';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+
+/* Esc closes everything */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    if (modal.classList.contains('active')) closeModal();
+    if (videoModal.classList.contains('active')) closeVideo();
     if (lightbox.classList.contains('active')) closeLightbox();
+    if (leadModal.classList.contains('active')) closeLead();
   }
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
+/* Smooth anchors */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) {
       e.preventDefault();
-      const offset = 80;
-      const targetPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 76, behavior: 'smooth' });
     }
   });
 });
 </script>
-<a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20web%20y%20quiero%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20trabajar%20mi%20publicidad%20en%20Meta%20Ads."
-   target="_blank" rel="noopener"
-   class="wa-float" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 01-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.42 9.42 0 01-1.45-5.03c0-5.21 4.25-9.45 9.47-9.45 2.53 0 4.9.99 6.69 2.77a9.4 9.4 0 012.77 6.69c0 5.21-4.25 9.45-9.46 9.45zm8.05-17.5A11.36 11.36 0 0012.04.5C5.77.5.67 5.6.67 11.87c0 2.01.52 3.97 1.52 5.7L.57 23.5l6.07-1.59a11.34 11.34 0 005.4 1.38h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.9-3.33-8.05z"/>
-  </svg>
-</a>
-<style>
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:95;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .3s ease,box-shadow .3s ease;}
-.wa-float svg{width:32px;height:32px;color:#fff;}
-.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.5);}
-.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wa-ripple 2.2s ease-out infinite;}
-@keyframes wa-ripple{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.5);opacity:0;}}
-@media (max-width:767px){.wa-float{bottom:88px;right:16px;width:54px;height:54px;}.wa-float svg{width:28px;height:28px;}}
-</style>
-  
+
 </body>
 </html>
