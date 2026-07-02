@@ -1477,12 +1477,6 @@ body::before {
 }
 
 /* ── Marca DÚO (4 cuadros) ── */
-.duo-mark { position: relative; width: 22px; height: 19px; flex-shrink: 0; display: inline-block; }
-.duo-mark i { position: absolute; width: 8px; height: 8px; border-radius: 1.5px; }
-.duo-mark .g1 { top: 0; left: 0; background: var(--gold); }
-.duo-mark .g2 { top: 0; left: 11px; background: var(--gold); }
-.duo-mark .o1 { top: 11px; left: 4px; background: var(--ember); }
-.duo-mark .o2 { top: 11px; left: 15px; background: var(--ember); }
 
 /* ── Hero editorial ── */
 .hero-frame { position: relative; max-width: 384px; margin: 0 auto; }
@@ -1522,11 +1516,6 @@ body::before {
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
   animation: float 6s ease-in-out infinite;
 }
-.duo-stamp .duo-mark { width: 26px; height: 22px; }
-.duo-stamp .duo-mark i { width: 9px; height: 9px; }
-.duo-stamp .duo-mark .g2 { left: 13px; }
-.duo-stamp .duo-mark .o1 { top: 13px; left: 5px; }
-.duo-stamp .duo-mark .o2 { top: 13px; left: 18px; }
 .duo-stamp span {
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
@@ -1551,49 +1540,48 @@ body::before {
 }
 @media (max-width: 1023px) { .hero-side-label { display: none; } }
 
-/* ──  animado (prueba social) ── */
-.embudo { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; position: relative; }
-.embudo::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 22%;
-  transform: translate(-50%, -50%);
-  width: 460px; height: 460px;
-  background: radial-gradient(circle, rgba(198, 241, 53, 0.06), transparent 68%);
-  pointer-events: none;
-}
-.embudo-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-@media (min-width: 860px) { .embudo-grid { grid-template-columns: 0.9fr 1.1fr; gap: 60px; } }
-.embudo-canvas-wrap { position: relative; aspect-ratio: 1 / 1; max-width: 340px; width: 100%; margin: 0 auto; }
-.embudo-canvas-wrap canvas { width: 100%; height: 100%; display: block; cursor: pointer; touch-action: manipulation; }
-.embudo-tap { text-align: center; font-size: 11px; color: var(--text-3); margin-top: 12px; font-weight: 500; }
-.embudo-info h2 { margin-bottom: 16px; }
-.embudo-info p { margin-bottom: 24px; max-width: 460px; }
-.embudo-info p strong { color: var(--text); font-weight: 700; }
-.embudo-badge {
+/* ── Mini embudo U (hero) ── */
+.ufunnel {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 13px 22px 13px 15px;
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  margin-bottom: 20px;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
 }
-.embudo-badge b { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 900; color: var(--text); display: block; line-height: 1.15; }
-.embudo-badge span { font-size: 11.5px; color: var(--text-3); }
-.embudo-live { display: flex; align-items: baseline; gap: 12px; }
-.embudo-live b { font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 5vw, 42px); font-weight: 900; color: var(--lime); line-height: 1; font-variant-numeric: tabular-nums; }
-.embudo-live span { font-size: 12px; color: var(--text-3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; max-width: 130px; line-height: 1.35; }
+.ufunnel::after {
+  content: '';
+  position: absolute;
+  bottom: -22px; left: 24px;
+  width: 70px; height: 44px;
+  background: radial-gradient(ellipse, rgba(198, 241, 53, 0.14), transparent 70%);
+  pointer-events: none;
+}
+.ufunnel canvas { width: 62px; height: 72px; display: block; position: relative; z-index: 1; }
+.ufunnel-t { position: relative; z-index: 1; }
+.ufunnel-t b {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--lime);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 3px;
+}
+.ufunnel-t span {
+  display: block;
+  font-size: 10px;
+  color: var(--text-3);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
 
 /* ── Preview Notion ── */
 .notion-prev { background: #1A1A1A; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5); width: 100%; }
@@ -1733,6 +1721,13 @@ body::before {
         <div class="hero-micro">
           <span class="dot"></span>
           <span>30 min por Meet · Diagnóstico inicial</span>
+        </div>
+        <div class="ufunnel" role="img" aria-label="Embudo DÚO captando leads en tiempo real">
+          <canvas id="ufunnel-c" aria-hidden="true"></canvas>
+          <div class="ufunnel-t">
+            <b id="ufunnel-n">0</b>
+            <span>Leads entrando<br>al sistema DÚO</span>
+          </div>
         </div>
       </div>
 
@@ -2423,127 +2418,124 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 }
 
-/* Embudo animado — la Ú de DÚO que convierte tráfico en leads */
+/* Mini embudo U — la U del logo DÚO captando leads (hero) */
 (function () {
-  const canvas = document.getElementById('embudo-canvas');
+  const canvas = document.getElementById('ufunnel-c');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const countEl = document.getElementById('-count');
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W = 0, H = 0, parts = [], converted = 0, running = false, raf = null;
+  const countEl = document.getElementById('ufunnel-n');
+  // Canvas chico y sutil: anima siempre (el resto de la página sí respeta reduced-motion)
+
+  // Espacio lógico 100 × 116 (misma proporción que el canvas 62×72)
+  const LW = 100, LH = 116;
+  // Geometría de la U del logo: brazos 32-46 y 62-76, boca 46-62, base en y=76
+  const ARM_L = 32, ARM_LI = 46, ARM_RI = 62, ARM_R = 76, ARM_TOP = 34;
+  const CX = 54, BOWL_Y = 76, R_OUT = 22, R_IN = 8;
+  const GOLD = '#F5A533', ORANGE = '#EE7530', WHITE = '#FAFAF8', LIME = '#C6F135';
+
+  let parts = [], count = 0, running = false, raf = null;
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const r = canvas.getBoundingClientRect();
-    W = r.width; H = r.height;
-    canvas.width = Math.round(W * dpr);
-    canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  // Semi-ancho del canal para una altura normalizada yn (/U)
-  function halfW(yn) {
-    const top = 0.40, neck = 0.055, yTop = 0.14, yNeck = 0.82;
-    if (yn <= yTop) return top;
-    if (yn >= yNeck) return neck;
-    return top - (top - neck) * ((yn - yTop) / (yNeck - yTop));
+    canvas.width = Math.round(r.width * dpr);
+    canvas.height = Math.round(r.height * dpr);
+    ctx.setTransform((r.width * dpr) / LW, 0, 0, (r.height * dpr) / LH, 0, 0);
   }
 
   function spawn(n) {
     for (let i = 0; i < n; i++) {
       parts.push({
-        xn: 0.5 + (Math.random() - 0.5) * 0.72,
-        yn: -0.04 - Math.random() * 0.12,
-        v: 0.0042 + Math.random() * 0.0045,
-        sz: 2 + Math.random() * 2.4,
-        c: Math.random() < 0.5 ? '#C6F135' : '#F5A623'
+        x: 38 + Math.random() * 32,
+        y: -6 - Math.random() * 34,
+        v: 0.5 + Math.random() * 0.42,
+        w: Math.random() * Math.PI * 2,
+        sz: 2.4 + Math.random() * 1.5,
+        c: Math.random() < 0.62 ? LIME : GOLD
       });
     }
   }
 
-  function drawFunnel() {
-    ctx.clearRect(0, 0, W, H);
-    const cx = W * 0.5, steps = 44;
-    // paredes del 
-    ctx.lineWidth = Math.max(2.2, W * 0.013);
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = 'rgba(198, 241, 53, 0.5)';
-    for (const side of [-1, 1]) {
-      ctx.beginPath();
-      for (let i = 0; i <= steps; i++) {
-        const yn = 0.14 + (i / steps) * (0.94 - 0.14);
-        const x = cx + side * halfW(yn) * W;
-        const y = yn * H;
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    }
-    // acento de la Ú (´)
-    ctx.strokeStyle = 'rgba(245, 166, 35, 0.9)';
-    ctx.lineWidth = Math.max(2.6, W * 0.017);
-    ctx.beginPath();
-    ctx.moveTo(cx + W * 0.015, H * 0.11);
-    ctx.lineTo(cx + W * 0.12, H * 0.02);
-    ctx.stroke();
-    // brillo del cuello (donde convierte)
-    const g = ctx.createRadialGradient(cx, H * 0.88, 0, cx, H * 0.88, W * 0.14);
-    g.addColorStop(0, 'rgba(198, 241, 53, 0.28)');
+  function drawLogo() {
+    // brillo suave en la boca de la U
+    const g = ctx.createRadialGradient(CX, 66, 0, CX, 66, 26);
+    g.addColorStop(0, 'rgba(198, 241, 53, 0.16)');
     g.addColorStop(1, 'rgba(198, 241, 53, 0)');
     ctx.fillStyle = g;
-    ctx.fillRect(cx - W * 0.14, H * 0.74, W * 0.28, H * 0.26);
+    ctx.fillRect(CX - 26, 40, 52, 52);
+    // la U blanca del logo
+    ctx.fillStyle = WHITE;
+    ctx.beginPath();
+    ctx.moveTo(ARM_L, ARM_TOP);
+    ctx.lineTo(ARM_L, BOWL_Y);
+    ctx.arc(CX, BOWL_Y, R_OUT, Math.PI, 0, true);
+    ctx.lineTo(ARM_R, ARM_TOP);
+    ctx.lineTo(ARM_RI, ARM_TOP);
+    ctx.lineTo(ARM_RI, BOWL_Y);
+    ctx.arc(CX, BOWL_Y, R_IN, 0, Math.PI, false);
+    ctx.lineTo(ARM_LI, ARM_TOP);
+    ctx.closePath();
+    ctx.fill();
+    // los 4 cuadros del logo (dorado arriba, naranja en diagonal)
+    ctx.fillStyle = GOLD;
+    ctx.fillRect(20, 3, 13, 13);
+    ctx.fillRect(50, 3, 13, 13);
+    ctx.fillStyle = ORANGE;
+    ctx.fillRect(33, 16, 13, 13);
+    ctx.fillRect(63, 16, 13, 13);
+  }
+
+  function drawParts() {
+    for (const p of parts) { ctx.fillStyle = p.c; ctx.fillRect(p.x - p.sz / 2, p.y - p.sz / 2, p.sz, p.sz); }
   }
 
   function tick() {
-    drawFunnel();
+    ctx.clearRect(0, 0, LW, LH);
     for (const p of parts) {
-      p.yn += p.v;
-      const hw = halfW(Math.max(0, p.yn));
-      const off = p.xn - 0.5;
-      if (Math.abs(off) > hw) p.xn = 0.5 + Math.sign(off) * hw;
-      const x = p.xn * W, y = p.yn * H;
-      ctx.fillStyle = p.c;
-      ctx.fillRect(x - p.sz / 2, y - p.sz / 2, p.sz, p.sz);
-      if (p.yn > 0.94) { converted++; p.yn = -0.04 - Math.random() * 0.1; p.xn = 0.5 + (Math.random() - 0.5) * 0.72; }
+      p.y += p.v;
+      p.w += 0.06;
+      p.x += Math.sin(p.w) * 0.14;
+      // los brazos de la U embudan los píxeles hacia la boca
+      if (p.y > 22) {
+        const t = Math.min(1, (p.y - 22) / 16);
+        const lo = 38 + (ARM_LI + 1.8 - 38) * t;
+        const hi = 70 + (ARM_RI - 1.8 - 70) * t;
+        if (p.x < lo) p.x = lo;
+        if (p.x > hi) p.x = hi;
+      }
+      // absorbido dentro de la U → cuenta y vuelve a entrar
+      if (p.y > BOWL_Y + 2) {
+        count++;
+        p.y = -6 - Math.random() * 30;
+        p.x = 38 + Math.random() * 32;
+        p.v = 0.5 + Math.random() * 0.42;
+      }
     }
-    if (countEl) countEl.textContent = converted.toLocaleString('es-BO');
+    drawParts();  // píxeles detrás…
+    drawLogo();   // …la U encima: se los "traga"
+    if (countEl) countEl.textContent = count.toLocaleString('es-BO');
     raf = requestAnimationFrame(tick);
   }
 
-  function drawStatic() {
-    resize();
-    if (parts.length === 0) spawn(34);
-    for (const p of parts) {
-      p.yn = Math.random() * 0.9;
-      p.xn = 0.5 + (Math.random() - 0.5) * halfW(p.yn) * 2;
-    }
-    converted = 428;
-    drawFunnel();
-    for (const p of parts) { ctx.fillStyle = p.c; ctx.fillRect(p.xn * W - p.sz / 2, p.yn * H - p.sz / 2, p.sz, p.sz); }
-    if (countEl) countEl.textContent = converted.toLocaleString('es-BO');
-  }
-
   function start() {
-    if (reduce) { drawStatic(); return; }
     if (running) return;
     running = true;
     resize();
-    if (parts.length === 0) spawn(46);
+    if (parts.length === 0) spawn(11);
     tick();
   }
   function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
 
   let rt;
-  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (reduce) drawStatic(); else if (running) resize(); }, 150); });
-  canvas.addEventListener('click', () => { if (reduce) return; start(); if (parts.length < 140) spawn(14); });
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (running) resize(); }, 150); });
 
-  // Arranca cuando entra en viewport; con respaldos por si el observer no dispara.
+  // El hero es lo primero visible: arranca ya, y pausa al salir de pantalla
+  start();
   if ('IntersectionObserver' in window) {
     new IntersectionObserver((es) => {
       es.forEach(e => { if (e.isIntersecting) start(); else stop(); });
-    }, { threshold: 0.15 }).observe(canvas);
+    }, { threshold: 0.1 }).observe(canvas);
   }
-  window.addEventListener('scroll', () => start(), { passive: true, once: true });
-  window.addEventListener('load', () => setTimeout(start, 500));
 })();
 
 /* Video modal */
