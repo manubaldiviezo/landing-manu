@@ -1629,9 +1629,34 @@ body::before {
 .rec-card.v .rec-body { padding: 24px 24px 28px; }
 .rec-card.v .rec-body .btn { width: 100%; }
 
-/* ── GPT avatar con marca DÚO ── */
-.gpt-ava { background: var(--bg-3); border: 1px solid var(--line); }
-.gpt-ava .duo-mark { transform: scale(0.66); }
+/* ── Iconos personalizados DÚO ── */
+.duo-stamp-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.gpt-ava {
+  width: 28px;
+  height: 28px;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gpt-ava-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* ── WhatsApp float ── */
 .wa-float {
@@ -1714,7 +1739,7 @@ body::before {
       <div class="hero-visual">
         <div class="hero-frame">
           <span class="duo-stamp">
-            <span class="duo-mark"><i class="g1"></i><i class="g2"></i><i class="o1"></i><i class="o2"></i></span>
+            <img src="/images/duo-icon.png" alt="DÚO Marketing" class="duo-stamp-logo">
             <span>DÚO<br>Marketing</span>
           </span>
           <span class="hero-side-label">Estratega Digital · Bolivia</span>
@@ -2021,7 +2046,9 @@ body::before {
       <div class="rec-card free-card reveal">
         <div class="gpt-preview">
           <div class="gpt-head">
-            <span class="gpt-ava"><span class="duo-mark"><i class="g1"></i><i class="g2"></i><i class="o1"></i><i class="o2"></i></span></span>
+            <span class="gpt-ava">
+              <img src="/images/duo-icon.png" alt="DÚO" class="gpt-ava-logo">
+            </span>
             <div>
               <div class="gpt-name">Agente Estratega | DÚO</div>
               <div class="gpt-status">● en línea</div>
@@ -2359,7 +2386,7 @@ const agendaSection = document.getElementById('agenda');
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
-  header.classList.toggle('scrolled', y > 10);
+  if (header) header.classList.toggle('scrolled', y > 10);
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
   const nearAgenda = agendaSection.getBoundingClientRect().top < window.innerHeight * 0.5;
