@@ -3235,19 +3235,6 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.fill();
     ctx.restore();
 
-    // Sombra interna sutil para separar visualmente los brazos.
-    ctx.save();
-    ctx.globalAlpha = 0.42;
-    ctx.strokeStyle = 'rgba(11, 11, 13, 0.68)';
-    ctx.lineWidth = 2.8;
-    ctx.lineCap = 'round';
-
-    ctx.beginPath();
-    ctx.moveTo(90, 91);
-    ctx.lineTo(90, 136);
-    ctx.stroke();
-    ctx.restore();
-
     // Cuadros superiores sólidos con brillo suave. Los naranjas quedan cerca y alineados a la U.
     squares.forEach((sq, index) => {
       const p = squarePulse[index];
