@@ -11,11 +11,11 @@
 <meta property="og:title" content="Manu Baldiviezo · Estratega Digital | DÚO">
 <meta property="og:description" content="Deja de pautar a ciegas. Vende con un sistema: estrategia, anuncios y contenido que convierten.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://manuads.vercel.app">
+<meta property="og:url" content="https://www.manubaldiviezo.lat">
 <meta property="og:image" content="/images/manu-baldiviezo-perfil.jpg">
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="canonical" href="https://manuads.vercel.app">
+<link rel="canonical" href="https://www.manubaldiviezo.lat">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -814,7 +814,7 @@ section { padding: 92px 0; position: relative; }
   gap: 18px;
 }
 
-@media (min-width: 900px) { .servicios-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .servicios-grid { grid-template-columns: 1.16fr 1fr 1fr; align-items: start; } }
 
 .servicio {
   background: var(--card);
@@ -829,7 +829,28 @@ section { padding: 92px 0; position: relative; }
 
 .servicio:hover { transform: translateY(-5px); background: var(--card-hover); }
 
-.servicio.destacado { border-color: var(--lime-line); background: linear-gradient(180deg, rgba(198, 241, 53, 0.055) 0%, var(--card) 40%); }
+.servicio.destacado {
+  border-color: var(--lime-line);
+  background: linear-gradient(180deg, rgba(198, 241, 53, 0.055) 0%, var(--card) 40%);
+  box-shadow: 0 0 0 1px rgba(198, 241, 53, 0.22), 0 14px 48px rgba(198, 241, 53, 0.10);
+}
+
+.servicio-sub {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--lime);
+  line-height: 1.5;
+  margin: -6px 0 12px;
+}
+
+.servicios-riesgo {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-3);
+  max-width: 560px;
+  margin: 30px auto 0;
+  line-height: 1.6;
+}
 
 .servicio-badge {
   position: absolute;
@@ -1837,13 +1858,13 @@ body::before {
       <div>
         <span class="eyebrow">Agencia de Marketing Digital</span>
         <h1>Deja de pautar a ciegas. <span class="lime">Vende con estrategia</span></h1>
-        <p class="hero-sub">Estrategia, anuncios y automatización con IA que convierten Meta Ads en tu <strong>en tu sistema de ventas</strong> — con datos claros y medibles.</p>
+        <p class="hero-sub">Estrategia, anuncios y automatización con IA que convierten Meta Ads en tu <strong>sistema de ventas</strong> — con datos claros y medibles.</p>
         <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo oportunidades hacia el embudo">
         <canvas id="ufunnel-c" aria-hidden="true"></canvas>
         </div>
         <div class="hero-ctas">
           <a href="#agenda" class="btn btn-lime">
-            Agendar reunión
+            Agendar reunión de diagnóstico
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="#recursos" class="btn btn-ghost">Recursos gratis</a>
@@ -1878,12 +1899,12 @@ body::before {
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
-    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +6 meses</span>
+    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +7 meses</span>
     <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
     <span class="marquee-item"><b>5</b> países en LATAM</span>
     <span class="marquee-item"><b>+5</b> años creando anuncios</span>
     <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
-    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +6 meses</span>
+    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +7 meses</span>
     <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
     <span class="marquee-item"><b>5</b> países en LATAM</span>
     <span class="marquee-item"><b>+5</b> años creando anuncios</span>
@@ -1901,6 +1922,42 @@ body::before {
   </div>
 </section>
 
+<section id="metodo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El método DÚO</span>
+      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
+    </div>
+
+    <div class="metodo-grid">
+      <div class="pilar reveal">
+        <span class="pilar-num">/01</span>
+        <h3>Oferta</h3>
+        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/02</span>
+        <h3>Estrategia</h3>
+        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/03</span>
+        <h3>Comunicación</h3>
+        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/04</span>
+        <h3>Medición</h3>
+        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
+      </div>
+    </div>
+
+    <div class="metodo-footer reveal">
+      <p>Cuando las cuatro están alineadas, tus anuncios dejan de ser piezas sueltas y trabajan como un sistema de ventas.</p>
+    </div>
+  </div>
+</section>
+  
 <section class="casos" id="resultados">
   <div class="container">
     <div class="sec-head reveal">
@@ -2033,11 +2090,13 @@ body::before {
     <div class="servicios-grid">
 
       <div class="servicio destacado reveal">
-        <span class="servicio-badge">Más solicitado</span>
+        <span class="servicio-badge">Servicio principal</span>
         <span class="servicio-tag">Agencia · Done for you</span>
         <h3>Gestión de Meta Ads</h3>
-        <p class="servicio-desc">Tu publicidad de punta a punta: nosotros ejecutamos, tú ves los reportes y las ventas.</p>
+        <p class="servicio-sub">Para negocios que quieren delegar su publicidad a un sistema completo</p>
+        <p class="servicio-desc">Estrategia, anuncios, optimización diaria y reportes en lenguaje de negocio. Vos vendés, yo hago que te lleguen clientes.</p>
         <ul class="servicio-list">
+          <li>Mapa de Rentabilidad inicial: definimos juntos cuánto te cuesta ganar un cliente y qué retorno necesitás</li>
           <li>Estrategia digital según tu oferta y etapa</li>
           <li>Estrategia de contenido para pauta</li>
           <li>Guionización y dirección creativa</li>
@@ -2047,15 +2106,16 @@ body::before {
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Inversión mensual</div>
-          <div class="servicio-price">Desde $200 <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs1950</span></div>
+          <div class="servicio-price">Desde $200 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.950 mensual</span></div>
           <div class="servicio-note">El pago de publicidad en Meta, es aparte.</div>
-          <a href="#agenda" class="btn btn-lime">Agendar reunión gratis</a>
+          <a href="#agenda" class="btn btn-lime">Agendar diagnóstico gratis</a>
         </div>
       </div>
 
       <div class="servicio reveal">
         <span class="servicio-tag">Asesoría · 1 a 1 por Meet</span>
-        <h3>Asesoría Estratégica</h3>
+        <h3>Asesoría 1:1</h3>
+        <p class="servicio-sub">Para dueños que gestionan sus propios anuncios y quieren dirección experta</p>
         <p class="servicio-desc">Te enseño la metodología DÚO completa, aplicada a tu negocio, para que la ejecutes con criterio.</p>
         <ul class="servicio-list">
           <li>EL SISTEMA de campañas explicado a fondo</li>
@@ -2065,7 +2125,7 @@ body::before {
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Modalidad</div>
-          <div class="servicio-price">2 Sesiones en vivo por $75</div>
+          <div class="servicio-price">$75 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 750 · 2 sesiones</span></div>
           <div class="servicio-note">Cupos limitados por semana.</div>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20Estrat%C3%A9gica%201%3A1*%20por%20Meet." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
         </div>
@@ -2073,7 +2133,8 @@ body::before {
 
       <div class="servicio reveal">
         <span class="servicio-tag">Web · Páginas de captura</span>
-        <h3>Landing Pages</h3>
+        <h3>Landing Pages que convierten</h3>
+        <p class="servicio-sub">Para campañas que necesitan una página enfocada en una sola acción</p>
         <p class="servicio-desc">Páginas como esta: diseñadas para captar leads y vender, listas para tus campañas.</p>
         <ul class="servicio-list">
           <li>Diseño profesional a tu marca</li>
@@ -2083,50 +2144,94 @@ body::before {
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Inversión única</div>
-          <div class="servicio-price">Desde $150 <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.450</span></div>
+          <div class="servicio-price">Desde $150 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.450</span></div>
           <div class="servicio-note">Entrega rápida, dominio aparte.</div>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-ghost">Quiero mi página</a>
         </div>
       </div>
     </div>
+
+    <p class="servicios-riesgo reveal">¿No sabés cuál necesitás? Agendá la reunión de diagnóstico: en 30 minutos te digo con datos qué le conviene a tu negocio — aunque no trabajemos juntos.</p>
   </div>
 </section>
-<section id="metodo">
+<section id="agenda">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">El método DÚO</span>
-      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
+      <div class="agenda-micro">
+        <span class="dot"></span>
+        <span>Agenda abierta esta semana</span>
+      </div>
+      <h2>Tu próxima campaña no debería ser <span class="lime">otra prueba al azar</span></h2>
+      <p>30 minutos · Sin compromiso · Te llevás claridad aunque no trabajemos juntos</p>
+      <p style="margin-top: 10px; font-weight: 600; color: var(--text);">En la reunión no vendemos: <span class="lime">diagnosticamos.</span></p>
     </div>
 
-    <div class="metodo-grid">
-      <div class="pilar reveal">
-        <span class="pilar-num">/01</span>
-        <h3>Oferta</h3>
-        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/02</span>
-        <h3>Estrategia</h3>
-        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/03</span>
-        <h3>Comunicación</h3>
-        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/04</span>
-        <h3>Medición</h3>
-        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
-      </div>
-    </div>
-
-    <div class="metodo-footer reveal">
-      <p>Cuando las cuatro están alineadas, tus anuncios dejan de ser piezas sueltas y trabajan como un sistema de ventas.</p>
+    <div class="calendly-wrap reveal">
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101013&text_color=fafaf8&primary_color=c6f135"></div>
     </div>
   </div>
 </section>
-  
+
+<section class="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Lo que seguro <span class="lime">te estás preguntando</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Qué pasa exactamente en la reunión gratuita?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Revisamos tu negocio (qué vendes, cómo y a quién), te muestro cómo trabajamos compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Cuál es la diferencia entre la agencia y la asesoría 1:1?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por ti: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que tú o tu equipo la ejecuten. ¿Quieres delegar? Agencia. ¿Quieres aprender? Asesoría.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Cuánto cuesta trabajar con ustedes?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">El acompañamiento de agencia parte desde $200 USD / Bs 1.950 al mes (la inversión publicitaria va directo a Meta, es aparte). El precio final depende de la inversión en meta y estrategia a implementar. La asesoría 1:1 cuesta $75 USD / Bs 750 (2 sesiones). Las landing pages parten desde $150 USD / Bs 1.450, pago único.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Cómo recibo las guías premium después de comprarlas?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Al tocar el botón de compra se abre un chat de WhatsApp conmigo. Coordinamos el pago por el medio que te quede más cómodo (transferencia, QR, PayPal) y te envío el PDF directamente. Sin plataformas de por medio.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Mi rubro funciona con Meta Ads?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Hemos trabajado con ecommerce de moda, clínicas estéticas, arquitectura, importadoras y gaming. Lo importante no es el rubro: es que tengas algo claro para vender y capacidad de responder consultas. En la reunión te digo con honestidad si tu caso es viable.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>¿Trabajan con clientes fuera de Bolivia?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Sí. Tenemos clientes activos en Chile, Ecuador, Colombia y Argentina. Trabajamos 100% online por Meet, WhatsApp y herramientas compartidas.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="recursos" id="recursos">
   <div class="container">
     <div class="sec-head reveal">
@@ -2282,7 +2387,7 @@ body::before {
             <li>Parámetros para leer cada métrica y decidir</li>
             <li>Historial de decisiones · lista para duplicar</li>
           </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
@@ -2298,88 +2403,11 @@ body::before {
   <div class="web-strip-inner">
     <div>
       <div class="web-strip-text">¿Te gustó esta página? La hicimos nosotros.</div>
-      <div class="web-strip-sub">Páginas de captura profesionales desde $150 USD / Bs 1.500</div>
+      <div class="web-strip-sub">Páginas de captura profesionales desde $150 USD / Bs 1.450</div>
     </div>
     <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20web%20y%20quiero%20una%20*landing%20page*%20as%C3%AD%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn">Quiero la mía</a>
   </div>
 </div>
-
-<section id="agenda">
-  <div class="container">
-    <div class="sec-head reveal">
-      <div class="agenda-micro">
-        <span class="dot"></span>
-        <span>Agenda abierta esta semana</span>
-      </div>
-      <h2>Tu próxima campaña no debería ser <span class="lime">otra prueba al azar</span></h2>
-      <p>30 minutos, 1:1 por Meet, 100% gratis. Revisamos tu caso y te decimos con honestidad si podemos ayudarte.</p>
-    </div>
-
-    <div class="calendly-wrap reveal">
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101013&text_color=fafaf8&primary_color=c6f135"></div>
-    </div>
-  </div>
-</section>
-
-<section class="faq">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Lo que seguro <span class="lime">te estás preguntando</span></h2>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Qué pasa exactamente en la reunión gratuita?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Revisamos tu negocio (qué vendes, cómo y a quién), te muestro cómo trabajamos compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Cuál es la diferencia entre la agencia y la asesoría 1:1?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por ti: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que tú o tu equipo la ejecuten. ¿Quieres delegar? Agencia. ¿Quieres aprender? Asesoría.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Cuánto cuesta trabajar con ustedes?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">El acompañamiento de agencia parte desde $200 USD / Bs 1.850 al mes (la inversión publicitaria va directo a Meta, es aparte). El precio final depende de la inversión en meta y estrategia a implementar. Las landing pages parten desde $150 USD / Bs 1.500, pago único.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Cómo recibo las guías premium después de comprarlas?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Al tocar el botón de compra se abre un chat de WhatsApp conmigo. Coordinamos el pago por el medio que te quede más cómodo (transferencia, QR, PayPal) y te envío el PDF directamente. Sin plataformas de por medio.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Mi rubro funciona con Meta Ads?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Hemos trabajado con ecommerce de moda, clínicas estéticas, arquitectura, importadoras y gaming. Lo importante no es el rubro: es que tengas algo claro para vender y capacidad de responder consultas. En la reunión te digo con honestidad si tu caso es viable.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Trabajan con clientes fuera de Bolivia?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Sí. Tenemos clientes activos en Chile, Ecuador, Colombia y Argentina. Trabajamos 100% online por Meet, WhatsApp y herramientas compartidas.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="container">
