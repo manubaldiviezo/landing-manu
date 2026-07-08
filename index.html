@@ -33,9 +33,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '987679140929122');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=987679140929122&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
   
 <style>
@@ -1864,6 +1861,13 @@ body::before {
 </head>
 <body>
 
+<!-- Meta Pixel Code noscript -->
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=987679140929122&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code noscript -->
+
 <div class="progress" id="progress"></div>
 
 <section class="hero" id="inicio">
@@ -3421,6 +3425,12 @@ const videoIframe = document.getElementById('video-iframe');
 document.querySelectorAll('.caso-video').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
+    trackMetaEvent('ViewContent', {
+      content_name: 'Video testimonio',
+      content_type: 'testimonial_video',
+      video_id: btn.dataset.video,
+      source: 'landing_manu'
+    });
     videoIframe.src = `https://www.youtube.com/embed/${btn.dataset.video}?autoplay=1&rel=0`;
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -3506,6 +3516,13 @@ leadForm.addEventListener('submit', async (e) => {
   leadFormView.style.display = 'none';
   leadSuccess.style.display = 'block';
 
+  trackMetaEvent('Lead', {
+    content_name: 'Descarga EL SISTEMA',
+    content_type: 'lead_magnet',
+    source: 'landing_manu',
+    resource: 'el_sistema'
+  });
+
   const a = document.createElement('a');
   a.href = '/recursos/EL-SISTEMA-DUO.pdf';
   a.download = 'EL-SISTEMA-DUO.pdf';
@@ -3521,6 +3538,116 @@ document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('active')) closeLightbox();
     if (leadModal.classList.contains('active')) closeLead();
   }
+});
+
+/* Meta Pixel events + Calendly */
+function trackMetaEvent(eventName, params = {}) {
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', eventName, params);
+  }
+}
+
+function trackMetaCustomEvent(eventName, params = {}) {
+  if (typeof window.fbq === 'function') {
+    window.fbq('trackCustom', eventName, params);
+  }
+}
+
+function isCalendlyEvent(e) {
+  return e.origin === 'https://calendly.com'
+    && e.data
+    && typeof e.data.event === 'string'
+    && e.data.event.startsWith('calendly.');
+}
+
+/*
+  Calendly envía eventos desde el iframe con window.postMessage().
+  - Click en botones de agenda = intención / visita a agenda.
+  - calendly.event_scheduled = reunión realmente agendada.
+*/
+window.addEventListener('message', function(e) {
+  if (!isCalendlyEvent(e)) return;
+
+  if (e.data.event === 'calendly.profile_page_viewed') {
+    trackMetaCustomEvent('CalendlyProfileViewed', {
+      content_name: 'Calendly cargado',
+      source: 'calendly_embed'
+    });
+  }
+
+  if (e.data.event === 'calendly.event_type_viewed') {
+    trackMetaCustomEvent('CalendlyEventTypeViewed', {
+      content_name: 'Tipo de reunión visto',
+      source: 'calendly_embed'
+    });
+  }
+
+  if (e.data.event === 'calendly.date_and_time_selected') {
+    trackMetaCustomEvent('CalendlyDateSelected', {
+      content_name: 'Seleccionó fecha y hora',
+      source: 'calendly_embed'
+    });
+  }
+
+  if (e.data.event === 'calendly.event_scheduled') {
+    trackMetaEvent('Schedule', {
+      content_name: 'Reunión agendada Calendly',
+      content_type: 'diagnostico_30_min',
+      source: 'calendly_embed'
+    });
+  }
+});
+
+// Clics hacia agenda / Calendly. Esto NO significa reunión agendada.
+document.querySelectorAll('a[href="#agenda"]').forEach(link => {
+  link.addEventListener('click', () => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Click en botón de agenda',
+      content_type: 'agenda_intent',
+      source: 'landing_manu'
+    });
+  });
+});
+
+// Clic para abrir el formulario del recurso gratuito.
+const openLeadButton = document.getElementById('open-lead');
+if (openLeadButton) {
+  openLeadButton.addEventListener('click', () => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Abrió formulario EL SISTEMA',
+      content_type: 'lead_magnet_modal',
+      source: 'landing_manu'
+    });
+  });
+}
+
+// Clics hacia WhatsApp.
+document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+  link.addEventListener('click', () => {
+    trackMetaEvent('Contact', {
+      content_name: 'Click a WhatsApp',
+      source: 'landing_manu'
+    });
+
+    if (link.href.includes('comprar')) {
+      trackMetaEvent('InitiateCheckout', {
+        content_name: 'Guía premium DÚO',
+        content_type: 'digital_product',
+        source: 'landing_manu'
+      });
+    }
+  });
+});
+
+// Clic hacia el GPT / Agente Estratega.
+document.querySelectorAll('a[href*="chatgpt.com/g/"]').forEach(link => {
+  link.addEventListener('click', () => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Click Agente Estratega Digital',
+      content_type: 'gpt_resource',
+      source: 'landing_manu'
+    });
+  });
 });
 
 /* Smooth anchors */
