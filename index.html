@@ -1267,42 +1267,6 @@ section { padding: 92px 0; position: relative; }
 .rec-note p { font-size: 13.5px; line-height: 1.65; }
 .rec-note strong { color: var(--text); font-weight: 600; }
 
-/* ── Web strip ── */
-.web-strip {
-  padding: 0;
-  background: var(--lime);
-}
-
-.web-strip-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 26px var(--pad);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.web-strip-text {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: clamp(16px, 2.2vw, 22px);
-  color: #0B0B0D;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
-
-.web-strip-sub { font-size: 13px; color: rgba(11, 11, 13, 0.7); font-weight: 600; margin-top: 3px; }
-
-.web-strip .btn {
-  background: #0B0B0D;
-  color: var(--lime);
-  flex-shrink: 0;
-}
-
-.web-strip .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(11, 11, 13, 0.4); }
-
 /* ── Agenda ── */
 .agenda-micro {
   display: inline-flex;
@@ -1909,15 +1873,15 @@ body::before {
         <canvas id="ufunnel-c" aria-hidden="true"></canvas>
         </div>
         <div class="hero-ctas">
-          <a href="#agenda" class="btn btn-lime">
-            Agendar reunión de diagnóstico
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime">
+            Escribime por WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
           </a>
-          <a href="#recursos" class="btn btn-ghost">Recursos gratis</a>
+          <a href="#agenda" class="btn btn-ghost">Agendar reunión de diagnóstico</a>
         </div>
         <div class="hero-micro">
           <span class="dot"></span>
-          <span>30 min por Meet · Diagnóstico inicial</span>
+          <span>Contame de tu negocio y te respondo en el día · Sin compromiso</span>
         </div>
       </div>
 
@@ -2253,14 +2217,6 @@ body::before {
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Cómo recibo las guías premium después de comprarlas?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Al tocar el botón de compra se abre un chat de WhatsApp conmigo. Coordinamos el pago por el medio que te quede más cómodo (transferencia, QR, PayPal) y te envío el PDF directamente. Sin plataformas de por medio.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
           <span>¿Mi rubro funciona con Meta Ads?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -2277,183 +2233,6 @@ body::before {
     </div>
   </div>
 </section>
-
-<section class="recursos" id="recursos">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Recursos DÚO</span>
-      <h2>La metodología, <span class="lime">en tus manos</span></h2>
-      <p>Si llegaste desde TikTok o Instagram, esto es para vos. Lo que uso todos los días con clientes, listo para aplicar.</p>
-    </div>
-
-    <div class="rec-sub free reveal">▸ Gratis para seguidores</div>
-
-    <div class="rec-grid">
-
-      <div class="rec-card free-card reveal">
-        <div class="rec-cover tilt">
-          <img src="/images/portada-el-sistema.png" alt="Portada del PDF EL SISTEMA de DÚO" loading="lazy">
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill gratis">Gratis</span>
-            <span class="rec-pill tipo">PDF · Meta Ads</span>
-          </div>
-          <h3>El Sistema</h3>
-          <p>La estructura de 2 campañas con la que gestionamos más de $50.000 USD en Meta Ads — y por qué la mayoría la usa al revés.</p>
-          <ul class="rec-feats">
-            <li>La estructura exacta, paso a paso</li>
-            <li>Por qué la mayoría pauta al revés</li>
-            <li>El método detrás de los casos de arriba</li>
-          </ul>
-          <button class="btn btn-lime" id="open-lead">
-            Descargar gratis
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="rec-card free-card reveal">
-        <div class="gpt-preview">
-          <div class="gpt-head">
-            <span class="gpt-ava">
-              <img src="/images/duo-icon.png?v=2" alt="DÚO" class="gpt-ava-logo">
-            </span>
-            <div>
-              <div class="gpt-name">Agente Estratega | DÚO</div>
-              <div class="gpt-status">● en línea</div>
-            </div>
-          </div>
-          <div class="gpt-msgs">
-            <div class="gpt-msg user">¿Qué contenido publico esta semana para vender más?</div>
-            <div class="gpt-msg bot">Primero definamos tu pilar. ¿Tu objetivo es captar mensajes o venta directa? Te armo la estrategia →</div>
-            <div class="gpt-typing"><i></i><i></i><i></i></div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill gratis">Gratis</span>
-            <span class="rec-pill tipo">GPT · ChatGPT</span>
-          </div>
-          <h3>Agente Estratega Digital</h3>
-          <p>Mi GPT entrenado con la metodología DÚO. Piensa tu estrategia, contenido y anuncios como un estratega — disponible 24/7.</p>
-          <ul class="rec-feats">
-            <li>Entrenado con los frameworks DÚO</li>
-            <li>Potenciado al máximo con las guías premium</li>
-            <li>Gratis con tu cuenta de ChatGPT</li>
-          </ul>
-          <a href="https://chatgpt.com/g/g-68489f37706881918afe718012412a33-duo-agente-estratega-digital" target="_blank" rel="noopener" class="btn btn-ghost">
-            Probar el agente
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rec-sub premium reveal">▸ Guías premium</div>
-
-    <div class="rec-grid trio">
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview">
-          <div class="mini-cover" role="img" aria-label="Portada de la guía Estrategia de Contenido DÚO">
-            <img src="/images/duo-logo-1.png" alt="" class="mc-logo">
-            <div class="mc-title"><span class="g">ESTRATEGIA</span> DE<br>CONTENIDO</div>
-            <div class="mc-div"></div>
-            <div class="mc-eye">Guía Completa · DÚO3X</div>
-            <div class="mc-desc">El paso a paso para una estrategia de contenido que sostiene tus ventas.</div>
-            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 15</span></div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 15</span>
-            <span class="rec-pill tipo">Guía PDF</span>
-          </div>
-          <h3>Estrategia de Contenido DÚO</h3>
-          <p>Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en orgánico y en pauta.</p>
-          <ul class="rec-feats">
-            <li>El árbol de coherencia: pilares, líneas y formatos</li>
-            <li>Investigación de referentes y detonadores virales</li>
-            <li>Cómo identificar ideas ganadoras antes de grabar</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview">
-          <div class="mini-cover" role="img" aria-label="Portada de la guía FÓRMULA DÚO3X de guionización estratégica">
-            <div class="mc-eye">Guía Estratégica · Guionización</div>
-            <div class="mc-title"><span class="g">FÓRMULA<br>DÚO3X</span></div>
-            <div class="mc-sub">Guionización Estratégica</div>
-            <div class="mc-div"></div>
-            <div class="mc-desc">El sistema de 8 pasos para crear guiones que capturan atención y convierten.</div>
-            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 25</span></div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 25</span>
-            <span class="rec-pill tipo">Guía PDF</span>
-          </div>
-          <h3>FÓRMULA DÚO3X</h3>
-          <p>Guionizá con método, no con inspiración. El sistema de 8 pasos para videos que enganchan y venden.</p>
-          <ul class="rec-feats">
-            <li>+20 estructuras narrativas para venta, valor y viralidad</li>
-            <li>+25 estilos de ganchos verbales, visuales y textuales</li>
-            <li>Sirve en orgánico y en pauta · potencia al Agente DÚO</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview center">
-          <div class="notion-prev" role="img" aria-label="Vista previa de la Bitácora 3Q en Notion">
-            <div class="notion-bar"><i></i><i></i><i></i></div>
-            <div class="notion-body">
-              <div class="notion-title"><span class="emoji">📊</span> Bitácora de Campañas</div>
-              <div class="notion-q q1"><b>1 · ¿Qué pasó?</b><span>Entiende mediante analisis de KPIs el resultado actual.</span></div>
-              <div class="notion-q q2"><b>2 · ¿Por qué pasó?</b><span>Mide con variables matemáticas de métricas secundarias.</span></div>
-              <div class="notion-q q3"><b>3 · ¿Qué hacer?</b><span>Pasos accionables de optimización de anuncios.</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 15</span>
-            <span class="rec-pill tipo">Notion</span>
-          </div>
-          <h3>Bitácora 3Q · Optimización</h3>
-          <p>Una plantilla en Notion para entender tus métricas con método y no a ojo, campaña por campaña.</p>
-          <ul class="rec-feats">
-            <li>Metodología 3Q: qué pasó, por qué pasó y qué hacer</li>
-            <li>Parámetros para leer cada métrica y decidir</li>
-            <li>Historial de decisiones · lista para duplicar</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rec-note reveal">
-      <p><strong>El ecosistema DÚO:</strong> las guías te dan la metodología, el <strong>Agente Estratega</strong> te ayuda a ejecutarla 24/7, y en la <strong>Asesoría 1:1</strong> te explico todo el sistema aplicado a tu negocio.</p>
-    </div>
-  </div>
-</section>
-
-<div class="web-strip">
-  <div class="web-strip-inner">
-    <div>
-      <div class="web-strip-text">¿Te gustó esta página? La hicimos nosotros.</div>
-      <div class="web-strip-sub">Páginas de captura profesionales desde $150 USD / Bs 1.450</div>
-    </div>
-    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20web%20y%20quiero%20una%20*landing%20page*%20as%C3%AD%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn">Quiero la mía</a>
-  </div>
-</div>
 
 <footer>
   <div class="container">
@@ -2474,7 +2253,6 @@ body::before {
         <a href="#inicio">Inicio</a>
         <a href="#resultados">Resultados</a>
         <a href="#servicios">Servicios</a>
-        <a href="#recursos">Recursos</a>
         <a href="#agenda">Agendar reunión</a>
       </nav>
     </div>
@@ -2488,10 +2266,10 @@ body::before {
 
 <div class="sticky-m" id="sticky-m">
   <div class="sticky-m-text">
-    <div class="sticky-m-eyebrow">¿Revisamos tu caso?</div>
-    <div class="sticky-m-title">Reunión gratis de 30 min.</div>
+    <div class="sticky-m-eyebrow">¿Meta Ads para tu negocio?</div>
+    <div class="sticky-m-title">Contame tu caso, te respondo hoy.</div>
   </div>
-  <a href="#agenda" class="sticky-m-btn">Agendar</a>
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="sticky-m-btn">Escribime</a>
 </div>
 
 <!-- Video modal -->
@@ -2510,46 +2288,6 @@ body::before {
 </div>
 
 <!-- Lead capture modal -->
-<div class="overlay" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title">
-  <div class="lead-box">
-    <button class="lead-close" id="lead-close" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <div class="lead-cover-side">
-      <img src="/images/portada-el-sistema.png" alt="Portada de EL SISTEMA">
-    </div>
-    <div class="lead-form-side">
-      <div id="lead-form-view">
-        <span class="lead-pill">Recurso gratuito</span>
-        <h3 id="lead-title">Descarga EL SISTEMA</h3>
-        <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en Meta Ads. Dime a dónde te lo envío:</p>
-        <form id="lead-form" novalidate>
-          <div class="lead-field">
-            <label for="lead-name">Tu nombre</label>
-            <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamas?" required autocomplete="name">
-          </div>
-          <div class="lead-field">
-            <label for="lead-email">Tu email</label>
-            <input type="email" id="lead-email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
-          </div>
-          <button type="submit" class="btn btn-lime lead-submit" id="lead-submit">
-            Descargar el PDF ahora
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </button>
-        </form>
-        <p class="lead-privacy">Cero spam. Solo recursos y estrategias que funcionan.</p>
-      </div>
-      <div class="lead-success" id="lead-success">
-        <div class="lead-success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3>¡Listo! Descargando…</h3>
-        <p>Si no inicia sola, tócalo acá abajo. Nos vemos dentro del sistema 🚀</p>
-        <a href="/recursos/EL-SISTEMA-DUO.pdf" download class="btn btn-lime">Descargar EL SISTEMA</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="overlay" id="wa-modal" role="dialog" aria-modal="true" aria-labelledby="wa-title">
   <div class="lead-box wa-box">
@@ -3532,85 +3270,11 @@ function closeLightbox() {
 
 lightbox.addEventListener('click', closeLightbox);
 
-/* Lead capture modal */
-const leadModal = document.getElementById('lead-modal');
-const leadForm = document.getElementById('lead-form');
-const leadFormView = document.getElementById('lead-form-view');
-const leadSuccess = document.getElementById('lead-success');
-const leadSubmit = document.getElementById('lead-submit');
-
-document.getElementById('open-lead').addEventListener('click', () => {
-  leadModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('lead-name').focus(), 300);
-});
-
-function closeLead() {
-  leadModal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('lead-close').addEventListener('click', closeLead);
-leadModal.addEventListener('click', (e) => { if (e.target === leadModal) closeLead(); });
-
-leadForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const name = document.getElementById('lead-name').value.trim();
-  const email = document.getElementById('lead-email').value.trim();
-  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    leadForm.reportValidity();
-    return;
-  }
-  leadSubmit.disabled = true;
-  leadSubmit.style.opacity = '0.6';
-
-  if (SUPABASE_URL.startsWith('https://')) {
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify({ name, email, resource: 'el-sistema', source: 'landing' })
-      });
-    } catch (err) { /* la descarga no se bloquea si falla el registro */ }
-  }
-
-  leadFormView.style.display = 'none';
-  leadSuccess.style.display = 'block';
-
-  // Evento personalizado granular por recurso descargado.
-  trackMetaCustomEvent('DescargaElSistema', {
-    content_name: 'Descarga EL SISTEMA',
-    content_type: 'lead_magnet',
-    source: 'landing_manu',
-    resource: 'el_sistema'
-  });
-  // Evento estándar para optimización de campañas.
-  trackMetaEvent('Lead', {
-    content_name: 'Descarga EL SISTEMA',
-    content_type: 'lead_magnet',
-    source: 'landing_manu',
-    resource: 'el_sistema'
-  });
-
-  const a = document.createElement('a');
-  a.href = '/recursos/EL-SISTEMA-DUO.pdf';
-  a.download = 'EL-SISTEMA-DUO.pdf';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-});
-
 /* Esc closes everything */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (videoModal.classList.contains('active')) closeVideo();
     if (lightbox.classList.contains('active')) closeLightbox();
-    if (leadModal.classList.contains('active')) closeLead();
     if (waModal.classList.contains('active')) cerrarWaModal();
   }
 });
@@ -3690,18 +3354,6 @@ document.querySelectorAll('a[href="#agenda"]').forEach(link => {
     });
   });
 });
-
-// Clic para abrir el formulario del recurso gratuito.
-const openLeadButton = document.getElementById('open-lead');
-if (openLeadButton) {
-  openLeadButton.addEventListener('click', () => {
-    trackMetaEvent('ViewContent', {
-      content_name: 'Abrió formulario EL SISTEMA',
-      content_type: 'lead_magnet_modal',
-      source: 'landing_manu'
-    });
-  });
-}
 
 // Clics hacia WhatsApp — cada intención dispara su propio evento personalizado.
 // Además de un evento estándar (Lead / InitiateCheckout) para que Meta optimice.
@@ -3792,17 +3444,6 @@ waForm.addEventListener('submit', (e) => {
   waForm.reset();
   const win = window.open(url, '_blank', 'noopener');
   if (!win) window.location.href = url; // fallback si el navegador bloquea el popup
-});
-
-// Clic hacia el GPT / Agente Estratega.
-document.querySelectorAll('a[href*="chatgpt.com/g/"]').forEach(link => {
-  link.addEventListener('click', () => {
-    trackMetaEvent('ViewContent', {
-      content_name: 'Click Agente Estratega Digital',
-      content_type: 'gpt_resource',
-      source: 'landing_manu'
-    });
-  });
 });
 
 /* Smooth anchors */
