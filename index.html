@@ -246,7 +246,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 
 /* ── Hero ── */
 .hero {
-  padding-top: 72px;
+  padding-top: 126px;
   padding-bottom: 72px;
   position: relative;
   overflow: hidden;
@@ -254,7 +254,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 
 @media (max-width: 767px) {
   .hero {
-    padding-top: 48px;
+    padding-top: 108px;
   }
 }
 
@@ -828,7 +828,40 @@ section { padding: 92px 0; position: relative; }
   gap: 18px;
 }
 
-@media (min-width: 900px) { .servicios-grid { grid-template-columns: 1.16fr 1fr 1fr; align-items: start; } }
+@media (min-width: 900px) { .servicios-grid { grid-template-columns: 1.16fr 1fr; align-items: start; max-width: 940px; margin: 0 auto; } }
+
+.extras-strip { margin-top: 36px; text-align: center; }
+
+.extras-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+
+.extras-items { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+.extra-chip {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  border: 1px solid var(--line);
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.extra-chip:hover { border-color: var(--lime-line); color: var(--lime); transform: translateY(-2px); }
+
+.pasos-grid { max-width: 920px; margin: 0 auto; }
+@media (min-width: 1024px) { .pasos-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.cta-final { text-align: center; }
+.cta-final .sec-head { margin-bottom: 30px; }
 
 .servicio {
   background: var(--card);
@@ -1266,33 +1299,6 @@ section { padding: 92px 0; position: relative; }
 
 .rec-note p { font-size: 13.5px; line-height: 1.65; }
 .rec-note strong { color: var(--text); font-weight: 600; }
-
-/* ── Agenda ── */
-.agenda-micro {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 16px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--text-2);
-  margin-bottom: 22px;
-}
-
-.calendly-wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: var(--bg-2);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-
-.calendly-inline-widget { min-width: 320px; height: 720px; width: 100%; }
-@media (max-width: 767px) { .calendly-inline-widget { height: 700px; } }
 
 /* ── FAQ ── */
 .faq { background: var(--bg-2); border-top: 1px solid var(--line-soft); }
@@ -1857,6 +1863,23 @@ body::before {
 </noscript>
 <!-- End Meta Pixel Code noscript -->
 
+<header id="header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="DÚO - inicio">
+      <img src="/images/duo-icon.png?v=2" alt="DÚO Marketing">
+      <span class="logo-sep"></span>
+      <span class="logo-role">Manu Baldiviezo<br>Estratega Digital</span>
+    </a>
+    <nav class="header-nav" aria-label="Navegación principal">
+      <a href="#resultados">Resultados</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="/recursos">Recursos</a>
+    </nav>
+    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="header-cta">Escribime</a>
+  </div>
+</header>
+
 <div class="progress" id="progress"></div>
 
 <section class="hero" id="inicio">
@@ -1877,7 +1900,7 @@ body::before {
             Escribime por WhatsApp
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
           </a>
-          <a href="#agenda" class="btn btn-ghost">Agendar reunión de diagnóstico</a>
+          <a href="#resultados" class="btn btn-ghost">Ver resultados reales</a>
         </div>
         <div class="hero-micro">
           <span class="dot"></span>
@@ -1921,53 +1944,6 @@ body::before {
   </div>
 </div>
 
-<section class="problema">
-  <canvas class="cosmic-canvas problem-cosmos" aria-hidden="true"></canvas>
-  <canvas class="section-funnel-bg" id="section-funnel-bg" aria-hidden="true"></canvas>
-  <div class="container">
-    <div class="problema-inner reveal">
-      <h2>¿Le pagas a Meta por clics… <span class="lime">o por ventas?</span></h2>
-      <p>La diferencia está en saber: qué estrategia seguir, qué comunicar y qué mirar antes de escalar.</p>
-    </div>
-  </div>
-</section>
-
-<section id="metodo">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">El método DÚO</span>
-      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
-    </div>
-
-    <div class="metodo-grid">
-      <div class="pilar reveal">
-        <span class="pilar-num">/01</span>
-        <h3>Oferta</h3>
-        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/02</span>
-        <h3>Estrategia</h3>
-        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/03</span>
-        <h3>Comunicación</h3>
-        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/04</span>
-        <h3>Medición</h3>
-        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
-      </div>
-    </div>
-
-    <div class="metodo-footer reveal">
-      <p>Cuando las cuatro están alineadas, tus anuncios dejan de ser piezas sueltas y trabajan como un sistema de ventas.</p>
-    </div>
-  </div>
-</section>
-  
 <section class="casos" id="resultados">
   <div class="container">
     <div class="sec-head reveal">
@@ -2088,6 +2064,53 @@ body::before {
   </div>
 </section>
 
+<section class="problema">
+  <canvas class="cosmic-canvas problem-cosmos" aria-hidden="true"></canvas>
+  <canvas class="section-funnel-bg" id="section-funnel-bg" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="problema-inner reveal">
+      <h2>¿Le pagas a Meta por clics… <span class="lime">o por ventas?</span></h2>
+      <p>La diferencia está en saber: qué estrategia seguir, qué comunicar y qué mirar antes de escalar.</p>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El método DÚO</span>
+      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
+    </div>
+
+    <div class="metodo-grid">
+      <div class="pilar reveal">
+        <span class="pilar-num">/01</span>
+        <h3>Oferta</h3>
+        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/02</span>
+        <h3>Estrategia</h3>
+        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/03</span>
+        <h3>Comunicación</h3>
+        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/04</span>
+        <h3>Medición</h3>
+        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
+      </div>
+    </div>
+
+    <div class="metodo-footer reveal">
+      <p>Cuando las cuatro están alineadas, tus anuncios dejan de ser piezas sueltas y trabajan como un sistema de ventas.</p>
+    </div>
+  </div>
+</section>
+  
 <section id="servicios">
   <canvas class="cosmic-canvas services-cosmos" aria-hidden="true"></canvas>
   <div class="container">
@@ -2118,7 +2141,7 @@ body::before {
           <div class="servicio-price-label">Inversión mensual</div>
           <div class="servicio-price">Desde $200 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.950 mensual</span></div>
           <div class="servicio-note">El pago de publicidad en Meta, es aparte.</div>
-          <a href="#agenda" class="btn btn-lime">Agendar diagnóstico gratis</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
         </div>
       </div>
 
@@ -2141,44 +2164,48 @@ body::before {
         </div>
       </div>
 
-      <div class="servicio reveal">
-        <span class="servicio-tag">Web · Páginas de captura</span>
-        <h3>Landing Pages que convierten</h3>
-        <p class="servicio-sub">Para campañas que necesitan una página enfocada en una sola acción</p>
-        <p class="servicio-desc">Páginas como esta: diseñadas para captar leads y vender, listas para tus campañas.</p>
-        <ul class="servicio-list">
-          <li>Diseño profesional a tu marca</li>
-          <li>Optimizada para móvil y velocidad</li>
-          <li>Conectada a WhatsApp o agenda</li>
-          <li>Lista para recibir tráfico de pauta</li>
-        </ul>
-        <div class="servicio-foot">
-          <div class="servicio-price-label">Inversión única</div>
-          <div class="servicio-price">Desde $150 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.450</span></div>
-          <div class="servicio-note">Entrega rápida, dominio aparte.</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-ghost">Quiero mi página</a>
-        </div>
+    </div>
+
+    <div class="extras-strip reveal">
+      <span class="extras-label">También hacemos</span>
+      <div class="extras-items">
+        <a class="extra-chip" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Landing pages de venta</a>
+        <a class="extra-chip" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Automatización con IA · WhatsApp y redes</a>
+        <a class="extra-chip" href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Creación de contenido · Agencia DÚO ↗</a>
       </div>
     </div>
 
-    <p class="servicios-riesgo reveal">¿No sabés cuál necesitás? Agendá la reunión de diagnóstico: en 30 minutos te digo con datos qué le conviene a tu negocio — aunque no trabajemos juntos.</p>
+    <p class="servicios-riesgo reveal">¿No sabés cuál necesitás? Escribime: en una conversación te digo con datos qué le conviene a tu negocio — aunque no trabajemos juntos.</p>
   </div>
 </section>
-<section id="agenda">
+<section id="proceso">
   <div class="container">
     <div class="sec-head reveal">
-      <div class="agenda-micro">
-        <span class="dot"></span>
-        <span>Agenda abierta esta semana</span>
-      </div>
-      <h2>Tu próxima campaña no debería ser <span class="lime">otra prueba al azar</span></h2>
-      <p>30 minutos · Sin compromiso · Te llevás claridad aunque no trabajemos juntos</p>
-      <p style="margin-top: 10px; font-weight: 600; color: var(--text);">En la reunión no vendemos: <span class="lime">diagnosticamos.</span></p>
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Sin humo: <span class="lime">así es el proceso</span></h2>
+      <p>Los resultados de arriba no salen de fórmulas mágicas. Salen de un método que se ejecuta y se mide.</p>
     </div>
 
-    <div class="calendly-wrap reveal">
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/duomarketing2024/60min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101013&text_color=fafaf8&primary_color=c6f135"></div>
+    <div class="metodo-grid pasos-grid">
+      <div class="pilar reveal">
+        <span class="pilar-num">/01</span>
+        <h3>Me escribís</h3>
+        <p>Me contás qué vendés, en qué ciudad estás y si ya invertiste en anuncios. Te toma 30 segundos.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/02</span>
+        <h3>Diagnóstico honesto</h3>
+        <p>Reviso tu caso y te digo con datos si Meta Ads te conviene ahora — y si no te conviene, también.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/03</span>
+        <h3>Plan y ejecución</h3>
+        <p>Definimos la estrategia, lanzamos EL SISTEMA y medimos cada mes qué ajustar, mantener o escalar.</p>
+      </div>
+    </div>
+
+    <div class="metodo-footer reveal">
+      <p>En la primera conversación no vendemos: <strong style="color: var(--text);">diagnosticamos.</strong></p>
     </div>
   </div>
 </section>
@@ -2193,10 +2220,10 @@ body::before {
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Qué pasa exactamente en la reunión gratuita?</span>
+          <span>¿Qué pasa después de que te escribo?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Revisamos tu negocio (qué vendes, cómo y a quién), te muestro cómo trabajamos compartiendo pantalla con casos reales, y evaluamos juntos si tiene sentido avanzar. No vendemos en la reunión: diagnosticamos.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Te respondo yo, no un bot. Reviso lo que me contaste de tu negocio y te digo con honestidad si puedo ayudarte y con qué servicio. Si tu caso lo amerita, coordinamos una reunión de diagnóstico por Meet de 30 minutos — gratis y sin compromiso.</div></div>
       </div>
 
       <div class="faq-item">
@@ -2234,6 +2261,22 @@ body::before {
   </div>
 </section>
 
+<section class="cta-final">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Empezá hoy</span>
+      <h2>Contame de tu negocio y <span class="lime">te respondo en el día</span></h2>
+      <p>Sin compromiso. Y si todavía no te conviene invertir, te lo digo con la misma honestidad.</p>
+    </div>
+    <div class="reveal">
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime">
+        Escribime por WhatsApp
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -2253,7 +2296,8 @@ body::before {
         <a href="#inicio">Inicio</a>
         <a href="#resultados">Resultados</a>
         <a href="#servicios">Servicios</a>
-        <a href="#agenda">Agendar reunión</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/agenda">Agendar reunión</a>
       </nav>
     </div>
 
@@ -2338,7 +2382,6 @@ body::before {
   </svg>
 </a>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
 /* ══════════ CONFIG: Supabase ══════════
@@ -3292,68 +3335,7 @@ function trackMetaCustomEvent(eventName, params = {}) {
   }
 }
 
-function isCalendlyEvent(e) {
-  return e.origin === 'https://calendly.com'
-    && e.data
-    && typeof e.data.event === 'string'
-    && e.data.event.startsWith('calendly.');
-}
-
-/*
-  Calendly envía eventos desde el iframe con window.postMessage().
-  - Click en botones de agenda = intención / visita a agenda.
-  - calendly.event_scheduled = reunión realmente agendada.
-*/
-window.addEventListener('message', function(e) {
-  if (!isCalendlyEvent(e)) return;
-
-  if (e.data.event === 'calendly.profile_page_viewed') {
-    trackMetaCustomEvent('CalendlyProfileViewed', {
-      content_name: 'Calendly cargado',
-      source: 'calendly_embed'
-    });
-  }
-
-  if (e.data.event === 'calendly.event_type_viewed') {
-    trackMetaCustomEvent('CalendlyEventTypeViewed', {
-      content_name: 'Tipo de reunión visto',
-      source: 'calendly_embed'
-    });
-  }
-
-  if (e.data.event === 'calendly.date_and_time_selected') {
-    trackMetaCustomEvent('CalendlyDateSelected', {
-      content_name: 'Seleccionó fecha y hora',
-      source: 'calendly_embed'
-    });
-  }
-
-  if (e.data.event === 'calendly.event_scheduled') {
-    // Evento personalizado granular: la conversión más valiosa del sitio.
-    trackMetaCustomEvent('ReunionAgendada', {
-      content_name: 'Reunión de diagnóstico agendada',
-      content_type: 'diagnostico_30_min',
-      source: 'calendly_embed'
-    });
-    // Evento estándar para optimización de campañas.
-    trackMetaEvent('Schedule', {
-      content_name: 'Reunión agendada Calendly',
-      content_type: 'diagnostico_30_min',
-      source: 'calendly_embed'
-    });
-  }
-});
-
-// Clics hacia agenda / Calendly. Esto NO significa reunión agendada.
-document.querySelectorAll('a[href="#agenda"]').forEach(link => {
-  link.addEventListener('click', () => {
-    trackMetaEvent('ViewContent', {
-      content_name: 'Click en botón de agenda',
-      content_type: 'agenda_intent',
-      source: 'landing_manu'
-    });
-  });
-});
+// El tracking de Calendly (ReunionAgendada + Schedule) vive en /agenda
 
 // Clics hacia WhatsApp — cada intención dispara su propio evento personalizado.
 // Además de un evento estándar (Lead / InitiateCheckout) para que Meta optimice.
@@ -3362,6 +3344,8 @@ function clasificarWhatsApp(href) {
   if (h.includes('Estrategia de Contenido')) return { custom: 'CompraEstrategiaContenido', std: 'InitiateCheckout', nombre: 'Estrategia de Contenido DÚO', valor: 15, consulta: false };
   if (h.includes('FÓRMULA'))                 return { custom: 'CompraFormulaDuo3x',        std: 'InitiateCheckout', nombre: 'FÓRMULA DÚO3X',              valor: 25, consulta: false };
   if (h.includes('Bitácora'))                return { custom: 'CompraBitacora3Q',          std: 'InitiateCheckout', nombre: 'Bitácora 3Q',                valor: 15, consulta: false };
+  if (h.includes('Gestión') || h.includes('Gestion')) return { custom: 'ConsultaGestion', std: 'Lead',             nombre: 'Gestión de Meta Ads',                   consulta: true };
+  if (h.includes('automatizaci'))            return { custom: 'ConsultaAutomatizacion',    std: 'Lead',             nombre: 'Automatización con IA',                 consulta: true };
   if (h.includes('Asesor'))                  return { custom: 'ConsultaAsesoria',          std: 'Lead',             nombre: 'Asesoría 1:1',                          consulta: true };
   if (h.includes('landing page'))            return { custom: 'ConsultaLandingPage',       std: 'Lead',             nombre: 'Landing Page',                          consulta: true };
   return                                            { custom: 'ConsultaWhatsApp',          std: 'Lead',             nombre: 'Consulta general Meta Ads',             consulta: true };
