@@ -2439,29 +2439,21 @@ const SUPABASE_ANON_KEY = 'REEMPLAZAR_SUPABASE_ANON_KEY';
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Scroll: header + progress + sticky + WhatsApp */
-const header = document.getElementById('header');
+/* Scroll: progress + CTAs de WhatsApp */
 const progress = document.getElementById('progress');
 const stickyM = document.getElementById('sticky-m');
-const agendaSection = document.getElementById('agenda');
 const waFloat = document.querySelector('.wa-float');
-const thirdSection = document.getElementById('resultados');
+const serviciosSection = document.getElementById('servicios');
 
 function handlePageScroll() {
   const y = window.scrollY;
-  if (header) header.classList.toggle('scrolled', y > 10);
-
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
 
-  const nearAgenda = agendaSection && agendaSection.getBoundingClientRect().top < window.innerHeight * 0.5;
-  stickyM.classList.toggle('visible', y > 600 && !nearAgenda);
-
-  /* El botón de WhatsApp aparece desde la tercera sección (#resultados). */
-  if (waFloat && thirdSection) {
-    const thirdTop = thirdSection.getBoundingClientRect().top;
-    waFloat.classList.toggle('visible', thirdTop < window.innerHeight * 0.78);
-  }
+  /* Los CTAs de WhatsApp aparecen recién cuando el visitante llega a la oferta (#servicios). */
+  const enOferta = serviciosSection && serviciosSection.getBoundingClientRect().top < window.innerHeight * 0.75;
+  stickyM.classList.toggle('visible', !!enOferta);
+  if (waFloat) waFloat.classList.toggle('visible', !!enOferta);
 }
 
 window.addEventListener('scroll', handlePageScroll, { passive: true });
