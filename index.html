@@ -130,6 +130,198 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   transition: width 0.1s linear;
 }
 
+/* ── Marca + menú flotante (arriba) ── */
+.brand-fab {
+  position: fixed;
+  top: 14px; left: 14px;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 8px;
+}
+.brand-fab img { height: 24px; width: auto; }
+
+.menu-fab {
+  position: fixed;
+  top: 14px; right: 14px;
+  z-index: 132;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(16, 16, 19, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+.menu-fab:hover { border-color: var(--lime-line); }
+.menu-fab span { width: 19px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+.menu-fab.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-fab.open span:nth-child(2) { opacity: 0; }
+.menu-fab.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 131;
+  background: rgba(7, 7, 9, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px var(--pad) 40px;
+  overflow-y: auto;
+}
+.drawer.open { opacity: 1; visibility: visible; transition: opacity 0.35s ease; }
+
+.drawer-nav { display: flex; flex-direction: column; max-width: 480px; margin: 0 auto; width: 100%; }
+
+.drawer-nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 6vw, 32px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line-soft);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.drawer.open .drawer-nav a { opacity: 1; transform: translateY(0); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, color 0.2s ease, padding-left 0.2s ease; }
+.drawer.open .drawer-nav a:nth-child(1) { transition-delay: 0.06s; }
+.drawer.open .drawer-nav a:nth-child(2) { transition-delay: 0.11s; }
+.drawer.open .drawer-nav a:nth-child(3) { transition-delay: 0.16s; }
+.drawer.open .drawer-nav a:nth-child(4) { transition-delay: 0.21s; }
+.drawer.open .drawer-nav a:nth-child(5) { transition-delay: 0.26s; }
+.drawer.open .drawer-nav a:nth-child(6) { transition-delay: 0.31s; }
+.drawer-nav a:hover { color: var(--lime); padding-left: 8px; }
+.drawer-nav a .sub { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
+.drawer-cta { margin: 30px auto 0; max-width: 480px; width: 100%; }
+.drawer-cta .btn { width: 100%; }
+
+/* ── Método animado (pipeline) ── */
+.pipe { max-width: 860px; margin: 0 auto; }
+
+.pipe-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 680px) { .pipe-track { grid-template-columns: 1fr 1fr; } }
+
+.pipe-node {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  padding: 22px 16px 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: nodePulse 4.4s ease-in-out infinite;
+}
+.pipe-node::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: nodeBar 4.4s ease-in-out infinite;
+}
+.pipe-node:nth-child(1), .pipe-node:nth-child(1)::before { animation-delay: 0s; }
+.pipe-node:nth-child(2), .pipe-node:nth-child(2)::before { animation-delay: 1.1s; }
+.pipe-node:nth-child(3), .pipe-node:nth-child(3)::before { animation-delay: 2.2s; }
+.pipe-node:nth-child(4), .pipe-node:nth-child(4)::before { animation-delay: 3.3s; }
+
+@keyframes nodePulse {
+  0%, 70%, 100% { border-color: var(--line-soft); box-shadow: none; }
+  12%, 28% { border-color: var(--lime-line); box-shadow: 0 12px 32px rgba(198, 241, 53, 0.10); }
+}
+@keyframes nodeBar {
+  0%, 8% { transform: scaleX(0); }
+  20%, 32% { transform: scaleX(1); }
+  44%, 100% { transform: scaleX(0); transform-origin: right; }
+}
+
+.pipe-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px; color: var(--lime); letter-spacing: 0.05em; }
+.pipe-node h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.01em; margin: 10px 0 6px; color: var(--text); }
+.pipe-node p { font-size: 11.5px; color: var(--text-3); line-height: 1.45; }
+
+.pipe-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.pipe-flow-line {
+  flex: 1;
+  max-width: 180px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--lime-line), transparent);
+  background-size: 200% 100%;
+  animation: flowSweep 2.6s linear infinite;
+}
+@keyframes flowSweep { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.pipe-out {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0B0B0D;
+  background: var(--lime);
+  padding: 11px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(198, 241, 53, 0.22);
+  white-space: nowrap;
+}
+
+/* ── Servicios extra (desglose) ── */
+.extras-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+@media (min-width: 760px) { .extras-cards { grid-template-columns: repeat(3, 1fr); } }
+
+.extra-card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.extra-card:hover { transform: translateY(-3px); border-color: var(--lime-line); }
+.extra-card .extra-ico { font-size: 22px; margin-bottom: 10px; }
+.extra-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 800; margin-bottom: 7px; color: var(--text); }
+.extra-card p { font-size: 12.5px; color: var(--text-3); line-height: 1.55; margin-bottom: 14px; flex: 1; }
+.extra-card a { font-size: 12.5px; font-weight: 700; color: var(--lime); margin-top: auto; }
+
 /* ── Buttons ── */
 .btn {
   display: inline-flex;
@@ -254,7 +446,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 
 @media (max-width: 767px) {
   .hero {
-    padding-top: 52px;
+    padding-top: 74px;
   }
 }
 
@@ -2033,6 +2225,31 @@ body::before {
 
 <div class="progress" id="progress"></div>
 
+<a href="#inicio" class="brand-fab" aria-label="DÚO — inicio">
+  <img src="/images/duo-icon.png?v=2" alt="DÚO Marketing">
+</a>
+
+<button class="menu-fab" id="menu-fab" aria-label="Abrir menú" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<nav class="drawer" id="drawer" aria-label="Menú principal">
+  <div class="drawer-nav">
+    <a href="#resultados" class="drawer-link">Resultados <span class="sub">Casos reales</span></a>
+    <a href="#metodo" class="drawer-link">El método <span class="sub">Cómo trabajamos</span></a>
+    <a href="#servicios" class="drawer-link">Inversión <span class="sub">Planes y precios</span></a>
+    <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
+    <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
+    <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
+  </div>
+  <div class="drawer-cta">
+    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime">
+      Cuéntame tu caso
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</nav>
+
 <section class="hero" id="inicio">
   <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="hero-lines"></div>
@@ -2099,72 +2316,6 @@ body::before {
     </div>
 
     <p class="suena-cierre reveal">Si dijiste «ese soy yo» en alguna, seguí leyendo. Esto te va a servir aunque no trabajemos juntos.</p>
-  </div>
-</section>
-
-<section id="metodo">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">El método DÚO</span>
-      <h2>Cuatro piezas. <span class="lime">Un embudo que vende.</span></h2>
-    </div>
-
-    <div class="metodo-grid">
-      <div class="pilar reveal">
-        <span class="pilar-num">/01</span>
-        <h3>Oferta</h3>
-        <p>Qué vendes, para quién y por qué elegirte ahora.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/02</span>
-        <h3>Estrategia</h3>
-        <p>El camino de tu publicidad según negocio, presupuesto y objetivo.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/03</span>
-        <h3>Comunicación</h3>
-        <p>El mensaje que hace que tu cliente escriba, compre o agende.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/04</span>
-        <h3>Medición</h3>
-        <p>Los datos que dicen si ajustar, mantener, frenar o escalar.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-  
-<section id="proceso">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Cómo trabajamos</span>
-      <h2>Sin humo: <span class="lime">así es el proceso</span></h2>
-      <p>Un sistema de ventas no se construye en una semana. Así se ve trabajar juntos:</p>
-    </div>
-
-    <div class="metodo-grid pasos-grid">
-      <div class="pilar reveal">
-        <span class="pilar-num">/01</span>
-        <p>Antes de empezar, analizamos tu oferta, tus márgenes y tus números: si invertir en publicidad no es rentable para tu negocio, te lo decimos antes de seguir.</p>
-        <h3>Mes 1 · Estrategia y creativos + Lanzamiento</h3>
-        <p>Diseñamos la estrategia digital y el plan de contenido: no prendemos anuncios al azar, seguimos una metodología para cada acción, desde el diseño de la oferta, la estrategia de adquisición y estructura de campañas. Te decimos qué grabar y por qué, con qué ganchos, en qué formatos y estructuras narrativas. Todo listo para que pases a producir con tu equipo creativo o agencia. Desde que prendemos anuncios corren 30 días de gestión.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/02</span>
-        <h3>Mes 2 · Aprendizaje y Consolidación</h3>
-        <p>Consolidamos las campañas y anuncios: audiencias, ángulos de venta, ganchos, formatos. Cada anuncio nos enseña algo que el siguiente aprovecha. Escalamos lo que nos trae resultados y seguimos probando variables con nuestra metodología creativa y de análisis de dátos para optimizar el rendimiento de campañas.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/03</span>
-        <h3>Mes 3 · Optimización y escala</h3>
-        <p>Ya sabemos qué funciona y qué no — con datos, no con intuición. Escalamos el sistema de ventas con anuncios de acuerdo a resultados buscando mayor retorno y mayor inversión en publicidad.</p>
-      </div>
-    </div>
-
-    <div class="metodo-footer reveal">
-      <p>Por eso no prometemos milagros en 7 días. Construimos sistemas que siguen vendiendo meses después — <strong style="color: var(--text);">como el que lleva más de 7 meses dando 10.55x.</strong></p>
-    </div>
   </div>
 </section>
 
@@ -2288,6 +2439,77 @@ body::before {
   </div>
 </section>
 
+<section id="metodo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El método DÚO</span>
+      <h2>Cuatro piezas que <span class="lime">trabajan como una.</span></h2>
+    </div>
+
+    <div class="pipe reveal">
+      <div class="pipe-track">
+        <div class="pipe-node">
+          <span class="pipe-num">/01</span>
+          <h4>Oferta</h4>
+          <p>Qué vendés y por qué elegirte a vos.</p>
+        </div>
+        <div class="pipe-node">
+          <span class="pipe-num">/02</span>
+          <h4>Estrategia</h4>
+          <p>El camino según tu negocio y objetivo.</p>
+        </div>
+        <div class="pipe-node">
+          <span class="pipe-num">/03</span>
+          <h4>Comunicación</h4>
+          <p>El mensaje que hace que te escriban.</p>
+        </div>
+        <div class="pipe-node">
+          <span class="pipe-num">/04</span>
+          <h4>Medición</h4>
+          <p>Los datos que dicen qué escalar.</p>
+        </div>
+      </div>
+      <div class="pipe-flow" aria-hidden="true">
+        <span class="pipe-flow-line"></span>
+        <span class="pipe-out">Ventas medibles</span>
+        <span class="pipe-flow-line"></span>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section id="proceso">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Sin humo: <span class="lime">así es el proceso</span></h2>
+      <p>Un sistema de ventas no se construye en una semana. Así se ve trabajar juntos:</p>
+    </div>
+
+    <div class="metodo-grid pasos-grid">
+      <div class="pilar reveal">
+        <span class="pilar-num">/01</span>
+        <h3>Mes 1 · Estrategia y lanzamiento</h3>
+        <p>Primero validamos si invertir es rentable para tu negocio. Después diseñamos la oferta, la estrategia y el plan de contenido — qué grabar, con qué ganchos y en qué formatos — y salimos al aire. Nada al azar.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/02</span>
+        <h3>Mes 2 · Aprendizaje y consolidación</h3>
+        <p>Cada anuncio nos enseña algo que el siguiente aprovecha. Probamos audiencias, ángulos y ganchos con método, y empezamos a escalar lo que ya trae resultados.</p>
+      </div>
+      <div class="pilar reveal">
+        <span class="pilar-num">/03</span>
+        <h3>Mes 3 · Optimización y escala</h3>
+        <p>Ya sabemos qué funciona — con datos, no con intuición. Apagamos lo que gasta y escalamos lo que vende, con más retorno por cada peso invertido.</p>
+      </div>
+    </div>
+
+    <div class="metodo-footer reveal">
+      <p>Por eso no prometemos milagros en 7 días. Construimos sistemas que siguen vendiendo meses después — <strong style="color: var(--text);">como el que lleva más de 7 meses dando 10.55x.</strong></p>
+    </div>
+  </div>
+</section>
+
 <section id="quien">
   <div class="container">
     <div class="quien-grid">
@@ -2309,11 +2531,10 @@ body::before {
       </div>
       <div class="quien-texto reveal">
         <span class="eyebrow">Quién está detrás</span>
-        <h2>De Yacuiba <span class="lime">para el mundo</span></h2>
-        <p>Soy Manu Baldiviezo. Empecé hace más de 5 años vendiendo con anuncios — pero no para clientes: para mis propios emprendimientos. Ahí aprendí lo que ningún curso enseña: <strong>cuando la plata que se invierte es tuya, medís todo.</strong></p>
-        <p>En los últimos 2 años llevé esa obsesión a más de 30 negocios en Bolivia, Chile, Colombia y Ecuador con mi agencia, DÚO. Hoy gestiono desde campañas de $5 diarios hasta cuentas de miles de dólares al mes — con la misma metodología.</p>
-        <p>Y algo que me gusta contar: buena parte de los que hoy me piden asesoría son traffickers y agencias. Los mismos que venden gestión de anuncios quieren aprender cómo lo hacemos nosotros.</p>
-        <div class="quien-firma">Manu Baldiviezo · Fundador de DÚO · Yacuiba, Bolivia</div>
+        <h2>De Bolivia <span class="lime">para el mundo</span></h2>
+        <p>Soy Manu Baldiviezo. Empecé hace más de 5 años vendiendo con anuncios para mis propios negocios — no para clientes. Ahí aprendí lo que ningún curso enseña: <strong>cuando la plata que se invierte es tuya, medís todo.</strong></p>
+        <p>Con esa obsesión llevé DÚO a más de 30 negocios en 4 países, gestionando desde campañas de $5 al día hasta cuentas de miles de dólares al mes. Y hoy, buena parte de los que me piden asesoría <strong>son traffickers y agencias</strong>: los que venden anuncios quieren aprender cómo lo hacemos.</p>
+        <div class="quien-firma">Manu Baldiviezo · Fundador de DÚO · Bolivia</div>
       </div>
     </div>
   </div>
@@ -2415,10 +2636,25 @@ body::before {
 
     <div class="extras-strip reveal">
       <span class="extras-label">También hacemos</span>
-      <div class="extras-items">
-        <a class="extra-chip" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Landing pages de venta</a>
-        <a class="extra-chip" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Automatización con IA · WhatsApp y redes</a>
-        <a class="extra-chip" href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Creación de contenido · Agencia DÚO ↗</a>
+      <div class="extras-cards">
+        <div class="extra-card">
+          <span class="extra-ico">🎯</span>
+          <h4>Landing pages de venta</h4>
+          <p>Páginas como esta: diseño, copy y estructura pensados para una sola acción — que el visitante deje sus datos o te escriba. Listas para recibir tráfico de tus anuncios.</p>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Quiero una página →</a>
+        </div>
+        <div class="extra-card">
+          <span class="extra-ico">🤖</span>
+          <h4>Automatización con IA</h4>
+          <p>Agentes que responden por WhatsApp e Instagram las 24 horas: contestan, califican y agendan por vos, para que ningún mensaje se enfríe.</p>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Ver cómo funciona →</a>
+        </div>
+        <div class="extra-card">
+          <span class="extra-ico">🎬</span>
+          <h4>Creación de contenido</h4>
+          <p>Producción y edición de los videos y piezas que tus campañas necesitan, con la dirección creativa de la agencia DÚO.</p>
+          <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Ver la agencia ↗</a>
+        </div>
       </div>
     </div>
 
@@ -3629,6 +3865,20 @@ waForm.addEventListener('submit', (e) => {
   const win = window.open(url, '_blank', 'noopener');
   if (!win) window.location.href = url; // fallback si el navegador bloquea el popup
 });
+
+/* Menú hamburguesa / drawer */
+const menuFab = document.getElementById('menu-fab');
+const drawer = document.getElementById('drawer');
+function toggleDrawer(open) {
+  const isOpen = open !== undefined ? open : !drawer.classList.contains('open');
+  drawer.classList.toggle('open', isOpen);
+  menuFab.classList.toggle('open', isOpen);
+  menuFab.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+menuFab.addEventListener('click', () => toggleDrawer());
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) toggleDrawer(false); });
 
 /* Smooth anchors */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
