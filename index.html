@@ -965,15 +965,26 @@ section { padding: 92px 0; position: relative; }
 @media (prefers-reduced-motion: reduce) { .wa-msg { opacity: 1; transform: none; transition: none; } }
 @media (max-width: 520px) { .wa-msg { max-width: 94%; font-size: 13px; } }
 
-/* ── El 80% que no ves (punto ciego) ── */
-.ciego-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 980px; margin: 40px auto 0; position: relative; z-index: 1; }
-@media (min-width: 720px) { .ciego-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1020px) { .ciego-grid { grid-template-columns: repeat(3, 1fr); } }
-.ciego-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius-md); padding: 24px 22px; transition: transform 0.25s ease, border-color 0.25s ease; }
-.ciego-card:hover { transform: translateY(-3px); border-color: var(--lime-line); }
-.ciego-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px; color: var(--lime); letter-spacing: 0.1em; }
-.ciego-card h3 { font-size: 15.5px; font-weight: 800; margin: 9px 0 8px; }
-.ciego-card p { font-size: 13.5px; color: var(--text-2); line-height: 1.62; }
+/* ── El 80% que no ves (punto ciego · acordeón) ── */
+#puntociego { position: relative; overflow: hidden; }
+#puntociego .container { position: relative; z-index: 1; }
+.ciego-cosmos { opacity: 0.4; }
+.ciego-acc { max-width: 680px; margin: 36px auto 0; background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius-md); overflow: hidden; }
+.ciego-item + .ciego-item { border-top: 1px solid var(--line-soft); }
+.ciego-row {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+  padding: 17px 20px; background: none; border: 0; cursor: pointer;
+  color: var(--text); font-family: inherit; transition: background 0.25s;
+}
+.ciego-row:hover { background: rgba(255,255,255,0.025); }
+.ciego-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 11.5px; color: var(--lime); letter-spacing: 0.08em; flex-shrink: 0; }
+.ciego-title { flex: 1; font-weight: 700; font-size: 14.5px; line-height: 1.35; }
+.ciego-chev { color: var(--text-3); font-size: 13px; transition: transform 0.3s ease, color 0.3s; flex-shrink: 0; }
+.ciego-item.open .ciego-chev { transform: rotate(180deg); color: var(--lime); }
+.ciego-item.open .ciego-title { color: var(--lime); }
+.ciego-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.ciego-body p { padding: 0 20px 17px 55px; font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
+@media (max-width: 520px) { .ciego-body p { padding-left: 20px; } }
 
 /* ── Por qué te pasa esto (el punto ciego) ── */
 #porque { border-bottom: 1px solid var(--line-soft); }
@@ -2401,47 +2412,41 @@ body::before {
 </section>
 
 <section id="puntociego">
+  <canvas class="cosmic-canvas ciego-cosmos" aria-hidden="true"></canvas>
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">El punto ciego</span>
       <h2>En mi contenido ves el Ads Manager. <span class="lime">Lo que no ves es el 80% del trabajo.</span></h2>
-      <p>Cuando una marca trabaja conmigo, apretar botones es lo <em>último</em> que pasa. Esto es lo que hay detrás de cada anuncio — y lo que casi ninguna agencia te muestra:</p>
     </div>
 
-    <div class="ciego-grid reveal">
-      <div class="ciego-card">
-        <span class="ciego-num">01</span>
-        <h3>Documento de estrategia digital</h3>
-        <p>Todo lo que va a pasar dentro y fuera del Ads Manager, por escrito: estructura de campañas, presupuestos, objetivos y el análisis — y mejora — de tu oferta.</p>
+    <div class="ciego-acc reveal" id="ciego-acc">
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">01</span><span class="ciego-title">Documento de estrategia digital</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Campañas, presupuestos, objetivos y la mejora de tu oferta. Todo por escrito, antes de invertir un peso.</p></div>
       </div>
-      <div class="ciego-card">
-        <span class="ciego-num">02</span>
-        <h3>Investigación de anuncios</h3>
-        <p>Antes de grabar nada, investigamos qué tipos de anuncio funcionan para cada tipo de campaña que definimos. Nada se improvisa.</p>
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">02</span><span class="ciego-title">Investigación de anuncios</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Qué tipo de anuncio va para cada campaña. Nada se improvisa.</p></div>
       </div>
-      <div class="ciego-card">
-        <span class="ciego-num">03</span>
-        <h3>Plan de contenido con intención</h3>
-        <p>Te decimos qué publicar y por qué: una metodología para el contenido de pauta y otra para el orgánico. Cada pieza tiene un trabajo que cumplir.</p>
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">03</span><span class="ciego-title">Plan de contenido con intención</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Qué publicar y por qué: una metodología para pauta y otra para orgánico.</p></div>
       </div>
-      <div class="ciego-card">
-        <span class="ciego-num">04</span>
-        <h3>Guiones con estructura narrativa</h3>
-        <p>Cada video con su guion y su estructura según el tipo de contenido y el formato elegido. Listos para que solo tengas que grabarlos.</p>
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">04</span><span class="ciego-title">Guiones listos para grabar</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Cada video con su estructura narrativa según el formato. Vos solo apretás grabar.</p></div>
       </div>
-      <div class="ciego-card">
-        <span class="ciego-num">05</span>
-        <h3>Testeo de variables</h3>
-        <p>Formatos y ángulos de venta compitiendo entre sí dentro de tus campañas, hasta que los datos digan cuál gana. Así se escala sin adivinar.</p>
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">05</span><span class="ciego-title">Testeo de variables</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Formatos y ángulos de venta compiten entre sí. Los datos eligen al ganador.</p></div>
       </div>
-      <div class="ciego-card">
-        <span class="ciego-num">06</span>
-        <h3>Medición que entendés</h3>
-        <p>Cuánto entró, cuánto volvió y qué se decide con eso. Reportes que hablan de ventas — no de likes.</p>
+      <div class="ciego-item">
+        <button class="ciego-row" type="button"><span class="ciego-num">06</span><span class="ciego-title">Medición que entendés</span><span class="ciego-chev">▾</span></button>
+        <div class="ciego-body"><p>Cuánto entró, cuánto volvió y qué se decide con eso. Ventas — no likes.</p></div>
       </div>
     </div>
 
-    <p class="suena-cierre reveal">Más de un cliente me dijo en la primera reunión que <strong style="color:var(--text)">ningún trafficker o agencia le había mostrado algo así.</strong> Por eso te lo muestro antes de que me escribas.</p>
+    <p class="suena-cierre reveal">«Nadie me había mostrado algo así.» — Lo escucho en casi todas las primeras reuniones.</p>
   </div>
 </section>
 
@@ -3053,84 +3058,81 @@ if (window.matchMedia('(hover: hover)').matches) {
   const canvases = document.querySelectorAll('.cosmic-canvas');
   if (!canvases.length) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const palette = [
-    'rgba(198, 241, 53, 0.88)',
-    'rgba(245, 166, 35, 0.72)',
-    'rgba(232, 71, 26, 0.58)',
-    'rgba(250, 250, 248, 0.54)'
-  ];
+  const LIME = '#C6F135', GOLD = '#F5A623', WHITE = '#FAFAF8';
 
-  canvases.forEach((canvas, index) => {
+  canvases.forEach((canvas) => {
     const ctx = canvas.getContext('2d');
-    let dpr = 1;
-    let w = 0;
-    let h = 0;
-    let particles = [];
-    let raf = null;
-    let t = Math.random() * 1000;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let w = 0, h = 0, stars = [], raf = null, running = false, t = Math.random() * 1000;
 
+    function spawn(anywhere) {
+      const deep = Math.random(); // 0 = lejano (lento, tenue) · 1 = cercano (rápido, brillante)
+      const r = Math.random();
+      return {
+        x: Math.random() * w,
+        y: anywhere ? Math.random() * h : h + 8 * dpr,
+        s: (deep < 0.82 ? 1 + Math.random() * 1.5 : 2 + Math.random() * 2.6) * dpr,
+        v: (0.05 + deep * 0.24) * dpr,
+        drift: (Math.random() - 0.5) * 0.06 * dpr,
+        a: 0.14 + deep * 0.55,
+        tw: Math.random() * Math.PI * 2,
+        c: r < 0.12 ? LIME : r < 0.2 ? GOLD : WHITE
+      };
+    }
     function resize() {
       const rect = canvas.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = Math.max(1, rect.width);
-      h = Math.max(1, rect.height);
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const density = canvas.classList.contains('hero-cosmos') ? 0.00017 : 0.00012;
-      const count = Math.min(90, Math.max(26, Math.floor(w * h * density)));
-
-      particles = Array.from({ length: count }, (_, i) => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (-0.08 + Math.random() * 0.16) * (canvas.classList.contains('hero-cosmos') ? 1.3 : 0.85),
-        vy: (-0.035 + Math.random() * 0.09) * (canvas.classList.contains('hero-cosmos') ? 1.25 : 0.9),
-        s: Math.random() < 0.72 ? 1.2 + Math.random() * 1.5 : 2.4 + Math.random() * 2.2,
-        a: 0.22 + Math.random() * 0.58,
-        tw: Math.random() * Math.PI * 2,
-        color: palette[(i + index) % palette.length]
-      }));
+      w = canvas.width = Math.round(rect.width * dpr);
+      h = canvas.height = Math.round(rect.height * dpr);
+      const count = Math.min(150, Math.max(40, Math.round((rect.width * rect.height) / 8500)));
+      stars = Array.from({ length: count }, () => spawn(true));
     }
-
-    function draw() {
-      t += 0.012;
+    function frame() {
+      t++;
       ctx.clearRect(0, 0, w, h);
-
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < -12) p.x = w + 12;
-        if (p.x > w + 12) p.x = -12;
-        if (p.y < -12) p.y = h + 12;
-        if (p.y > h + 12) p.y = -12;
-
-        const twinkle = 0.55 + Math.sin(t * 2.1 + p.tw) * 0.45;
-        const alpha = p.a * twinkle;
-
-        ctx.save();
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = p.s > 2.5 ? 10 : 5;
-        ctx.fillRect(p.x, p.y, p.s, p.s);
-        ctx.restore();
+      for (const st of stars) {
+        st.y -= st.v; st.x += st.drift;
+        if (st.y < -8 || st.x < -8 || st.x > w + 8) Object.assign(st, spawn(false));
+        const tw = 0.7 + Math.sin(t * 0.02 + st.tw) * 0.3;
+        ctx.globalAlpha = st.a * tw;
+        ctx.fillStyle = st.c;
+        const ss = Math.max(1, Math.round(st.s));
+        ctx.fillRect(Math.round(st.x), Math.round(st.y), ss, ss);
       }
-
-      if (!reduceMotion) raf = requestAnimationFrame(draw);
+      ctx.globalAlpha = 1;
+      raf = requestAnimationFrame(frame);
     }
-
-    resize();
-    draw();
-
+    function start() { if (running) return; running = true; if (!w) resize(); frame(); }
+    function stop() { running = false; if (raf) cancelAnimationFrame(raf); }
     let rt;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
-      rt = setTimeout(resize, 160);
+      rt = setTimeout(() => { if (running) resize(); }, 160);
     }, { passive: true });
+    start();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) start(); else stop(); }), { threshold: 0.02 }).observe(canvas);
+    }
   });
+})();
+
+/* Acordeón del punto ciego */
+(function () {
+  const items = document.querySelectorAll('#ciego-acc .ciego-item');
+  if (!items.length) return;
+  items.forEach((item) => {
+    item.querySelector('.ciego-row').addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      items.forEach((o) => { o.classList.remove('open'); o.querySelector('.ciego-body').style.maxHeight = '0px'; });
+      if (!wasOpen) {
+        item.classList.add('open');
+        const b = item.querySelector('.ciego-body');
+        b.style.maxHeight = b.scrollHeight + 'px';
+      }
+    });
+  });
+  items[0].classList.add('open');
+  const fb = items[0].querySelector('.ciego-body');
+  fb.style.maxHeight = fb.scrollHeight + 'px';
 })();
 
 /* U de fondo captando leads — visible desde la segunda sección */
