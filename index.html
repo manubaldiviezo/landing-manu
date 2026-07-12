@@ -2140,8 +2140,9 @@ body::before {
 }
 
 .ufloat canvas {
-  width: 136px;
-  height: 154px;
+  width: min(430px, 92vw);
+  aspect-ratio: 340 / 210;
+  height: auto;
   display: block;
   position: relative;
   z-index: 1;
@@ -3320,6 +3321,8 @@ if (window.matchMedia('(hover: hover)').matches) {
 
   const W = 180;
   const H = 210;
+  const PAD = 80; // espacio lateral extra: los píxeles nacen a la vista (igual que en la web DÚO)
+  const VW = W + PAD * 2;
 
   const GOLD = '#F5A623';
   const ORANGE = '#E8471A';
@@ -3355,12 +3358,13 @@ if (window.matchMedia('(hover: hover)').matches) {
     canvas.width = Math.round(rect.width * dpr);
     canvas.height = Math.round(rect.height * dpr);
 
+    const sx = canvas.width / VW;
     ctx.setTransform(
-      canvas.width / W,
+      sx,
       0,
       0,
       canvas.height / H,
-      0,
+      PAD * sx,
       0
     );
 
@@ -3413,19 +3417,19 @@ if (window.matchMedia('(hover: hover)').matches) {
 
     if (route === 0) {
       // Costado izquierdo, altura de los cuadrados.
-      start = { x: -22, y: 24 + Math.random() * 64 };
+      start = { x: -(34 + Math.random() * 40), y: 24 + Math.random() * 64 };
     } else if (route === 1) {
       // Costado derecho, altura de los cuadrados.
-      start = { x: W + 22, y: 24 + Math.random() * 64 };
+      start = { x: W + 34 + Math.random() * 40, y: 24 + Math.random() * 64 };
     } else if (route === 2) {
       // Desde arriba, con aire suficiente para que no se corte.
       start = { x: 28 + Math.random() * 124, y: 5 + Math.random() * 12 };
     } else if (route === 3) {
       // Diagonal superior izquierda, nunca desde abajo.
-      start = { x: -18, y: 8 + Math.random() * 44 };
+      start = { x: -(26 + Math.random() * 34), y: 8 + Math.random() * 44 };
     } else {
       // Diagonal superior derecha, nunca desde abajo.
-      start = { x: W + 18, y: 8 + Math.random() * 44 };
+      start = { x: W + 26 + Math.random() * 34, y: 8 + Math.random() * 44 };
     }
 
     return {
@@ -3736,7 +3740,7 @@ if (window.matchMedia('(hover: hover)').matches) {
   }
 
   function render() {
-    ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(-PAD, -4, VW + 8, H + 8);
 
     const scaleBoost = Math.min(0.14, scrollEnergy * 0.014);
 
