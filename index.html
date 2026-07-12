@@ -926,6 +926,55 @@ section { padding: 92px 0; position: relative; }
   z-index: 1;
 }
 
+/* ── Bandeja de WhatsApp (¿Te suena?) ── */
+.wa-inbox {
+  max-width: 620px; margin: 40px auto 0;
+  background: #0B141A; border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md); overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  position: relative; z-index: 1;
+}
+.wa-inbox-head {
+  display: flex; align-items: center; gap: 9px;
+  padding: 13px 18px; background: #202C33;
+  font-size: 12.5px; font-weight: 700; color: #E9EDEF; letter-spacing: 0.02em;
+}
+.wa-dot { width: 9px; height: 9px; border-radius: 50%; background: #25D366; box-shadow: 0 0 10px rgba(37,211,102,0.75); flex-shrink: 0; }
+.wa-chat {
+  padding: 22px 16px 24px; display: flex; flex-direction: column; gap: 10px;
+  background: radial-gradient(circle at 20% 10%, rgba(37,211,102,0.045), transparent 45%), radial-gradient(circle at 85% 90%, rgba(37,211,102,0.03), transparent 40%), #0B141A;
+}
+.wa-msg {
+  position: relative; max-width: 88%;
+  padding: 10px 14px 21px; border-radius: 10px;
+  font-size: 13.8px; line-height: 1.55; color: #E9EDEF;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible .wa-msg { opacity: 1; transform: translateY(0); }
+.reveal.visible .wa-msg:nth-child(1) { transition-delay: 0.15s; }
+.reveal.visible .wa-msg:nth-child(2) { transition-delay: 0.55s; }
+.reveal.visible .wa-msg:nth-child(3) { transition-delay: 0.95s; }
+.reveal.visible .wa-msg:nth-child(4) { transition-delay: 1.35s; }
+.reveal.visible .wa-msg:nth-child(5) { transition-delay: 1.9s; }
+.wa-msg.in { align-self: flex-start; background: #202C33; border-top-left-radius: 3px; }
+.wa-msg.out { align-self: flex-end; background: #005C4B; border-top-right-radius: 3px; }
+.wa-msg.out b { color: #fff; }
+.wa-name { display: block; font-size: 11px; font-weight: 800; color: var(--lime); margin-bottom: 4px; letter-spacing: 0.02em; }
+.wa-time { position: absolute; right: 11px; bottom: 5px; font-size: 10px; color: #8696A0; }
+@media (prefers-reduced-motion: reduce) { .wa-msg { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 520px) { .wa-msg { max-width: 94%; font-size: 13px; } }
+
+/* ── El 80% que no ves (punto ciego) ── */
+.ciego-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 980px; margin: 40px auto 0; position: relative; z-index: 1; }
+@media (min-width: 720px) { .ciego-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .ciego-grid { grid-template-columns: repeat(3, 1fr); } }
+.ciego-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius-md); padding: 24px 22px; transition: transform 0.25s ease, border-color 0.25s ease; }
+.ciego-card:hover { transform: translateY(-3px); border-color: var(--lime-line); }
+.ciego-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px; color: var(--lime); letter-spacing: 0.1em; }
+.ciego-card h3 { font-size: 15.5px; font-weight: 800; margin: 9px 0 8px; }
+.ciego-card p { font-size: 13.5px; color: var(--text-2); line-height: 1.62; }
+
 /* ── Por qué te pasa esto (el punto ciego) ── */
 #porque { border-bottom: 1px solid var(--line-soft); }
 
@@ -1699,7 +1748,7 @@ section { padding: 92px 0; position: relative; }
 .social-texto p { color: var(--text-2); line-height: 1.75; }
 .social-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .tk-phone {
-  position: relative; width: min(330px, 88vw); aspect-ratio: 9 / 19;
+  position: relative; width: min(300px, 76vw); aspect-ratio: 782 / 1600;
   border-radius: 42px; border: 9px solid #000; background: #101010; overflow: hidden;
   box-shadow: 0 0 0 1.5px rgba(255,255,255,0.09), 0 44px 88px rgba(0,0,0,0.55), 0 0 90px rgba(198,241,53,0.1);
   transform: rotate(-3.5deg);
@@ -2273,6 +2322,7 @@ body::before {
     <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
     <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
     <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener" class="drawer-link">TikTok <span class="sub">@manu_estrategadigital ↗</span></a>
+    <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener" class="drawer-link">Agencia DÚO <span class="sub">contenido y producción ↗</span></a>
     <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
   </div>
   <div class="drawer-cta">
@@ -2333,22 +2383,66 @@ body::before {
   <canvas class="section-funnel-bg" id="section-funnel-bg" aria-hidden="true"></canvas>
   <div class="container">
     <div class="problema-inner reveal">
-      <h2>¿Te <span class="lime">suena?</span></h2>
+      <h2>Mensajes que me llegan <span class="lime">cada semana</span></h2>
     </div>
 
-    <div class="suena-grid reveal">
-      <div class="suena-card">
-        <p>"Invierto en anuncios, me llegan mensajes… pero no sé cuánto de eso se convierte en venta."</p>
-      </div>
-      <div class="suena-card">
-        <p>"El que me maneja las redes me habla de likes y alcance. Nunca de cuánto vendí."</p>
-      </div>
-      <div class="suena-card">
-        <p>"Ya probé con anuncios. Sentí que era plata que se iba y nada volvía."</p>
+    <div class="wa-inbox reveal">
+      <div class="wa-inbox-head"><span class="wa-dot"></span>WhatsApp · Bandeja de entrada de Manu</div>
+      <div class="wa-chat">
+        <div class="wa-msg in"><span class="wa-name">Tienda de ropa · Santa Cruz</span>Invierto en anuncios, me llegan mensajes… pero no sé cuánto de eso se convierte en venta 😕<span class="wa-time">09:14</span></div>
+        <div class="wa-msg in"><span class="wa-name">Clínica estética · Tarija</span>El que me maneja las redes me habla de likes y alcance. Nunca de cuánto vendí.<span class="wa-time">11:32</span></div>
+        <div class="wa-msg in"><span class="wa-name">Restaurante · Yacuiba</span>Apreté «promocionar» como sale en los tutoriales, gasté Bs 300 y solo me escribieron curiosos 🙃<span class="wa-time">13:05</span></div>
+        <div class="wa-msg in"><span class="wa-name">Ecommerce · La Paz</span>Ya pagué a un trafficker antes. Sentí que era plata que se iba y nada volvía…<span class="wa-time">17:48</span></div>
+        <div class="wa-msg out">Todos me escriben pensando que el problema es Meta, el pixel o la suerte. Casi nunca es eso: <b>es que nadie les mostró la estrategia completa que hay detrás de un anuncio.</b> Te la muestro acá abajo 👇<span class="wa-time">18:02 ✓✓</span></div>
       </div>
     </div>
 
-    <p class="suena-cierre reveal">Si dijiste «ese soy yo» en alguna, seguí leyendo. Esto te va a servir aunque no trabajemos juntos.</p>
+    <p class="suena-cierre reveal">Si algún mensaje pudo ser tuyo, seguí bajando. Esto te sirve aunque no trabajemos juntos.</p>
+  </div>
+</section>
+
+<section id="puntociego">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El punto ciego</span>
+      <h2>En mi contenido ves el Ads Manager. <span class="lime">Lo que no ves es el 80% del trabajo.</span></h2>
+      <p>Cuando una marca trabaja conmigo, apretar botones es lo <em>último</em> que pasa. Esto es lo que hay detrás de cada anuncio — y lo que casi ninguna agencia te muestra:</p>
+    </div>
+
+    <div class="ciego-grid reveal">
+      <div class="ciego-card">
+        <span class="ciego-num">01</span>
+        <h3>Documento de estrategia digital</h3>
+        <p>Todo lo que va a pasar dentro y fuera del Ads Manager, por escrito: estructura de campañas, presupuestos, objetivos y el análisis — y mejora — de tu oferta.</p>
+      </div>
+      <div class="ciego-card">
+        <span class="ciego-num">02</span>
+        <h3>Investigación de anuncios</h3>
+        <p>Antes de grabar nada, investigamos qué tipos de anuncio funcionan para cada tipo de campaña que definimos. Nada se improvisa.</p>
+      </div>
+      <div class="ciego-card">
+        <span class="ciego-num">03</span>
+        <h3>Plan de contenido con intención</h3>
+        <p>Te decimos qué publicar y por qué: una metodología para el contenido de pauta y otra para el orgánico. Cada pieza tiene un trabajo que cumplir.</p>
+      </div>
+      <div class="ciego-card">
+        <span class="ciego-num">04</span>
+        <h3>Guiones con estructura narrativa</h3>
+        <p>Cada video con su guion y su estructura según el tipo de contenido y el formato elegido. Listos para que solo tengas que grabarlos.</p>
+      </div>
+      <div class="ciego-card">
+        <span class="ciego-num">05</span>
+        <h3>Testeo de variables</h3>
+        <p>Formatos y ángulos de venta compitiendo entre sí dentro de tus campañas, hasta que los datos digan cuál gana. Así se escala sin adivinar.</p>
+      </div>
+      <div class="ciego-card">
+        <span class="ciego-num">06</span>
+        <h3>Medición que entendés</h3>
+        <p>Cuánto entró, cuánto volvió y qué se decide con eso. Reportes que hablan de ventas — no de likes.</p>
+      </div>
+    </div>
+
+    <p class="suena-cierre reveal">Más de un cliente me dijo en la primera reunión que <strong style="color:var(--text)">ningún trafficker o agencia le había mostrado algo así.</strong> Por eso te lo muestro antes de que me escribas.</p>
   </div>
 </section>
 
@@ -2715,8 +2809,8 @@ body::before {
         <div class="extra-card">
           <span class="extra-ico">🎬</span>
           <h4>Creación de contenido</h4>
-          <p>Producción y edición de los videos y piezas que tus campañas necesitan, con la dirección creativa de la agencia DÚO.</p>
-          <a href="https://www.tiktok.com/@duo_marketingdigital" target="_blank" rel="noopener">Ver la agencia en TikTok ↗</a>
+          <p>Producción y edición de los videos y piezas que tus campañas necesitan, con la dirección creativa de la agencia DÚO: plan de contenido, guiones y grabación.</p>
+          <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Conocé la agencia DÚO ↗</a>
         </div>
       </div>
     </div>
@@ -2805,6 +2899,7 @@ body::before {
         <a href="#resultados">Resultados</a>
         <a href="#servicios">Inversión</a>
         <a href="/recursos">Recursos</a>
+        <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Agencia DÚO ↗</a>
         <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener">Cuéntame tu caso</a>
       </nav>
     </div>
