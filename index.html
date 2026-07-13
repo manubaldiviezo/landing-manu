@@ -2896,6 +2896,10 @@ body::before {
           <input type="text" id="wa-name" name="name" placeholder="¿Cómo te llamas?" required autocomplete="name">
         </div>
         <div class="lead-field">
+          <label for="wa-telefono">Tu WhatsApp</label>
+          <input type="tel" id="wa-telefono" name="telefono" placeholder="Ej: 75123456" required autocomplete="tel" inputmode="tel" minlength="7">
+        </div>
+        <div class="lead-field">
           <label for="wa-negocio">¿Qué vendes? Tu negocio o rubro</label>
           <input type="text" id="wa-negocio" name="negocio" placeholder="Ej: tienda de ropa, clínica estética…" required>
         </div>
@@ -3922,11 +3926,12 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
 
 waForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const nombre  = document.getElementById('wa-name').value.trim();
-  const negocio = document.getElementById('wa-negocio').value.trim();
-  const ciudad  = document.getElementById('wa-ciudad').value.trim();
-  const ads     = document.getElementById('wa-ads').value;
-  if (!nombre || !negocio || !ciudad || !ads) { waForm.reportValidity(); return; }
+  const nombre   = document.getElementById('wa-name').value.trim();
+  const telefono = document.getElementById('wa-telefono').value.trim();
+  const negocio  = document.getElementById('wa-negocio').value.trim();
+  const ciudad   = document.getElementById('wa-ciudad').value.trim();
+  const ads      = document.getElementById('wa-ads').value;
+  if (!nombre || !telefono || !negocio || !ciudad || !ads) { waForm.reportValidity(); return; }
 
   // Mensaje de WhatsApp con la calificación ya cargada
   const base = (waCtx && waCtx.href.indexOf('text=') !== -1)
@@ -3948,8 +3953,9 @@ waForm.addEventListener('submit', (e) => {
     try {
       fetch(SUPABASE_URL + '/rest/v1/leads', {
         method: 'POST',
+        keepalive: true,
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Prefer': 'return=minimal' },
-        body: JSON.stringify({ name: nombre, business: negocio, city: ciudad, invested_ads: ads, intent: waCtx.c.custom, source: 'whatsapp_qualify' })
+        body: JSON.stringify({ name: nombre, phone: telefono, business: negocio, city: ciudad, invested_ads: ads, intent: waCtx.c.custom, source: 'whatsapp_qualify' })
       });
     } catch (err) { /* no bloquea la apertura de WhatsApp */ }
   }
