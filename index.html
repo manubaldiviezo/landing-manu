@@ -1778,6 +1778,14 @@ section { padding: 92px 0; position: relative; }
 .tk-card-follow:hover { transform: scale(1.05); }
 .tk-card img { display: block; width: 100%; height: auto; }
 
+/* ── Refinamiento premium (tipografía y aire) ── */
+.sec-head p { font-size: clamp(15px, 1.9vw, 17px); line-height: 1.75; }
+.hero-sub { font-size: clamp(16px, 2vw, 19px); line-height: 1.75; }
+.servicio-list li { font-size: 14.5px; line-height: 1.7; }
+.servicio-desc { font-size: 15px; }
+.eyebrow { letter-spacing: 0.16em; }
+.hero-micro b { color: var(--lime); font-weight: 800; }
+
 /* ── Footer ── */
 footer {
   border-top: 1px solid var(--line-soft);
@@ -2358,7 +2366,7 @@ body::before {
         </div>
         <div class="hero-micro">
           <span class="dot"></span>
-          <span>🇧🇴 DÚO · Agencia de Marketing Digital</span>
+          <span><b>+5 años</b> en Meta Ads&nbsp;·&nbsp;<b>+30</b> negocios&nbsp;·&nbsp;<b>5</b> países&nbsp;·&nbsp;<b>US$50K+</b> gestionados</span>
         </div>
       </div>
 
@@ -2527,28 +2535,28 @@ body::before {
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Inversión mensual</div>
-          <div class="servicio-price">Desde $195 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1950 mensual</span></div>
-          <div class="servicio-note">El pago de publicidad en Meta, es aparte.</div>
-          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime); border-radius:10px; color:var(--text-1, #fff);">🛡️ <strong>Garantía de claridad</strong>: si al día 30 no sabés exactamente qué está funcionando, qué no y por qué, no seguimos — y te quedás con tu estrategia documentada.</div>
+          <div class="servicio-price">Desde $250 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 2.500 mensual</span></div>
+          <div class="servicio-note">Empezamos con una reunión inicial de diagnóstico. El pago de publicidad en Meta es aparte.</div>
+          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime); border-radius:10px; color:var(--text-1, #fff);"><strong>Garantía de claridad</strong>: si al día 30 no sabés exactamente qué está funcionando, qué no y por qué, no seguimos — y te quedás con tu estrategia documentada.</div>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
         </div>
       </div>
 
       <div class="servicio reveal">
-        <span class="servicio-tag">Asesoría · 1 a 1 por Meet</span>
-        <h3>Asesoría 1:1</h3>
+        <span class="servicio-tag">Consultoría · 1 a 1 por Meet</span>
+        <h3>Consultoría práctica</h3>
         <p class="servicio-sub">Para dueños que gestionan sus propios anuncios y quieren dirección experta</p>
-        <p class="servicio-desc">Aprende el sistema completo, aplicado a tu negocio.</p>
+        <p class="servicio-desc">Una sesión de trabajo sobre tu cuenta real — no teoría.</p>
         <ul class="servicio-list">
-          <li>El método DÚO de campañas, a fondo</li>
-          <li>Plan de acción para tu caso, no teoría</li>
-          <li>Soporte por WhatsApp durante 1 mes</li>
+          <li>Revisamos tus campañas y tu estrategia en vivo</li>
+          <li>Salís con un plan de acción concreto para tu caso</li>
+          <li>Empezamos con una reunión inicial de diagnóstico</li>
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Modalidad</div>
-          <div class="servicio-price">$75 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 750 · 3 sesiones</span></div>
-          <div class="servicio-note">Capacitación teórica y práctica de 60–90 min. Empezamos según tu nivel actual.</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20Estrat%C3%A9gica%201%3A1*%20por%20Meet." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
+          <div class="servicio-price">$45 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 450 · sesión de 90 min</span></div>
+          <div class="servicio-note">Sesión práctica de 90 minutos por Google Meet, sobre tu cuenta.</div>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Consultor%C3%ADa%20pr%C3%A1ctica*%20de%2090%20min." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
         </div>
       </div>
 
@@ -2558,19 +2566,16 @@ body::before {
       <span class="extras-label">También hacemos</span>
       <div class="extras-cards">
         <div class="extra-card">
-          <span class="extra-ico">🎯</span>
           <h4>Sitios Web de venta</h4>
           <p>Páginas como esta: diseño, copy y estructura pensados para una sola acción — que el visitante deje sus datos o te escriba. Listas para recibir tráfico de tus anuncios con el pixel de Meta ya configurado.</p>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Quiero una página →</a>
         </div>
         <div class="extra-card">
-          <span class="extra-ico">🤖</span>
           <h4>Automatización con IA</h4>
           <p>Agentes que responden por WhatsApp e Instagram las 24 horas: contestan, califican y agendan por vos, para que ningún mensaje se enfríe.</p>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Ver cómo funciona →</a>
         </div>
         <div class="extra-card">
-          <span class="extra-ico">🎬</span>
           <h4>Creación de contenido</h4>
           <p>Producción y edición de los videos y piezas que tus campañas necesitan, con la dirección creativa de la agencia DÚO: plan de contenido, guiones y grabación.</p>
           <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Conocé la agencia DÚO ↗</a>
@@ -2632,11 +2637,11 @@ body::before {
     <div class="wa-inbox reveal">
       <div class="wa-inbox-head"><span class="wa-dot"></span>WhatsApp · Bandeja de entrada</div>
       <div class="wa-chat">
-        <div class="wa-msg in"><span class="wa-name">Tienda de ropa · Santa Cruz</span>Invierto en anuncios, me llegan mensajes… pero no sé cuánto de eso se convierte en venta 😕<span class="wa-time">09:14</span></div>
+        <div class="wa-msg in"><span class="wa-name">Tienda de ropa · Santa Cruz</span>Invierto en anuncios, me llegan mensajes… pero no sé cuánto de eso se convierte en venta.<span class="wa-time">09:14</span></div>
         <div class="wa-msg in"><span class="wa-name">Clínica estética · Tarija</span>El que me maneja las redes me habla de likes y alcance. Nunca de cuánto vendí.<span class="wa-time">11:32</span></div>
-        <div class="wa-msg in"><span class="wa-name">Restaurante · Yacuiba</span>Apreté «promocionar» como sale en los tutoriales, gasté Bs 300 y solo me escribieron curiosos 🙃<span class="wa-time">13:05</span></div>
+        <div class="wa-msg in"><span class="wa-name">Restaurante · Yacuiba</span>Apreté «promocionar» como sale en los tutoriales, gasté Bs 300 y solo me escribieron curiosos.<span class="wa-time">13:05</span></div>
         <div class="wa-msg in"><span class="wa-name">Ecommerce · La Paz</span>Ya pagué a un trafficker antes. Sentí que era plata que se iba y nada volvía…<span class="wa-time">17:48</span></div>
-        <div class="wa-msg out">La mayoría pensando que el problema es Meta, el algoritmo o la segmentación. 😅 Casi nunca es eso: <b>es que nadie les mostró la estrategia y metodología que hay detrás de cada anuncio.</b> Es todo lo que acabás de ver arriba 👆<span class="wa-time">18:02 ✓✓</span></div>
+        <div class="wa-msg out">La mayoría piensa que el problema es Meta, el algoritmo o la segmentación. Casi nunca es eso: <b>es que nadie les mostró la estrategia y metodología que hay detrás de cada anuncio.</b> Es todo lo que acabás de ver arriba.<span class="wa-time">18:02 ✓✓</span></div>
       </div>
     </div>
 
@@ -2786,7 +2791,7 @@ body::before {
           <span>¿Cuánto cuesta trabajar con ustedes?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Agencia: desde $195 USD / Bs 1.950 al mes (la pauta va directo a Meta, aparte). Asesoría 1:1: $65 USD / Bs 650 por 3 sesiones. Landing pages: desde $145 USD / Bs 1.450, pago único.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Gestión: desde $250 USD / Bs 2.500 al mes (la pauta va directo a Meta, aparte). Consultoría práctica: $45 USD / Bs 450 por sesión de 90 min. Landing pages: desde $145 USD / Bs 1.450, pago único. Ambos servicios empiezan con una reunión inicial de diagnóstico, gratis.</div></div>
       </div>
 
     </div>
@@ -2917,7 +2922,7 @@ body::before {
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
         </button>
       </form>
-      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">📌 Para que llegues con todo claro: la reunión es <strong>gratis</strong>. Si después trabajamos juntos: Gestión desde <strong>$195 USD/mes</strong> · Asesoría 1:1 <strong>$60 USD</strong>.</p>
+      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">Para que llegues con todo claro: la reunión inicial es <strong>gratis</strong>. Si después trabajamos juntos: Gestión desde <strong>$250 USD/mes</strong> · Consultoría práctica de 90 min <strong>$45 USD</strong>.</p>
       <p class="lead-privacy">Te abre WhatsApp con tu info lista. Sin spam.</p>
     </div>
   </div>
@@ -3946,7 +3951,7 @@ waForm.addEventListener('submit', (e) => {
   dispararEventosWa(waCtx.c, { nombre: nombre, negocio: negocio, ciudad: ciudad, invirtio_ads: ads });
 
   // Registro opcional en Supabase (si está configurado)
-  if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.startsWith('https://')) {
+  if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.indexOf('PEGAR') === -1) {
     try {
       fetch(SUPABASE_URL + '/rest/v1/leads', {
         method: 'POST',
