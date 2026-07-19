@@ -1786,6 +1786,41 @@ section { padding: 92px 0; position: relative; }
 .eyebrow { letter-spacing: 0.16em; }
 .hero-micro b { color: var(--lime); font-weight: 800; }
 
+/* ═══════════ REBRAND EDITORIAL — menos es más ═══════════
+   Referencia de percepción: un consultor premium no grita.
+   El lima pasa de wallpaper a acento; los titulares crecen y
+   se calman; cada sección respira; un solo momento cósmico. */
+
+/* Aire estructural */
+section { padding: 104px 0; }
+@media (min-width: 768px) { section { padding: 138px 0; } }
+.sec-head { margin-bottom: 54px; }
+.sec-head p { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* Tipografía editorial: grande, tracking cerrado, sin gritar */
+h1 { letter-spacing: -0.03em; }
+h2 { font-size: clamp(30px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1.07; }
+
+/* El lima se vuelve escaso: solo hero, CTAs y datos pequeños */
+section:not(.hero) h2 .lime { color: var(--text); }
+.eyebrow { color: var(--text-3); background: transparent; border: 1px solid var(--line-soft); padding: 7px 14px; border-radius: 999px; }
+
+/* Un solo momento cósmico: el hero. El resto, sereno. */
+.problem-cosmos, .services-cosmos, .ciego-cosmos { display: none; }
+
+/* Superficies serenas: bordes finos, sombras profundas pero suaves */
+.servicio, .extra-card, .ciego-acc, .wa-inbox, .caso { border-radius: 14px; }
+.servicio.destacado { box-shadow: 0 0 0 1px var(--lime-line), 0 28px 70px rgba(0, 0, 0, 0.4); }
+.btn { border-radius: 10px; }
+.btn-lime:hover { box-shadow: 0 12px 34px rgba(198, 241, 53, 0.2); }
+
+/* Banda de datos (reemplaza a la marquesina) — números blancos, sobrios */
+.stats-band { border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); background: var(--bg-2); padding: 40px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 18px; text-align: center; }
+@media (min-width: 820px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(21px, 2.6vw, 30px); letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
+.stat span { display: block; font-size: 12.5px; color: var(--text-3); line-height: 1.5; margin-top: 6px; }
+
 /* ── Footer ── */
 footer {
   border-top: 1px solid var(--line-soft);
@@ -2383,18 +2418,14 @@ body::before {
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
-    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +7 meses</span>
-    <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
-    <span class="marquee-item"><b>🇧🇴</b> De Yacuiba para toda Bolivia</span>
-    <span class="marquee-item"><b>+5</b> años creando anuncios</span>
-    <span class="marquee-item"><b>+US$50.000</b> gestionados en Meta Ads</span>
-    <span class="marquee-item"><b>10.55x</b> ROAS e-commerce +7 meses</span>
-    <span class="marquee-item"><b>+25.000</b> conversaciones por WhatsApp</span>
-    <span class="marquee-item"><b>🇧🇴</b> De Yacuiba para toda Bolivia</span>
-    <span class="marquee-item"><b>+5</b> años creando anuncios</span>
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal"><b>US$50.000+</b><span>gestionados en Meta Ads</span></div>
+      <div class="stat reveal"><b>10.55x</b><span>de retorno sostenido por más de 7 meses</span></div>
+      <div class="stat reveal"><b>+25.000</b><span>conversaciones de venta generadas</span></div>
+      <div class="stat reveal"><b>5 países</b><span>operando con la misma metodología</span></div>
+    </div>
   </div>
 </div>
 
