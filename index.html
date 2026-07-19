@@ -2457,6 +2457,10 @@ h1 .lime, h2 .lime, .entregables-title .lime, .quien-social-txt h3 .lime {
 h2 { color: var(--text); }
 .eyebrow { color: var(--text-3); }
 
+/* Caja mixta editorial: las mayúsculas mataban a la serif itálica.
+   Este era el choque real entre tipografías. */
+h1, h2 { text-transform: none; letter-spacing: -0.022em; }
+
 /* La levitación ahora vive en el canvas — sin doble movimiento CSS */
 .ufloat { animation: none !important; }
 
