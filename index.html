@@ -12,7 +12,9 @@
 <meta property="og:description" content="Deja de pautar a ciegas. Vende con un sistema: estrategia, anuncios y contenido que convierten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.manubaldiviezo.lat">
-<meta property="og:image" content="/images/manu-baldiviezo-perfil.jpg">
+<meta property="og:image" content="https://www.manubaldiviezo.lat/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="canonical" href="https://www.manubaldiviezo.lat">
@@ -37,23 +39,23 @@ fbq('track', 'PageView');
   
 <style>
 :root {
-  /* Base editorial cálida — el negro queda para los momentos firma (hero y CTA) */
-  --bg: #F7F4EC;
-  --bg-2: #F1EDE1;
-  --bg-3: #EAE4D6;
+  /* Base oscura (la esencia DÚO) — las bandas .claro traen la calma crema */
+  --bg: #0B0B0D;
+  --bg-2: #101013;
+  --bg-3: #141418;
   --lime: #C6F135;
-  --lime-soft: rgba(140, 170, 20, 0.12);
-  --lime-line: rgba(120, 150, 15, 0.4);
+  --lime-soft: rgba(198, 241, 53, 0.12);
+  --lime-line: rgba(198, 241, 53, 0.35);
   --gold: #F5A623;
   --ember: #E8471A;
   --grad-premium: linear-gradient(92deg, #F5A623, #E8471A);
-  --card: #FFFFFF;
-  --card-hover: #FFFEF9;
-  --line: rgba(22, 20, 12, 0.16);
-  --line-soft: rgba(22, 20, 12, 0.09);
-  --text: #16150F;
-  --text-2: #45443B;
-  --text-3: #837F71;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.055);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --text: #FAFAF8;
+  --text-2: #B8B8B2;
+  --text-3: #7D7D78;
   --green: #34D27B;
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -1835,30 +1837,11 @@ section:not(.hero) h2 .lime { color: var(--text); }
 .servicio-sub { color: var(--ember); }
 .quien-firma { color: var(--ember); }
 
-/* El hero ahora vive en crema — la Ü tiene su propio escenario negro */
-.hero { background: transparent; border-bottom: 1px solid var(--line-soft); }
+/* Hero oscuro: la esencia — la Ü flota libre con su cosmos */
+.hero { background: var(--bg); border-bottom: 1px solid var(--line-soft); }
 .hero-lines, .hero-glow { display: none; }
-.hero h1 .lime {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 640;
-  letter-spacing: -0.01em;
-  color: var(--ember);
-}
-.hero .hero-micro b { color: var(--ember); }
-.hero .eyebrow { color: var(--text-3); }
-.u-stage {
-  position: relative;
-  width: min(560px, 100%);
-  margin: 34px auto 30px;
-  background: radial-gradient(480px 260px at 50% 20%, #16161a, #0B0B0D 78%);
-  border-radius: 26px;
-  overflow: hidden;
-  padding: 26px 16px 18px;
-  box-shadow: 0 34px 80px rgba(22, 20, 12, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
-}
-.u-stage .cosmic-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.u-stage .ufloat { position: relative; z-index: 1; margin: 0 auto; }
+.hero h1 .lime { color: var(--lime); }
+.hero .hero-micro b { color: var(--lime); }
 .cta-final { border-top: 1px solid rgba(255, 255, 255, 0.08); }
 .drawer { background: rgba(8, 8, 9, 0.98); }
 .sticky-m { background: rgba(10, 10, 11, 0.96); }
@@ -1866,14 +1849,13 @@ section:not(.hero) h2 .lime { color: var(--text); }
 
 /* La segunda voz tipográfica: Fraunces itálica en cálido.
    Donde antes gritaba el lima, ahora susurra una serif. */
-section:not(.hero):not(.cta-final) h2 .lime {
+h1 .lime, h2 .lime, .entregables-title .lime {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
   font-weight: 640;
   letter-spacing: -0.01em;
-  color: var(--ember);
 }
-.cta-final h2 .lime { color: var(--lime); }
+.claro h2 .lime, .claro .entregables-title .lime { color: var(--ember); }
 
 /* Acentos que en claro perdían contraste: pasan al cálido */
 .pilar-num, .ciego-num { color: var(--ember); }
@@ -2414,6 +2396,51 @@ body::before {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ═══════════ RITMO OSCURO / CREMA ═══════════
+   La base es oscura (la esencia); las secciones .claro
+   respiran en crema editorial para leer con calma. */
+.claro {
+  --bg: #F7F4EC; --bg-2: #F1EDE1; --bg-3: #EAE4D6;
+  --card: #FFFFFF; --card-hover: #FFFEF9;
+  --line: rgba(22, 20, 12, 0.16); --line-soft: rgba(22, 20, 12, 0.09);
+  --text: #16150F; --text-2: #45443B; --text-3: #837F71;
+  --lime-soft: rgba(140, 170, 20, 0.12); --lime-line: rgba(120, 150, 15, 0.4);
+  background: #F7F4EC;
+  color: var(--text);
+}
+.claro + .claro { border-top: 1px solid var(--line-soft); }
+.claro .eyebrow { color: var(--text-3); }
+.claro .pilar-num, .claro .ciego-num { color: var(--ember); }
+.claro .servicio-sub { color: var(--ember); }
+.claro .caso-video { color: var(--ember); border-color: var(--line); }
+.claro .caso-title b { color: var(--ember); }
+.claro .caso-metric b, .claro .servicio-price { color: var(--text); }
+.claro .suena-cierre a, .claro .servicios-riesgo a, .claro .extra-card a { color: var(--ember); }
+.claro .ciego-item.open .ciego-title, .claro .ciego-item.open .ciego-chev { color: var(--ember); }
+.claro .btn-ghost { border-color: var(--line); color: var(--text); }
+.claro .btn-ghost:hover { border-color: var(--ember); color: var(--ember); }
+#quien .quien-firma { color: var(--lime); }
+.problema .suena-cierre a { color: var(--lime); }
+
+/* Quién está detrás + TikTok, fusionados al final */
+.quien-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; margin-top: 54px; padding-top: 44px; border-top: 1px solid var(--line-soft); }
+.quien-social .tk-shot { flex-shrink: 0; }
+.quien-social-txt { max-width: 380px; }
+.quien-social-txt h3 { font-size: clamp(19px, 2.4vw, 24px); margin-bottom: 12px; }
+.quien-social-txt h3 .lime { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 640; }
+.quien-social-txt p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 20px; }
+.quien-social-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+#quien .tk-shot { border-color: rgba(255, 255, 255, 0.12); }
+#quien .tk-shot figcaption { background: #131316; border-top-color: rgba(255, 255, 255, 0.08); }
+#quien .tk-shot figcaption span { color: #FAFAF8; }
+#quien .tk-shot figcaption a { color: var(--lime); }
+
+/* Extras de servicios como línea compacta (dieta de texto) */
+.extras-inline { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; margin-top: 40px; font-size: 13.5px; color: var(--text-3); }
+.extras-inline b { color: var(--text); font-weight: 700; }
+.extras-inline a { font-weight: 700; color: var(--ember); }
+.extras-inline .sep { opacity: 0.45; }
 </style>
 </head>
 <body>
@@ -2455,17 +2482,15 @@ body::before {
 </nav>
 
 <section class="hero" id="inicio">
+  <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="container">
     <div class="hero-inner">
       <div>
         <span class="eyebrow">Meta Ads · Bolivia</span>
         <h1>Apretar «promocionar» <span class="lime">no es una estrategia.</span></h1>
         <p class="hero-sub">Convierto tus anuncios de Facebook e Instagram en un <strong>sistema de ventas medible</strong> — el mismo que le dio <strong>10.55x de retorno sostenido</strong> a una marca en Chile durante más de 7 meses.</p>
-        <div class="u-stage reveal">
-          <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
-          <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo oportunidades hacia el embudo">
-          <canvas id="ufunnel-c" aria-hidden="true"></canvas>
-          </div>
+        <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
+        <canvas id="ufunnel-c" aria-hidden="true"></canvas>
         </div>
         <div class="hero-ctas">
           <a href="#resultados" class="btn btn-lime">
@@ -2484,18 +2509,7 @@ body::before {
   </div>
 </section>
 
-<div class="stats-band">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat reveal"><b data-n="50000" data-pre="US$" data-suf="+">US$50.000+</b><span>gestionados en Meta Ads</span></div>
-      <div class="stat reveal"><b data-n="10.55" data-dec="2" data-suf="x">10.55x</b><span>de retorno sostenido por más de 7 meses</span></div>
-      <div class="stat reveal"><b data-n="25000" data-pre="+">+25.000</b><span>conversaciones de venta generadas</span></div>
-      <div class="stat reveal"><b data-n="5" data-suf=" países">5 países</b><span>operando con la misma metodología</span></div>
-    </div>
-  </div>
-</div>
-
-<section class="casos" id="resultados">
+<section class="casos claro" id="resultados">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Resultados</span>
@@ -2615,8 +2629,7 @@ body::before {
   </div>
 </section>
 
-<section id="servicios">
-  <canvas class="cosmic-canvas services-cosmos" aria-hidden="true"></canvas>
+<section id="servicios" class="claro">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Inversión</span>
@@ -2633,18 +2646,18 @@ body::before {
         <p class="servicio-sub">Para negocios que quieren delegar su publicidad a un sistema completo</p>
         <p class="servicio-desc">Tú vendes; yo hago que te lleguen clientes.</p>
         <ul class="servicio-list">
-          <li>Mapa de la Estrategia Digital: campañas, presupuestos y mejora de tu oferta</li>
-          <li>Investigación y benchmark de tu nicho en cada etapa del embudo</li>
-          <li>Estrategia de contenido DÚO con dirección creativa y guiones listos</li>
-          <li>Lanzamiento, testeo de variables y optimización continua</li>
-          <li>Medición que entendés: reporte mensual en lenguaje de negocio</li>
+          <li>Mapa de la Estrategia Digital, por escrito</li>
+          <li>Investigación y benchmark de tu nicho</li>
+          <li>Estrategia de contenido + guiones listos</li>
+          <li>Lanzamiento, testeo y optimización continua</li>
+          <li>Medición mensual en lenguaje de negocio</li>
         </ul>
-        <p class="servicio-note" style="margin-top:2px;">Los mismos 6 entregables del «80% que no se ve» — aplicados a tu negocio y documentados.</p>
+        <p class="servicio-note" style="margin-top:2px;">El «80% que no se ve», aplicado a tu negocio y documentado.</p>
         <div class="servicio-foot">
           <div class="servicio-price-label">Inversión mensual</div>
           <div class="servicio-price">Desde $250 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 2.500 mensual</span></div>
           <div class="servicio-note">Empezamos con una reunión inicial de diagnóstico. El pago de publicidad en Meta es aparte.</div>
-          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Garantía de claridad</strong>: si al día 30 no sabés exactamente qué está funcionando, qué no y por qué, no seguimos — y te quedás con tu estrategia documentada.</div>
+          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Garantía de claridad</strong>: si al día 30 no sabés qué funciona y por qué, no seguimos — tu estrategia documentada queda con vos.</div>
           <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
         </div>
       </div>
@@ -2669,26 +2682,7 @@ body::before {
 
     </div>
 
-    <div class="extras-strip reveal">
-      <span class="extras-label">También hacemos</span>
-      <div class="extras-cards">
-        <div class="extra-card">
-          <h4>Sitios Web de venta</h4>
-          <p>Páginas como esta: diseño, copy y estructura pensados para una sola acción — que el visitante deje sus datos o te escriba. Listas para recibir tráfico de tus anuncios con el pixel de Meta ya configurado.</p>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Quiero una página →</a>
-        </div>
-        <div class="extra-card">
-          <h4>Automatización con IA</h4>
-          <p>Agentes que responden por WhatsApp e Instagram las 24 horas: contestan, califican y agendan por vos, para que ningún mensaje se enfríe.</p>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Ver cómo funciona →</a>
-        </div>
-        <div class="extra-card">
-          <h4>Creación de contenido</h4>
-          <p>Producción y edición de los videos y piezas que tus campañas necesitan, con la dirección creativa de la agencia DÚO: plan de contenido, guiones y grabación.</p>
-          <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Conocé la agencia DÚO ↗</a>
-        </div>
-      </div>
-    </div>
+    <p class="extras-inline reveal"><b>También:</b> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Sitios web de venta</a> <span class="sep">·</span> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
 
     <p class="servicios-riesgo reveal">¿No sabes cuál necesitas? Escríbeme y te lo digo con datos — aunque no trabajemos juntos.</p>
   </div>
@@ -2716,7 +2710,7 @@ body::before {
   </div>
 </section>
 
-<section id="proceso">
+<section id="proceso" class="claro">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Cómo trabajamos</span>
@@ -2779,32 +2773,6 @@ body::before {
   </div>
 </section>
 
-<section id="quien">
-  <div class="container">
-    <div class="quien-grid">
-      <div class="quien-foto reveal">
-        <div class="hero-frame">
-          <div class="hero-photo">
-            <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital" loading="lazy">
-            <div class="hero-grade"></div>
-            <div class="hero-caption">
-              <div class="hero-caption-name">Manu Baldiviezo</div>
-              <div class="hero-caption-role">Estratega Digital · +5 años en Meta Ads</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="quien-texto reveal">
-        <span class="eyebrow">Quién está detrás</span>
-        <h2>De Bolivia <span class="lime">para el mundo</span></h2>
-        <p>Soy Emanuel. Empecé hace más de 5 años vendiendo con anuncios para mis propios emprendimientos — no para clientes. Ahí aprendí lo que ningún curso enseña: <strong>cuando la plata que se invierte es tuya, medís todo.</strong></p>
-        <p>Con esa obsesión llevé DÚO a más de 30 negocios en 5 países, gestionando campañas de clientes que invierten menos de $100 al mes hasta cuentas que invierten miles de dólares mes tras mes.</p>
-        <div class="quien-firma">Manu Baldiviezo · Estratega Digital · Bolivia</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="cta-final">
   <div class="container">
     <div class="sec-head reveal">
@@ -2823,7 +2791,7 @@ body::before {
   </div>
 </section>
 
-<section class="faq">
+<section class="faq claro">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">FAQ</span>
@@ -2867,25 +2835,44 @@ body::before {
   </div>
 </section>
 
-<section id="social">
+<section id="quien">
   <div class="container">
-    <div class="social-grid">
-      <div class="social-mock reveal">
-        <figure class="tk-shot">
-          <img src="/images/tiktok-perfil.png" alt="Perfil de TikTok de Manu Baldiviezo (@manu_estrategadigital)" loading="lazy">
-          <figcaption>
-            <span>@manu_estrategadigital</span>
-            <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">Ver perfil ↗</a>
-          </figcaption>
-        </figure>
+    <div class="quien-grid">
+      <div class="quien-foto reveal">
+        <div class="hero-frame">
+          <div class="hero-photo">
+            <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital" loading="lazy">
+            <div class="hero-grade"></div>
+            <div class="hero-caption">
+              <div class="hero-caption-name">Manu Baldiviezo</div>
+              <div class="hero-caption-role">Estratega Digital · +5 años en Meta Ads</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="social-texto reveal">
-        <span class="eyebrow">Sin humo</span>
-        <h2>Mirá cómo trabajo <span class="lime">antes de escribirme</span></h2>
-        <p>Todo lo que leíste en esta página lo muestro en la práctica, en público: estrategias, campañas reales y lo que aprendo cada semana gestionando cuentas. Si querés saber quién va a tocar tu publicidad, <strong>revisá mi contenido primero.</strong></p>
-        <div class="social-btns">
-          <a class="btn btn-lime" href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok · @manu_estrategadigital</a>
-          <a class="btn btn-ghost" href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram · @manubaldiviezo</a>
+      <div class="quien-texto reveal">
+        <span class="eyebrow">Quién está detrás</span>
+        <h2>De Bolivia <span class="lime">para el mundo</span></h2>
+        <p>Soy Emanuel. Empecé hace más de 5 años vendiendo con anuncios para mis propios emprendimientos — no para clientes. Ahí aprendí lo que ningún curso enseña: <strong>cuando la plata que se invierte es tuya, medís todo.</strong></p>
+        <p>Con esa obsesión llevé DÚO a más de 30 negocios en 5 países, gestionando campañas de clientes que invierten menos de $100 al mes hasta cuentas que invierten miles de dólares mes tras mes.</p>
+        <div class="quien-firma">Manu Baldiviezo · Estratega Digital · Bolivia</div>
+      </div>
+    </div>
+
+    <div class="quien-social reveal">
+      <figure class="tk-shot">
+        <img src="/images/tiktok-perfil.png" alt="Perfil de TikTok de Manu Baldiviezo (@manu_estrategadigital)" loading="lazy">
+        <figcaption>
+          <span>@manu_estrategadigital</span>
+          <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">Ver perfil ↗</a>
+        </figcaption>
+      </figure>
+      <div class="quien-social-txt">
+        <h3>Mirá cómo trabajo <span class="lime">antes de escribirme</span></h3>
+        <p>Todo lo que leíste acá lo muestro en la práctica, en público. Si querés saber quién va a tocar tu publicidad, revisá mi contenido primero.</p>
+        <div class="quien-social-btns">
+          <a class="btn btn-lime" href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn btn-ghost" href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
     </div>
@@ -3508,17 +3495,22 @@ if (window.matchMedia('(hover: hover)').matches) {
       start = { x: W + 26 + Math.random() * 34, y: 8 + Math.random() * 44 };
     }
 
+    // Cada lead es una oportunidad real: WhatsApp, venta o consulta.
+    const kind = ['wa', 'venta', 'consulta', 'wa'][i % 4];
+    const KIND_COLOR = { wa: '#25D366', venta: GOLD, consulta: '#5FB4FF' };
+
     return {
       start,
       target,
       targetIndex,
+      kind,
       progress: Math.random(),
       speed: 0.0028 + Math.random() * 0.0025,
-      size: 2.4 + Math.random() * 3.6,
+      size: 3.2 + Math.random() * 2.6,
       alpha: 0.62 + Math.random() * 0.38,
       jitter: Math.random() * Math.PI * 2,
       hold: 0,
-      color: targetIndex < 2 ? GOLD : ORANGE
+      color: KIND_COLOR[kind]
     };
   }
 
@@ -3577,6 +3569,67 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.restore();
   }
 
+  function roundRectPath(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // Íconos de oportunidad: burbuja de WhatsApp, moneda de venta, consulta.
+  function drawIcon(kind, x, y, s, color, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(x, y);
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 6;
+
+    if (kind === 'venta') {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(0, 0, s * 1.05, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = 'rgba(11, 11, 13, 0.85)';
+      ctx.font = '900 ' + (s * 1.5).toFixed(1) + 'px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('$', 0, s * 0.1);
+    } else {
+      const w = s * 2.3, h = s * 1.75, r = Math.min(h * 0.42, s * 0.8);
+      ctx.fillStyle = color;
+      roundRectPath(-w / 2, -h / 2, w, h, r);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(-w * 0.16, h / 2 - 0.5);
+      ctx.lineTo(-w * 0.28, h / 2 + s * 0.55);
+      ctx.lineTo(w * 0.02, h / 2 - 0.5);
+      ctx.closePath();
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      if (kind === 'wa') {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+        const dr = Math.max(0.55, s * 0.16);
+        [-0.6, 0, 0.6].forEach(function (k) {
+          ctx.beginPath();
+          ctx.arc(k * s * 0.6, -h * 0.06, dr, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      } else {
+        ctx.fillStyle = '#fff';
+        ctx.font = '800 ' + (s * 1.4).toFixed(1) + 'px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('?', 0, -h * 0.02);
+      }
+    }
+
+    ctx.restore();
+  }
+
   function drawParticle(p, scaleBoost) {
     const progress = Math.min(1, p.progress);
     const pos = particlePath(p, progress);
@@ -3619,13 +3672,8 @@ if (window.matchMedia('(hover: hover)').matches) {
 
     ctx.stroke();
 
-    // Lead principal: pixel sólido.
-    drawPixel(x, y, p.size, p.color, alpha, true);
-
-    // Pixel secundario, discreto.
-    if (p.size > 4.5) {
-      drawPixel(x + p.size * 0.72, y - p.size * 0.48, p.size * 0.38, p.color, alpha * 0.62, true);
-    }
+    // Lead principal: ícono de oportunidad según su tipo.
+    drawIcon(p.kind, x, y, p.size, p.color, alpha);
 
     ctx.restore();
   }
