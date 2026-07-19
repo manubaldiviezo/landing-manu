@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,640&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -39,23 +39,23 @@ fbq('track', 'PageView');
   
 <style>
 :root {
-  /* Base oscura (la esencia DÚO) — las bandas .claro traen la calma crema */
-  --bg: #0B0B0D;
-  --bg-2: #101013;
-  --bg-3: #141418;
+  /* Crema editorial en toda la página — el negro es puntual: resultados, CTA flotante, menú y footer */
+  --bg: #F7F4EC;
+  --bg-2: #F1EDE1;
+  --bg-3: #EAE4D6;
   --lime: #C6F135;
-  --lime-soft: rgba(198, 241, 53, 0.12);
-  --lime-line: rgba(198, 241, 53, 0.35);
+  --lime-soft: rgba(140, 170, 20, 0.12);
+  --lime-line: rgba(120, 150, 15, 0.4);
   --gold: #F5A623;
   --ember: #E8471A;
   --grad-premium: linear-gradient(92deg, #F5A623, #E8471A);
-  --card: rgba(255, 255, 255, 0.03);
-  --card-hover: rgba(255, 255, 255, 0.055);
-  --line: rgba(255, 255, 255, 0.1);
-  --line-soft: rgba(255, 255, 255, 0.06);
-  --text: #FAFAF8;
-  --text-2: #B8B8B2;
-  --text-3: #7D7D78;
+  --card: #FFFFFF;
+  --card-hover: #FFFEF9;
+  --line: rgba(22, 20, 12, 0.16);
+  --line-soft: rgba(22, 20, 12, 0.09);
+  --text: #16150F;
+  --text-2: #45443B;
+  --text-3: #837F71;
   --green: #34D27B;
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -89,7 +89,7 @@ input { font-family: inherit; }
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--pad); }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.04;
@@ -109,7 +109,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.24em;
@@ -190,7 +190,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 .drawer-nav { display: flex; flex-direction: column; max-width: 480px; margin: 0 auto; width: 100%; }
 
 .drawer-nav a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(22px, 6vw, 32px);
   font-weight: 900;
   text-transform: uppercase;
@@ -263,8 +263,8 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   44%, 100% { transform: scaleX(0); transform-origin: right; }
 }
 
-.pipe-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px; color: var(--lime); letter-spacing: 0.05em; }
-.pipe-node h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.01em; margin: 10px 0 6px; color: var(--text); }
+.pipe-num { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 900; font-size: 12px; color: var(--lime); letter-spacing: 0.05em; }
+.pipe-node h4 { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.01em; margin: 10px 0 6px; color: var(--text); }
 .pipe-node p { font-size: 11.5px; color: var(--text-3); line-height: 1.45; }
 
 .pipe-flow {
@@ -288,7 +288,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-weight: 900;
   font-size: 13px;
   letter-spacing: 0.12em;
@@ -321,7 +321,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 }
 .extra-card:hover { transform: translateY(-3px); border-color: var(--lime-line); }
 .extra-card .extra-ico { font-size: 22px; margin-bottom: 10px; }
-.extra-card h4 { font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 800; margin-bottom: 7px; color: var(--text); }
+.extra-card h4 { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-size: 14.5px; font-weight: 800; margin-bottom: 7px; color: var(--text); }
 .extra-card p { font-size: 12.5px; color: var(--text-3); line-height: 1.55; margin-bottom: 14px; flex: 1; }
 .extra-card a { font-size: 12.5px; font-weight: 700; color: var(--lime); margin-top: auto; }
 
@@ -337,7 +337,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -396,7 +396,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 .logo-sep { width: 1px; height: 22px; background: var(--line); }
 
 .logo-role {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -428,7 +428,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
     padding: 11px 20px;
     background: var(--lime);
     color: #0B0B0D;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
     font-weight: 800;
     font-size: 12.5px;
     letter-spacing: 0.02em;
@@ -658,7 +658,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 }
 
 .hero-caption-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 900;
   text-transform: uppercase;
@@ -679,7 +679,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 }
 
 .hero-chip-value {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 19px;
   font-weight: 900;
   color: var(--lime);
@@ -727,7 +727,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   align-items: center;
   gap: 14px;
   padding: 0 28px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 13.5px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -789,7 +789,7 @@ section { padding: 92px 0; position: relative; }
 @media (min-width: 768px) { .stat { border-bottom: none; padding: 56px 24px; } }
 
 .stat-value {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(27px, 3.8vw, 42px);
   font-weight: 900;
   color: var(--lime);
@@ -808,7 +808,7 @@ section { padding: 92px 0; position: relative; }
 .problema h2 { margin-bottom: 28px; }
 
 .problema-quote {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(17px, 2.4vw, 23px);
   font-weight: 700;
   color: var(--text);
@@ -901,7 +901,7 @@ section { padding: 92px 0; position: relative; }
   content: '“';
   position: absolute;
   top: 8px; left: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 52px;
   font-weight: 900;
   color: var(--lime);
@@ -981,7 +981,7 @@ section { padding: 92px 0; position: relative; }
   color: var(--text); font-family: inherit; transition: background 0.25s;
 }
 .ciego-row:hover { background: rgba(255,255,255,0.025); }
-.ciego-num { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 11.5px; color: var(--lime); letter-spacing: 0.08em; flex-shrink: 0; }
+.ciego-num { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 900; font-size: 11.5px; color: var(--lime); letter-spacing: 0.08em; flex-shrink: 0; }
 .ciego-title { flex: 1; font-weight: 700; font-size: 14.5px; line-height: 1.35; }
 .ciego-chev { color: var(--text-3); font-size: 13px; transition: transform 0.3s ease, color 0.3s; flex-shrink: 0; }
 .ciego-item.open .ciego-chev { transform: rotate(180deg); color: var(--lime); }
@@ -1035,7 +1035,7 @@ section { padding: 92px 0; position: relative; }
   margin-top: 26px;
   padding-top: 20px;
   border-top: 1px solid var(--line-soft);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -1078,7 +1078,7 @@ section { padding: 92px 0; position: relative; }
 .pilar:hover::before { transform: scaleX(1); }
 
 .pilar-num {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 900;
   color: var(--lime);
@@ -1167,7 +1167,7 @@ section { padding: 92px 0; position: relative; }
 
 .caso-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 
-.caso-brand { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800; color: var(--text); }
+.caso-brand { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-size: 13px; font-weight: 800; color: var(--text); }
 
 .caso-tag {
   font-size: 10px;
@@ -1181,7 +1181,7 @@ section { padding: 92px 0; position: relative; }
 }
 
 .caso-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(16px, 1.9vw, 19px);
   font-weight: 800;
   line-height: 1.32;
@@ -1204,7 +1204,7 @@ section { padding: 92px 0; position: relative; }
 
 .caso-metric b {
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 900;
   color: var(--lime);
@@ -1257,7 +1257,7 @@ section { padding: 92px 0; position: relative; }
 
 .extras-label {
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -1327,7 +1327,7 @@ section { padding: 92px 0; position: relative; }
   top: -12px; left: 28px;
   background: var(--lime);
   color: #0B0B0D;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -1337,7 +1337,7 @@ section { padding: 92px 0; position: relative; }
 }
 
 .servicio-tag {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -1386,7 +1386,7 @@ section { padding: 92px 0; position: relative; }
 }
 
 .servicio-price {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(19px, 2.3vw, 23px);
   font-weight: 900;
   margin-bottom: 3px;
@@ -1403,7 +1403,7 @@ section { padding: 92px 0; position: relative; }
   display: flex;
   align-items: center;
   gap: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.2em;
@@ -1505,7 +1505,7 @@ section { padding: 92px 0; position: relative; }
 .mc-logo { height: 14px; width: auto; margin-bottom: 14px; position: relative; z-index: 1; }
 
 .mc-eye {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 5.5px;
   font-weight: 700;
   letter-spacing: 0.32em;
@@ -1517,7 +1517,7 @@ section { padding: 92px 0; position: relative; }
 }
 
 .mc-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 21px;
   font-weight: 900;
   line-height: 1.02;
@@ -1537,7 +1537,7 @@ section { padding: 92px 0; position: relative; }
 }
 
 .mc-sub {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 7px;
   font-weight: 700;
   letter-spacing: 0.26em;
@@ -1571,7 +1571,7 @@ section { padding: 92px 0; position: relative; }
   bottom: 10px; left: 14px; right: 14px;
   display: flex;
   justify-content: space-between;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 4.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -1610,7 +1610,7 @@ section { padding: 92px 0; position: relative; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 8px;
   font-weight: 900;
   color: #0B0B0D;
@@ -1664,7 +1664,7 @@ section { padding: 92px 0; position: relative; }
 .rec-pills { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 
 .rec-pill {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 9.5px;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -1739,7 +1739,7 @@ section { padding: 92px 0; position: relative; }
   align-items: center;
   gap: 22px;
   text-align: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: clamp(14.5px, 1.8vw, 16.5px);
   font-weight: 800;
   transition: color 0.2s ease;
@@ -1817,31 +1817,31 @@ section:not(.hero) h2 .lime { color: var(--text); }
 .stats-band { border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); background: var(--bg-2); padding: 40px 0; }
 .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 18px; text-align: center; }
 @media (min-width: 820px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-.stat b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(21px, 2.6vw, 30px); letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
+.stat b { display: block; font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 900; font-size: clamp(21px, 2.6vw, 30px); letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
 .stat span { display: block; font-size: 12.5px; color: var(--text-3); line-height: 1.5; margin-top: 6px; }
 
 /* ═══════════ LUZ + MOMENTOS FIRMA ═══════════
    La página vive en crema editorial; el negro queda reservado
    para el hero (la Ü), el CTA final, el menú y el footer. */
-.cta-final, footer, .drawer, .sticky-m, .overlay > * {
+.oscuro, footer, .drawer, .sticky-m, .overlay > * {
   --bg: #0B0B0D; --bg-2: #101013; --bg-3: #141418;
   --card: rgba(255, 255, 255, 0.035); --card-hover: rgba(255, 255, 255, 0.06);
   --line: rgba(255, 255, 255, 0.14); --line-soft: rgba(255, 255, 255, 0.08);
   --text: #FAFAF8; --text-2: #C4C4BE; --text-3: #8C8C85;
   --lime-soft: rgba(198, 241, 53, 0.12); --lime-line: rgba(198, 241, 53, 0.35);
 }
-.cta-final, footer { background: #0B0B0D; color: var(--text); }
+.oscuro, footer { background: #0B0B0D; color: var(--text); }
 .drawer, .sticky-m { color: var(--text); }
 .overlay > * { color: var(--text); }
 .caso-video { color: var(--ember); border-color: var(--line); }
 .servicio-sub { color: var(--ember); }
 .quien-firma { color: var(--ember); }
 
-/* Hero oscuro: la esencia — la Ü flota libre con su cosmos */
+/* Hero crema: la Ü carbón flota sobre la luz */
 .hero { background: var(--bg); border-bottom: 1px solid var(--line-soft); }
 .hero-lines, .hero-glow { display: none; }
-.hero h1 .lime { color: var(--lime); }
-.hero .hero-micro b { color: var(--lime); }
+.hero h1 .lime { color: var(--ember); }
+.hero .hero-micro b { color: var(--ember); }
 .cta-final { border-top: 1px solid rgba(255, 255, 255, 0.08); }
 .drawer { background: rgba(8, 8, 9, 0.98); }
 .sticky-m { background: rgba(10, 10, 11, 0.96); }
@@ -1850,7 +1850,7 @@ section:not(.hero) h2 .lime { color: var(--text); }
 /* La segunda voz tipográfica: Fraunces itálica en cálido.
    Donde antes gritaba el lima, ahora susurra una serif. */
 h1 .lime, h2 .lime, .entregables-title .lime {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
   font-weight: 640;
   letter-spacing: -0.01em;
@@ -1859,7 +1859,7 @@ h1 .lime, h2 .lime, .entregables-title .lime {
 
 /* Acentos que en claro perdían contraste: pasan al cálido */
 .pilar-num, .ciego-num { color: var(--ember); }
-.entregables-title .lime { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 640; color: var(--ember); }
+.entregables-title .lime { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 640; color: var(--ember); }
 .suena-cierre a, .servicios-riesgo a { color: var(--ember); }
 .extra-card a, .footer-contact a:hover, .footer-nav a:hover { color: var(--ember); }
 footer .footer-contact a:hover, footer .footer-nav a:hover { color: var(--lime); }
@@ -1937,7 +1937,7 @@ footer {
   padding: 11px 18px;
   background: var(--lime);
   color: #0B0B0D;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 12.5px;
   font-weight: 900;
   border-radius: 8px;
@@ -2053,7 +2053,7 @@ footer {
 
 .lead-pill {
   display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 9.5px;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -2192,7 +2192,7 @@ body::before {
   animation: float 6s ease-in-out infinite;
 }
 .duo-stamp span {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -2205,7 +2205,7 @@ body::before {
   top: 50%; right: -34px;
   z-index: 2;
   transform: translateY(-50%) rotate(90deg);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.36em;
@@ -2270,7 +2270,7 @@ body::before {
 .notion-bar { display: flex; align-items: center; gap: 5px; padding: 8px 11px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
 .notion-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
 .notion-body { padding: 15px 15px 17px; }
-.notion-title { display: flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 13px; text-transform: none; }
+.notion-title { display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 13px; text-transform: none; }
 .notion-title .emoji { font-size: 16px; }
 .notion-q { border-left: 2.5px solid var(--lime); background: rgba(255, 255, 255, 0.03); border-radius: 0 6px 6px 0; padding: 8px 11px; margin-bottom: 8px; }
 .notion-q:last-child { margin-bottom: 0; }
@@ -2420,27 +2420,84 @@ body::before {
 .claro .ciego-item.open .ciego-title, .claro .ciego-item.open .ciego-chev { color: var(--ember); }
 .claro .btn-ghost { border-color: var(--line); color: var(--text); }
 .claro .btn-ghost:hover { border-color: var(--ember); color: var(--ember); }
-#quien .quien-firma { color: var(--lime); }
-.problema .suena-cierre a { color: var(--lime); }
+.problema .suena-cierre a { color: var(--ember); }
 
 /* Quién está detrás + TikTok, fusionados al final */
 .quien-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; margin-top: 54px; padding-top: 44px; border-top: 1px solid var(--line-soft); }
 .quien-social .tk-shot { flex-shrink: 0; }
 .quien-social-txt { max-width: 380px; }
 .quien-social-txt h3 { font-size: clamp(19px, 2.4vw, 24px); margin-bottom: 12px; }
-.quien-social-txt h3 .lime { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 640; }
+.quien-social-txt h3 .lime { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 640; }
 .quien-social-txt p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 20px; }
 .quien-social-btns { display: flex; flex-wrap: wrap; gap: 12px; }
-#quien .tk-shot { border-color: rgba(255, 255, 255, 0.12); }
-#quien .tk-shot figcaption { background: #131316; border-top-color: rgba(255, 255, 255, 0.08); }
-#quien .tk-shot figcaption span { color: #FAFAF8; }
-#quien .tk-shot figcaption a { color: var(--lime); }
+/* TikTok recortado: solo la mitad del perfil, con botón para ver el contenido */
+.tk-shot img { width: 100%; height: clamp(220px, 46vw, 300px); object-fit: cover; object-position: top; }
 
 /* Extras de servicios como línea compacta (dieta de texto) */
 .extras-inline { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; margin-top: 40px; font-size: 13.5px; color: var(--text-3); }
 .extras-inline b { color: var(--text); font-weight: 700; }
 .extras-inline a { font-weight: 700; color: var(--ember); }
 .extras-inline .sep { opacity: 0.45; }
+
+/* ═══════════ V4 — CREMA TOTAL · NEGRO PUNTUAL ═══════════
+   Tipos: Bricolage Grotesque (voz principal) + Instrument Serif
+   itálica (acento). Tinta y naranja mandan; el lima es matiz. */
+
+/* La serif de acento: corre chica, se compensa y va en naranja */
+h1 .lime, h2 .lime, .entregables-title .lime, .quien-social-txt h3 .lime {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.08em;
+  letter-spacing: 0;
+  color: var(--ember);
+}
+.oscuro h2 .lime { color: var(--lime); }
+
+/* Titulares con la voz nueva: pesados pero no gritones */
+h1, h2 { font-weight: 800; }
+h3, h4 { font-weight: 700; }
+
+/* Resultados: la banda negra de la casa */
+.oscuro .caso { border: 1px solid rgba(255, 255, 255, 0.09); background: #121214; }
+.oscuro .caso-metric b { color: var(--lime); }
+.oscuro .caso-title b { color: var(--gold); }
+.oscuro .sec-head p { color: var(--text-2); }
+.oscuro .casos-hint { color: var(--text-3); }
+
+/* Cómo trabajamos: de texto plano a tarjetas con número */
+.pasos-grid .pilar {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 26px 24px;
+  box-shadow: 0 14px 40px rgba(22, 20, 12, 0.06);
+}
+.pasos-grid .pilar-num {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 34px;
+  color: var(--ember);
+  opacity: 0.9;
+}
+
+/* El CTA flotante toma el rol del cierre (también en desktop) */
+@media (min-width: 768px) {
+  .sticky-m {
+    display: flex;
+    left: auto;
+    right: 22px;
+    bottom: 22px;
+    width: auto;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Botones: lima como matiz de conversión, tinta como estructura */
+.btn-lime { box-shadow: 0 10px 28px rgba(140, 170, 20, 0.25); }
+.btn-ghost { border-width: 1.5px; }
 </style>
 </head>
 <body>
@@ -2509,7 +2566,7 @@ body::before {
   </div>
 </section>
 
-<section class="casos claro" id="resultados">
+<section class="casos oscuro" id="resultados">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Resultados</span>
@@ -2720,24 +2777,6 @@ body::before {
   </div>
 </section>
 
-<section class="cta-final">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Empieza hoy</span>
-      <h2>Agendá tu <span class="lime">reunión estratégica</span> gratis</h2>
-      <p>Te digo con números si te conviene invertir — y si no te conviene, también. Sin compromiso.</p>
-    </div>
-    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-      <a href="/agenda" class="btn btn-lime">
-        Agendar diagnóstico por Google Meet
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico*%20gratis." target="_blank" rel="noopener" class="btn btn-ghost">Prefiero escribir por WhatsApp</a>
-    </div>
-    <p class="reveal" style="text-align:center;font-size:12.5px;color:var(--text-3);margin-top:16px">20–30 minutos · Es un diagnóstico, no una llamada de venta · Sin compromiso</p>
-  </div>
-</section>
-
 <section class="faq claro">
   <div class="container">
     <div class="sec-head reveal">
@@ -2861,10 +2900,10 @@ body::before {
 
 <div class="sticky-m" id="sticky-m">
   <div class="sticky-m-text">
-    <div class="sticky-m-eyebrow">¿Meta Ads para tu negocio?</div>
-    <div class="sticky-m-title">Reunión estratégica gratis · te respondo hoy.</div>
+    <div class="sticky-m-eyebrow">Diagnóstico gratis · 20-30 min</div>
+    <div class="sticky-m-title">¿Te conviene invertir? Te lo digo con números.</div>
   </div>
-  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="sticky-m-btn">Escríbeme</a>
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico*%20gratis." target="_blank" rel="noopener" class="sticky-m-btn">Agendar</a>
 </div>
 
 <!-- Video modal -->
@@ -2997,7 +3036,7 @@ if (window.matchMedia('(hover: hover)').matches) {
   const canvases = document.querySelectorAll('.cosmic-canvas');
   if (!canvases.length) return;
 
-  const LIME = '#C6F135', GOLD = '#F5A623', WHITE = '#FAFAF8';
+  const LIME = '#E8471A', GOLD = '#F5A623', WHITE = 'rgba(22, 20, 12, 0.55)'; // motas tinta + destellos cálidos sobre crema
 
   canvases.forEach((canvas) => {
     const ctx = canvas.getContext('2d');
@@ -3336,7 +3375,7 @@ if (window.matchMedia('(hover: hover)').matches) {
 
   const GOLD = '#F5A623';
   const ORANGE = '#E8471A';
-  const WHITE = '#FAFAF8';
+  const WHITE = '#1D1D1B'; // la U ahora es carbón: protagonista sobre crema
   const LIME = '#C6F135';
 
   let raf = null;
