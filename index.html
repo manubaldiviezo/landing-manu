@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,640&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -37,22 +37,23 @@ fbq('track', 'PageView');
   
 <style>
 :root {
-  --bg: #0B0B0D;
-  --bg-2: #101013;
-  --bg-3: #141418;
+  /* Base editorial cálida — el negro queda para los momentos firma (hero y CTA) */
+  --bg: #F7F4EC;
+  --bg-2: #F1EDE1;
+  --bg-3: #EAE4D6;
   --lime: #C6F135;
-  --lime-soft: rgba(198, 241, 53, 0.12);
-  --lime-line: rgba(198, 241, 53, 0.35);
+  --lime-soft: rgba(140, 170, 20, 0.12);
+  --lime-line: rgba(120, 150, 15, 0.4);
   --gold: #F5A623;
   --ember: #E8471A;
   --grad-premium: linear-gradient(92deg, #F5A623, #E8471A);
-  --card: rgba(255, 255, 255, 0.03);
-  --card-hover: rgba(255, 255, 255, 0.055);
-  --line: rgba(255, 255, 255, 0.1);
-  --line-soft: rgba(255, 255, 255, 0.06);
-  --text: #FAFAF8;
-  --text-2: #B8B8B2;
-  --text-3: #7D7D78;
+  --card: #FFFFFF;
+  --card-hover: #FFFEF9;
+  --line: rgba(22, 20, 12, 0.16);
+  --line-soft: rgba(22, 20, 12, 0.09);
+  --text: #16150F;
+  --text-2: #45443B;
+  --text-3: #837F71;
   --green: #34D27B;
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -1806,7 +1807,7 @@ section:not(.hero) h2 .lime { color: var(--text); }
 .eyebrow { color: var(--text-3); background: transparent; border: 1px solid var(--line-soft); padding: 7px 14px; border-radius: 999px; }
 
 /* Un solo momento cósmico: el hero. El resto, sereno. */
-.problem-cosmos, .services-cosmos, .ciego-cosmos { display: none; }
+.problem-cosmos, .services-cosmos, .ciego-cosmos, .section-funnel-bg { display: none; }
 
 /* Superficies serenas: bordes finos, sombras profundas pero suaves */
 .servicio, .extra-card, .ciego-acc, .wa-inbox, .caso { border-radius: 14px; }
@@ -1820,6 +1821,46 @@ section:not(.hero) h2 .lime { color: var(--text); }
 @media (min-width: 820px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
 .stat b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(21px, 2.6vw, 30px); letter-spacing: -0.01em; color: var(--text); line-height: 1.1; }
 .stat span { display: block; font-size: 12.5px; color: var(--text-3); line-height: 1.5; margin-top: 6px; }
+
+/* ═══════════ LUZ + MOMENTOS FIRMA ═══════════
+   La página vive en crema editorial; el negro queda reservado
+   para el hero (la Ü), el CTA final, el menú y el footer. */
+.hero, .cta-final, footer, .drawer, .sticky-m, .overlay > * {
+  --bg: #0B0B0D; --bg-2: #101013; --bg-3: #141418;
+  --card: rgba(255, 255, 255, 0.035); --card-hover: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.14); --line-soft: rgba(255, 255, 255, 0.08);
+  --text: #FAFAF8; --text-2: #C4C4BE; --text-3: #8C8C85;
+  --lime-soft: rgba(198, 241, 53, 0.12); --lime-line: rgba(198, 241, 53, 0.35);
+}
+.hero, .cta-final, footer { background: #0B0B0D; color: var(--text); }
+.hero { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.cta-final { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.drawer { background: rgba(8, 8, 9, 0.98); }
+.sticky-m { background: rgba(10, 10, 11, 0.96); }
+.overlay > * { background: #101013; }
+
+/* La segunda voz tipográfica: Fraunces itálica en cálido.
+   Donde antes gritaba el lima, ahora susurra una serif. */
+section:not(.hero):not(.cta-final) h2 .lime {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 640;
+  letter-spacing: -0.01em;
+  color: var(--ember);
+}
+.cta-final h2 .lime { color: var(--lime); }
+
+/* Acentos que en claro perdían contraste: pasan al cálido */
+.pilar-num, .ciego-num { color: var(--ember); }
+.entregables-title .lime { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 640; color: var(--ember); }
+.suena-cierre a, .servicios-riesgo a { color: var(--ember); }
+.extra-card a, .footer-contact a:hover, .footer-nav a:hover { color: var(--ember); }
+footer .footer-contact a:hover, footer .footer-nav a:hover { color: var(--lime); }
+.ciego-item.open .ciego-title, .ciego-item.open .ciego-chev { color: var(--ember); }
+.caso-title b { color: var(--ember); }
+.caso-metric b { color: var(--text); }
+.servicio-price { color: var(--text); }
+.hero-micro b { color: var(--lime); }
 
 /* ── Footer ── */
 footer {
@@ -2372,7 +2413,7 @@ body::before {
 <nav class="drawer" id="drawer" aria-label="Menú principal">
   <div class="drawer-nav">
     <a href="#resultados" class="drawer-link">Resultados <span class="sub">Casos reales</span></a>
-    <a href="#metodo" class="drawer-link">El método <span class="sub">Cómo trabajamos</span></a>
+    <a href="#proceso" class="drawer-link">El método <span class="sub">Cómo trabajamos</span></a>
     <a href="#servicios" class="drawer-link">Inversión <span class="sub">Planes y precios</span></a>
     <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
     <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
@@ -2421,10 +2462,10 @@ body::before {
 <div class="stats-band">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat reveal"><b>US$50.000+</b><span>gestionados en Meta Ads</span></div>
-      <div class="stat reveal"><b>10.55x</b><span>de retorno sostenido por más de 7 meses</span></div>
-      <div class="stat reveal"><b>+25.000</b><span>conversaciones de venta generadas</span></div>
-      <div class="stat reveal"><b>5 países</b><span>operando con la misma metodología</span></div>
+      <div class="stat reveal"><b data-n="50000" data-pre="US$" data-suf="+">US$50.000+</b><span>gestionados en Meta Ads</span></div>
+      <div class="stat reveal"><b data-n="10.55" data-dec="2" data-suf="x">10.55x</b><span>de retorno sostenido por más de 7 meses</span></div>
+      <div class="stat reveal"><b data-n="25000" data-pre="+">+25.000</b><span>conversaciones de venta generadas</span></div>
+      <div class="stat reveal"><b data-n="5" data-suf=" países">5 países</b><span>operando con la misma metodología</span></div>
     </div>
   </div>
 </div>
@@ -2626,46 +2667,6 @@ body::before {
     <p class="servicios-riesgo reveal">¿No sabes cuál necesitas? Escríbeme y te lo digo con datos — aunque no trabajemos juntos.</p>
   </div>
 </section>
-<section id="metodo">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">El método DÚO</span>
-      <h2>Cuatro piezas que <span class="lime">trabajan como una.</span></h2>
-    </div>
-
-    <div class="pipe reveal">
-      <div class="pipe-track">
-        <div class="pipe-node">
-          <span class="pipe-num">/01</span>
-          <h4>Oferta</h4>
-          <p>Qué vendés y por qué elegirte a vos.</p>
-        </div>
-        <div class="pipe-node">
-          <span class="pipe-num">/02</span>
-          <h4>Estrategia</h4>
-          <p>El camino según tu negocio y objetivo.</p>
-        </div>
-        <div class="pipe-node">
-          <span class="pipe-num">/03</span>
-          <h4>Comunicación</h4>
-          <p>El mensaje que hace que te escriban.</p>
-        </div>
-        <div class="pipe-node">
-          <span class="pipe-num">/04</span>
-          <h4>Medición</h4>
-          <p>Los datos que dicen qué escalar.</p>
-        </div>
-      </div>
-      <div class="pipe-flow" aria-hidden="true">
-        <span class="pipe-flow-line"></span>
-        <span class="pipe-out">Ventas medibles</span>
-        <span class="pipe-flow-line"></span>
-      </div>
-    </div>
-    <p class="reveal" style="text-align:center; margin-top:26px; color:var(--text-3); font-size:15px; max-width:640px; margin-left:auto; margin-right:auto;">Nada de esto vive en mi cabeza: está <strong style="color:var(--lime);">documentado</strong>. Tu estrategia en PDF, el plan de contenido, el reporte mensual de 6 secciones y el seguimiento en Notion. Lo ves antes de pagar un peso.</p>
-  </div>
-</section>
-  
 <section class="problema">
   <canvas class="cosmic-canvas problem-cosmos" aria-hidden="true"></canvas>
   <canvas class="section-funnel-bg" id="section-funnel-bg" aria-hidden="true"></canvas>
@@ -2743,6 +2744,8 @@ body::before {
         <div class="ciego-body"><p>Qué pasó, por qué y qué se hace con eso. Ventas — no likes. Análisis de datos contínuo</p></div>
       </div>
     </div>
+
+    <p class="reveal" style="text-align:center; margin-top:30px; color:var(--text-3); font-size:15px; max-width:640px; margin-left:auto; margin-right:auto;">Nada de esto vive en mi cabeza: está <strong style="color:var(--ember);">documentado</strong>. Tu estrategia en PDF, el plan de contenido, el reporte mensual y el seguimiento en Notion. Lo ves antes de pagar un peso.</p>
 
     <div class="metodo-footer reveal">
       <p>Por eso no prometemos milagros en 7 días. Construimos sistemas que siguen vendiendo meses después — <strong style="color: var(--text);">como el que lleva casi un año dando 10.55x.</strong></p>
@@ -3090,6 +3093,35 @@ if (window.matchMedia('(hover: hover)').matches) {
       new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) start(); else stop(); }), { threshold: 0.02 }).observe(canvas);
     }
   });
+})();
+
+/* Contadores animados de la banda de datos */
+(function () {
+  const nums = document.querySelectorAll('.stat b[data-n]');
+  if (!nums.length || !('IntersectionObserver' in window)) return;
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io2.unobserve(e.target);
+      const el = e.target;
+      const target = parseFloat(el.dataset.n);
+      const dec = parseInt(el.dataset.dec || '0', 10);
+      const pre = el.dataset.pre || '', suf = el.dataset.suf || '';
+      const dur = 1500, t0 = performance.now();
+      function fmt(v) {
+        return dec > 0
+          ? v.toFixed(dec).replace('.', ',')
+          : Math.round(v).toLocaleString('de-DE'); // separador de miles con punto
+      }
+      (function tick(t) {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = pre + fmt(target * eased) + suf;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach((el) => io2.observe(el));
 })();
 
 /* Acordeón del punto ciego */
