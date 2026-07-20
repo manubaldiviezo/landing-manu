@@ -2585,45 +2585,52 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 }
 .puente-u .container { position: relative; z-index: 1; }
 .puente-cosmos { opacity: 0.62; mix-blend-mode: normal; } /* sobre negro el blend no aporta y en GPUs móviles puede pintar en blanco */
-.puente-u .eyebrow { display: inline-block; margin-bottom: 26px; }
-.puente-u .ufloat { margin: 0 auto 14px; }
+.puente-u .sec-head { margin-bottom: 40px; }
+.puente-u .ufloat { margin: 0 auto 16px; }
 .puente-u .ufloat::before { background: radial-gradient(circle, rgba(249, 178, 51, 0.14), transparent 68%); }
 
-/* Leyenda del sistema: qué está atrayendo la U */
-.u-leyenda {
-  display: flex; justify-content: center; flex-wrap: wrap;
-  gap: 10px 20px;
-  margin: 0 0 42px;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 0.04em;
-  color: rgba(245, 241, 232, 0.62);
+/* Pilares del sistema: la numeración editorial de la casa (/01 /02 /03) */
+.u-pilares {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 0 0 46px;
 }
-.u-leyenda span { display: inline-flex; align-items: center; gap: 7px; }
-.u-leyenda i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
-.u-leyenda .dot-wa { background: #25D366; box-shadow: 0 0 8px rgba(37, 211, 102, 0.55); }
-.u-leyenda .dot-venta { background: var(--gold); box-shadow: 0 0 8px rgba(249, 178, 51, 0.55); }
-.u-leyenda .dot-consulta { background: #5FB4FF; box-shadow: 0 0 8px rgba(95, 180, 255, 0.55); }
+.u-pil {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.8);
+}
+.u-pil i {
+  font-family: 'Bitter', Georgia, serif;
+  font-style: italic; font-weight: 700;
+  font-size: 14px; letter-spacing: 0; text-transform: none;
+  color: var(--gold);
+}
+.u-pil-sep { color: rgba(249, 178, 51, 0.45); font-size: 13px; }
+@media (max-width: 560px) {
+  .u-pilares { flex-direction: column; gap: 9px; }
+  .u-pil-sep { display: none; }
+}
 
-/* La cita: serif itálica generosa, acentos en oro→naranja */
+/* La cita: serif itálica generosa, acento dorado plano (como el resto de la casa) */
 .tw-quote { max-width: 660px; margin: 0 auto; }
 .tw-quote::before {
   content: '\201C';
   display: block;
   font-family: 'Bitter', Georgia, serif;
   font-style: italic; font-weight: 700;
-  font-size: 74px; line-height: 0.5;
-  margin: 0 auto 20px;
-  background: linear-gradient(120deg, #F9B233, #EC6730);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+  font-size: 60px; line-height: 0.5;
+  margin: 0 auto 18px;
+  color: var(--gold);
 }
 .tw-wrap { min-height: 12em; margin: 0; }
-@media (min-width: 720px) { .tw-wrap { min-height: 7.6em; } }
+@media (min-width: 720px) { .tw-wrap { min-height: 8.6em; } }
 #tw {
   font-family: 'Bitter', Georgia, serif;
   font-style: italic; font-weight: 700;
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(19px, 2.6vw, 26px);
   line-height: 1.5;
   letter-spacing: -0.005em;
   color: #F5F1E8;
@@ -2631,11 +2638,7 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 }
 #tw .tw-l { display: block; }
 #tw .tw-l + .tw-l { margin-top: 10px; }
-#tw .tw-acc {
-  background: linear-gradient(92deg, #F9B233, #EC6730);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+#tw .tw-acc { color: var(--gold); }
 .tw-caret {
   display: inline-block; width: 3px; height: 1em;
   background: var(--gold);
@@ -2864,18 +2867,23 @@ h3, h4 { font-weight: 700; }
 <section class="puente-u oscuro" aria-label="Nuestro sistema de adquisición">
   <canvas class="cosmic-canvas puente-cosmos" aria-hidden="true"></canvas>
   <div class="container">
-    <span class="eyebrow">nuestro sistema de adquisición</span>
+    <div class="sec-head reveal">
+      <span class="eyebrow">nuestro sistema de adquisición</span>
+      <h2>Prender anuncios <span class="lime">no es un sistema.</span></h2>
+    </div>
     <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
     <canvas id="ufunnel-c" aria-hidden="true"></canvas>
     </div>
-    <div class="u-leyenda" aria-hidden="true">
-      <span><i class="dot-wa"></i>WhatsApps</span>
-      <span><i class="dot-venta"></i>Ventas</span>
-      <span><i class="dot-consulta"></i>Consultas</span>
+    <div class="u-pilares" aria-label="Los tres pilares del sistema">
+      <span class="u-pil"><i>/01</i> Estrategia</span>
+      <span class="u-pil-sep" aria-hidden="true">→</span>
+      <span class="u-pil"><i>/02</i> Comunicación</span>
+      <span class="u-pil-sep" aria-hidden="true">→</span>
+      <span class="u-pil"><i>/03</i> Medición continua</span>
     </div>
     <figure class="tw-quote">
       <blockquote class="tw-wrap">
-        <span class="sr-only">«Esto no es prender anuncios en el Ads Manager. Es un sistema de adquisición: estrategia, oferta y contenido. Lo más importante pasa antes de pautar.» — Manu Baldiviezo, estratega digital</span>
+        <span class="sr-only">«Un anuncio solo amplifica lo que hay detrás. Si detrás no hay estrategia, amplifica el problema. Lo más importante pasa antes de pautar.» — Manu Baldiviezo, estratega digital</span>
         <div id="tw" aria-hidden="true"></div>
       </blockquote>
       <figcaption class="tw-firma" id="tw-firma">
@@ -3415,8 +3423,8 @@ if (window.matchMedia('(hover: hover)').matches) {
   if (!box) return;
 
   const LINES = [
-    { text: 'Esto no es prender anuncios en el Ads Manager.', acc: false },
-    { text: 'Es un sistema de adquisición: estrategia, oferta y contenido.', acc: false },
+    { text: 'Un anuncio solo amplifica lo que hay detrás.', acc: false },
+    { text: 'Si detrás no hay estrategia, amplifica el problema.', acc: false },
     { text: 'Lo más importante pasa antes de pautar.', acc: true }
   ];
 
