@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=DM+Serif+Display:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=Bitter:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -602,7 +602,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 
 .dot {
   width: 8px; height: 8px;
-  background: var(--green);
+  background: var(--ember);
   border-radius: 50%;
   flex-shrink: 0;
   position: relative;
@@ -612,7 +612,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   content: '';
   position: absolute;
   inset: -2px;
-  background: var(--green);
+  background: var(--ember);
   border-radius: 50%;
   opacity: 0.4;
   animation: pulse 2s ease-in-out infinite;
@@ -1851,16 +1851,16 @@ h2 { font-size: clamp(30px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1
 /* La segunda voz tipográfica: Fraunces itálica en cálido.
    Donde antes gritaba el lima, ahora susurra una serif. */
 h1 .lime, h2 .lime, .entregables-title .lime {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: 'Bitter', Georgia, serif;
   font-style: italic;
-  font-weight: 640;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 .claro h2 .lime, .claro .entregables-title .lime { color: var(--ember); }
 
 /* Acentos que en claro perdían contraste: pasan al cálido */
 .pilar-num, .ciego-num { color: var(--ember); }
-.entregables-title .lime { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-weight: 640; color: var(--ember); }
+.entregables-title .lime { font-family: 'Bitter', Georgia, serif; font-style: italic; font-weight: 700; color: var(--ember); }
 .suena-cierre a, .servicios-riesgo a { color: var(--ember); }
 .extra-card a, .footer-contact a:hover, .footer-nav a:hover { color: var(--ember); }
 footer .footer-contact a:hover, footer .footer-nav a:hover { color: var(--lime); }
@@ -2118,7 +2118,7 @@ footer {
 .wa-box { max-width: 470px; }
 @media (min-width: 700px) { .wa-box { grid-template-columns: 1fr; } }
 .wa-box .lead-form-side { padding: 34px 32px; }
-.lead-pill.wa { background: rgba(37, 211, 102, 0.14); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3); }
+.lead-pill.wa { background: var(--lime-soft); color: var(--ember); border: 1px solid var(--lime-line); }
 
 .lead-submit { width: 100%; margin-top: 8px; }
 
@@ -2428,7 +2428,7 @@ body::before {
 .quien-social .tk-shot { flex-shrink: 0; }
 .quien-social-txt { max-width: 380px; }
 .quien-social-txt h3 { font-size: clamp(19px, 2.4vw, 24px); margin-bottom: 12px; }
-.quien-social-txt h3 .lime { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-weight: 640; }
+.quien-social-txt h3 .lime { font-family: 'Bitter', Georgia, serif; font-style: italic; font-weight: 700; }
 .quien-social-txt p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 20px; }
 .quien-social-btns { display: flex; flex-wrap: wrap; gap: 12px; }
 /* TikTok recortado: solo la mitad del perfil, con botón para ver el contenido */
@@ -2441,14 +2441,14 @@ body::before {
 .extras-inline .sep { opacity: 0.45; }
 
 /* ═══════════ V4 — CREMA TOTAL · NEGRO PUNTUAL ═══════════
-   Tipos: DM Sans (voz principal) + DM Serif Display
-   itálica (acento). Tinta y naranja mandan; el lima es matiz. */
+   Tipos: DM Sans (voz principal) + Bitter itálica bold
+   (acento sólido, no delicado). Tinta y naranja mandan; el lima es matiz. */
 
 /* La serif de acento: corre chica, se compensa y va en naranja */
 h1 .lime, h2 .lime, .entregables-title .lime, .quien-social-txt h3 .lime {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: 'Bitter', Georgia, serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.03em;
   letter-spacing: 0;
   color: var(--ember);
@@ -2473,8 +2473,8 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 .lockup { display: block; margin-bottom: 22px; }
 .lock-intro {
   display: block;
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-style: italic; font-weight: 400;
+  font-family: 'Bitter', Georgia, serif;
+  font-style: italic; font-weight: 700;
   text-transform: lowercase;
   font-size: clamp(21px, 3vw, 30px);
   color: var(--ember);
@@ -2493,12 +2493,13 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 }
 
 /* Hero a dos columnas: la persona aparece al inicio (patrón común de las 3 referencias) */
-.hero-dos-col { display: grid; grid-template-columns: 1fr; gap: 38px; align-items: center; text-align: left; justify-items: start; }
-@media (min-width: 900px) { .hero-dos-col { grid-template-columns: 1.15fr 0.85fr; } }
-.hero-col-txt .hero-ctas, .hero-col-txt .hero-micro { justify-content: flex-start; }
-.hero-col-foto { position: relative; display: flex; justify-content: center; width: 100%; }
-.hero-col-foto.sin-foto { display: none; }
-.hero-col-foto::before {
+/* Hero centrado: primero la confianza (stat + foto), después el título */
+.hero-centered { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; max-width: 720px; margin: 0 auto; }
+.hero-centered .hero-micro { margin-bottom: 4px; }
+.hero-centered .lockup { margin-top: 6px; }
+.hero-foto-stage { position: relative; display: flex; justify-content: center; width: 100%; margin: 4px 0 10px; }
+.hero-foto-stage.sin-foto { display: none; }
+.hero-foto-stage::before {
   content: '';
   position: absolute; top: 50%; left: 50%; z-index: 0;
   width: min(380px, 82vw); aspect-ratio: 1;
@@ -2526,7 +2527,7 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   padding: 8px 14px; border-radius: 999px;
   backdrop-filter: blur(6px);
 }
-.hero-foto-tag em { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; color: var(--ember); font-size: 15px; }
+.hero-foto-tag em { font-family: 'Bitter', Georgia, serif; font-style: italic; color: var(--ember); font-size: 15px; }
 .hero .ufloat { margin: 46px auto 8px; }
 
 /* Barra de autoridad — números reales, no una tira de palabras sueltas */
@@ -2544,8 +2545,8 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 
 /* Los intros de sección hablan en serif (chau píldora en mayúsculas) */
 .eyebrow {
-  font-family: 'DM Serif Display', Georgia, serif !important;
-  font-style: italic; font-weight: 400;
+  font-family: 'Bitter', Georgia, serif !important;
+  font-style: italic; font-weight: 700;
   text-transform: lowercase;
   font-size: 20px;
   letter-spacing: 0.01em;
@@ -2600,8 +2601,9 @@ h3, h4 { font-weight: 700; }
   box-shadow: 0 14px 40px rgba(22, 20, 12, 0.06);
 }
 .pasos-grid .pilar-num {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: 'Bitter', Georgia, serif;
   font-style: italic;
+  font-weight: 700;
   font-size: 34px;
   color: var(--ember);
   opacity: 0.9;
@@ -2667,31 +2669,30 @@ h3, h4 { font-weight: 700; }
 <section class="hero" id="inicio">
   <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="container">
-    <div class="hero-inner hero-dos-col">
-      <div class="hero-col-txt">
-        <h1 class="lockup">
-          <span class="lock-intro">apretar «promocionar»</span>
-          <span class="lock-main">No es una<br>estrategia.</span>
-        </h1>
-        <p class="hero-sub">Convierto tus anuncios de Facebook e Instagram en un <strong>sistema de ventas medible</strong> — el mismo que le dio <strong>10.55x de retorno sostenido</strong> a una marca en Chile durante +8 meses.</p>
-        <div class="hero-ctas">
-          <a href="#resultados" class="btn btn-lime">
-            Mirá los resultados
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
-        </div>
-        <div class="hero-micro">
-          <span class="dot"></span>
-          <span><b>+5 años</b> en Meta Ads&nbsp;·&nbsp;<b>US$50K+</b> gestionados</span>
+    <div class="hero-inner hero-centered">
+      <div class="hero-micro reveal">
+        <span class="dot"></span>
+        <span><b>+5 años</b> en Meta Ads&nbsp;·&nbsp;<b>US$50K+</b> gestionados</span>
+      </div>
+
+      <div class="hero-foto-stage reveal">
+        <div class="hero-foto-wrap">
+          <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
+          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
         </div>
       </div>
 
-      <div class="hero-col-foto">
-        <div class="hero-foto-wrap reveal">
-          <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital" onerror="this.closest('.hero-col-foto').classList.add('sin-foto')">
-          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
-        </div>
+      <h1 class="lockup">
+        <span class="lock-intro">apretar «promocionar»</span>
+        <span class="lock-main">No es una<br>estrategia.</span>
+      </h1>
+      <p class="hero-sub">Convierto tus anuncios de Facebook e Instagram en un <strong>sistema de ventas medible</strong> — el mismo que le dio <strong>10.55x de retorno sostenido</strong> a una marca en Chile durante +8 meses.</p>
+      <div class="hero-ctas">
+        <a href="#resultados" class="btn btn-lime">
+          Mirá los resultados
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
       </div>
     </div>
 
@@ -2715,10 +2716,10 @@ h3, h4 { font-weight: 700; }
       <div class="stat-card stat reveal">
         <b class="stat-num" data-n="30" data-pre="+">+0</b>
         <span>cuentas gestionadas</span>
+      </div>
       <div class="stat-card stat reveal">
         <b class="stat-num" data-n="5" data-pre="+">+0</b>
         <span>años vendiendo con Meta Ads</span>
-      </div>
       </div>
     </div>
   </div>
@@ -3778,8 +3779,8 @@ if (window.matchMedia('(hover: hover)').matches) {
     const progress = Math.min(1, p.progress);
     const pos = particlePath(p, progress);
 
-    const fadeIn = Math.min(1, progress * 5);
-    const fadeOut = Math.min(1, (1 - progress) * 7);
+    const fadeIn = Math.min(1, progress * 2.2);
+    const fadeOut = Math.min(1, (1 - progress) * 3.5);
     const alpha = Math.max(0, Math.min(fadeIn, fadeOut)) * p.alpha;
 
     const wobbleX = Math.sin(time * 0.08 + p.jitter) * 1.15;
@@ -3872,7 +3873,7 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.translate(-W / 2, -H / 2);
 
     for (const imp of impacts) {
-      drawPixel(imp.x, imp.y, imp.size, imp.color, Math.min(0.85, imp.life), true);
+      drawPixel(imp.x, imp.y, imp.size, imp.color, Math.min(0.4, imp.life * 0.4), true);
     }
 
     ctx.restore();
@@ -3968,7 +3969,7 @@ if (window.matchMedia('(hover: hover)').matches) {
 
         if (impacts.length > 14) impacts.shift();
 
-        p.hold = 8 + Math.floor(Math.random() * 14);
+        p.hold = 26 + Math.floor(Math.random() * 40);
       }
     });
   }
