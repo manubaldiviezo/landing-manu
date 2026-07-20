@@ -665,6 +665,8 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
 }
 
 .hero-caption-role { font-size: 12px; color: var(--lime); margin-top: 3px; font-weight: 600; }
@@ -1873,37 +1875,37 @@ footer .footer-contact a:hover, footer .footer-nav a:hover { color: var(--lime);
 /* ── Footer ── */
 footer {
   border-top: 1px solid var(--line-soft);
-  padding: 60px 0 104px;
+  padding: 56px 0 96px;
 }
 
-@media (min-width: 768px) { footer { padding-bottom: 48px; } }
+@media (min-width: 768px) { footer { padding: 64px 0 48px; } }
 
-.footer-inner { display: grid; grid-template-columns: 1fr; gap: 34px; }
+.footer-brand { text-align: center; margin-bottom: 32px; }
+.footer-logo { height: 44px; width: auto; margin: 0 auto 14px; display: block; }
+.footer-tagline { font-size: 13.5px; color: var(--text-3); max-width: 320px; margin: 0 auto; }
 
-@media (min-width: 768px) { .footer-inner { grid-template-columns: 1.5fr 1fr; align-items: start; } }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-bottom: 24px; }
+.footer-links a { font-size: 13.5px; color: var(--text-2); transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--lime); }
 
-.footer-logo { height: 26px; width: auto; margin-bottom: 18px; }
+.footer-cta { display: flex; justify-content: center; margin-bottom: 22px; }
+.footer-cta .btn { padding: 11px 22px; font-size: 13.5px; }
 
-.footer-tagline { font-size: 13.5px; color: var(--text-3); max-width: 320px; margin-bottom: 18px; }
-
-.footer-contact p { color: var(--text-3); font-size: 14px; line-height: 1.85; }
+.footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px; font-size: 12.5px; color: var(--text-3); }
+.footer-contact .sep { opacity: 0.45; }
 .footer-contact a:hover { color: var(--lime); }
 
-.footer-nav { display: flex; flex-direction: column; gap: 10px; }
-@media (min-width: 768px) { .footer-nav { align-items: flex-end; } }
-.footer-nav a { font-size: 14px; color: var(--text-3); transition: color 0.2s ease; }
-.footer-nav a:hover { color: var(--lime); }
-
 .footer-bottom {
-  margin-top: 48px;
-  padding-top: 24px;
+  margin-top: 32px;
+  padding-top: 20px;
   border-top: 1px solid var(--line-soft);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-3);
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-between;
+  gap: 8px 16px;
+  justify-content: center;
+  text-align: center;
 }
 
 /* ── Sticky mobile CTA ── */
@@ -1936,14 +1938,16 @@ footer {
   align-items: center;
   gap: 6px;
   padding: 11px 18px;
-  background: var(--lime);
-  color: #0B0B0D;
+  background: #25D366;
+  color: #FFFFFF;
   font-family: 'DM Sans', 'Inter', sans-serif;
   font-size: 12.5px;
   font-weight: 900;
   border-radius: 8px;
   flex-shrink: 0;
 }
+
+.sticky-m-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 /* ── Modals ── */
 .overlay {
@@ -2425,14 +2429,37 @@ body::before {
 
 /* Quién está detrás + TikTok, fusionados al final */
 .quien-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; margin-top: 54px; padding-top: 44px; border-top: 1px solid var(--line-soft); }
-.quien-social .tk-shot { flex-shrink: 0; }
+.quien-social .tk-mock { flex-shrink: 0; }
 .quien-social-txt { max-width: 380px; }
 .quien-social-txt h3 { font-size: clamp(19px, 2.4vw, 24px); margin-bottom: 12px; }
 .quien-social-txt h3 .lime { font-family: 'Bitter', Georgia, serif; font-style: italic; font-weight: 700; }
-.quien-social-txt p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 20px; }
-.quien-social-btns { display: flex; flex-wrap: wrap; gap: 12px; }
-/* TikTok recortado: solo la mitad del perfil, con botón para ver el contenido */
-.tk-shot img { width: 100%; height: clamp(220px, 46vw, 300px); object-fit: cover; object-position: top; }
+.quien-social-txt p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 0; }
+
+/* Mockup de perfil de TikTok (sin captura, sin link de salida) */
+.tk-mock {
+  width: min(280px, 80vw);
+  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  background: var(--card, #fff);
+  box-shadow: 0 26px 64px rgba(22, 20, 12, 0.14);
+  padding: 30px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.tk-mock-avatar {
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--ember);
+  box-shadow: 0 8px 22px rgba(236, 103, 48, 0.22);
+}
+.tk-mock-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.tk-mock-handle { display: block; margin-top: 14px; font-weight: 800; color: var(--text); font-size: 15px; }
+.tk-mock-stats { display: block; margin-top: 6px; font-size: 12.5px; color: var(--text-3); }
+.tk-mock-stats b { color: var(--text-2); font-weight: 700; }
+.tk-mock-stats .sep { opacity: 0.5; }
 
 /* Extras de servicios como línea compacta (dieta de texto) */
 .extras-inline { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; margin-top: 40px; font-size: 13.5px; color: var(--text-3); }
@@ -2511,6 +2538,7 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 .hero-foto-wrap {
   position: relative; z-index: 1;
   width: min(400px, 86vw);
+  aspect-ratio: 1;
   border-radius: 22px;
   overflow: hidden;
   transform: rotate(1.6deg);
@@ -2518,7 +2546,14 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   border: 1px solid var(--line-soft);
   background: var(--card);
 }
-.hero-foto-wrap img { display: block; width: 100%; height: auto; }
+.hero-foto-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.28);
+  transform-origin: center 32%;
+}
 .hero-foto-tag {
   position: absolute; left: 14px; bottom: 14px;
   background: rgba(250, 248, 242, 0.92);
@@ -2578,7 +2613,7 @@ h2 .lime, .entregables-title .lime {
 }
 .btn-lime:hover { box-shadow: 0 16px 40px rgba(236, 103, 48, 0.34); }
 .btn-lime svg { color: #FFF8F0; }
-.sticky-m-btn { background: linear-gradient(94deg, var(--ember), #F07A28); color: #FFF8F0; }
+.sticky-m-btn { background: #25D366; color: #FFFFFF; }
 .btn-ghost:hover { border-color: var(--ember); color: var(--ember); }
 
 /* Titulares con la voz nueva: pesados pero no gritones */
@@ -2650,7 +2685,6 @@ h3, h4 { font-weight: 700; }
 <nav class="drawer" id="drawer" aria-label="Menú principal">
   <div class="drawer-nav">
     <a href="#resultados" class="drawer-link">Resultados <span class="sub">Casos reales</span></a>
-    <a href="#proceso" class="drawer-link">El método <span class="sub">Cómo trabajamos</span></a>
     <a href="#servicios" class="drawer-link">Inversión <span class="sub">Planes y precios</span></a>
     <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
     <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
@@ -2686,7 +2720,12 @@ h3, h4 { font-weight: 700; }
         <span class="lock-intro">apretar «promocionar»</span>
         <span class="lock-main">No es una<br>estrategia.</span>
       </h1>
-      <p class="hero-sub">Convierto tus anuncios de Facebook e Instagram en un <strong>sistema de ventas medible</strong> — el mismo que le dio <strong>10.55x de retorno sostenido</strong> a una marca en Chile durante +8 meses.</p>
+      <p class="hero-sub">Aplico una <strong>metodología propia y probada</strong>, adaptada a tu negocio, para llevarte más clientes por WhatsApp — la misma que le dio <strong>10.55x de retorno</strong> a una marca en Chile.</p>
+
+      <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
+      <canvas id="ufunnel-c" aria-hidden="true"></canvas>
+      </div>
+
       <div class="hero-ctas">
         <a href="#resultados" class="btn btn-lime">
           Mirá los resultados
@@ -2694,10 +2733,6 @@ h3, h4 { font-weight: 700; }
         </a>
         <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
       </div>
-    </div>
-
-    <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
-    <canvas id="ufunnel-c" aria-hidden="true"></canvas>
     </div>
   </div>
 </section>
@@ -2849,8 +2884,7 @@ h3, h4 { font-weight: 700; }
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Inversión</span>
-      <h2>Dos formas de <span class="lime">trabajar juntos</span></h2>
-      <p>Antes de cobrarte un peso tenemos una <strong>reunión estratégica sin compromiso</strong>: analizamos con números si invertir en publicidad le conviene a tu negocio — incluyendo nuestro servicio dentro de tus costos. Si no te conviene, también te lo decimos, y el análisis te lo llevás igual.</p>
+      <h2>Dos formas de <span class="lime">trabajar</span></h2>
     </div>
 
     <div class="servicios-grid">
@@ -2874,7 +2908,7 @@ h3, h4 { font-weight: 700; }
           <div class="servicio-price">Desde $250 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 2.490 mensual</span></div>
           <div class="servicio-note">No incluye tu inversión publicitaria en Meta.</div>
           <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Garantía de servicio</strong>: si no superamos tus resultados actuales en el 1er mes, no pagas el siguiente.</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
+          <a id="primer-servicio-cta" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
         </div>
       </div>
 
@@ -2904,38 +2938,6 @@ h3, h4 { font-weight: 700; }
   </div>
 </section>
 
-<section id="proceso" class="claro">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Cómo trabajamos</span>
-      <h2>Sin humo: <span class="lime">así es el proceso</span></h2>
-      <p>Un sistema de ventas no se construye en una semana. Así se ve trabajar juntos:</p>
-    </div>
-
-    <div class="metodo-grid pasos-grid">
-      <div class="pilar reveal">
-        <span class="pilar-num">/01</span>
-        <h3>Mes 1 · Estrategia y lanzamiento</h3>
-        <p>Desarrollamos la estrategia de pauta y el plan de contenido adecuado — te decimos qué anuncios producir y por qué. Nada al azar.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/02</span>
-        <h3>Mes 2 · Aprendizaje y consolidación</h3>
-        <p>Cada anuncio nos enseña algo que el siguiente aprovecha. Probamos líneas narrativas, ángulos de venta, formatos de contenido y más — seguimos una metodología.</p>
-      </div>
-      <div class="pilar reveal">
-        <span class="pilar-num">/03</span>
-        <h3>Mes 3 · Optimización y escala</h3>
-        <p>Sabemos qué funciona y por qué — con datos, no con intuición. Escalamos el presupuesto publicitario y sistema de ventas.</p>
-      </div>
-    </div>
-
-    <div class="metodo-footer reveal">
-      <p>Por eso no prometemos milagros en 7 días. Construimos sistemas que siguen vendiendo meses después — <strong style="color: var(--text);">como el que lleva casi un año dando 10.55x.</strong></p>
-    </div>
-  </div>
-</section>
-
 <section class="faq claro">
   <div class="container">
     <div class="sec-head reveal">
@@ -2946,10 +2948,18 @@ h3, h4 { font-weight: 700; }
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Qué pasa después de que te escribo?</span>
+          <span>¿Qué pasa si no tengo resultados?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Te respondo yo dentro de las 24 hrs. Reviso tu caso y te digo con honestidad si puedo ayudarte y con qué servicio. Si amerita, coordinamos una reunión de 30 minutos por Meet — gratis.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Tenés la <strong>Garantía de servicio</strong>: si no superamos tus resultados actuales en el primer mes, no pagás el siguiente. Antes de cobrarte un peso arrancamos con una reunión de diagnóstico gratis para confirmar, con números, si te conviene invertir.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>No tengo página web, ¿igual puedo hacer publicidad?</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Sí, no la necesitás. La mayoría de mis clientes en Bolivia venden directo por WhatsApp — el anuncio lleva a tu chat y ahí cerramos la venta, sin página web de por medio.</div></div>
       </div>
 
       <div class="faq-item">
@@ -2973,7 +2983,7 @@ h3, h4 { font-weight: 700; }
           <span>¿Cuánto cuesta trabajar con ustedes?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Gestión: desde $250 USD / Bs 2.500 al mes (la pauta va directo a Meta, aparte). Consultoría práctica: $45 USD / Bs 450 por sesión de 90 min. Landing pages: desde $145 USD / Bs 1.450, pago único. Ambos servicios empiezan con una reunión inicial de diagnóstico, gratis.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $250 USD / Bs 2.490 al mes (la pauta va directo a Meta, aparte). Consultoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
       </div>
 
     </div>
@@ -3005,20 +3015,16 @@ h3, h4 { font-weight: 700; }
     </div>
 
     <div class="quien-social reveal">
-      <figure class="tk-shot">
-        <img src="/images/tiktok-perfil.png" alt="Perfil de TikTok de Manu Baldiviezo (@manu_estrategadigital)" loading="lazy">
+      <figure class="tk-mock" aria-label="Perfil de TikTok de Manu Baldiviezo">
+        <div class="tk-mock-avatar"><img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo"></div>
         <figcaption>
-          <span>@manu_estrategadigital</span>
-          <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">Ver perfil ↗</a>
+          <span class="tk-mock-handle">@manu_estrategadigital</span>
+          <span class="tk-mock-stats"><b>2.180</b> seguidores <span class="sep">·</span> <b>10.8K</b> likes</span>
         </figcaption>
       </figure>
       <div class="quien-social-txt">
         <h3>Mirá cómo trabajo <span class="lime">antes de escribirme</span></h3>
-        <p>Todo lo que leíste acá lo muestro en la práctica, en público. Si querés saber quién va a tocar tu publicidad, revisá mi contenido primero.</p>
-        <div class="quien-social-btns">
-          <a class="btn btn-lime" href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok</a>
-          <a class="btn btn-ghost" href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram</a>
-        </div>
+        <p>Llevo más de un año creciendo en orgánico — captando clientes con pauta y con orgánico, aplicando la misma metodología que uso con mis clientes, en mi propio negocio.</p>
       </div>
     </div>
   </div>
@@ -3026,28 +3032,31 @@ h3, h4 { font-weight: 700; }
 
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div>
-        <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital" class="footer-logo">
-        <p class="footer-tagline">Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica.</p>
-        <div class="footer-contact">
-          <p>
-            <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok · @manu_estrategadigital</a><br>
-            <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram · @manubaldiviezo</a><br>
-            <a href="https://wa.me/59175175144" target="_blank" rel="noopener">+591 75175144</a><br>
-            <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
-          </p>
-        </div>
-      </div>
+    <div class="footer-brand">
+      <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital" class="footer-logo">
+      <p class="footer-tagline">Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica.</p>
+    </div>
 
-      <nav class="footer-nav" aria-label="Navegación del pie de página">
-        <a href="#inicio">Inicio</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#servicios">Inversión</a>
-        <a href="/recursos">Recursos</a>
-        <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Agencia DÚO ↗</a>
-        <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener">Cuéntame tu caso</a>
-      </nav>
+    <nav class="footer-links" aria-label="Navegación del pie de página">
+      <a href="#inicio">Inicio</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#servicios">Inversión</a>
+      <a href="/recursos">Recursos</a>
+      <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Agencia DÚO ↗</a>
+    </nav>
+
+    <div class="footer-cta">
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime">Cuéntame tu caso</a>
+    </div>
+
+    <div class="footer-contact">
+      <a href="https://wa.me/59175175144" target="_blank" rel="noopener">+591 75175144</a>
+      <span class="sep">·</span>
+      <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok</a>
+      <span class="sep">·</span>
+      <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram</a>
     </div>
 
     <div class="footer-bottom">
@@ -3060,9 +3069,12 @@ h3, h4 { font-weight: 700; }
 <div class="sticky-m" id="sticky-m">
   <div class="sticky-m-text">
     <div class="sticky-m-eyebrow">Diagnóstico gratis · 20-30 min</div>
-    <div class="sticky-m-title">¿Te conviene invertir? Te lo digo con números.</div>
+    <div class="sticky-m-title">Agendemos tu reunión estratégica</div>
   </div>
-  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico*%20gratis." target="_blank" rel="noopener" class="sticky-m-btn">Agendar</a>
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico*%20gratis." target="_blank" rel="noopener" class="sticky-m-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.14-4.89-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+    WhatsApp
+  </a>
 </div>
 
 <!-- Video modal -->
@@ -3142,15 +3154,15 @@ document.getElementById('year').textContent = new Date().getFullYear();
 /* Scroll: progress + CTAs de WhatsApp */
 const progress = document.getElementById('progress');
 const stickyM = document.getElementById('sticky-m');
-const resultadosSection = document.getElementById('servicios'); /* la barra de contacto aparece recién cuando el visitante ya vio precios */
+const primerServicioCta = document.getElementById('primer-servicio-cta'); /* la barra de contacto aparece recién cuando el visitante ya vio el precio y el botón del primer servicio */
 
 function handlePageScroll() {
   const y = window.scrollY;
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
 
-  /* La barra inferior aparece cuando el visitante llega a los resultados. */
-  const enOferta = resultadosSection && resultadosSection.getBoundingClientRect().top < window.innerHeight * 0.75;
+  /* La barra inferior aparece recién cuando ya vieron el precio + CTA del primer servicio. */
+  const enOferta = primerServicioCta && primerServicioCta.getBoundingClientRect().top < window.innerHeight * 0.9;
   stickyM.classList.toggle('visible', !!enOferta);
 }
 
@@ -3779,8 +3791,8 @@ if (window.matchMedia('(hover: hover)').matches) {
     const progress = Math.min(1, p.progress);
     const pos = particlePath(p, progress);
 
-    const fadeIn = Math.min(1, progress * 2.2);
-    const fadeOut = Math.min(1, (1 - progress) * 3.5);
+    const fadeIn = Math.min(1, progress * 1.6);
+    const fadeOut = Math.min(1, (1 - progress) * 2.6);
     const alpha = Math.max(0, Math.min(fadeIn, fadeOut)) * p.alpha;
 
     const wobbleX = Math.sin(time * 0.08 + p.jitter) * 1.15;
@@ -3873,7 +3885,8 @@ if (window.matchMedia('(hover: hover)').matches) {
     ctx.translate(-W / 2, -H / 2);
 
     for (const imp of impacts) {
-      drawPixel(imp.x, imp.y, imp.size, imp.color, Math.min(0.4, imp.life * 0.4), true);
+      const fadeIn = Math.min(1, imp.age / 7);
+      drawPixel(imp.x, imp.y, imp.size, imp.color, Math.min(0.22, fadeIn * imp.life * 0.22), true);
     }
 
     ctx.restore();
@@ -3938,10 +3951,11 @@ if (window.matchMedia('(hover: hover)').matches) {
     scrollEnergy *= 0.9;
 
     for (let i = 0; i < squarePulse.length; i++) {
-      squarePulse[i] *= 0.91;
+      squarePulse[i] *= 0.94;
     }
 
     for (let i = impacts.length - 1; i >= 0; i--) {
+      impacts[i].age++;
       impacts[i].life *= 0.9;
       if (impacts[i].life < 0.05) impacts.splice(i, 1);
     }
@@ -3957,19 +3971,20 @@ if (window.matchMedia('(hover: hover)').matches) {
       p.progress += p.speed + scrollEnergy * 0.00055;
 
       if (p.progress >= 1) {
-        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.5);
+        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.22);
 
         impacts.push({
           x: p.target.x,
           y: p.target.y,
           size: Math.max(2.5, p.size * 0.82),
           color: p.color,
+          age: 0,
           life: 1
         });
 
         if (impacts.length > 14) impacts.shift();
 
-        p.hold = 26 + Math.floor(Math.random() * 40);
+        p.hold = 34 + Math.floor(Math.random() * 56);
       }
     });
   }
