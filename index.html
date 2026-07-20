@@ -2568,65 +2568,23 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   width: fit-content; margin: 0 auto;
 }
 .hero-foto-tag em { font-family: 'Bitter', Georgia, serif; font-style: italic; color: var(--ember); font-size: 12px; }
-/* Puente Ü — momento firma: universo profundo, U blanca y cita tipeada de Manu */
+/* Puente Ü — un solo mensaje: el sistema trabajando, sin adornos */
 .puente-u {
   position: relative;
   text-align: center;
-  padding: 96px 0 92px;
+  padding: 78px 0 74px;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.puente-u::after {
-  content: '';
-  position: absolute; inset: 0; z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(58% 52% at 50% 36%, rgba(249, 178, 51, 0.07), transparent 70%);
-}
 .puente-u .container { position: relative; z-index: 1; }
 .puente-cosmos { opacity: 0.62; mix-blend-mode: normal; } /* sobre negro el blend no aporta y en GPUs móviles puede pintar en blanco */
-.puente-u .sec-head { margin-bottom: 40px; }
-.puente-u .ufloat { margin: 0 auto 16px; }
-.puente-u .ufloat::before { background: radial-gradient(circle, rgba(249, 178, 51, 0.14), transparent 68%); }
+.puente-u .ufloat { margin: 0 auto 20px; }
+.puente-u .ufloat::before { display: none; } /* sin halos naranjas alrededor de la U */
+.puente-u .ufloat canvas { filter: none; }
 
-/* Pilares del sistema: la numeración editorial de la casa (/01 /02 /03) */
-.u-pilares {
-  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-  gap: 10px 16px;
-  margin: 0 0 46px;
-}
-.u-pil {
-  display: inline-flex; align-items: baseline; gap: 7px;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 12px; font-weight: 800;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(245, 241, 232, 0.8);
-}
-.u-pil i {
-  font-family: 'Bitter', Georgia, serif;
-  font-style: italic; font-weight: 700;
-  font-size: 14px; letter-spacing: 0; text-transform: none;
-  color: var(--gold);
-}
-.u-pil-sep { color: rgba(249, 178, 51, 0.45); font-size: 13px; }
-@media (max-width: 560px) {
-  .u-pilares { flex-direction: column; gap: 9px; }
-  .u-pil-sep { display: none; }
-}
-
-/* La cita: serif itálica generosa, acento dorado plano (como el resto de la casa) */
-.tw-quote { max-width: 660px; margin: 0 auto; }
-.tw-quote::before {
-  content: '\201C';
-  display: block;
-  font-family: 'Bitter', Georgia, serif;
-  font-style: italic; font-weight: 700;
-  font-size: 60px; line-height: 0.5;
-  margin: 0 auto 18px;
-  color: var(--gold);
-}
-.tw-wrap { min-height: 12em; margin: 0; }
-@media (min-width: 720px) { .tw-wrap { min-height: 8.6em; } }
+.tw-wrap { max-width: 620px; margin: 0 auto; min-height: 3.6em; }
+@media (min-width: 720px) { .tw-wrap { min-height: 1.9em; } }
 #tw {
   font-family: 'Bitter', Georgia, serif;
   font-style: italic; font-weight: 700;
@@ -2637,7 +2595,6 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   min-height: 1.6em; /* con altura real el observer siempre puede dispararse */
 }
 #tw .tw-l { display: block; }
-#tw .tw-l + .tw-l { margin-top: 10px; }
 #tw .tw-acc { color: var(--gold); }
 .tw-caret {
   display: inline-block; width: 3px; height: 1em;
@@ -2647,25 +2604,18 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   animation: twblink 0.85s steps(1) infinite;
 }
 @keyframes twblink { 50% { opacity: 0; } }
-.tw-firma {
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  margin-top: 26px;
-  opacity: 0; transform: translateY(8px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+
+/* Pilares del método: una sola voz tipográfica */
+.u-pilares {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 22px 0 0;
   font-family: 'DM Sans', 'Inter', sans-serif;
+  font-size: 11.5px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.66);
 }
-.tw-firma.visible { opacity: 1; transform: none; }
-.tw-firma img {
-  width: 34px; height: 34px; border-radius: 50%;
-  object-fit: cover; object-position: center 15%;
-  border: 1.5px solid var(--gold);
-  box-shadow: 0 0 14px rgba(249, 178, 51, 0.25);
-}
-.tw-firma span {
-  font-size: 11.5px; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(245, 241, 232, 0.58);
-}
+.u-pil-sep { color: var(--gold); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* Los intros de sección hablan en serif (chau píldora en mayúsculas) */
@@ -2842,7 +2792,7 @@ h3, h4 { font-weight: 700; }
 
       <div class="hero-foto-stage reveal">
         <div class="hero-foto-wrap">
-          <img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo, estratega digital" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
+          <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo, estratega digital" width="737" height="739" decoding="async" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
           <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
         </div>
       </div>
@@ -2867,30 +2817,20 @@ h3, h4 { font-weight: 700; }
 <section class="puente-u oscuro" aria-label="Nuestro sistema de adquisición">
   <canvas class="cosmic-canvas puente-cosmos" aria-hidden="true"></canvas>
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">nuestro sistema de adquisición</span>
-      <h2>Prender anuncios <span class="lime">no es un sistema.</span></h2>
-    </div>
     <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
     <canvas id="ufunnel-c" aria-hidden="true"></canvas>
     </div>
-    <div class="u-pilares" aria-label="Los tres pilares del sistema">
-      <span class="u-pil"><i>/01</i> Estrategia</span>
-      <span class="u-pil-sep" aria-hidden="true">→</span>
-      <span class="u-pil"><i>/02</i> Comunicación</span>
-      <span class="u-pil-sep" aria-hidden="true">→</span>
-      <span class="u-pil"><i>/03</i> Medición continua</span>
+    <div class="tw-wrap">
+      <span class="sr-only">Así se ve un sistema que trae clientes todos los días: estrategia, comunicación y medición continua.</span>
+      <div id="tw" aria-hidden="true"></div>
     </div>
-    <figure class="tw-quote">
-      <blockquote class="tw-wrap">
-        <span class="sr-only">«Un anuncio solo amplifica lo que hay detrás. Si detrás no hay estrategia, amplifica el problema. Lo más importante pasa antes de pautar.» — Manu Baldiviezo, estratega digital</span>
-        <div id="tw" aria-hidden="true"></div>
-      </blockquote>
-      <figcaption class="tw-firma" id="tw-firma">
-        <img src="/images/manu-baldiviezo-perfil.jpg" alt="" width="68" height="68" decoding="async">
-        <span>Manu Baldiviezo · Estratega digital</span>
-      </figcaption>
-    </figure>
+    <div class="u-pilares" aria-label="Los tres pilares del sistema">
+      <span>Estrategia</span>
+      <span class="u-pil-sep" aria-hidden="true">·</span>
+      <span>Comunicación</span>
+      <span class="u-pil-sep" aria-hidden="true">·</span>
+      <span>Medición continua</span>
+    </div>
   </div>
 </section>
 
@@ -3423,9 +3363,7 @@ if (window.matchMedia('(hover: hover)').matches) {
   if (!box) return;
 
   const LINES = [
-    { text: 'Un anuncio solo amplifica lo que hay detrás.', acc: false },
-    { text: 'Si detrás no hay estrategia, amplifica el problema.', acc: false },
-    { text: 'Lo más importante pasa antes de pautar.', acc: true }
+    { text: 'Así se ve un sistema que trae clientes todos los días.', acc: false }
   ];
 
   const caret = document.createElement('span');
@@ -3450,16 +3388,8 @@ if (window.matchMedia('(hover: hover)').matches) {
       return;
     }
     li++; ci = 0;
-    if (window.__uPulse) window.__uPulse(); // cada frase que aterriza pulsa la U
-    if (li < LINES.length) {
-      setTimeout(function () { newLine(); tick(); }, 620);
-    } else {
-      setTimeout(function () {
-        caret.remove();
-        const firma = document.getElementById('tw-firma');
-        if (firma) firma.classList.add('visible');
-      }, 700);
-    }
+    if (window.__uPulse) window.__uPulse(); // la frase completa pulsa la U
+    if (li < LINES.length) setTimeout(function () { newLine(); tick(); }, 620);
   }
 
   function start() {
@@ -4165,20 +4095,6 @@ if (window.matchMedia('(hover: hover)').matches) {
     // Levitación dibujada en canvas: se ve siempre, incluso con reduced-motion.
     const floatY = Math.sin(time * 0.022) * 6 + Math.sin(time * 0.041) * 1.8;
     const floatX = Math.sin(time * 0.014) * 2.2;
-
-    // Resplandor de piso sobre negro: cuanto más baja la U, más luz proyecta — vende el flote.
-    const cerca = (floatY + 8) / 16; // 0 = arriba · 1 = abajo
-    ctx.save();
-    ctx.translate(90 + floatX * 0.5, 188);
-    ctx.scale(1, 0.16);
-    const piso = ctx.createRadialGradient(0, 0, 0, 0, 0, 46 + cerca * 18);
-    piso.addColorStop(0, 'rgba(249, 178, 51, ' + (0.05 + cerca * 0.09).toFixed(3) + ')');
-    piso.addColorStop(1, 'rgba(249, 178, 51, 0)');
-    ctx.fillStyle = piso;
-    ctx.beginPath();
-    ctx.arc(0, 0, 80, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
 
     ctx.save();
     ctx.translate(floatX, floatY);
