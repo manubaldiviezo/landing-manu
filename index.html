@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=DM+Serif+Display:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=DM+Serif+Display:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -2464,6 +2464,111 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 /* La levitación ahora vive en el canvas — sin doble movimiento CSS */
 .ufloat { animation: none !important; }
 
+/* ═══════════ V6 — MARCA PERSONAL (Vergara · Alex · Poggioli) ═══════════
+   Lockup: intro serif itálica minúscula + display condensada (Anton).
+   La serif nunca vive dentro de las caps: cada voz en su línea. */
+
+.lockup { display: block; margin-bottom: 22px; }
+.lock-intro {
+  display: block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic; font-weight: 400;
+  text-transform: lowercase;
+  font-size: clamp(21px, 3vw, 30px);
+  color: var(--ember);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+.lock-main {
+  display: block;
+  font-family: 'Anton', 'DM Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(52px, 9vw, 104px);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  color: var(--text);
+}
+
+/* Hero a dos columnas: la persona aparece al inicio (patrón común de las 3 referencias) */
+.hero-dos-col { display: grid; grid-template-columns: 1fr; gap: 38px; align-items: center; text-align: left; justify-items: start; }
+@media (min-width: 900px) { .hero-dos-col { grid-template-columns: 1.15fr 0.85fr; } }
+.hero-col-txt .hero-ctas, .hero-col-txt .hero-micro { justify-content: flex-start; }
+.hero-col-foto { display: flex; justify-content: center; width: 100%; }
+.hero-col-foto.sin-foto { display: none; }
+.hero-foto-wrap {
+  position: relative;
+  width: min(400px, 86vw);
+  border-radius: 22px;
+  overflow: hidden;
+  transform: rotate(1.6deg);
+  box-shadow: 0 34px 80px rgba(22, 20, 12, 0.2);
+  border: 1px solid var(--line-soft);
+  background: var(--card);
+}
+.hero-foto-wrap img { display: block; width: 100%; height: auto; }
+.hero-foto-tag {
+  position: absolute; left: 14px; bottom: 14px;
+  background: rgba(250, 248, 242, 0.92);
+  color: var(--text);
+  font-size: 13px; font-weight: 700;
+  padding: 8px 14px; border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.hero-foto-tag em { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; color: var(--ember); font-size: 15px; }
+.hero .ufloat { margin: 46px auto 8px; }
+
+/* Cinta de palabras — vibra creativa entre el hero y los resultados */
+.palabras { overflow: hidden; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); background: var(--bg-2); padding: 15px 0; }
+.palabras-track { display: flex; align-items: baseline; gap: 36px; width: max-content; white-space: nowrap; will-change: transform; }
+.palabras-track span {
+  font-family: 'Anton', sans-serif; text-transform: uppercase;
+  font-size: 19px; letter-spacing: 0.06em; color: var(--text);
+  opacity: 0.82;
+}
+.palabras-track em {
+  font-family: 'DM Serif Display', Georgia, serif; font-style: italic;
+  font-size: 21px; color: var(--ember);
+}
+
+/* Los intros de sección hablan en serif (chau píldora en mayúsculas) */
+.eyebrow {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-style: italic; font-weight: 400;
+  text-transform: lowercase;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  color: var(--ember);
+  background: none; border: none; padding: 0;
+}
+.oscuro .eyebrow { color: var(--gold); }
+
+/* Titulares de sección: display condensada; el acento es COLOR, no serif inline */
+h2 {
+  font-family: 'Anton', 'DM Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(32px, 5.2vw, 60px);
+  line-height: 1.04;
+  letter-spacing: 0.005em;
+}
+h2 .lime, .entregables-title .lime {
+  font-family: inherit; font-style: normal; font-weight: inherit; font-size: inherit;
+  color: var(--ember);
+}
+.oscuro h2 .lime { color: var(--gold); }
+
+/* Botones en los colores DÚO: naranja→ámbar manda */
+.btn-lime {
+  background: linear-gradient(94deg, var(--ember), #F07A28);
+  color: #FFF8F0;
+  box-shadow: 0 12px 30px rgba(232, 71, 26, 0.28);
+}
+.btn-lime:hover { box-shadow: 0 16px 40px rgba(232, 71, 26, 0.34); }
+.btn-lime svg { color: #FFF8F0; }
+.sticky-m-btn { background: linear-gradient(94deg, var(--ember), #F07A28); color: #FFF8F0; }
+.btn-ghost:hover { border-color: var(--ember); color: var(--ember); }
+
 /* Titulares con la voz nueva: pesados pero no gritones */
 h1, h2 { font-weight: 800; }
 h3, h4 { font-weight: 700; }
@@ -2551,14 +2656,13 @@ h3, h4 { font-weight: 700; }
 <section class="hero" id="inicio">
   <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="container">
-    <div class="hero-inner">
-      <div>
-        <span class="eyebrow">Meta Ads · Bolivia</span>
-        <h1>Apretar «promocionar» <span class="lime">no es una estrategia.</span></h1>
+    <div class="hero-inner hero-dos-col">
+      <div class="hero-col-txt">
+        <h1 class="lockup">
+          <span class="lock-intro">apretar «promocionar»</span>
+          <span class="lock-main">No es una<br>estrategia.</span>
+        </h1>
         <p class="hero-sub">Convierto tus anuncios de Facebook e Instagram en un <strong>sistema de ventas medible</strong> — el mismo que le dio <strong>10.55x de retorno sostenido</strong> a una marca en Chile durante +8 meses.</p>
-        <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
-        <canvas id="ufunnel-c" aria-hidden="true"></canvas>
-        </div>
         <div class="hero-ctas">
           <a href="#resultados" class="btn btn-lime">
             Mirá los resultados
@@ -2572,9 +2676,25 @@ h3, h4 { font-weight: 700; }
         </div>
       </div>
 
+      <div class="hero-col-foto">
+        <div class="hero-foto-wrap reveal">
+          <img src="/images/manu-hero.jpg" alt="Manu Baldiviezo, estratega digital, grabando contenido" onerror="this.closest('.hero-col-foto').classList.add('sin-foto')">
+          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
+    <canvas id="ufunnel-c" aria-hidden="true"></canvas>
     </div>
   </div>
 </section>
+
+<div class="palabras" aria-hidden="true">
+  <div class="palabras-track" id="palabras-track">
+    <span>estrategia</span><em>contenido</em><span>datos</span><em>ventas</em><span>Meta Ads</span><em>sin humo</em><span>estrategia</span><em>contenido</em><span>datos</span><em>ventas</em><span>Meta Ads</span><em>sin humo</em>
+  </div>
+</div>
 
 <section class="casos oscuro" id="resultados">
   <div class="container">
@@ -3130,6 +3250,22 @@ if (window.matchMedia('(hover: hover)').matches) {
     });
   }, { threshold: 0.5 });
   nums.forEach((el) => io2.observe(el));
+})();
+
+/* Cinta de palabras — movimiento por rAF (se ve incluso con reduced-motion) */
+(function () {
+  const track = document.getElementById('palabras-track');
+  if (!track) return;
+  let x = 0, half = 0;
+  function medir() { half = track.scrollWidth / 2; }
+  medir();
+  window.addEventListener('resize', medir, { passive: true });
+  (function paso() {
+    x -= 0.55;
+    if (half > 0 && -x >= half) x += half;
+    track.style.transform = 'translateX(' + x + 'px)';
+    requestAnimationFrame(paso);
+  })();
 })();
 
 /* Acordeón del punto ciego */
