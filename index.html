@@ -2595,17 +2595,42 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 .puente-u {
   position: relative;
   text-align: center;
-  padding: 116px 0 74px;
+  padding: 150px 0 146px;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-/* Unión desvaneciente con el hero: el crema se disuelve sobre el negro, sin corte */
-.puente-u::before {
+/* Uniones desvanecientes con las secciones crema (arriba y abajo):
+   scrim con curva suave — muchas paradas de alpha para que no se vea
+   ni banda gris ni corte, solo el crema disolviéndose en el negro. */
+.puente-u::before,
+.puente-u::after {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; z-index: 1;
-  height: 150px;
-  background: linear-gradient(180deg, #F7F4EC 0%, rgba(247, 244, 236, 0.32) 36%, rgba(247, 244, 236, 0) 100%);
+  position: absolute; left: 0; right: 0; z-index: 1;
+  height: 190px;
   pointer-events: none;
+}
+.puente-u::before {
+  top: 0;
+  background: linear-gradient(180deg,
+    #F7F4EC 0%,
+    rgba(247, 244, 236, 0.86) 10%,
+    rgba(247, 244, 236, 0.66) 22%,
+    rgba(247, 244, 236, 0.45) 36%,
+    rgba(247, 244, 236, 0.26) 52%,
+    rgba(247, 244, 236, 0.12) 68%,
+    rgba(247, 244, 236, 0.04) 84%,
+    rgba(247, 244, 236, 0) 100%);
+}
+.puente-u::after {
+  bottom: 0;
+  background: linear-gradient(0deg,
+    #F7F4EC 0%,
+    rgba(247, 244, 236, 0.86) 10%,
+    rgba(247, 244, 236, 0.66) 22%,
+    rgba(247, 244, 236, 0.45) 36%,
+    rgba(247, 244, 236, 0.26) 52%,
+    rgba(247, 244, 236, 0.12) 68%,
+    rgba(247, 244, 236, 0.04) 84%,
+    rgba(247, 244, 236, 0) 100%);
 }
 .puente-u .container { position: relative; z-index: 2; }
 .puente-cosmos { opacity: 0.62; mix-blend-mode: normal; } /* sobre negro el blend no aporta y en GPUs móviles puede pintar en blanco */
@@ -2804,7 +2829,7 @@ h3, h4 { font-weight: 700; }
     <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
   </div>
   <div class="drawer-cta">
-    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica*%20gratis." target="_blank" rel="noopener" class="btn btn-lime">
+    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-lime">
       Agendar reunión estratégica
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -2841,28 +2866,6 @@ h3, h4 { font-weight: 700; }
         </a>
         <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="puente-u oscuro" aria-label="Nuestro sistema de adquisición">
-  <canvas class="cosmic-canvas puente-cosmos" aria-hidden="true"></canvas>
-  <div class="container">
-    <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
-    <canvas id="ufunnel-c" aria-hidden="true"></canvas>
-    </div>
-    <div class="tw-wrap">
-      <span class="sr-only">Así se ve un sistema que trae clientes todos los días: estrategia, comunicación y medición continua.</span>
-      <div id="tw" aria-hidden="true"></div>
-    </div>
-    <div class="u-pilares" aria-label="Los tres pilares del sistema">
-      <span>Estrategia</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Comunicación</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Medición</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Optimización</span>
     </div>
   </div>
 </section>
@@ -3035,15 +3038,37 @@ h3, h4 { font-weight: 700; }
           <div class="servicio-price-label">Modalidad Virtual</div>
           <div class="servicio-price">$69 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 690 · 2 sesiones de 45 min.</span></div>
           <div class="servicio-note">Planificamos y lanzamos juntos. Soporte por WhatsApp durante 2 semanas</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Consultor%C3%ADa%20pr%C3%A1ctica*%20de%2090%20min." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20pr%C3%A1ctica%20de%20Meta%20Ads*%20(2%20sesiones%201%20a%201)." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
         </div>
       </div>
 
     </div>
 
-    <p class="extras-inline reveal"><b>También:</b> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mi%20negocio." target="_blank" rel="noopener">Sitios web de venta</a> <span class="sep">·</span> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20WhatsApp%20y%20redes." target="_blank" rel="noopener">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
+    <p class="extras-inline reveal"><b>También:</b> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*." target="_blank" rel="noopener">Sitios web de venta</a> <span class="sep">·</span> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
 
     <p class="servicios-riesgo reveal">¿No sabes cuál necesitas? Escríbeme y te lo digo con datos — aunque no trabajemos juntos.</p>
+  </div>
+</section>
+
+<section class="puente-u oscuro" aria-label="Nuestro sistema de adquisición">
+  <canvas class="cosmic-canvas puente-cosmos" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
+    <canvas id="ufunnel-c" aria-hidden="true"></canvas>
+    </div>
+    <div class="tw-wrap">
+      <span class="sr-only">Así se ve un sistema que trae clientes todos los días: estrategia, comunicación, medición y optimización.</span>
+      <div id="tw" aria-hidden="true"></div>
+    </div>
+    <div class="u-pilares" aria-label="Los pilares del sistema">
+      <span>Estrategia</span>
+      <span class="u-pil-sep" aria-hidden="true">·</span>
+      <span>Comunicación</span>
+      <span class="u-pil-sep" aria-hidden="true">·</span>
+      <span>Medición</span>
+      <span class="u-pil-sep" aria-hidden="true">·</span>
+      <span>Optimización</span>
+    </div>
   </div>
 </section>
 
@@ -3092,7 +3117,7 @@ h3, h4 { font-weight: 700; }
           <span>¿Cuánto cuesta trabajar con ustedes?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $250 USD / Bs 2.490 al mes (la pauta va directo a Meta, aparte). Consultoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $250 USD / Bs 2.490 al mes (la pauta va directo a Meta, aparte). Asesoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
       </div>
 
     </div>
@@ -3159,7 +3184,7 @@ h3, h4 { font-weight: 700; }
     </div>
 
     <div class="footer-contact">
-      <a href="https://wa.me/59175175144" target="_blank" rel="noopener">+591 75175144</a>
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener">+591 75175144</a>
       <span class="sep">·</span>
       <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
       <span class="sep">·</span>
@@ -3180,7 +3205,7 @@ h3, h4 { font-weight: 700; }
     <div class="sticky-m-eyebrow">Quedan solo 3 cupos para empezar agosto </div>
     <div class="sticky-m-title">Agenda una reunión conmigo</div>
   </div>
-  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico*%20gratis." target="_blank" rel="noopener" class="sticky-m-btn">
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="sticky-m-btn">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.14-4.89-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
     WhatsApp
   </a>
@@ -3243,7 +3268,7 @@ h3, h4 { font-weight: 700; }
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
         </button>
       </form>
-      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">Para que llegues con todo claro: la reunión inicial es <strong>gratis</strong>. Si después trabajamos juntos: Gestión desde <strong>$250 USD/mes</strong> · Consultoría práctica de 2 sesiones por <strong>$69 USD</strong>.</p>
+      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">Para que llegues con todo claro: la reunión inicial es <strong>gratis</strong>. Si después trabajamos juntos: Gestión de Meta Ads desde <strong>$250 USD/mes</strong> · Asesoría práctica de 2 sesiones por <strong>$69 USD</strong>.</p>
       <p class="lead-privacy">Te abre WhatsApp con tu info lista. Sin spam.</p>
     </div>
   </div>
@@ -4335,7 +4360,7 @@ waForm.addEventListener('submit', (e) => {
   // Mensaje de WhatsApp con la calificación ya cargada
   const base = (waCtx && waCtx.href.indexOf('text=') !== -1)
     ? decodeURIComponent(waCtx.href.split('text=')[1])
-    : 'Hola Manu 👋 Quiero contactarte.';
+    : 'Hola Manu 👋 Quiero info sobre *Meta Ads*.';
   const msg = base
     + '\n\n📋 Mi info para agilizar:'
     + '\n• Negocio: ' + negocio
