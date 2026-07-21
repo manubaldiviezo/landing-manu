@@ -1839,8 +1839,8 @@ h2 { font-size: clamp(30px, 5vw, 56px); letter-spacing: -0.025em; line-height: 1
 .servicio-sub { color: var(--ember); }
 .quien-firma { color: var(--ember); }
 
-/* Hero crema: la Ü carbón flota sobre la luz */
-.hero { background: var(--bg); border-bottom: 1px solid var(--line-soft); }
+/* Hero crema: se funde sin borde con la sección oscura que sigue */
+.hero { background: var(--bg); }
 .hero-lines, .hero-glow { display: none; }
 .hero h1 .lime { color: var(--ember); }
 .hero .hero-micro b { color: var(--ember); }
@@ -2520,6 +2520,19 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   letter-spacing: 0.005em;
   color: var(--text);
 }
+/* El remate: la palabra clave en itálica naranja, más grande que el resto de la línea */
+.lock-kicker {
+  display: block;
+  font-family: 'Bitter', Georgia, serif;
+  font-style: italic; font-weight: 700;
+  text-transform: lowercase;
+  font-size: clamp(23px, 3.4vw, 38px);
+  line-height: 1.2;
+  color: var(--text-2);
+  margin-top: 14px;
+  letter-spacing: 0.01em;
+}
+.lock-kicker em { font-style: italic; color: var(--ember); font-size: 1.12em; }
 
 /* Hero a dos columnas: la persona aparece al inicio (patrón común de las 3 referencias) */
 /* Hero centrado: primero la confianza (stat + foto), después el título */
@@ -2537,16 +2550,29 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
   filter: blur(38px);
   pointer-events: none;
 }
-/* Cuadrado grande, recto y sin zoom: la foto de estudio se muestra completa */
+/* Cuadrado grande, recto y sin zoom: la foto de estudio se muestra completa.
+   Sombras en capas + sombra de contacto: la foto "sale" de la pantalla. */
 .hero-foto-wrap {
   position: relative; z-index: 1;
   width: min(300px, 74vw);
   aspect-ratio: 1;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 26px 60px rgba(22, 20, 12, 0.18);
+  box-shadow:
+    0 5px 12px rgba(22, 20, 12, 0.12),
+    0 24px 46px rgba(22, 20, 12, 0.22),
+    0 56px 100px rgba(236, 103, 48, 0.16);
   border: 1px solid var(--line-soft);
   background: var(--card);
+}
+.hero-foto-stage::after {
+  content: '';
+  position: absolute; left: 50%; bottom: -20px; z-index: 0;
+  width: min(230px, 58vw); height: 34px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(22, 20, 12, 0.30), transparent 72%);
+  filter: blur(9px);
+  pointer-events: none;
 }
 .hero-foto-wrap img {
   display: block;
@@ -2569,12 +2595,19 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 .puente-u {
   position: relative;
   text-align: center;
-  padding: 78px 0 74px;
+  padding: 116px 0 74px;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.puente-u .container { position: relative; z-index: 1; }
+/* Unión desvaneciente con el hero: el crema se disuelve sobre el negro, sin corte */
+.puente-u::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; z-index: 1;
+  height: 150px;
+  background: linear-gradient(180deg, #F7F4EC 0%, rgba(247, 244, 236, 0.32) 36%, rgba(247, 244, 236, 0) 100%);
+  pointer-events: none;
+}
+.puente-u .container { position: relative; z-index: 2; }
 .puente-cosmos { opacity: 0.62; mix-blend-mode: normal; } /* sobre negro el blend no aporta y en GPUs móviles puede pintar en blanco */
 .puente-u .ufloat { margin: 0 auto 20px; }
 .puente-u .ufloat::before { display: none; } /* sin halos naranjas alrededor de la U */
@@ -2795,8 +2828,9 @@ h3, h4 { font-weight: 700; }
       </div>
 
       <h1 class="lockup">
-        <span class="lock-intro">apretar «promocionar»</span>
-        <span class="lock-main">No es una<br>estrategia.</span>
+        <span class="lock-intro">tus campañas de meta ads</span>
+        <span class="lock-main">No necesitan<br>más presupuesto.</span>
+        <span class="lock-kicker">necesitan <em>una estrategia.</em></span>
       </h1>
       <p class="hero-sub">Aplico una <strong>metodología integral</strong> para vender con anuncios en Meta — la misma con la que gestionamos <strong>+50.000$us</strong> de inversión de nuestros clientes el último año.</p>
 
