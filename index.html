@@ -1103,7 +1103,7 @@ section { padding: 92px 0; position: relative; }
 .casos-scroll {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: min(86%, 380px);
+  grid-auto-columns: min(82%, 380px); /* deja asomar el borde de la siguiente tarjeta a propósito */
   gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -1218,6 +1218,31 @@ section { padding: 92px 0; position: relative; }
 }
 
 .caso-metric span { font-size: 10.5px; color: var(--text-3); font-weight: 500; line-height: 1.3; display: block; }
+
+/* Nombre + cargo visibles sin click — el placeholder queda deliberadamente
+   marcado para que Manu lo complete con el dato real, nunca inventado. */
+.caso-testimonio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: rgba(236, 103, 48, 0.03);
+}
+.caso-testimonio-avatar {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px dashed var(--text-3);
+  font-size: 8px; line-height: 1.1; text-align: center;
+  color: var(--text-3);
+  padding: 2px;
+}
+.caso-testimonio-info { display: flex; flex-direction: column; gap: 1px; font-size: 11.5px; line-height: 1.35; }
+.caso-testimonio-info strong { color: var(--text-3); font-weight: 700; }
+.caso-testimonio-info span { color: var(--text-3); }
 
 .caso-video {
   display: inline-flex;
@@ -2120,6 +2145,22 @@ footer {
 .lead-field select:invalid { color: var(--text-3); }
 .lead-field select option { background: var(--bg-2); color: var(--text); }
 
+/* Campos de un tap: arrancan el formulario con fricción cero */
+.lead-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-choice {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.lead-choice:hover { border-color: var(--lime-line); }
+.lead-choice.active { background: var(--lime); border-color: var(--lime); color: #0B0B0D; }
+.lead-choices.error .lead-choice { border-color: #E5484D; }
+
 .wa-box { max-width: 470px; }
 @media (min-width: 700px) { .wa-box { grid-template-columns: 1fr; } }
 .wa-box .lead-form-side { padding: 34px 32px; }
@@ -2541,6 +2582,24 @@ h1, h2 { text-transform: none; letter-spacing: -0.022em; }
 .hero-centered { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; max-width: 720px; margin: 0 auto; }
 .hero-centered .hero-micro { margin-bottom: 4px; }
 .hero-centered .lockup { margin-top: 6px; }
+
+/* CTA de conversión del hero: el único botón sólido de la primera pantalla */
+.hero-cta-primary { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero-cta-note { font-size: 12.5px; font-weight: 600; color: var(--text-3); letter-spacing: 0.005em; }
+
+/* Los CTAs que había antes bajan un escalón: outline, más chicos, ya no compiten */
+.hero-ctas-secondary { margin-top: 0; }
+.hero-ctas-secondary .btn { padding: 12px 20px; font-size: 13px; }
+
+/* En pantallas de navegador in-app (Instagram/Facebook, ~380px con chrome propio)
+   el titular + subtítulo + CTA principal tienen que entrar sin scrollear. */
+@media (max-width: 420px) {
+  .hero-centered { gap: 16px; }
+  .lockup { margin-bottom: 14px; }
+  .hero-sub { margin-bottom: 18px; }
+  .lock-kicker { margin-top: 8px; }
+  .lock-main { font-size: clamp(44px, 9vw, 104px); }
+}
 .hero-foto-stage { position: relative; display: flex; justify-content: center; width: 100%; margin: 4px 0 10px; }
 .hero-foto-stage.sin-foto { display: none; }
 .hero-foto-stage::before {
@@ -2831,7 +2890,7 @@ h3, h4 { font-weight: 700; }
     <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
   </div>
   <div class="drawer-cta">
-    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-lime">
+    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-lime" data-origen="menu_drawer">
       Agendar reunión estratégica
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -2847,13 +2906,6 @@ h3, h4 { font-weight: 700; }
         <span><b>+5 años</b> en Meta Ads&nbsp;·&nbsp;<b>US$50K+</b> gestionados</span>
       </div>
 
-      <div class="hero-foto-stage reveal">
-        <div class="hero-foto-wrap">
-          <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo, estratega digital" width="737" height="739" decoding="async" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
-          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
-        </div>
-      </div>
-
       <h1 class="lockup">
         <span class="lock-intro">tus campañas de meta ads</span>
         <span class="lock-main">No necesitan<br>más presupuesto.</span>
@@ -2861,12 +2913,27 @@ h3, h4 { font-weight: 700; }
       </h1>
       <p class="hero-sub">Aplico una <strong>metodología integral</strong> para vender con anuncios en Meta — la misma con la que gestionamos <strong>+50.000$us</strong> de inversión de nuestros clientes el último año.</p>
 
-      <div class="hero-ctas">
-        <a href="#resultados" class="btn btn-lime">
+      <div class="hero-cta-primary reveal">
+        <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20mi%20*diagn%C3%B3stico%20gratis*%20de%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime" data-origen="hero_cta_principal">
+          Quiero mi diagnóstico gratis
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="hero-cta-note">Reunión de diagnóstico gratis · Servicios desde $250 USD/mes</p>
+      </div>
+
+      <div class="hero-ctas hero-ctas-secondary">
+        <a href="#resultados" class="btn btn-ghost">
           Mirá los resultados
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
+      </div>
+
+      <div class="hero-foto-stage reveal">
+        <div class="hero-foto-wrap">
+          <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo, estratega digital" width="737" height="739" decoding="async" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
+          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
+        </div>
       </div>
     </div>
   </div>
@@ -2917,9 +2984,13 @@ h3, h4 { font-weight: 700; }
             <div class="caso-metric"><b>20</b><span>reuniones</span></div>
             <div class="caso-metric"><b>6</b><span>proyectos</span></div>
           </div>
+          <div class="caso-testimonio">
+            <span class="caso-testimonio-avatar" aria-hidden="true">[INSERTAR: foto testimonial]</span>
+            <span class="caso-testimonio-info"><strong>[INSERTAR: nombre del cliente]</strong><span>[INSERTAR: cargo/empresa]</span></span>
+          </div>
           <button class="caso-video" data-video="uJaNMf92w10">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio
+            Ver testimonio en video
           </button>
         </div>
       </div>
@@ -2977,9 +3048,13 @@ h3, h4 { font-weight: 700; }
             <div class="caso-metric"><b>+1 año</b><span>juntos</span></div>
             <div class="caso-metric"><b>+30–50%</b><span>en ventas</span></div>
           </div>
+          <div class="caso-testimonio">
+            <span class="caso-testimonio-avatar" aria-hidden="true">[INSERTAR: foto testimonial]</span>
+            <span class="caso-testimonio-info"><strong>[INSERTAR: nombre del cliente]</strong><span>[INSERTAR: cargo/empresa]</span></span>
+          </div>
           <button class="caso-video" data-video="4rR8Nwn9Slw">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio
+            Ver testimonio en video
           </button>
         </div>
       </div>
@@ -2997,7 +3072,7 @@ h3, h4 { font-weight: 700; }
     <div class="sec-head reveal">
       <span class="eyebrow">Inversión</span>
       <h2>Dos formas de <span class="lime">trabajar</span></h2>
-      <p>Las dos empiezan con una <strong>reunión de diagnóstico gratis</strong>. Aceptamos una cantidad limitada de negocios por mes para cuidar los resultados — <strong>quedan pocos cupos para agosto</strong>.</p>
+      <p>Las dos empiezan con una <strong>reunión de diagnóstico gratis</strong>. Aceptamos una cantidad limitada de negocios por mes para cuidar los resultados — <strong>quedan <span data-cupos-count></span> cupos para <span data-cupos-mes></span></strong>.</p>
     </div>
 
     <div class="servicios-grid">
@@ -3020,9 +3095,9 @@ h3, h4 { font-weight: 700; }
           <div class="servicio-price-label">Inversión mensual</div>
           <div class="servicio-price"><s class="precio-antes">$350</s> Desde $250 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 2.490</span></div>
           <div class="servicio-note">No incluye tu inversión publicitaria en Meta.</div>
-          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Tu garantía</strong>: si no superamos tus resultados actuales en el 1er mes, no nos pagas el siguiente.</div>
-          <div class="servicio-cupos"><span class="cupos-dot"></span> Quedan 3 cupos para Agosto</div>
-          <a id="primer-servicio-cta" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime">Quiero este sistema</a>
+          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Tu garantía</strong>: si no superamos tus resultados actuales en el 1er mes, no nos pagás el siguiente.</div>
+          <div class="servicio-cupos"><span class="cupos-dot"></span> Quedan <span data-cupos-count></span> cupos para <span data-cupos-mes></span></div>
+          <a id="primer-servicio-cta" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime" data-origen="servicio_agencia">Quiero este sistema</a>
         </div>
       </div>
 
@@ -3040,15 +3115,15 @@ h3, h4 { font-weight: 700; }
           <div class="servicio-price-label">Modalidad Virtual</div>
           <div class="servicio-price">$69 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 690 · 2 sesiones de 45 min.</span></div>
           <div class="servicio-note">Planificamos y lanzamos juntos. Soporte por WhatsApp durante 2 semanas</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20pr%C3%A1ctica%20de%20Meta%20Ads*%20(2%20sesiones%201%20a%201)." target="_blank" rel="noopener" class="btn btn-ghost">Consultar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20pr%C3%A1ctica%20de%20Meta%20Ads*%20(2%20sesiones%201%20a%201)." target="_blank" rel="noopener" class="btn btn-ghost" data-origen="servicio_asesoria">Consultar por WhatsApp</a>
         </div>
       </div>
 
     </div>
 
-    <p class="extras-inline reveal"><b>También:</b> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*." target="_blank" rel="noopener">Sitios web de venta</a> <span class="sep">·</span> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
+    <p class="extras-inline reveal"><b>También:</b> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20una%20*landing%20page%20de%20venta*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*." target="_blank" rel="noopener" data-origen="servicio_landing">Sitios web de venta</a> <span class="sep">·</span> <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener" data-origen="servicio_automatizacion">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
 
-    <p class="servicios-riesgo reveal">¿No sabes cuál necesitas? Escríbeme y te lo digo con datos — aunque no trabajemos juntos.</p>
+    <p class="servicios-riesgo reveal">¿No sabés cuál necesitás? Escribime y te lo digo con datos — aunque no trabajemos juntos.</p>
   </div>
 </section>
 
@@ -3111,7 +3186,7 @@ h3, h4 { font-weight: 700; }
           <span>¿Cuál es la diferencia entre la agencia y la asesoría 1:1?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por ti: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que tú o tu equipo la ejecuten. ¿Quieres delegar? Agencia. ¿Quieres aprender? Asesoría.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por vos: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que vos o tu equipo la ejecuten. ¿Querés delegar? Agencia. ¿Querés aprender? Asesoría.</div></div>
       </div>
 
       <div class="faq-item">
@@ -3182,11 +3257,11 @@ h3, h4 { font-weight: 700; }
     </nav>
 
     <div class="footer-cta">
-      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime">Cuéntame tu caso</a>
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime" data-origen="footer">Contame tu caso</a>
     </div>
 
     <div class="footer-contact">
-      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener">+591 75175144</a>
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener" data-origen="footer_telefono">+591 75175144</a>
       <span class="sep">·</span>
       <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
       <span class="sep">·</span>
@@ -3204,10 +3279,10 @@ h3, h4 { font-weight: 700; }
 
 <div class="sticky-m" id="sticky-m">
   <div class="sticky-m-text">
-    <div class="sticky-m-eyebrow">Quedan solo 3 cupos para empezar agosto </div>
-    <div class="sticky-m-title">Agenda una reunión conmigo</div>
+    <div class="sticky-m-eyebrow">Quedan <span data-cupos-count></span> cupos para empezar <span data-cupos-mes></span></div>
+    <div class="sticky-m-title">Agendá una reunión conmigo</div>
   </div>
-  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="sticky-m-btn">
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="sticky-m-btn" data-origen="sticky_bar">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.14-4.89-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
     WhatsApp
   </a>
@@ -3237,19 +3312,30 @@ h3, h4 { font-weight: 700; }
     </button>
     <div class="lead-form-side">
       <span class="lead-pill wa">Antes de escribirme</span>
-      <h3 id="wa-title">Cuéntame de tu negocio</h3>
-      <p>30 segundos y te escribo por WhatsApp ya sabiendo tu caso — así vamos directo a lo importante.</p>
+      <h3 id="wa-title">Contame tu caso</h3>
+      <p>Contame tu caso y te digo con números si te conviene invertir en Meta — aunque no trabajemos juntos.</p>
       <form id="wa-form" novalidate>
         <div class="lead-field">
-          <label for="wa-name">Tu nombre</label>
-          <input type="text" id="wa-name" name="name" placeholder="¿Cómo te llamas?" required autocomplete="name">
+          <label>¿Ya invertiste en anuncios antes?</label>
+          <div class="lead-choices" data-target="wa-ads">
+            <button type="button" class="lead-choice" data-value="Sí, con buenos resultados">Sí, con buenos resultados</button>
+            <button type="button" class="lead-choice" data-value="Sí, pero sin resultados claros">Sí, pero sin resultados claros</button>
+            <button type="button" class="lead-choice" data-value="No, nunca invertí">No, nunca invertí</button>
+          </div>
+          <input type="hidden" id="wa-ads" name="ads">
         </div>
         <div class="lead-field">
-          <label for="wa-telefono">Tu WhatsApp</label>
-          <input type="tel" id="wa-telefono" name="telefono" placeholder="Ej: 75123456" required autocomplete="tel" inputmode="tel" minlength="7">
+          <label>¿Cuánto invertís hoy al mes en anuncios?</label>
+          <div class="lead-choices" data-target="wa-presupuesto">
+            <button type="button" class="lead-choice" data-value="Todavía nada">Todavía nada</button>
+            <button type="button" class="lead-choice" data-value="Menos de $100">Menos de $100</button>
+            <button type="button" class="lead-choice" data-value="$100–$500">$100–$500</button>
+            <button type="button" class="lead-choice" data-value="Más de $500">Más de $500</button>
+          </div>
+          <input type="hidden" id="wa-presupuesto" name="presupuesto">
         </div>
         <div class="lead-field">
-          <label for="wa-negocio">¿Qué vendes? Tu negocio o rubro</label>
+          <label for="wa-negocio">¿Qué vendés? Tu negocio o rubro</label>
           <input type="text" id="wa-negocio" name="negocio" placeholder="Ej: tienda de ropa, clínica estética…" required>
         </div>
         <div class="lead-field">
@@ -3257,13 +3343,12 @@ h3, h4 { font-weight: 700; }
           <input type="text" id="wa-ciudad" name="ciudad" placeholder="Ej: Santa Cruz, La Paz, Cochabamba…" required autocomplete="address-level2">
         </div>
         <div class="lead-field">
-          <label for="wa-ads">¿Ya invertiste en anuncios antes?</label>
-          <select id="wa-ads" name="ads" required>
-            <option value="" disabled selected>Elige una opción</option>
-            <option value="Sí, con buenos resultados">Sí, con buenos resultados</option>
-            <option value="Sí, pero sin resultados claros">Sí, pero sin resultados claros</option>
-            <option value="No, nunca invertí">No, nunca invertí</option>
-          </select>
+          <label for="wa-name">Tu nombre</label>
+          <input type="text" id="wa-name" name="name" placeholder="¿Cómo te llamás?" required autocomplete="name">
+        </div>
+        <div class="lead-field">
+          <label for="wa-telefono">Tu WhatsApp</label>
+          <input type="tel" id="wa-telefono" name="telefono" placeholder="Ej: 75123456" required autocomplete="tel" inputmode="tel" minlength="7">
         </div>
         <button type="submit" class="btn btn-lime lead-submit" id="wa-submit">
           Escribirme por WhatsApp
@@ -3287,19 +3372,27 @@ const SUPABASE_ANON_KEY = 'sb_publishable_heuN0KYsF_holhMKB9H5Fw_CLQFDfKH';
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* Escasez honesta: UNA sola variable — Manu la actualiza acá cada mes, de verdad,
+   y los 3 lugares de la página (servicios, intro de precios, barra flotante) se
+   mantienen en sincro solos. Nada de contadores falsos. */
+const CUPOS_DISPONIBLES = 3;
+const CUPOS_MES = 'agosto';
+document.querySelectorAll('[data-cupos-count]').forEach(el => { el.textContent = CUPOS_DISPONIBLES; });
+document.querySelectorAll('[data-cupos-mes]').forEach(el => { el.textContent = CUPOS_MES; });
+
 /* Scroll: progress + CTAs de WhatsApp */
 const progress = document.getElementById('progress');
 const stickyM = document.getElementById('sticky-m');
-const primerServicioCta = document.getElementById('primer-servicio-cta'); /* la barra de contacto aparece recién cuando el visitante ya vio el precio y el botón del primer servicio */
+const heroSection = document.getElementById('inicio');
 
 function handlePageScroll() {
   const y = window.scrollY;
   const h = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
 
-  /* La barra inferior aparece recién cuando ya vieron el precio + CTA del primer servicio. */
-  const enOferta = primerServicioCta && primerServicioCta.getBoundingClientRect().top < window.innerHeight * 0.9;
-  stickyM.classList.toggle('visible', !!enOferta);
+  /* La barra inferior aparece apenas termina el hero — antes esperaba hasta precios. */
+  const terminoHero = heroSection && heroSection.getBoundingClientRect().bottom < window.innerHeight * 0.5;
+  stickyM.classList.toggle('visible', !!terminoHero);
 }
 
 window.addEventListener('scroll', handlePageScroll, { passive: true });
@@ -4315,18 +4408,28 @@ function dispararEventosWa(c, extra) {
   const params = Object.assign({ content_name: c.nombre, source: 'landing_manu', canal: 'whatsapp' }, extra || {});
   if (c.valor) { params.value = c.valor; params.currency = 'USD'; params.content_type = 'digital_product'; }
   trackMetaCustomEvent(c.custom, params); // personalizado granular (medición)
-  trackMetaEvent(c.std, params);          // estándar (optimización de Meta)
+  trackMetaEvent(c.std, params);          // estándar (Lead o InitiateCheckout) para que Meta optimice
+  trackMetaEvent('Contact', params);      // estándar: confirma que la conversación en WhatsApp arrancó de verdad
 }
+
+// Título del modal según el botón que lo abrió — así el lead siente que ya lo entendieron
+const WA_TITULOS = {
+  ConsultaGestion:        'Querés que gestionemos tus campañas',
+  ConsultaAsesoria:       'Querés la asesoría 1 a 1',
+  ConsultaAutomatizacion: 'Querés automatizar tu atención',
+  ConsultaLandingPage:    'Querés tu landing page de venta'
+};
 
 // Modal de calificación previo a WhatsApp
 const waModal = document.getElementById('wa-modal');
 const waForm = document.getElementById('wa-form');
+const waTitleEl = document.getElementById('wa-title');
 let waCtx = null;
 
-function abrirWaModal() {
+function abrirWaModal(c) {
+  waTitleEl.textContent = (c && WA_TITULOS[c.custom]) || 'Contame tu caso';
   waModal.classList.add('active');
   document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('wa-name').focus(), 300);
 }
 function cerrarWaModal() {
   waModal.classList.remove('active');
@@ -4335,29 +4438,50 @@ function cerrarWaModal() {
 document.getElementById('wa-close').addEventListener('click', cerrarWaModal);
 waModal.addEventListener('click', (e) => { if (e.target === waModal) cerrarWaModal(); });
 
+/* Campos de un tap (¿invertiste antes? / ¿cuánto invertís hoy?): fricción cero para arrancar */
+document.querySelectorAll('.lead-choices').forEach(grupo => {
+  const hidden = document.getElementById(grupo.dataset.target);
+  grupo.querySelectorAll('.lead-choice').forEach(boton => {
+    boton.addEventListener('click', () => {
+      grupo.querySelectorAll('.lead-choice').forEach(b => b.classList.remove('active'));
+      boton.classList.add('active');
+      hidden.value = boton.dataset.value;
+      grupo.classList.remove('error');
+    });
+  });
+});
+
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
   link.addEventListener('click', (e) => {
     const c = clasificarWhatsApp(link.href);
+    const origen = link.dataset.origen || 'otro'; // qué botón/sección disparó el lead
     if (c.consulta) {
       // Consulta de servicio → calificamos al lead antes de abrir WhatsApp
       e.preventDefault();
-      waCtx = { c: c, href: link.href };
-      abrirWaModal();
+      waCtx = { c: c, href: link.href, origen: origen };
+      abrirWaModal(c);
     } else {
       // Compra de recurso → directo a WhatsApp, con sus eventos
-      dispararEventosWa(c);
+      dispararEventosWa(c, { origen: origen });
     }
   });
 });
 
 waForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const nombre   = document.getElementById('wa-name').value.trim();
-  const telefono = document.getElementById('wa-telefono').value.trim();
-  const negocio  = document.getElementById('wa-negocio').value.trim();
-  const ciudad   = document.getElementById('wa-ciudad').value.trim();
-  const ads      = document.getElementById('wa-ads').value;
-  if (!nombre || !telefono || !negocio || !ciudad || !ads) { waForm.reportValidity(); return; }
+  const nombre      = document.getElementById('wa-name').value.trim();
+  const telefono    = document.getElementById('wa-telefono').value.trim();
+  const negocio     = document.getElementById('wa-negocio').value.trim();
+  const ciudad      = document.getElementById('wa-ciudad').value.trim();
+  const ads         = document.getElementById('wa-ads').value;
+  const presupuesto = document.getElementById('wa-presupuesto').value;
+
+  // Los campos de un tap no los valida el navegador (son inputs ocultos) — los marcamos a mano.
+  document.querySelectorAll('.lead-choices').forEach(g => {
+    g.classList.toggle('error', !document.getElementById(g.dataset.target).value);
+  });
+  if (!ads || !presupuesto) return;
+  if (!nombre || !telefono || !negocio || !ciudad) { waForm.reportValidity(); return; }
 
   // Mensaje de WhatsApp con la calificación ya cargada
   const base = (waCtx && waCtx.href.indexOf('text=') !== -1)
@@ -4368,11 +4492,12 @@ waForm.addEventListener('submit', (e) => {
     + '\n• Negocio: ' + negocio
     + '\n• Ciudad: ' + ciudad
     + '\n• ¿Invertí en anuncios antes?: ' + ads
+    + '\n• Inversión mensual actual: ' + presupuesto
     + '\n• Soy: ' + nombre;
   const url = 'https://wa.me/59175175144?text=' + encodeURIComponent(msg);
 
-  // Eventos del pixel, ahora con los datos de calificación
-  dispararEventosWa(waCtx.c, { nombre: nombre, negocio: negocio, ciudad: ciudad, invirtio_ads: ads });
+  // Eventos del pixel (Lead + Contact), ahora con los datos de calificación y el origen del botón
+  dispararEventosWa(waCtx.c, { nombre: nombre, negocio: negocio, ciudad: ciudad, invirtio_ads: ads, presupuesto_actual: presupuesto, origen: waCtx.origen });
 
   // Registro opcional en Supabase (si está configurado)
   if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.indexOf('PEGAR') === -1) {
@@ -4381,13 +4506,19 @@ waForm.addEventListener('submit', (e) => {
         method: 'POST',
         keepalive: true,
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Prefer': 'return=minimal' },
-        body: JSON.stringify({ name: nombre, phone: telefono, business: negocio, city: ciudad, invested_ads: ads, intent: waCtx.c.custom, source: 'whatsapp_qualify' })
+        body: JSON.stringify({ name: nombre, phone: telefono, business: negocio, city: ciudad, invested_ads: ads, monthly_budget: presupuesto, intent: waCtx.c.custom, origen: waCtx.origen, source: 'whatsapp_qualify' })
       });
     } catch (err) { /* no bloquea la apertura de WhatsApp */ }
   }
 
   cerrarWaModal();
   waForm.reset();
+  // form.reset() no limpia los inputs type="hidden" que llenamos por JS — hay que vaciarlos a mano.
+  document.querySelectorAll('.lead-choices').forEach(g => {
+    g.classList.remove('error');
+    document.getElementById(g.dataset.target).value = '';
+    g.querySelectorAll('.lead-choice.active').forEach(b => b.classList.remove('active'));
+  });
   const win = window.open(url, '_blank', 'noopener');
   if (!win) window.location.href = url; // fallback si el navegador bloquea el popup
 });
