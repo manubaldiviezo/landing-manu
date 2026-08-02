@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 <meta name="theme-color" content="#0B0B0D">
 
-<title>Te ayudo a vender con anuncios en Meta | Manu Baldiviezo · DÚO</title>
-<meta name="description" content="Apretar «promocionar» no es una estrategia. Construimos sistemas de venta con Facebook e Instagram para negocios bolivianos: campañas, contenido y datos que se convierten en clientes.">
+<title>Respondé a tus clientes al instante, incluso dormido | Manu Baldiviezo · DÚO</title>
+<meta name="description" content="Automatización con IA para WhatsApp e Instagram: cada persona que te escribe recibe respuesta al momento, a cualquier hora. El cliente que espera, compra en otro lado.">
 
-<meta property="og:title" content="Manu Baldiviezo · Estratega Digital | DÚO">
-<meta property="og:description" content="Deja de pautar a ciegas. Vende con un sistema: estrategia, anuncios y contenido que convierten.">
+<meta property="og:title" content="Automatización con IA para WhatsApp | DÚO">
+<meta property="og:description" content="El cliente que espera respuesta, compra en otro lado. Respondé al instante, incluso dormido.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.manubaldiviezo.lat">
+<meta property="og:url" content="https://www.manubaldiviezo.lat/automatizacion">
 <meta property="og:image" content="https://www.manubaldiviezo.lat/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://www.manubaldiviezo.lat/images/og-cover.jpg">
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="canonical" href="https://www.manubaldiviezo.lat">
+<link rel="canonical" href="https://www.manubaldiviezo.lat/automatizacion">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@ fbq('init', '987679140929122');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
-  
+
 <style>
 :root {
   /* Crema editorial en toda la página — el negro es puntual: resultados, CTA flotante, menú y footer */
@@ -2871,457 +2871,278 @@ h3, h4 { font-weight: 700; }
 /* Botones: lima como matiz de conversión, tinta como estructura */
 .btn-lime { box-shadow: 0 10px 28px rgba(140, 170, 20, 0.25); }
 .btn-ghost { border-width: 1.5px; }
+
+/* ═══════════ EXTRAS DE LANDINGS POR SERVICIO ═══════════
+   Se suma al <style> heredado completo de index.html. */
+
+/* Foto del hero más chica en landings: el CTA manda, la cara acompaña */
+.landing .hero-foto-wrap { width: min(190px, 46vw); border-radius: 16px; }
+.landing .hero-foto-stage { margin: 14px 0 0; }
+.landing .hero-foto-stage::before { width: min(230px, 54vw); }
+.landing .hero-foto-tag { font-size: 10.5px; padding: 5px 10px; }
+.landing .hero-foto-tag em { font-size: 12px; }
+
+/* ── VSL (video de ventas) — la sección aparece sola cuando hay ID de YouTube ── */
+.vsl { padding-top: 0; }
+.vsl .sec-head { margin-bottom: 34px; }
+.vsl-frame { max-width: 760px; margin: 0 auto; position: relative; }
+.vsl-poster {
+  position: relative; cursor: pointer;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line-soft);
+  box-shadow: 0 30px 80px rgba(22, 20, 12, 0.22);
+  aspect-ratio: 16 / 9;
+  background: #0B0B0D;
+}
+.vsl-poster img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.vsl-poster::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(11, 11, 13, 0.5)); }
+.vsl-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 82px; height: 82px; border-radius: 50%;
+  background: var(--lime);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 18px 50px rgba(236, 103, 48, 0.45);
+  transition: transform 0.25s ease;
+  z-index: 2;
+}
+.vsl-poster:hover .vsl-play { transform: translate(-50%, -50%) scale(1.07); }
+.vsl-play svg { width: 30px; height: 30px; color: #FFF8F0; margin-left: 4px; }
+.vsl-dur { position: absolute; right: 14px; bottom: 12px; z-index: 2; background: rgba(11, 11, 13, 0.78); color: #F7F4EC; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
+.vsl-embed { aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(22, 20, 12, 0.22); }
+.vsl-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ── Microcopy de justificación bajo preguntas sensibles del formulario ── */
+.lead-hint { display: block; font-size: 11px; font-weight: 500; color: var(--text-3); text-transform: none; letter-spacing: 0; margin: 3px 0 8px; }
+
+/* ── Nota-caption bajo capturas de casos (los captions se leen 4x más) ── */
+.caso-nota { font-size: 12px; line-height: 1.5; color: var(--text-3); font-style: italic; }
+
+/* ── Cierre de la comparación (deducción guiada) ── */
+.vs-cierre { text-align: center; margin-top: 30px; font-size: clamp(16px, 2vw, 19px); font-weight: 700; color: var(--text); }
+.vs-cierre .lime { color: var(--ember); }
+
+/* ── Bloque honestidad radical: para quién es / para quién no ── */
+.para-quien { max-width: 720px; margin: 40px auto 0; display: grid; gap: 16px; }
+@media (min-width: 720px) { .para-quien { grid-template-columns: 1fr 1fr; } }
+.pq-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: 14px; padding: 24px 22px; }
+.pq-card h3 { font-size: 14px; margin-bottom: 12px; letter-spacing: 0.02em; }
+.pq-card.si h3 { color: var(--ember); }
+.pq-card ul { list-style: none; }
+.pq-card li { display: flex; gap: 9px; align-items: flex-start; padding: 6px 0; font-size: 13.5px; color: var(--text-2); line-height: 1.5; }
+.pq-card.si li::before { content: '✓'; color: var(--ember); font-weight: 900; flex-shrink: 0; }
+.pq-card.no li::before { content: '✕'; color: var(--text-3); font-weight: 700; flex-shrink: 0; font-size: 11px; margin-top: 3px; }
 </style>
 </head>
-<body>
-
-<!-- Meta Pixel Code noscript -->
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=987679140929122&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code noscript -->
+<body class="landing">
 
 <div class="progress" id="progress"></div>
 
-<a href="#inicio" class="brand-fab" aria-label="DÚO — inicio">
+<a href="/" class="brand-fab" aria-label="DÚO — volver al inicio">
   <img src="/images/duo-icon.png?v=2" alt="DÚO Marketing">
 </a>
 
-<button class="menu-fab" id="menu-fab" aria-label="Abrir menú" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-
-<nav class="drawer" id="drawer" aria-label="Menú principal">
-  <div class="drawer-nav">
-    <a href="#resultados" class="drawer-link">Resultados <span class="sub">Casos reales</span></a>
-    <a href="#servicios" class="drawer-link">Inversión <span class="sub">Planes y precios</span></a>
-    <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
-    <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
-    <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener" class="drawer-link">TikTok <span class="sub">@manu_estrategadigital ↗</span></a>
-    <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener" class="drawer-link">Agencia DÚO <span class="sub">contenido y producción ↗</span></a>
-    <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
-  </div>
-  <div class="drawer-cta">
-    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-lime" data-origen="menu_drawer">
-      Agendar reunión estratégica
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</nav>
-
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="inicio">
   <canvas class="cosmic-canvas hero-cosmos" aria-hidden="true"></canvas>
   <div class="container">
     <div class="hero-inner hero-centered">
       <div class="hero-micro reveal">
         <span class="dot"></span>
-        <span><b>+5 años</b> en Meta Ads&nbsp;·&nbsp;<b>US$50K+</b> gestionados</span>
+        <span>Para negocios que reciben <b>muchas consultas</b></span>
       </div>
 
       <h1 class="lockup">
-        <span class="lock-intro">tus campañas de meta ads</span>
-        <span class="lock-main">No necesitan<br>más presupuesto.</span>
-        <span class="lock-kicker">necesitan <em>una estrategia.</em></span>
+        <span class="lock-intro">te escriben a las 11 de la noche…</span>
+        <span class="lock-main">¿Y respondés<br>vos?</span>
+        <span class="lock-kicker">el cliente que espera, <em>compra en otro lado.</em></span>
       </h1>
-      <p class="hero-sub">Escalo tus campañas de Facebook e Instagram con un <strong>sistema de ventas medible</strong> — el mismo con el que gestionamos <strong>+$50.000</strong> de nuestros clientes el último año.</p>
+      <p class="hero-sub">Ponemos un asistente con inteligencia artificial en tu WhatsApp e Instagram: responde <strong>al instante</strong>, a cualquier hora, con la información de tu negocio — y te deja lista la venta para cerrar.</p>
 
       <div class="hero-cta-primary reveal">
-        <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20mi%20*diagn%C3%B3stico%20gratis*%20de%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime" data-origen="hero_cta_principal">
-          Agendar reunión inicial
+        <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener" class="btn btn-lime" data-origen="hero">
+          Quiero responder al instante
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="hero-cta-note">Diagnóstico gratis · Servicio desde Bs 1.950/mes</p>
-      </div>
-
-      <div class="hero-ctas hero-ctas-secondary">
-        <a href="#resultados" class="btn btn-ghost">
-          Mirá los resultados
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#servicios" class="btn btn-ghost">Ver servicios y precios</a>
-      </div>
-
-      <div class="hero-foto-stage reveal">
-        <div class="hero-foto-wrap">
-          <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo, estratega digital" width="737" height="739" decoding="async" onerror="this.closest('.hero-foto-stage').classList.add('sin-foto')">
-          <span class="hero-foto-tag"><em>manu</em> — estratega digital</span>
-        </div>
+        <p class="hero-cta-note">Primera charla gratis · Te decimos si tu negocio lo necesita (o no)</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="problema" aria-label="El problema real detrás de pautar sin estrategia">
-  <canvas class="cosmic-canvas problem-cosmos" aria-hidden="true"></canvas>
+<!-- ═══════════ ESPEJO SÍ-SÍ ═══════════ -->
+<section class="problema" aria-label="Te suena, ¿no?">
   <div class="container">
     <div class="problema-inner">
       <div class="sec-head reveal">
-        <span class="eyebrow">el problema</span>
-        <h2>Si esto te suena, <span class="lime">no es falta de plata.</span></h2>
-        <p>La mayoría de los negocios que pautan en Meta no tienen un problema de presupuesto — tienen un problema de sistema.</p>
+        <span class="eyebrow">te suena, ¿no?</span>
+        <h2>Tu negocio vende. <span class="lime">Tu tiempo no alcanza.</span></h2>
       </div>
 
       <ul class="sintomas-list reveal">
-        <li><span class="sintoma-x" aria-hidden="true">✕</span>Le das a Promocionar publicación y no sabés si eso vende o solo gasta.</li>
-        <li><span class="sintoma-x" aria-hidden="true">✕</span>Tu costo por mensaje sube mes a mes y no sabés por qué.</li>
-        <li><span class="sintoma-x" aria-hidden="true">✕</span>Recibís consultas pero no se convierten en ventas.</li>
-        <li><span class="sintoma-x" aria-hidden="true">✕</span>Nunca sabés qué anuncio funcionó ni por qué.</li>
+        <li><span class="sintoma-x" aria-hidden="true">✕</span>Respondés mensajes mientras cocinás, mientras atendés, mientras deberías dormir.</li>
+        <li><span class="sintoma-x" aria-hidden="true">✕</span>Te preguntan lo mismo 40 veces al día: precio, ubicación, envíos, horarios.</li>
+        <li><span class="sintoma-x" aria-hidden="true">✕</span>Abrís WhatsApp a la mañana y hay consultas de madrugada… que ya se enfriaron.</li>
+        <li><span class="sintoma-x" aria-hidden="true">✕</span>Sabés que perdiste ventas solo por responder tarde.</li>
       </ul>
 
-      <p class="suena-cierre reveal">No necesitás gastar más. <strong>Necesitás un sistema que mida y decida por vos.</strong></p>
+      <p class="suena-cierre reveal">No necesitás contratar a alguien más. <strong>Necesitás que lo repetitivo se responda solo — y quedarte vos con el cierre.</strong></p>
     </div>
   </div>
 </section>
 
-<section class="casos claro" id="resultados">
+<!-- ═══════════ QUÉ HACE ═══════════ -->
+<section class="claro" aria-label="Qué hace la automatización">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">Resultados</span>
-      <h2>La misma estrategia en Meta <span class="lime">El mismo sistema.</span></h2>
-      <p>Negocios de Bolivia, Chile y Ecuador. Distintos rubros, una sola metodología.</p>
+      <span class="eyebrow">cómo funciona</span>
+      <h2>Vos dormís. <span class="lime">Tu WhatsApp atiende.</span></h2>
     </div>
 
-    <div class="casos-scroll" id="casos-scroll">
-
-      <div class="caso reveal">
-        <div class="caso-img" data-img="/images/01-femmeninas-ads-manager-roas.webp" data-alt="Dashboard de Meta Ads de Femmeninas">
-          <img src="/images/01-femmeninas-ads-manager-roas.webp" alt="Dashboard Meta Ads Femmeninas" loading="lazy">
-          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-        </div>
-        <div class="caso-body">
-          <div class="caso-top">
-            <span class="caso-brand">Femmeninas.cl</span>
-            <span class="caso-tag">Ecommerce · Chile</span>
-          </div>
-          <div class="caso-title">+US$50.000 gestionados con <b>retorno de 10.55x</b> durante 7 meses</div>
-          <div class="caso-metrics">
-            <div class="caso-metric"><b>US$50K+</b><span>gestionados</span></div>
-            <div class="caso-metric"><b>10.55x</b><span>ROAS</span></div>
-            <div class="caso-metric"><b>+7 meses</b><span>escalando</span></div>
-          </div>
-        </div>
+    <div class="vs-grid reveal">
+      <div class="vs-card vs-no">
+        <div class="vs-head"><span class="vs-icon">😮‍💨</span><h3>Hoy: todo a pulmón</h3></div>
+        <ul class="vs-list">
+          <li>Cada «¿precio?» lo respondés vos, uno por uno</li>
+          <li>El que escribe de noche espera hasta mañana</li>
+          <li>Se te pasan mensajes cuando hay mucho movimiento</li>
+          <li>Tu publicidad trae gente… que nadie atiende a tiempo</li>
+        </ul>
       </div>
-
-      <div class="caso reveal">
-        <div class="caso-img" data-img="/images/02-vision-arq-ads-manager.webp" data-alt="Dashboard de Meta Ads de Vision Arq Studio">
-          <img src="/images/02-vision-arq-ads-manager.webp" alt="Dashboard Meta Ads Vision Arq" loading="lazy">
-          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-        </div>
-        <div class="caso-body">
-          <div class="caso-top">
-            <span class="caso-brand">Vision Arq Studio</span>
-            <span class="caso-tag">Arquitectura · Bolivia</span>
-          </div>
-          <div class="caso-title"><b>6 proyectos cerrados</b> en el primer mes de campañas</div>
-          <div class="caso-metrics">
-            <div class="caso-metric"><b>+300</b><span>mensajes</span></div>
-            <div class="caso-metric"><b>20</b><span>reuniones</span></div>
-            <div class="caso-metric"><b>6</b><span>proyectos</span></div>
-          </div>
-          <!-- INSERTAR: cuando Manu tenga nombre + cargo + foto reales del cliente,
-               volver a agregar un bloque de testimonio visible acá (sin placeholders). -->
-          <button class="caso-video" data-video="uJaNMf92w10">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio en video
-          </button>
-        </div>
+      <div class="vs-card vs-si">
+        <div class="vs-head"><span class="vs-icon">⚡</span><h3>Con el asistente DÚO</h3></div>
+        <ul class="vs-list">
+          <li>Responde al instante, 24 horas, con TU información real</li>
+          <li>Contesta lo repetitivo: precios, envíos, horarios, catálogo</li>
+          <li>Junta los datos del cliente y te lo pasa listo para cerrar</li>
+          <li>Cada peso de publicidad rinde más: nadie queda sin respuesta</li>
+        </ul>
       </div>
-
-      <div class="caso reveal">
-        <div class="caso-img" data-img="/images/05-progaming-ads-manager-whatsapp.webp" data-alt="Dashboard de Meta Ads de ProGaming">
-          <img src="/images/05-progaming-ads-manager-whatsapp.webp" alt="Dashboard Meta Ads ProGaming" loading="lazy">
-          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-        </div>
-        <div class="caso-body">
-          <div class="caso-top">
-            <span class="caso-brand">ProGaming EC</span>
-            <span class="caso-tag">Gaming · Ecuador</span>
-          </div>
-          <div class="caso-title"><b>+25.000 prospectos</b> por WhatsApp a US$0.15 cada uno</div>
-          <div class="caso-metrics">
-            <div class="caso-metric"><b>+25K</b><span>conversaciones</span></div>
-            <div class="caso-metric"><b>US$0.15</b><span>por contacto</span></div>
-            <div class="caso-metric"><b>+425K</b><span>alcanzados</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="caso reveal">
-        <div class="caso-img" data-img="/images/04-nanitos-ads-manager-manychat.webp" data-alt="Dashboard de Meta Ads de Ñañitos">
-          <img src="/images/04-nanitos-ads-manager-manychat.webp" alt="Dashboard Meta Ads Ñañitos" loading="lazy">
-          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-        </div>
-        <div class="caso-body">
-          <div class="caso-top">
-            <span class="caso-brand">Juguetería Ñañitos</span>
-            <span class="caso-tag">Importadora Mayorista · Bolivia</span>
-          </div>
-          <div class="caso-title"><b>+5.000 mensajes</b> a US$0.08 para mover inventario</div>
-          <div class="caso-metrics">
-            <div class="caso-metric"><b>+5.000</b><span>mensajes</span></div>
-            <div class="caso-metric"><b>US$0.08</b><span>por contacto</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="caso reveal">
-        <div class="caso-img" data-img="/images/03-climere-ads-manager-consultas.webp" data-alt="Dashboard de Meta Ads de Climere clínica estética">
-          <img src="/images/03-climere-ads-manager-consultas.webp" alt="Dashboard Meta Ads Climere" loading="lazy">
-          <span class="caso-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-        </div>
-        <div class="caso-body">
-          <div class="caso-top">
-            <span class="caso-brand">Climere</span>
-            <span class="caso-tag">Clínica estética · Bolivia</span>
-          </div>
-          <div class="caso-title">Ventas <b>+30% a +50%</b> con contenido estratégico y campañas</div>
-          <div class="caso-metrics">
-            <div class="caso-metric"><b>+5.000</b><span>mensajes</span></div>
-            <div class="caso-metric"><b>+1 año</b><span>juntos</span></div>
-            <div class="caso-metric"><b>+30–50%</b><span>en ventas</span></div>
-          </div>
-          <!-- INSERTAR: cuando Manu tenga nombre + cargo + foto reales del cliente,
-               volver a agregar un bloque de testimonio visible acá (sin placeholders). -->
-          <button class="caso-video" data-video="4rR8Nwn9Slw">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio en video
-          </button>
-        </div>
-      </div>
-
     </div>
+
+    <p class="vs-cierre reveal">El asistente no reemplaza tu atención. <span class="lime">Te la devuelve para lo que importa: cerrar ventas.</span></p>
   </div>
 </section>
 
-<section id="proceso" aria-label="Cómo trabajamos, paso a paso">
+<!-- ═══════════ MÉTODO 3 PASOS ═══════════ -->
+<section id="proceso" aria-label="Cómo lo armamos">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">el proceso</span>
-      <h2>Así es <span class="lime">trabajar con nosotros</span></h2>
-      <p>Tres pasos, sin vueltas — desde que nos escribís hasta que ves resultados.</p>
+      <span class="eyebrow">cómo lo armamos</span>
+      <h2>Tres pasos <span class="lime">y queda andando</span></h2>
     </div>
     <div class="metodo-grid pasos-grid">
       <div class="pilar reveal">
         <span class="pilar-num">01</span>
-        <h3>Diagnóstico gratis</h3>
-        <p>Revisamos tu caso con números y te decimos si te conviene invertir en Meta — aunque no trabajemos juntos.</p>
+        <h3>Charla gratis</h3>
+        <p>Vemos juntos qué te preguntan siempre y dónde se te escapan ventas. <strong>Si tu negocio todavía no lo necesita, te lo digo de frente.</strong></p>
       </div>
       <div class="pilar reveal">
         <span class="pilar-num">02</span>
-        <h3>Armamos tu sistema</h3>
-        <p>Estrategia, campañas y contenido hechos para tu negocio y tu ciudad. No prendemos anuncios al azar.</p>
+        <h3>Lo entrenamos con tu negocio</h3>
+        <p>Cargamos tus precios, productos, horarios y forma de hablar. <strong>El asistente responde como tu mejor empleado, no como un robot.</strong></p>
       </div>
       <div class="pilar reveal">
         <span class="pilar-num">03</span>
-        <h3>Escalamos con datos</h3>
-        <p>Medimos, optimizamos y reportamos cada mes. Vos ves qué vende y cuánto.</p>
+        <h3>Vos cerrás las ventas</h3>
+        <p>El asistente atiende y filtra; cuando hay una venta seria, <strong>te avisa y entrás vos</strong>. Lo ajustamos juntos las primeras semanas.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="servicios" class="claro">
+<!-- ═══════════ OFERTA ═══════════ -->
+<section id="servicios" class="claro" aria-label="Qué incluye">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">Inversión</span>
-      <h2>Dos formas de <span class="lime">trabajar</span></h2>
-      <p>Las dos empiezan con una <strong>reunión de diagnóstico gratis</strong>. Aceptamos una cantidad limitada de negocios por mes para cuidar los resultados — <strong>quedan <span data-cupos-count>3</span> cupos para <span data-cupos-mes>agosto</span></strong>.</p>
+      <span class="eyebrow">inversión</span>
+      <h2>Qué incluye <span class="lime">y cómo se cotiza</span></h2>
     </div>
 
-    <div class="servicios-grid">
-
+    <div class="servicios-grid" style="grid-template-columns: 1fr; max-width: 620px;">
       <div class="servicio destacado reveal">
-        <span class="servicio-badge">Servicio principal</span>
-        <span class="servicio-tag">Agencia · Done for you</span>
-        <h3>Publicidad digital en Meta</h3>
-        <p class="servicio-sub">Para negocios que quieren implementar un sistema de ventas online</p>
-        <p class="servicio-desc">Mi agencia se encarga de toda la estrategia y gestión</p>
+        <span class="servicio-badge">Automatización con IA</span>
+        <span class="servicio-tag">WhatsApp · Instagram · Messenger</span>
+        <h3>Tu asistente que responde al instante</h3>
+        <p class="servicio-sub">Para negocios que reciben consultas todos los días y no dan abasto</p>
         <ul class="servicio-list">
-          <li>Auditoría inicial de Resultados</li>
-          <li>Estrategia Digital Integral</li>
-          <li>Estrategia de Contenido + Guiones</li>
-          <li>Gestión y optimización continua</li>
-          <li>Automatización de respuestas (opcional)</li>
-        </ul>
-        <p class="servicio-note" style="margin-top:2px;">No prendemos anuncios al azar.</p>
-        <div class="servicio-foot">
-          <div class="servicio-price-label">Inversión mensual</div>
-          <div class="servicio-price"><s class="precio-antes">$350</s> Desde $195 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 1.950</span></div>
-          <div class="servicio-note">No incluye tu inversión publicitaria en Meta.</div>
-          <div class="servicio-note" style="margin-top:10px; padding:10px 12px; border:1px solid var(--lime-line); border-radius:10px; color:var(--text);"><strong>Tu garantía</strong>: si no superamos tus resultados actuales en el 1er mes, no nos pagás el siguiente.</div>
-          <div class="servicio-cupos"><span class="cupos-dot"></span> Quedan <span data-cupos-count>3</span> cupos para <span data-cupos-mes>agosto</span></div>
-          <a id="primer-servicio-cta" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Gesti%C3%B3n%20de%20Meta%20Ads*%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn btn-lime" data-origen="servicio_agencia">Quiero este sistema</a>
-          <a class="servicio-mas" href="/publicidad">Conocé este servicio a fondo →</a>
-        </div>
-      </div>
-
-      <div class="servicio reveal">
-        <span class="servicio-tag">Asesoría · 1 a 1 por Meet</span>
-        <h3>Capacitación práctica</h3>
-        <p class="servicio-sub">Para quienes gestionan sus propios anuncios y quieren dirección estratégica</p>
-        <p class="servicio-desc">Dos sesiones con nuestra metodología.</p>
-        <ul class="servicio-list">
-          <li>Revisamos tus campañas y tu estrategia en vivo</li>
-          <li>Armamos un plan de acción concreto para tu caso</li>
-          <li>Te llevas un Agente Estratega en ChatGPT para tu planificación</li>
+          <li>Asistente con IA entrenado con <strong>tu</strong> información: precios, productos, horarios</li>
+          <li>Responde 24/7 en WhatsApp e Instagram — con tu tono, no como robot</li>
+          <li>Filtra curiosos y te pasa las ventas serias listas para cerrar</li>
+          <li>Conectado con tu publicidad: nadie que hace clic queda sin respuesta</li>
+          <li>Ajustes y acompañamiento las primeras semanas</li>
         </ul>
         <div class="servicio-foot">
-          <div class="servicio-price-label">Modalidad Virtual</div>
-          <div class="servicio-price">$69 USD <span style="font-size:13px; color:var(--text-3); font-weight:600;">/ Bs 690 · 2 sesiones de 45 min.</span></div>
-          <div class="servicio-note">Planificamos y lanzamos juntos. Soporte por WhatsApp durante 2 semanas</div>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20la%20*Asesor%C3%ADa%20pr%C3%A1ctica%20de%20Meta%20Ads*%20(2%20sesiones%201%20a%201)." target="_blank" rel="noopener" class="btn btn-ghost" data-origen="servicio_asesoria">Consultar por WhatsApp</a>
-          <a class="servicio-mas" href="/asesoria">Conocé este servicio a fondo →</a>
+          <div class="servicio-price-label">Inversión</div>
+          <div class="servicio-price">Se cotiza según tu negocio</div>
+          <div class="servicio-note">No todos los negocios necesitan lo mismo — por eso no hay precio de lista. En la charla gratis te doy el número exacto, y si no te conviene, también te lo digo.</div>
+          <a id="primer-servicio-cta" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener" class="btn btn-lime" data-origen="oferta">Quiero mi cotización gratis</a>
         </div>
       </div>
-
     </div>
 
-    <p class="extras-inline reveal"><b>También:</b> <a href="/paginas-web">Páginas web que venden</a> <span class="sep">·</span> <a href="/automatizacion">Automatización con IA</a> <span class="sep">·</span> <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Creación de contenido (Agencia DÚO) ↗</a></p>
-
-    <p class="servicios-riesgo reveal">¿No sabés cuál necesitás? Escribime y te lo digo con datos — aunque no trabajemos juntos.</p>
+    <p class="servicios-riesgo reveal">¿Todavía no te escriben tantos clientes? El problema es otro: mirá la <a href="/publicidad">gestión de publicidad</a> primero.</p>
   </div>
 </section>
 
-<section class="garantia-banda" aria-label="Garantía de resultados">
-  <div class="container">
-    <div class="garantia-box reveal">
-      <svg class="garantia-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="m9 12 2 2 4-4"/></svg>
-      <div>
-        <span class="eyebrow">tu garantía</span>
-        <p class="garantia-text">Si no superamos tus resultados actuales en el primer mes, <strong>no pagás el siguiente.</strong></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="puente-u oscuro" aria-label="Nuestro sistema de adquisición">
-  <canvas class="cosmic-canvas puente-cosmos" aria-hidden="true"></canvas>
-  <div class="container">
-    <div class="ufloat" role="img" aria-label="La U de DÚO atrayendo WhatsApps, ventas y consultas hacia el embudo">
-    <canvas id="ufunnel-c" aria-hidden="true"></canvas>
-    </div>
-    <div class="tw-wrap">
-      <span class="sr-only">Así se ve un sistema que trae clientes todos los días: estrategia, comunicación, medición y optimización.</span>
-      <div id="tw" aria-hidden="true"></div>
-    </div>
-    <div class="u-pilares" aria-label="Los pilares del sistema">
-      <span>Estrategia</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Comunicación</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Medición</span>
-      <span class="u-pil-sep" aria-hidden="true">·</span>
-      <span>Optimización</span>
-    </div>
-  </div>
-</section>
-
-<section class="faq claro">
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq claro" aria-label="Preguntas frecuentes">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">FAQ</span>
+      <span class="eyebrow">hablemos claro</span>
       <h2>Lo que seguro <span class="lime">te estás preguntando</span></h2>
     </div>
 
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Qué pasa si no tengo resultados?</span>
+          <span>¿Mis clientes van a notar que es un robot?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Tenés la <strong>Garantía de servicio</strong>: si no superamos tus resultados actuales en el primer mes, no pagás el siguiente. Antes de cobrarte un peso arrancamos con una reunión de diagnóstico gratis para confirmar, con números, si te conviene invertir.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Lo entrenamos con tu forma de hablar y tu información real, así que responde como alguien de tu equipo. Y cuando la conversación se pone seria, entrás vos — el asistente atiende lo repetitivo, no reemplaza el trato humano.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>No tengo página web, ¿igual puedo hacer publicidad?</span>
+          <span>¿Pierdo el control de mi WhatsApp?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Sí, no la necesitás. La mayoría de mis clientes en Bolivia venden directo por WhatsApp — el anuncio lleva a tu chat y ahí cerramos la venta, sin página web de por medio.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">No. Vos ves todas las conversaciones, podés entrar cuando quieras, y definís qué responde solo y qué te pasa a vos. Tu número sigue siendo tuyo.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Esto funciona para negocios en Bolivia?</span>
+          <span>¿Cuánto cuesta?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Sí: una juguetería, una clínica estética y un estudio de arquitectura — todos en Bolivia, todos con resultados arriba. Lo que cambia según tu rubro y tu ciudad es la estrategia, no el sistema.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Depende de qué necesite tu negocio: no es lo mismo responder 5 preguntas frecuentes que manejar un catálogo entero. En la charla gratis te doy el número exacto antes de que decidas nada.</div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>¿Cuál es la diferencia entre la agencia y la asesoría 1:1?</span>
+          <span>¿Sirve si recién estoy empezando?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Con la agencia, nosotros ejecutamos todo por vos: estrategia, campañas, optimización y reportes. En la asesoría 1:1 te enseño la metodología completa (EL SISTEMA, estrategia de contenido y guionización) aplicada a tu negocio, para que vos o tu equipo la ejecuten. ¿Querés delegar? Agencia. ¿Querés aprender? Asesoría.</div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>¿Cuánto cuesta trabajar con ustedes?</span>
-          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $195 USD / Bs 1.950 al mes (la pauta va directo a Meta, aparte). Asesoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Te soy honesto: si todavía te escriben pocas personas al día, no te conviene — primero hay que llenar tu WhatsApp de consultas con publicidad bien hecha. La automatización brilla cuando ya no das abasto.</div></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<section id="quien">
-  <div class="container">
-    <div class="quien-grid">
-      <div class="quien-foto">
-        <div class="hero-frame">
-          <div class="hero-photo">
-            <img src="/images/manu-celebrando.jpg" alt="Manu Baldiviezo celebrando en un rodaje con su gimbal" width="1000" height="1333" decoding="async" onerror="this.onerror=null;this.src='/images/manu-baldiviezo-perfil.jpg';">
-            <div class="hero-grade"></div>
-            <div class="hero-caption">
-              <div class="hero-caption-name">Manu Baldiviezo</div>
-              <div class="hero-caption-role">Estratega Digital · +5 años en Meta Ads</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="quien-texto reveal">
-        <span class="eyebrow">Quién está detrás</span>
-        <h2>De Bolivia <span class="lime">para el mundo</span></h2>
-        <p>Soy Emanuel. Empecé hace más de 5 años vendiendo con anuncios para mis propios emprendimientos — no para clientes. Ahí aprendí lo que ningún curso enseña: <strong>cuando la plata que se invierte es tuya, medís todo.</strong></p>
-        <p>Con esa obsesión llevé DÚO a más de 30 negocios en 5 países, gestionando campañas de clientes que invierten menos de $100 al mes hasta cuentas que invierten miles de dólares mes tras mes.</p>
-        <div class="quien-firma">Manu Baldiviezo · Estratega Digital · Bolivia</div>
-      </div>
-    </div>
-
-    <div class="quien-social reveal">
-      <figure class="tk-mock" aria-label="Perfil de TikTok de Manu Baldiviezo">
-        <div class="tk-mock-avatar"><img src="/images/manu-baldiviezo-perfil.jpg" alt="Manu Baldiviezo"></div>
-        <figcaption>
-          <span class="tk-mock-handle">@manu_estrategadigital</span>
-          <span class="tk-mock-stats"><b>2.180</b> seguidores <span class="sep">·</span> <b>10.8K</b> likes</span>
-        </figcaption>
-      </figure>
-      <div class="quien-social-txt">
-        <h3>Mirá cómo trabajo <span class="lime">antes de escribirme</span></h3>
-        <p>Llevo más de un año creciendo en orgánico — captando clientes con y sin pauta, aplicando la misma metodología que uso con mis clientes, en mi propia agencia.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-final oscuro" aria-label="Empezá con un sistema que mide">
+<!-- ═══════════ CIERRE ═══════════ -->
+<section class="cta-final oscuro" aria-label="Pedí tu cotización">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">empecemos</span>
-      <h2>Dejá de pautar a ciegas. <span class="lime">Empezá con un sistema que mide.</span></h2>
-      <p>La reunión de diagnóstico es gratis — la hacemos antes de cobrarte un peso.</p>
+      <span class="eyebrow">la decisión</span>
+      <h2>Cada mensaje sin responder <span class="lime">es una venta que se enfría.</span></h2>
+      <p>Contame cómo trabaja tu negocio y te digo con números si la automatización te conviene — y cuánto te costaría.</p>
     </div>
     <div class="cta-final-cta reveal">
-      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20mi%20*diagn%C3%B3stico%20gratis*%20de%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime" data-origen="cierre_final">
-        Quiero mi diagnóstico gratis
+      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener" class="btn btn-lime" data-origen="cierre">
+        Quiero responder al instante
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="cta-final-note">Reunión gratis · Garantía de resultados · Servicios desde $195 USD/mes</p>
+      <p class="cta-final-note">Primera charla gratis · Cotización clara antes de decidir</p>
     </div>
   </div>
 </section>
@@ -3330,33 +3151,16 @@ h3, h4 { font-weight: 700; }
   <div class="container">
     <div class="footer-brand">
       <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital" class="footer-logo">
-      <p class="footer-tagline">Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica.</p>
+      <p class="footer-tagline">Publicidad que se nota en el WhatsApp, no solo en los likes.</p>
     </div>
-
-    <nav class="footer-links" aria-label="Navegación del pie de página">
-      <a href="#inicio">Inicio</a>
-      <a href="/publicidad">Publicidad</a>
-      <a href="/asesoria">Asesoría 1 a 1</a>
-      <a href="/paginas-web">Páginas web</a>
-      <a href="/automatizacion">Automatización</a>
-      <a href="/recursos">Recursos</a>
-      <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener">Agencia DÚO ↗</a>
+    <nav class="footer-links" aria-label="Navegación">
+      <a href="/">← Volver a manubaldiviezo.lat</a>
     </nav>
-
-    <div class="footer-cta">
-      <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="btn btn-lime" data-origen="footer">Contame tu caso</a>
-    </div>
-
     <div class="footer-contact">
       <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener" data-origen="footer_telefono">+591 75175144</a>
       <span class="sep">·</span>
       <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
-      <span class="sep">·</span>
-      <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok</a>
-      <span class="sep">·</span>
-      <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram</a>
     </div>
-
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> Manu Baldiviezo · DÚO Marketing Digital</span>
       <span>Hecho en Bolivia · De Yacuiba para el Mundo</span>
@@ -3366,23 +3170,13 @@ h3, h4 { font-weight: 700; }
 
 <div class="sticky-m" id="sticky-m">
   <div class="sticky-m-text">
-    <div class="sticky-m-eyebrow">Quedan <span data-cupos-count>3</span> cupos para empezar <span data-cupos-mes>agosto</span></div>
-    <div class="sticky-m-title">Agendá una reunión conmigo</div>
+    <div class="sticky-m-eyebrow">Primera charla gratis</div>
+    <div class="sticky-m-title">Respondé al instante, siempre</div>
   </div>
-  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20de%20diagn%C3%B3stico%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="sticky-m-btn" data-origen="sticky_bar">
+  <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*automatizaci%C3%B3n%20con%20IA*%20para%20mis%20campa%C3%B1as%20de%20*Meta%20Ads*%20y%20WhatsApp." target="_blank" rel="noopener" class="sticky-m-btn" data-origen="sticky">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.14-4.89-4.33-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
     WhatsApp
   </a>
-</div>
-
-<!-- Video modal -->
-<div class="overlay" id="video-modal" role="dialog" aria-modal="true">
-  <div class="video-box">
-    <button class="overlay-close" id="video-close" aria-label="Cerrar video">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <iframe id="video-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
 </div>
 
 <!-- Lightbox -->
@@ -3390,17 +3184,16 @@ h3, h4 { font-weight: 700; }
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
 
-<!-- Lead capture modal -->
-
+<!-- Modal de calificación pre-WhatsApp -->
 <div class="overlay" id="wa-modal" role="dialog" aria-modal="true" aria-labelledby="wa-title">
   <div class="lead-box wa-box">
     <button class="lead-close" id="wa-close" aria-label="Cerrar">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="lead-form-side">
-      <span class="lead-pill wa">Antes de escribirme</span>
+      <span class="lead-pill wa">Son 6 toques · menos de 1 minuto</span>
       <h3 id="wa-title">Contame tu caso</h3>
-      <p>Contame tu caso y te digo con números si te conviene invertir en Meta — aunque no trabajemos juntos.</p>
+      <p>Así te digo si la automatización te conviene — y cuánto te costaría.</p>
       <form id="wa-form" novalidate>
         <div class="lead-field">
           <label>¿Ya invertiste en anuncios antes?</label>
@@ -3413,6 +3206,7 @@ h3, h4 { font-weight: 700; }
         </div>
         <div class="lead-field">
           <label>¿Cuánto invertís hoy al mes en anuncios?</label>
+          <span class="lead-hint">Es solo para entender tu momento — no hay monto mínimo.</span>
           <div class="lead-choices" data-target="wa-presupuesto">
             <button type="button" class="lead-choice" data-value="Todavía nada">Todavía nada</button>
             <button type="button" class="lead-choice" data-value="Menos de $100">Menos de $100</button>
@@ -3438,36 +3232,41 @@ h3, h4 { font-weight: 700; }
           <input type="tel" id="wa-telefono" name="telefono" placeholder="Ej: 75123456" required autocomplete="tel" inputmode="tel" minlength="7">
         </div>
         <button type="submit" class="btn btn-lime lead-submit" id="wa-submit">
-          Escribirme por WhatsApp
+          Quiero mi cotización gratis
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
         </button>
       </form>
-      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">Para que llegues con todo claro: la reunión inicial es <strong>gratis</strong>. Si después trabajamos juntos: Gestión de Meta Ads desde <strong>$195 USD/mes</strong> · Asesoría práctica de 2 sesiones por <strong>$69 USD</strong>.</p>
-      <p class="lead-privacy">Te abre WhatsApp con tu info lista. Sin spam.</p>
+      <p class="lead-privacy" style="font-size:12.5px; color:var(--text-2, #ccc);">La charla inicial es <strong>gratis</strong> y la cotización te la damos clara, antes de que decidas nada.</p>
+      <p class="lead-privacy">Al enviar, te escribimos por WhatsApp. Sin spam, sin compromiso.</p>
     </div>
   </div>
 </div>
 
 
 <script>
-/* ══════════ CONFIG: Supabase ══════════
-   1. Crea un proyecto en supabase.com
-   2. Ejecuta el SQL de la tabla `leads` (ver README)
-   3. Pega aquí la URL y la anon key            */
+/* ══════════ CONFIG de esta landing ══════════ */
+const LANDING = 'automatizacion'; // identifica esta landing en Supabase y en el Pixel
+
+/* Escasez honesta: UNA sola variable — actualizala cada mes (igual que en index.html). */
+const CUPOS_DISPONIBLES = 3;
+const CUPOS_MES = 'agosto';
+
+/* VSL: cuando tengas el video, pegá acá el ID de YouTube (puede ser oculto/unlisted)
+   y la sección del video aparece sola. Mientras esté vacío, la sección no se muestra. */
+const VSL_YOUTUBE_ID = '';
+
+/* Supabase (misma tabla `leads` que index.html) */
 const SUPABASE_URL = 'https://bdihmagqncipbohcbgjr.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_heuN0KYsF_holhMKB9H5Fw_CLQFDfKH';
 
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ══════════ Base ══════════ */
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* Escasez honesta: UNA sola variable — Manu la actualiza acá cada mes, de verdad,
-   y los 3 lugares de la página (servicios, intro de precios, barra flotante) se
-   mantienen en sincro solos. Nada de contadores falsos. */
-const CUPOS_DISPONIBLES = 3;
-const CUPOS_MES = 'agosto';
 document.querySelectorAll('[data-cupos-count]').forEach(el => { el.textContent = CUPOS_DISPONIBLES; });
 document.querySelectorAll('[data-cupos-mes]').forEach(el => { el.textContent = CUPOS_MES; });
 
-/* Scroll: progress + CTAs de WhatsApp */
+/* Scroll: barra de progreso + barra flotante apenas termina el hero */
 const progress = document.getElementById('progress');
 const stickyM = document.getElementById('sticky-m');
 const heroSection = document.getElementById('inicio');
@@ -3475,13 +3274,12 @@ const heroSection = document.getElementById('inicio');
 function handlePageScroll() {
   const y = window.scrollY;
   const h = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-
-  /* La barra inferior aparece apenas termina el hero — antes esperaba hasta precios. */
-  const terminoHero = heroSection && heroSection.getBoundingClientRect().bottom < window.innerHeight * 0.5;
-  stickyM.classList.toggle('visible', !!terminoHero);
+  if (progress) progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  if (stickyM && heroSection) {
+    const terminoHero = heroSection.getBoundingClientRect().bottom < window.innerHeight * 0.5;
+    stickyM.classList.toggle('visible', terminoHero);
+  }
 }
-
 window.addEventListener('scroll', handlePageScroll, { passive: true });
 window.addEventListener('resize', handlePageScroll, { passive: true });
 handlePageScroll();
@@ -3492,49 +3290,32 @@ const io = new IntersectionObserver((entries) => {
     if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 /* FAQ accordion */
 document.querySelectorAll('.faq-item').forEach(item => {
-  item.querySelector('.faq-q').addEventListener('click', () => {
+  const q = item.querySelector('.faq-q');
+  if (!q) return;
+  q.addEventListener('click', () => {
     const was = item.classList.contains('active');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
     if (!was) item.classList.add('active');
   });
 });
 
-/* 3D tilt on covers (desktop pointers only) */
-if (window.matchMedia('(hover: hover)').matches) {
-  document.querySelectorAll('.tilt').forEach(el => {
-    el.addEventListener('pointermove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.03)`;
-    });
-    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-  });
-}
-
-
-/* Fondo cósmico animado — pixeles en movimiento */
+/* Fondo cósmico animado — mismo sistema que index.html (motas tinta sobre crema) */
 (function () {
   const canvases = document.querySelectorAll('.cosmic-canvas');
   if (!canvases.length) return;
-
   const LIME = '#EC6730', GOLD = '#F9B233';
-
   canvases.forEach((canvas) => {
     const ctx = canvas.getContext('2d');
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    // Sobre negro las motas son luz crema; sobre crema son tinta.
     const onDark = !!canvas.closest('.oscuro');
     const INK = onDark ? 'rgba(247, 244, 236, 0.8)' : 'rgba(22, 20, 12, 0.55)';
     let w = 0, h = 0, stars = [], raf = null, running = false, t = Math.random() * 1000;
-
     function spawn(anywhere) {
-      const deep = Math.random(); // 0 = lejano (lento, tenue) · 1 = cercano (rápido, brillante)
+      const deep = Math.random();
       const r = Math.random();
       return {
         x: Math.random() * w,
@@ -3544,7 +3325,7 @@ if (window.matchMedia('(hover: hover)').matches) {
         drift: (Math.random() - 0.5) * 0.06 * dpr,
         a: 0.12 + deep * 0.42,
         tw: Math.random() * Math.PI * 2,
-        life: anywhere ? 999 : 0, // las que nacen fuera de pantalla entran fundiendo, sin "pop"
+        life: anywhere ? 999 : 0,
         c: r < 0.12 ? LIME : r < 0.2 ? GOLD : INK
       };
     }
@@ -3561,14 +3342,12 @@ if (window.matchMedia('(hover: hover)').matches) {
       for (const st of stars) {
         st.y -= st.v; st.x += st.drift;
         if (st.y < -8 || st.x < -8 || st.x > w + 8) Object.assign(st, spawn(false));
-        // Titileo lento y poco profundo + entrada fundida: nada aparece ni desaparece de golpe.
         st.life = Math.min(999, st.life + 1);
         const fadeIn = Math.min(1, st.life / 90);
         const tw = 0.8 + Math.sin(t * 0.011 + st.tw) * 0.2;
         ctx.globalAlpha = st.a * tw * fadeIn;
         ctx.fillStyle = st.c;
         if (onDark) {
-          // Universo real: estrellas redondas; las cercanas llevan un halo suave.
           const r = Math.max(0.6, st.s * 0.55);
           if (st.s > 2.2) { ctx.shadowColor = st.c; ctx.shadowBlur = 7; }
           ctx.beginPath();
@@ -3597,1032 +3376,191 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 })();
 
-/* Manifiesto tipeado del puente: la estrategia va antes que el Ads Manager */
+/* ══════════ VSL ══════════ */
 (function () {
-  const box = document.getElementById('tw');
-  if (!box) return;
-
-  const LINES = [
-    { text: 'Así se ve un sistema que trae clientes todos los días.', acc: false }
-  ];
-
-  const caret = document.createElement('span');
-  caret.className = 'tw-caret';
-
-  let li = 0, ci = 0, node = null, started = false;
-
-  function newLine() {
-    const l = document.createElement('span');
-    l.className = 'tw-l' + (LINES[li].acc ? ' tw-acc' : '');
-    node = document.createTextNode('');
-    l.appendChild(node);
-    l.appendChild(caret); // el caret vive siempre al final de la línea activa
-    box.appendChild(l);
+  const sec = document.getElementById('vsl');
+  if (!sec) return;
+  if (!VSL_YOUTUBE_ID) return; // sin video todavía: la sección queda oculta y el layout fluye igual
+  sec.hidden = false;
+  const poster = document.getElementById('vsl-poster');
+  const embed = document.getElementById('vsl-embed');
+  if (!poster || !embed) return;
+  function playVsl() {
+    embed.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VSL_YOUTUBE_ID + '?autoplay=1&rel=0&modestbranding=1" title="Cómo trabajamos en DÚO" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    embed.hidden = false;
+    poster.hidden = true;
+    trackMetaCustomEvent('VSLPlay', { origen: LANDING });
   }
-
-  function tick() {
-    const line = LINES[li].text;
-    if (ci < line.length) {
-      node.data += line.charAt(ci++);
-      setTimeout(tick, 24 + Math.random() * 34);
-      return;
-    }
-    li++; ci = 0;
-    if (window.__uPulse) window.__uPulse(); // la frase completa pulsa la U
-    if (li < LINES.length) setTimeout(function () { newLine(); tick(); }, 620);
-  }
-
-  function start() {
-    if (started) return;
-    started = true;
-    newLine();
-    setTimeout(tick, 240);
-  }
-
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es, io) {
-      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); start(); } });
-    }, { threshold: 0.2 }).observe(box);
-  }
-
-  // Respaldo por scroll: si el observer no dispara (WebViews raros), esto sí.
-  function twFallback() {
-    if (started) { window.removeEventListener('scroll', twFallback); return; }
-    const r = box.getBoundingClientRect();
-    if (r.top < window.innerHeight * 0.8) { window.removeEventListener('scroll', twFallback); start(); }
-  }
-  window.addEventListener('scroll', twFallback, { passive: true });
-  twFallback();
+  poster.addEventListener('click', playVsl);
+  poster.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVsl(); } });
 })();
 
-/* Acordeón del punto ciego */
-(function () {
-  const items = document.querySelectorAll('#ciego-acc .ciego-item');
-  if (!items.length) return;
-  items.forEach((item) => {
-    item.querySelector('.ciego-row').addEventListener('click', () => {
-      const wasOpen = item.classList.contains('open');
-      items.forEach((o) => { o.classList.remove('open'); o.querySelector('.ciego-body').style.maxHeight = '0px'; });
-      if (!wasOpen) {
-        item.classList.add('open');
-        const b = item.querySelector('.ciego-body');
-        b.style.maxHeight = b.scrollHeight + 'px';
-      }
-    });
-  });
-  items[0].classList.add('open');
-  const fb = items[0].querySelector('.ciego-body');
-  fb.style.maxHeight = fb.scrollHeight + 'px';
-})();
-
-/* U de fondo captando leads — visible desde la segunda sección */
-(function () {
-  const canvas = document.getElementById('section-funnel-bg');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const W = 620;
-  const H = 420;
-  const LIME = '#EC6730';
-  const GOLD = '#F9B233';
-  const ORANGE = '#EC6730';
-  const WHITE = '#FAFAF8';
-
-  let t = 0;
-  let raf = null;
-  let particles = [];
-  let squarePulse = [0, 0, 0, 0];
-
-  const squares = [
-    { x: 230, y: 54, s: 30, color: GOLD },
-    { x: 362, y: 54, s: 30, color: GOLD },
-    { x: 244, y: 96, s: 30, color: ORANGE },
-    { x: 376, y: 96, s: 30, color: ORANGE }
-  ];
-
-  function resize() {
-    const rect = canvas.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(rect.width * dpr);
-    canvas.height = Math.round(rect.height * dpr);
-    ctx.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
-  }
-
-  function bezier(p0, p1, p2, p3, tt) {
-    const u = 1 - tt;
-    return {
-      x: u*u*u*p0.x + 3*u*u*tt*p1.x + 3*u*tt*tt*p2.x + tt*tt*tt*p3.x,
-      y: u*u*u*p0.y + 3*u*u*tt*p1.y + 3*u*tt*tt*p2.y + tt*tt*tt*p3.y
-    };
-  }
-
-  function targetPoint(i) {
-    const q = squares[i];
-    const side = Math.floor(Math.random() * 3); // arriba, izquierda o derecha. Nunca abajo.
-    const u = Math.random() * q.s;
-    if (side === 0) return { x: q.x + u, y: q.y - 5 };
-    if (side === 1) return { x: q.x - 5, y: q.y + u };
-    return { x: q.x + q.s + 5, y: q.y + u };
-  }
-
-  function createParticle(i) {
-    const targetIndex = Math.floor(Math.random() * squares.length);
-    const target = targetPoint(targetIndex);
-    const lane = i % 4;
-    let start;
-
-    if (lane === 0) start = { x: -60, y: 46 + Math.random() * 135 };
-    else if (lane === 1) start = { x: W + 60, y: 46 + Math.random() * 135 };
-    else if (lane === 2) start = { x: 150 + Math.random() * 330, y: -42 };
-    else start = { x: Math.random() < 0.5 ? 70 : W - 70, y: -28 + Math.random() * 72 };
-
-    return {
-      start,
-      target,
-      targetIndex,
-      progress: Math.random(),
-      speed: 0.002 + Math.random() * 0.0019,
-      size: 3 + Math.random() * 5,
-      alpha: 0.45 + Math.random() * 0.45,
-      seed: Math.random() * Math.PI * 2,
-      hold: 0,
-      color: targetIndex < 2 ? GOLD : ORANGE
-    };
-  }
-
-  function reset(p) {
-    Object.assign(p, createParticle(Math.floor(Math.random() * 9999)));
-    p.progress = 0;
-  }
-
-  function init() {
-    particles = Array.from({ length: 34 }, (_, i) => createParticle(i));
-    for (let i = 0; i < 180; i++) update();
-  }
-
-  function path(p, tt) {
-    const e = 1 - Math.pow(1 - tt, 3);
-    const magnet = { x: p.target.x, y: p.target.y + 8 };
-    return bezier(
-      p.start,
-      { x: p.start.x * 0.58 + magnet.x * 0.42, y: p.start.y * 0.7 + magnet.y * 0.3 },
-      { x: magnet.x + Math.sin(p.seed) * 90, y: magnet.y - 40 + Math.cos(p.seed) * 32 },
-      p.target,
-      e
-    );
-  }
-
-  function drawLead(p) {
-    const pos = path(p, p.progress);
-    const fadeIn = Math.min(1, p.progress * 5);
-    const fadeOut = Math.min(1, (1 - p.progress) * 6);
-    const alpha = Math.min(fadeIn, fadeOut) * p.alpha;
-
-    ctx.save();
-    ctx.globalAlpha = alpha * 0.22;
-    ctx.strokeStyle = p.color;
-    ctx.lineWidth = 1.6;
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    for (let i = 7; i >= 0; i--) {
-      const tt = Math.max(0, p.progress - i * 0.022);
-      const tr = path(p, tt);
-      if (i === 7) ctx.moveTo(tr.x, tr.y);
-      else ctx.lineTo(tr.x, tr.y);
-    }
-    ctx.stroke();
-    ctx.restore();
-
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = p.color;
-    ctx.shadowColor = p.color;
-    ctx.shadowBlur = 12;
-    const wobbleX = Math.sin(t * 0.035 + p.seed) * 2.2;
-    const wobbleY = Math.cos(t * 0.032 + p.seed) * 1.8;
-    ctx.fillRect(pos.x + wobbleX, pos.y + wobbleY, p.size, p.size);
-    ctx.restore();
-  }
-
-  function drawFunnel() {
-    const pulse = 0.5 + Math.sin(t * 0.025) * 0.5;
-
-    ctx.save();
-    const glow = ctx.createRadialGradient(310, 226, 0, 310, 226, 180);
-    glow.addColorStop(0, `rgba(236, 103, 48, ${0.12 + pulse * 0.06})`);
-    glow.addColorStop(0.58, 'rgba(236, 103, 48, 0.035)');
-    glow.addColorStop(1, 'rgba(236, 103, 48, 0)');
-    ctx.fillStyle = glow;
-    ctx.fillRect(90, 24, 440, 350);
-    ctx.restore();
-
-    ctx.save();
-    ctx.strokeStyle = 'rgba(250, 250, 248, 0.72)';
-    ctx.lineWidth = 52;
-    ctx.lineCap = 'butt';
-    ctx.lineJoin = 'round';
-    ctx.shadowColor = 'rgba(250, 250, 248, 0.28)';
-    ctx.shadowBlur = 24;
-    ctx.beginPath();
-    ctx.moveTo(244, 144);
-    ctx.lineTo(244, 245);
-    ctx.bezierCurveTo(244, 330, 376, 330, 376, 245);
-    ctx.lineTo(376, 144);
-    ctx.stroke();
-    ctx.restore();
-
-    squares.forEach((sq, i) => {
-      const sp = squarePulse[i];
-      ctx.save();
-      ctx.fillStyle = sq.color;
-      ctx.shadowColor = sq.color;
-      ctx.shadowBlur = 12 + sp * 22;
-      ctx.fillRect(sq.x, sq.y, sq.s, sq.s);
-      ctx.globalAlpha = 0.18 + sp * 0.2;
-      ctx.fillStyle = sq.color;
-      ctx.beginPath();
-      ctx.arc(sq.x + sq.s / 2, sq.y + sq.s / 2, sq.s * 1.1 + sp * 16, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    });
-  }
-
-  function update() {
-    t++;
-    squarePulse = squarePulse.map(v => v * 0.92);
-
-    particles.forEach((p) => {
-      if (p.hold > 0) {
-        p.hold--;
-        if (p.hold <= 0) reset(p);
-        return;
-      }
-
-      p.progress += p.speed;
-      if (p.progress >= 1) {
-        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.48);
-        p.hold = 8 + Math.floor(Math.random() * 12);
-      }
-    });
-  }
-
-  function render() {
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach((p) => { if (p.hold <= 0) drawLead(p); });
-    drawFunnel();
-  }
-
-  function tick() {
-    update();
-    render();
-    if (!reduceMotion) raf = requestAnimationFrame(tick);
-  }
-
-  resize();
-  init();
-  tick();
-
-  let rt;
-  window.addEventListener('resize', () => {
-    clearTimeout(rt);
-    rt = setTimeout(resize, 160);
-  }, { passive: true });
-})();
-
-/* Embudo DÚO flotante:
-   Los leads entran como pixeles sólidos, siguen un rastro dinámico
-   y se adhieren a los 4 cuadrados superiores del logo sin generar brillo pixelado.
-   Hay más aire arriba para que el movimiento y el glow no se corten. */
-(function () {
-  const canvas = document.getElementById('ufunnel-c');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-
-  const W = 180;
-  const H = 210;
-  const PAD = 80; // espacio lateral extra: los píxeles nacen a la vista (igual que en la web DÚO)
-  const VW = W + PAD * 2;
-
-  const GOLD = '#F9B233';
-  const ORANGE = '#EC6730';
-  const WHITE = '#F7F4EC'; // la U vuelve a ser blanca: protagonista sobre el universo negro
-  const LIME = '#EC6730';
-
-  let raf = null;
-  let running = false;
-  let time = 0;
-
-  let scrollEnergy = 0;
-  let lastScrollY = window.scrollY || 0;
-
-  const particles = [];
-  const TOTAL = 14; // menos y más lentos: se lee como sistema, no como lluvia de notificaciones
-
-  // Los 4 cuadrados del logo más cerca de la U.
-  // Los naranjas quedan alineados con las franjas blancas de la U.
-  const squares = [
-    { x: 43, y: 43, s: 15, color: GOLD },
-    { x: 96, y: 43, s: 15, color: GOLD },
-    { x: 58, y: 68, s: 15, color: ORANGE },
-    { x: 107, y: 68, s: 15, color: ORANGE }
-  ];
-
-  const squarePulse = [0, 0, 0, 0];
-
-  // El manifiesto tipeado avisa acá: cada frase que termina hace reaccionar a la U.
-  window.__uPulse = function () {
-    scrollEnergy = Math.min(16, scrollEnergy + 8);
-    for (let i = 0; i < squarePulse.length; i++) squarePulse[i] = Math.min(1, squarePulse[i] + 0.4);
-  };
-
-  function resize() {
-    const rect = canvas.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    canvas.width = Math.round(rect.width * dpr);
-    canvas.height = Math.round(rect.height * dpr);
-
-    const sx = canvas.width / VW;
-    ctx.setTransform(
-      sx,
-      0,
-      0,
-      canvas.height / H,
-      PAD * sx,
-      0
-    );
-
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-  }
-
-  function ease(t) {
-    return 1 - Math.pow(1 - t, 3);
-  }
-
-  function bezier(p0, p1, p2, p3, t) {
-    const u = 1 - t;
-    const tt = t * t;
-    const uu = u * u;
-
-    return {
-      x:
-        uu * u * p0.x +
-        3 * uu * t * p1.x +
-        3 * u * tt * p2.x +
-        tt * t * p3.x,
-      y:
-        uu * u * p0.y +
-        3 * uu * t * p1.y +
-        3 * u * tt * p2.y +
-        tt * t * p3.y
-    };
-  }
-
-  function squareTarget(index) {
-    const q = squares[index];
-
-    // Los leads se adhieren desde arriba y los costados de los cuadrados,
-    // no desde abajo, para que no parezca que suben desde debajo de la U.
-    const side = Math.floor(Math.random() * 3);
-    const u = Math.random() * q.s;
-
-    if (side === 0) return { x: q.x + u, y: q.y - 2.4 };
-    if (side === 1) return { x: q.x - 2.4, y: q.y + u };
-    return { x: q.x + q.s + 2.4, y: q.y + u };
-  }
-
-  function createParticle(i) {
-    const route = i % 5;
-    const targetIndex = Math.floor(Math.random() * squares.length);
-    const target = squareTarget(targetIndex);
-
-    let start;
-
-    if (route === 0) {
-      // Costado izquierdo, altura de los cuadrados.
-      start = { x: -(34 + Math.random() * 40), y: 24 + Math.random() * 64 };
-    } else if (route === 1) {
-      // Costado derecho, altura de los cuadrados.
-      start = { x: W + 34 + Math.random() * 40, y: 24 + Math.random() * 64 };
-    } else if (route === 2) {
-      // Desde arriba, con aire suficiente para que no se corte.
-      start = { x: 28 + Math.random() * 124, y: 5 + Math.random() * 12 };
-    } else if (route === 3) {
-      // Diagonal superior izquierda, nunca desde abajo.
-      start = { x: -(26 + Math.random() * 34), y: 8 + Math.random() * 44 };
-    } else {
-      // Diagonal superior derecha, nunca desde abajo.
-      start = { x: W + 26 + Math.random() * 34, y: 8 + Math.random() * 44 };
-    }
-
-    // Cada lead es una oportunidad real: WhatsApp, venta o consulta.
-    const kind = ['wa', 'venta', 'consulta', 'wa'][i % 4];
-    const KIND_COLOR = { wa: '#25D366', venta: GOLD, consulta: '#5FB4FF' };
-
-    return {
-      start,
-      target,
-      targetIndex,
-      kind,
-      progress: Math.random(),
-      speed: 0.0022 + Math.random() * 0.0018,
-      size: 3.2 + Math.random() * 2.6,
-      alpha: 0.55 + Math.random() * 0.3,
-      jitter: Math.random() * Math.PI * 2,
-      hold: 0,
-      color: KIND_COLOR[kind]
-    };
-  }
-
-  function resetParticle(p) {
-    const fresh = createParticle(Math.floor(Math.random() * 9999));
-    Object.assign(p, fresh);
-    p.progress = 0;
-  }
-
-  function initParticles() {
-    particles.length = 0;
-
-    for (let i = 0; i < TOTAL; i++) {
-      particles.push(createParticle(i));
-    }
-  }
-
-  function particlePath(p, t) {
-    const e = ease(t);
-
-    // Imán visual hacia los cuadrados: la curva pasa por arriba/costados,
-    // no por debajo del embudo.
-    const magnetX = 82 + Math.sin(p.jitter) * 28;
-    const magnetY = 48 + Math.cos(p.jitter) * 18;
-
-    return bezier(
-      p.start,
-      {
-        x: p.start.x * 0.62 + magnetX * 0.38,
-        y: p.start.y * 0.72 + magnetY * 0.28
-      },
-      {
-        x: magnetX,
-        y: magnetY
-      },
-      p.target,
-      e
-    );
-  }
-
-  function drawPixel(x, y, size, color, alpha, glow = true) {
-    const px = Math.round(x - size / 2);
-    const py = Math.round(y - size / 2);
-    const ps = Math.max(2, Math.round(size));
-
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = color;
-
-    if (glow) {
-      ctx.shadowColor = color;
-      ctx.shadowBlur = 7;
-    }
-
-    ctx.fillRect(px, py, ps, ps);
-    ctx.restore();
-  }
-
-  function roundRectPath(x, y, w, h, r) {
-    ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.arcTo(x + w, y, x + w, y + h, r);
-    ctx.arcTo(x + w, y + h, x, y + h, r);
-    ctx.arcTo(x, y + h, x, y, r);
-    ctx.arcTo(x, y, x + w, y, r);
-    ctx.closePath();
-  }
-
-  // Íconos de oportunidad: burbuja de WhatsApp, moneda de venta, consulta.
-  function drawIcon(kind, x, y, s, color, alpha) {
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.translate(x, y);
-    ctx.shadowColor = color;
-    ctx.shadowBlur = 6;
-
-    if (kind === 'venta') {
-      ctx.fillStyle = color;
-      ctx.beginPath();
-      ctx.arc(0, 0, s * 1.05, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = 'rgba(11, 11, 13, 0.85)';
-      ctx.font = '900 ' + (s * 1.5).toFixed(1) + 'px Inter, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('$', 0, s * 0.1);
-    } else {
-      const w = s * 2.3, h = s * 1.75, r = Math.min(h * 0.42, s * 0.8);
-      ctx.fillStyle = color;
-      roundRectPath(-w / 2, -h / 2, w, h, r);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(-w * 0.16, h / 2 - 0.5);
-      ctx.lineTo(-w * 0.28, h / 2 + s * 0.55);
-      ctx.lineTo(w * 0.02, h / 2 - 0.5);
-      ctx.closePath();
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      if (kind === 'wa') {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-        const dr = Math.max(0.55, s * 0.16);
-        [-0.6, 0, 0.6].forEach(function (k) {
-          ctx.beginPath();
-          ctx.arc(k * s * 0.6, -h * 0.06, dr, 0, Math.PI * 2);
-          ctx.fill();
-        });
-      } else {
-        ctx.fillStyle = '#fff';
-        ctx.font = '800 ' + (s * 1.4).toFixed(1) + 'px Inter, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('?', 0, -h * 0.02);
-      }
-    }
-
-    ctx.restore();
-  }
-
-  function drawParticle(p, scaleBoost) {
-    const progress = Math.min(1, p.progress);
-    const pos = particlePath(p, progress);
-
-    // Ciclo de vida sin parpadeos: nace creciendo y fundiendo,
-    // vuela, y al llegar se ENCOGE dentro del cuadro (absorción), no desaparece.
-    const born = Math.min(1, progress * 4);                                  // 0→1 en el primer cuarto
-    const landing = progress > 0.86 ? Math.max(0, (1 - progress) / 0.14) : 1; // 1→0 en el tramo final
-    const scale = (0.55 + 0.45 * born) * (0.3 + 0.7 * landing);
-    const alpha = Math.min(1, born * 1.2) * Math.min(1, 0.35 + landing * 0.65) * p.alpha;
-
-    const wobbleX = Math.sin(time * 0.08 + p.jitter) * 1.15;
-    const wobbleY = Math.cos(time * 0.07 + p.jitter) * 1.0;
-
-    const x = pos.x + wobbleX * landing;
-    const y = pos.y + wobbleY * landing;
-
-    ctx.save();
-
-    // Todo el sistema crece ligeramente al scrollear.
-    ctx.translate(W / 2, H / 2);
-    ctx.scale(1 + scaleBoost, 1 + scaleBoost);
-    ctx.translate(-W / 2, -H / 2);
-
-    // Rastro fino y limpio, sin manchas cuadradas.
-    ctx.globalAlpha = alpha * 0.26;
-    ctx.strokeStyle = p.color;
-    ctx.lineWidth = 1.25;
-    ctx.lineCap = 'round';
-
-    ctx.beginPath();
-
-    for (let i = 8; i >= 0; i--) {
-      const tt = Math.max(0, progress - i * 0.023);
-      const trail = particlePath(p, tt);
-
-      const tx = trail.x + Math.sin(time * 0.08 + p.jitter - i * 0.42) * 0.65;
-      const ty = trail.y + Math.cos(time * 0.07 + p.jitter - i * 0.42) * 0.65;
-
-      if (i === 8) ctx.moveTo(tx, ty);
-      else ctx.lineTo(tx, ty);
-    }
-
-    ctx.stroke();
-
-    // Lead principal: ícono de oportunidad según su tipo.
-    drawIcon(p.kind, x, y, p.size * scale, p.color, alpha);
-
-    ctx.restore();
-  }
-
-  function drawSoftGlow(cx, cy, radius, color, alpha) {
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-
-    if (color === GOLD) {
-      g.addColorStop(0, `rgba(249, 178, 51, ${alpha})`);
-      g.addColorStop(0.55, `rgba(249, 178, 51, ${alpha * 0.22})`);
-    } else {
-      g.addColorStop(0, `rgba(236, 103, 48, ${alpha})`);
-      g.addColorStop(0.55, `rgba(236, 103, 48, ${alpha * 0.22})`);
-    }
-
-    g.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-    ctx.save();
-    ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-  }
-
-  function drawSolidSquare(sq, pulse) {
-    // Plano y sólido: el impacto se nota como leve crecimiento, no como brillo.
-    const grow = pulse * 1.8;
-
-    ctx.save();
-
-    ctx.fillStyle = sq.color;
-    ctx.fillRect(sq.x - grow / 2, sq.y - grow / 2, sq.s + grow, sq.s + grow);
-
-    // Pequeño brillo interno para que se vea premium, no pixelado.
-    ctx.shadowBlur = 0;
-    ctx.globalAlpha = 0.28;
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(sq.x + 2, sq.y + 2, sq.s - 4, 2);
-
-    ctx.globalAlpha = 0.16;
-    ctx.fillRect(sq.x + 2, sq.y + 2, 2, sq.s - 4);
-
-    ctx.restore();
-  }
-
-  function drawU(scaleBoost) {
-    const pulse = 0.5 + Math.sin(time * 0.045) * 0.5;
-
-    ctx.save();
-
-    ctx.translate(W / 2, H / 2);
-    ctx.scale(1 + scaleBoost, 1 + scaleBoost);
-    ctx.translate(-W / 2, -H / 2);
-
-    // Huella interna animada. La línea acompaña la forma de la U sin cortar sus remates.
-    ctx.save();
-    ctx.globalAlpha = 0.28;
-    ctx.strokeStyle = 'rgba(236, 103, 48, 0.24)';
-    ctx.lineWidth = 2;
-    ctx.lineCap = 'round';
-    ctx.setLineDash([5, 9]);
-    ctx.lineDashOffset = -time * 0.42;
-
-    ctx.beginPath();
-    ctx.moveTo(68, 91);
-    ctx.lineTo(68, 128);
-    ctx.bezierCurveTo(68, 158, 112, 158, 112, 128);
-    ctx.lineTo(112, 91);
-    ctx.stroke();
-    ctx.restore();
-
-    // U principal del logo: remates superiores rectos, cuerpo sólido y base curva.
-    // Se dibuja como forma rellena, no como trazo, para evitar extremos redondeados.
-    ctx.save();
-    ctx.fillStyle = WHITE;
-    ctx.beginPath();
-    ctx.moveTo(57, 88);
-    ctx.lineTo(74, 88);
-    ctx.lineTo(74, 126);
-    ctx.bezierCurveTo(74, 146, 106, 146, 106, 126);
-    ctx.lineTo(106, 88);
-    ctx.lineTo(123, 88);
-    ctx.lineTo(123, 127);
-    ctx.bezierCurveTo(123, 166, 57, 166, 57, 127);
-    ctx.closePath();
-    ctx.fill();
-    ctx.restore();
-
-    // Cuadros superiores sólidos, planos — sin brillo (sobre crema el glow ensucia).
-    squares.forEach((sq, index) => {
-      const p = squarePulse[index];
-      const activePulse = pulse * 0.24 + p;
-      drawSolidSquare(sq, activePulse);
-    });
-
-    ctx.restore();
-  }
-
-  function update() {
-    time++;
-
-    scrollEnergy *= 0.9;
-
-    for (let i = 0; i < squarePulse.length; i++) {
-      squarePulse[i] *= 0.94;
-    }
-
-    particles.forEach((p) => {
-      if (p.hold > 0) {
-        p.hold--;
-
-        if (p.hold <= 0) resetParticle(p);
-        return;
-      }
-
-      p.progress += p.speed + scrollEnergy * 0.00055;
-
-      if (p.progress >= 1) {
-        // El lead ya se encogió dentro del cuadro (absorción); el cuadro late como acuse.
-        squarePulse[p.targetIndex] = Math.min(1, squarePulse[p.targetIndex] + 0.22);
-        p.hold = 34 + Math.floor(Math.random() * 56);
-      }
-    });
-  }
-
-  function render() {
-    ctx.clearRect(-PAD, -4, VW + 8, H + 8);
-
-    const scaleBoost = Math.min(0.14, scrollEnergy * 0.014);
-
-    // Levitación dibujada en canvas: se ve siempre, incluso con reduced-motion.
-    const floatY = Math.sin(time * 0.022) * 6 + Math.sin(time * 0.041) * 1.8;
-    const floatX = Math.sin(time * 0.014) * 2.2;
-
-    ctx.save();
-    ctx.translate(floatX, floatY);
-
-    // Leads primero, el logo sólido encima.
-    particles.forEach((p) => {
-      if (p.hold <= 0) drawParticle(p, scaleBoost);
-    });
-
-    drawU(scaleBoost);
-
-    ctx.restore();
-  }
-
-  function tick() {
-    update();
-    render();
-    raf = requestAnimationFrame(tick);
-  }
-
-  function start() {
-    if (running) return;
-
-    running = true;
-    resize();
-
-    if (!particles.length) {
-      initParticles();
-
-      // Arranca con la escena ya viva.
-      for (let i = 0; i < 130; i++) update();
-    }
-
-    tick();
-  }
-
-  function stop() {
-    running = false;
-    if (raf) cancelAnimationFrame(raf);
-  }
-
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (running) resize();
-    }, 120);
-  });
-
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY || 0;
-    const delta = Math.abs(y - lastScrollY);
-    lastScrollY = y;
-
-    // Al scrollear: más energía, más velocidad y crecimiento leve.
-    scrollEnergy = Math.min(10, scrollEnergy + delta * 0.04);
-  }, { passive: true });
-
-  start();
-
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) start();
-        else stop();
-      });
-    }, { threshold: 0.08 }).observe(canvas);
-  }
-})();
-
-/* Video modal */
+/* ══════════ Video modal (testimonios) ══════════ */
 const videoModal = document.getElementById('video-modal');
 const videoIframe = document.getElementById('video-iframe');
-
-document.querySelectorAll('.caso-video').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    trackMetaEvent('ViewContent', {
-      content_name: 'Video testimonio',
-      content_type: 'testimonial_video',
-      video_id: btn.dataset.video,
-      source: 'landing_manu'
-    });
-    videoIframe.src = `https://www.youtube.com/embed/${btn.dataset.video}?autoplay=1&rel=0`;
-    videoModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
 function closeVideo() {
+  if (!videoModal) return;
   videoModal.classList.remove('active');
-  videoIframe.src = '';
+  if (videoIframe) videoIframe.src = '';
   document.body.style.overflow = '';
 }
+if (videoModal && videoIframe) {
+  document.querySelectorAll('.caso-video').forEach(btn => {
+    btn.addEventListener('click', () => {
+      videoIframe.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.video + '?autoplay=1&rel=0';
+      videoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  const vc = document.getElementById('video-close');
+  if (vc) vc.addEventListener('click', closeVideo);
+  videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideo(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && videoModal.classList.contains('active')) closeVideo(); });
+}
 
-document.getElementById('video-close').addEventListener('click', closeVideo);
-videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideo(); });
-
-/* Lightbox */
+/* ══════════ Lightbox de capturas (prueba) ══════════ */
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-
-document.querySelectorAll('.caso-img').forEach(w => {
-  w.addEventListener('click', () => {
-    lightboxImg.src = w.dataset.img;
-    lightboxImg.alt = w.dataset.alt || '';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+if (lightbox && lightboxImg) {
+  document.querySelectorAll('.caso-img').forEach(w => {
+    w.addEventListener('click', () => {
+      lightboxImg.src = w.dataset.img;
+      lightboxImg.alt = w.dataset.alt || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
-
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  });
 }
 
-lightbox.addEventListener('click', closeLightbox);
-
-/* Esc closes everything */
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    if (videoModal.classList.contains('active')) closeVideo();
-    if (lightbox.classList.contains('active')) closeLightbox();
-    if (waModal.classList.contains('active')) cerrarWaModal();
-  }
-});
-
-/* Meta Pixel events + Calendly */
+/* ══════════ Meta Pixel ══════════ */
 function trackMetaEvent(eventName, params = {}) {
-  if (typeof window.fbq === 'function') {
-    window.fbq('track', eventName, params);
-  }
+  if (typeof window.fbq === 'function') window.fbq('track', eventName, params);
 }
-
 function trackMetaCustomEvent(eventName, params = {}) {
-  if (typeof window.fbq === 'function') {
-    window.fbq('trackCustom', eventName, params);
-  }
+  if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, params);
 }
 
-// El tracking de Calendly (ReunionAgendada + Schedule) vive en /agenda
-
-// Clics hacia WhatsApp — cada intención dispara su propio evento personalizado.
-// Además de un evento estándar (Lead / InitiateCheckout) para que Meta optimice.
 function clasificarWhatsApp(href) {
   const h = decodeURIComponent(href);
-  if (h.includes('Estrategia de Contenido')) return { custom: 'CompraEstrategiaContenido', std: 'InitiateCheckout', nombre: 'Estrategia de Contenido DÚO', valor: 15, consulta: false };
-  if (h.includes('FÓRMULA'))                 return { custom: 'CompraFormulaDuo3x',        std: 'InitiateCheckout', nombre: 'FÓRMULA DÚO3X',              valor: 25, consulta: false };
-  if (h.includes('Bitácora'))                return { custom: 'CompraBitacora3Q',          std: 'InitiateCheckout', nombre: 'Bitácora 3Q',                valor: 15, consulta: false };
-  if (h.includes('Gestión') || h.includes('Gestion')) return { custom: 'ConsultaGestion', std: 'Lead',             nombre: 'Gestión de Meta Ads',                   consulta: true };
-  if (h.includes('automatizaci'))            return { custom: 'ConsultaAutomatizacion',    std: 'Lead',             nombre: 'Automatización con IA',                 consulta: true };
-  if (h.includes('Asesor'))                  return { custom: 'ConsultaAsesoria',          std: 'Lead',             nombre: 'Asesoría 1:1',                          consulta: true };
-  if (h.includes('landing page'))            return { custom: 'ConsultaLandingPage',       std: 'Lead',             nombre: 'Landing Page',                          consulta: true };
-  return                                            { custom: 'ConsultaWhatsApp',          std: 'Lead',             nombre: 'Consulta general Meta Ads',             consulta: true };
+  if (h.includes('Gestión') || h.includes('Gestion')) return { custom: 'ConsultaGestion', std: 'Lead', nombre: 'Gestión de Meta Ads', consulta: true };
+  if (h.includes('automatizaci'))            return { custom: 'ConsultaAutomatizacion', std: 'Lead', nombre: 'Automatización con IA', consulta: true };
+  if (h.includes('Asesor'))                  return { custom: 'ConsultaAsesoria', std: 'Lead', nombre: 'Asesoría 1:1', consulta: true };
+  if (h.includes('landing page') || h.includes('página web') || h.includes('pagina web')) return { custom: 'ConsultaLandingPage', std: 'Lead', nombre: 'Landing Page', consulta: true };
+  return { custom: 'ConsultaWhatsApp', std: 'Lead', nombre: 'Consulta general Meta Ads', consulta: true };
 }
 
 function dispararEventosWa(c, extra) {
-  const params = Object.assign({ content_name: c.nombre, source: 'landing_manu', canal: 'whatsapp' }, extra || {});
-  if (c.valor) { params.value = c.valor; params.currency = 'USD'; params.content_type = 'digital_product'; }
-  trackMetaCustomEvent(c.custom, params); // personalizado granular (medición)
-  trackMetaEvent(c.std, params);          // estándar (Lead o InitiateCheckout) para que Meta optimice
-  trackMetaEvent('Contact', params);      // estándar: confirma que la conversación en WhatsApp arrancó de verdad
+  const params = Object.assign({ content_name: c.nombre, source: 'landing_' + LANDING, canal: 'whatsapp' }, extra || {});
+  trackMetaCustomEvent(c.custom, params);
+  trackMetaEvent(c.std, params);
+  trackMetaEvent('Contact', params);
 }
 
-// Título del modal según el botón que lo abrió — así el lead siente que ya lo entendieron
-const WA_TITULOS = {
-  ConsultaGestion:        'Querés que gestionemos tus campañas',
-  ConsultaAsesoria:       'Querés la asesoría 1 a 1',
-  ConsultaAutomatizacion: 'Querés automatizar tu atención',
-  ConsultaLandingPage:    'Querés tu landing page de venta'
-};
-
-// Modal de calificación previo a WhatsApp
+/* ══════════ Modal de calificación (idéntico a index.html) ══════════ */
 const waModal = document.getElementById('wa-modal');
 const waForm = document.getElementById('wa-form');
-const waTitleEl = document.getElementById('wa-title');
 let waCtx = null;
 
-function abrirWaModal(c) {
-  waTitleEl.textContent = (c && WA_TITULOS[c.custom]) || 'Contame tu caso';
+function abrirWaModal() {
+  if (!waModal) return;
   waModal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 function cerrarWaModal() {
+  if (!waModal) return;
   waModal.classList.remove('active');
   document.body.style.overflow = '';
 }
-document.getElementById('wa-close').addEventListener('click', cerrarWaModal);
-waModal.addEventListener('click', (e) => { if (e.target === waModal) cerrarWaModal(); });
 
-/* Campos de un tap (¿invertiste antes? / ¿cuánto invertís hoy?): fricción cero para arrancar */
-document.querySelectorAll('.lead-choices').forEach(grupo => {
-  const hidden = document.getElementById(grupo.dataset.target);
-  grupo.querySelectorAll('.lead-choice').forEach(boton => {
-    boton.addEventListener('click', () => {
-      grupo.querySelectorAll('.lead-choice').forEach(b => b.classList.remove('active'));
-      boton.classList.add('active');
-      hidden.value = boton.dataset.value;
-      grupo.classList.remove('error');
-    });
-  });
-});
-
-document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const c = clasificarWhatsApp(link.href);
-    const origen = link.dataset.origen || 'otro'; // qué botón/sección disparó el lead
-    if (c.consulta) {
-      // Consulta de servicio → calificamos al lead antes de abrir WhatsApp
-      e.preventDefault();
-      waCtx = { c: c, href: link.href, origen: origen };
-      abrirWaModal(c);
-    } else {
-      // Compra de recurso → directo a WhatsApp, con sus eventos
-      dispararEventosWa(c, { origen: origen });
+if (waModal && waForm) {
+  const waClose = document.getElementById('wa-close');
+  if (waClose) waClose.addEventListener('click', cerrarWaModal);
+  waModal.addEventListener('click', (e) => { if (e.target === waModal) cerrarWaModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (waModal.classList.contains('active')) cerrarWaModal();
+      if (lightbox && lightbox.classList.contains('active')) { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
     }
   });
-});
 
-waForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const nombre      = document.getElementById('wa-name').value.trim();
-  const telefono    = document.getElementById('wa-telefono').value.trim();
-  const negocio     = document.getElementById('wa-negocio').value.trim();
-  const ciudad      = document.getElementById('wa-ciudad').value.trim();
-  const ads         = document.getElementById('wa-ads').value;
-  const presupuesto = document.getElementById('wa-presupuesto').value;
-
-  // Los campos de un tap no los valida el navegador (son inputs ocultos) — los marcamos a mano.
-  document.querySelectorAll('.lead-choices').forEach(g => {
-    g.classList.toggle('error', !document.getElementById(g.dataset.target).value);
-  });
-  if (!ads || !presupuesto) return;
-  if (!nombre || !telefono || !negocio || !ciudad) { waForm.reportValidity(); return; }
-
-  // Mensaje de WhatsApp con la calificación ya cargada
-  const base = (waCtx && waCtx.href.indexOf('text=') !== -1)
-    ? decodeURIComponent(waCtx.href.split('text=')[1])
-    : 'Hola Manu 👋 Quiero info sobre *Meta Ads*.';
-  const msg = base
-    + '\n\n📋 Mi info para agilizar:'
-    + '\n• Negocio: ' + negocio
-    + '\n• Ciudad: ' + ciudad
-    + '\n• ¿Invertí en anuncios antes?: ' + ads
-    + '\n• Inversión mensual actual: ' + presupuesto
-    + '\n• Soy: ' + nombre;
-  const url = 'https://wa.me/59175175144?text=' + encodeURIComponent(msg);
-
-  // Eventos del pixel (Lead + Contact), ahora con los datos de calificación y el origen del botón
-  dispararEventosWa(waCtx.c, { nombre: nombre, negocio: negocio, ciudad: ciudad, invirtio_ads: ads, presupuesto_actual: presupuesto, origen: waCtx.origen });
-
-  // Registro opcional en Supabase (si está configurado)
-  if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.indexOf('PEGAR') === -1) {
-    try {
-      fetch(SUPABASE_URL + '/rest/v1/leads', {
-        method: 'POST',
-        keepalive: true,
-        headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Prefer': 'return=minimal' },
-        body: JSON.stringify({ name: nombre, phone: telefono, business: negocio, city: ciudad, invested_ads: ads, monthly_budget: presupuesto, intent: waCtx.c.custom, origen: waCtx.origen, source: 'whatsapp_qualify' })
+  /* Campos de un tap */
+  document.querySelectorAll('.lead-choices').forEach(grupo => {
+    const hidden = document.getElementById(grupo.dataset.target);
+    grupo.querySelectorAll('.lead-choice').forEach(boton => {
+      boton.addEventListener('click', () => {
+        grupo.querySelectorAll('.lead-choice').forEach(b => b.classList.remove('active'));
+        boton.classList.add('active');
+        hidden.value = boton.dataset.value;
+        grupo.classList.remove('error');
       });
-    } catch (err) { /* no bloquea la apertura de WhatsApp */ }
-  }
-
-  cerrarWaModal();
-  waForm.reset();
-  // form.reset() no limpia los inputs type="hidden" que llenamos por JS — hay que vaciarlos a mano.
-  document.querySelectorAll('.lead-choices').forEach(g => {
-    g.classList.remove('error');
-    document.getElementById(g.dataset.target).value = '';
-    g.querySelectorAll('.lead-choice.active').forEach(b => b.classList.remove('active'));
+    });
   });
-  const win = window.open(url, '_blank', 'noopener');
-  if (!win) window.location.href = url; // fallback si el navegador bloquea el popup
-});
 
-/* Menú hamburguesa / drawer */
-const menuFab = document.getElementById('menu-fab');
-const drawer = document.getElementById('drawer');
-function toggleDrawer(open) {
-  const isOpen = open !== undefined ? open : !drawer.classList.contains('open');
-  drawer.classList.toggle('open', isOpen);
-  menuFab.classList.toggle('open', isOpen);
-  menuFab.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const c = clasificarWhatsApp(link.href);
+      const origen = LANDING + '_' + (link.dataset.origen || 'cta');
+      e.preventDefault();
+      waCtx = { c: c, href: link.href, origen: origen };
+      abrirWaModal();
+    });
+  });
+
+  waForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre      = document.getElementById('wa-name').value.trim();
+    const telefono    = document.getElementById('wa-telefono').value.trim();
+    const negocio     = document.getElementById('wa-negocio').value.trim();
+    const ciudad      = document.getElementById('wa-ciudad').value.trim();
+    const ads         = document.getElementById('wa-ads').value;
+    const presupuesto = document.getElementById('wa-presupuesto').value;
+
+    document.querySelectorAll('.lead-choices').forEach(g => {
+      g.classList.toggle('error', !document.getElementById(g.dataset.target).value);
+    });
+    if (!ads || !presupuesto) return;
+    if (!nombre || !telefono || !negocio || !ciudad) { waForm.reportValidity(); return; }
+
+    const base = (waCtx && waCtx.href.indexOf('text=') !== -1)
+      ? decodeURIComponent(waCtx.href.split('text=')[1])
+      : 'Hola Manu 👋 Quiero info sobre *Meta Ads*.';
+    const msg = base
+      + '\n\n📋 Mi info para agilizar:'
+      + '\n• Negocio: ' + negocio
+      + '\n• Ciudad: ' + ciudad
+      + '\n• ¿Invertí en anuncios antes?: ' + ads
+      + '\n• Inversión mensual actual: ' + presupuesto
+      + '\n• Soy: ' + nombre;
+    const url = 'https://wa.me/59175175144?text=' + encodeURIComponent(msg);
+
+    dispararEventosWa(waCtx.c, { nombre: nombre, negocio: negocio, ciudad: ciudad, invirtio_ads: ads, presupuesto_actual: presupuesto, origen: waCtx.origen });
+
+    if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.indexOf('PEGAR') === -1) {
+      try {
+        fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          keepalive: true,
+          headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Prefer': 'return=minimal' },
+          body: JSON.stringify({ name: nombre, phone: telefono, business: negocio, city: ciudad, invested_ads: ads, monthly_budget: presupuesto, intent: waCtx.c.custom, origen: waCtx.origen, source: 'landing_' + LANDING })
+        });
+      } catch (err) { /* no bloquea la apertura de WhatsApp */ }
+    }
+
+    cerrarWaModal();
+    waForm.reset();
+    document.querySelectorAll('.lead-choices').forEach(g => {
+      g.classList.remove('error');
+      document.getElementById(g.dataset.target).value = '';
+      g.querySelectorAll('.lead-choice.active').forEach(b => b.classList.remove('active'));
+    });
+    const win = window.open(url, '_blank', 'noopener');
+    if (!win) window.location.href = url;
+  });
 }
-menuFab.addEventListener('click', () => toggleDrawer());
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) toggleDrawer(false); });
 
 /* Smooth anchors */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -4635,6 +3573,5 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 </script>
-
 </body>
 </html>
