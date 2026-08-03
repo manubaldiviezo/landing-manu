@@ -19,7 +19,7 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=DM+Serif+Display:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=Bitter:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -104,8 +104,8 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 .lime { color: var(--lime); }
 
 .eyebrow {
-  font-family: 'DM Serif Display', Georgia, serif !important;
-  font-style: italic; font-weight: 400;
+  font-family: 'Bitter', Georgia, serif !important;
+  font-style: italic; font-weight: 700;
   text-transform: lowercase;
   letter-spacing: 0.01em;
   color: var(--ember);
@@ -191,7 +191,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
 .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .logo img { height: 30px; width: auto; }
 
-.logo-sep { width: 1px; height: 22px; background: var(--line); }
+.logo-sep { width: 1px; height: 22px; background: rgba(247, 244, 236, 0.22); }
 
 .logo-role {
   font-family: 'DM Sans', 'Inter', sans-serif;
@@ -199,7 +199,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: rgba(247, 244, 236, 0.66);
   line-height: 1.4;
 }
 
@@ -210,7 +210,7 @@ header.scrolled { border-bottom-color: var(--line-soft); }
   .header-nav a {
     font-size: 13px;
     font-weight: 600;
-    color: var(--text-2);
+    color: rgba(247, 244, 236, 0.78);
     transition: color 0.2s ease;
   }
   .header-nav a:hover { color: var(--lime); }
@@ -1356,7 +1356,7 @@ section { padding: 92px 0; position: relative; }
 
 /* ── Footer ── */
 footer {
-  border-top: 1px solid var(--line-soft);
+  background: #0B0B0D;
   padding: 60px 0 104px;
 }
 
@@ -1368,22 +1368,22 @@ footer {
 
 .footer-logo { height: 26px; width: auto; margin-bottom: 18px; }
 
-.footer-tagline { font-size: 13.5px; color: var(--text-3); max-width: 320px; margin-bottom: 18px; }
+.footer-tagline { font-size: 13.5px; color: rgba(247, 244, 236, 0.62); max-width: 320px; margin-bottom: 18px; }
 
-.footer-contact p { color: var(--text-3); font-size: 14px; line-height: 1.85; }
+.footer-contact p { color: rgba(247, 244, 236, 0.62); font-size: 14px; line-height: 1.85; }
 .footer-contact a:hover { color: var(--lime); }
 
 .footer-nav { display: flex; flex-direction: column; gap: 10px; }
 @media (min-width: 768px) { .footer-nav { align-items: flex-end; } }
-.footer-nav a { font-size: 14px; color: var(--text-3); transition: color 0.2s ease; }
+.footer-nav a { font-size: 14px; color: rgba(247, 244, 236, 0.66); transition: color 0.2s ease; }
 .footer-nav a:hover { color: var(--lime); }
 
 .footer-bottom {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid rgba(247, 244, 236, 0.14);
   font-size: 12px;
-  color: var(--text-3);
+  color: rgba(247, 244, 236, 0.5);
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -1931,7 +1931,7 @@ section.recursos { padding-top: 148px; }
           <p>La estructura de 2 campañas con la que gestionamos más de $50.000 USD en Meta Ads — y por qué la mayoría la usa al revés.</p>
           <ul class="rec-feats">
             <li>La estructura exacta, paso a paso</li>
-            <li>Por qué la mayoría pauta al revés</li>
+            <li>Por qué la mayoría anuncia al revés</li>
             <li>El método detrás de los casos de arriba</li>
           </ul>
           <button class="btn btn-lime" id="open-lead">
@@ -2000,13 +2000,13 @@ section.recursos { padding-top: 148px; }
             <span class="rec-pill tipo">Guía PDF</span>
           </div>
           <h3>Estrategia de Contenido DÚO</h3>
-          <p>Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en orgánico y en pauta.</p>
+          <p>Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en tu contenido y en tus anuncios.</p>
           <ul class="rec-feats">
             <li>El árbol de coherencia: pilares, líneas y formatos</li>
             <li>Investigación de referentes y detonadores virales</li>
             <li>Cómo identificar ideas ganadoras antes de grabar</li>
           </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
@@ -2031,9 +2031,9 @@ section.recursos { padding-top: 148px; }
           <ul class="rec-feats">
             <li>+20 estructuras narrativas para venta, valor y viralidad</li>
             <li>+25 estilos de ganchos verbales, visuales y textuales</li>
-            <li>Sirve en orgánico y en pauta · potencia al Agente DÚO</li>
+            <li>Sirve para tu contenido y tus anuncios · potencia al Agente DÚO</li>
           </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
@@ -2043,8 +2043,8 @@ section.recursos { padding-top: 148px; }
             <div class="notion-bar"><i></i><i></i><i></i></div>
             <div class="notion-body">
               <div class="notion-title"><span class="emoji">📊</span> Bitácora de Campañas</div>
-              <div class="notion-q q1"><b>1 · ¿Qué pasó?</b><span>Entiende mediante analisis de KPIs el resultado actual.</span></div>
-              <div class="notion-q q2"><b>2 · ¿Por qué pasó?</b><span>Mide con variables matemáticas de métricas secundarias.</span></div>
+              <div class="notion-q q1"><b>1 · ¿Qué pasó?</b><span>Entendé el resultado mirando los números que importan.</span></div>
+              <div class="notion-q q2"><b>2 · ¿Por qué pasó?</b><span>Medí qué lo causó, con los datos detrás de ese resultado.</span></div>
               <div class="notion-q q3"><b>3 · ¿Qué hacer?</b><span>Pasos accionables de optimización de anuncios.</span></div>
             </div>
           </div>
@@ -2061,7 +2061,7 @@ section.recursos { padding-top: 148px; }
             <li>Parámetros para leer cada métrica y decidir</li>
             <li>Historial de decisiones · lista para duplicar</li>
           </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015)." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
+          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
         </div>
       </div>
 
@@ -2084,7 +2084,7 @@ section.recursos { padding-top: 148px; }
           <p>
             <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok · @manu_estrategadigital</a><br>
             <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram · @manubaldiviezo</a><br>
-            <a href="https://wa.me/59175175144" target="_blank" rel="noopener">+591 75175144</a><br>
+            <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener">+591 75175144</a><br>
             <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
           </p>
         </div>
@@ -2092,15 +2092,16 @@ section.recursos { padding-top: 148px; }
 
       <nav class="footer-nav" aria-label="Navegación del pie de página">
         <a href="/">Inicio</a>
-        <a href="/#resultados">Resultados</a>
-        <a href="/#servicios">Servicios</a>
-        <a href="/recursos">Recursos</a>
+        <a href="/publicidad">Publicidad</a>
+        <a href="/asesoria">Asesoría 1 a 1</a>
+        <a href="/paginas-web">Páginas web</a>
+        <a href="/automatizacion">Automatización</a>
         <a href="/agenda">Agendar reunión</a>
       </nav>
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Manu Baldiviezo · DÚO Marketing Digital</span>
+      <span>© <span id="year">2026</span> Manu Baldiviezo · DÚO Marketing Digital</span>
       <span>Hecho en Bolivia · De Yacuiba para el Mundo</span>
     </div>
   </div>
@@ -2118,12 +2119,12 @@ section.recursos { padding-top: 148px; }
     <div class="lead-form-side">
       <div id="lead-form-view">
         <span class="lead-pill">Recurso gratuito</span>
-        <h3 id="lead-title">Descarga EL SISTEMA</h3>
-        <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en Meta Ads. Dime a dónde te lo envío:</p>
+        <h3 id="lead-title">Descargá EL SISTEMA</h3>
+        <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en Meta Ads. Contame a dónde te lo envío:</p>
         <form id="lead-form" novalidate>
           <div class="lead-field">
             <label for="lead-name">Tu nombre</label>
-            <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamas?" required autocomplete="name">
+            <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamás?" required autocomplete="name">
           </div>
           <div class="lead-field">
             <label for="lead-email">Tu email</label>
@@ -2141,7 +2142,7 @@ section.recursos { padding-top: 148px; }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h3>¡Listo! Descargando…</h3>
-        <p>Si no inicia sola, tócalo acá abajo. Nos vemos dentro del sistema 🚀</p>
+        <p>Si no inicia sola, tocalo acá abajo. Nos vemos dentro del sistema 🚀</p>
         <a href="/recursos/EL-SISTEMA-DUO.pdf" download class="btn btn-lime">Descargar EL SISTEMA</a>
       </div>
     </div>
@@ -2233,7 +2234,7 @@ leadForm.addEventListener('submit', async (e) => {
           'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
           'Prefer': 'return=minimal'
         },
-        body: JSON.stringify({ name, email, resource: 'el-sistema', source: 'landing' })
+        body: JSON.stringify({ name, email, resource: 'el-sistema', source: 'recursos', origen: 'recursos_elsistema' })
       });
     } catch (err) { /* la descarga no se bloquea si falla el registro */ }
   }

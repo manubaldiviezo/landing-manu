@@ -25,6 +25,11 @@ create table if not exists public.leads (
 alter table public.leads add column if not exists origen text;          -- qué botón/sección abrió el formulario (hero, servicio_agencia, sticky_bar, etc.)
 alter table public.leads add column if not exists monthly_budget text;  -- cuánto invierte HOY al mes en anuncios (nuevo campo de calificación)
 
+-- ══════════ Migración 2026-08 — /recursos: descarga de EL SISTEMA ══════════
+-- El formulario de descarga en /recursos guarda email y qué recurso pidió.
+alter table public.leads add column if not exists email text;     -- email del lead que descarga un recurso
+alter table public.leads add column if not exists resource text;  -- qué recurso descargó (el-sistema, etc.)
+
 alter table public.leads enable row level security;
 
 -- El anon key solo puede INSERTAR (nunca leer ni borrar):

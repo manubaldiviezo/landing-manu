@@ -9,7 +9,7 @@
 <meta name="description" content="Apretar «promocionar» no es una estrategia. Construimos sistemas de venta con Facebook e Instagram para negocios bolivianos: campañas, contenido y datos que se convierten en clientes.">
 
 <meta property="og:title" content="Manu Baldiviezo · Estratega Digital | DÚO">
-<meta property="og:description" content="Deja de pautar a ciegas. Vende con un sistema: estrategia, anuncios y contenido que convierten.">
+<meta property="og:description" content="Dejá de anunciar a ciegas. Vendé con un sistema: estrategia, anuncios y contenido que convierten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.manubaldiviezo.lat">
 <meta property="og:image" content="https://www.manubaldiviezo.lat/images/og-cover.jpg">
@@ -168,7 +168,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   transition: border-color 0.25s ease;
 }
 .menu-fab:hover { border-color: var(--lime-line); }
-.menu-fab span { width: 19px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+.menu-fab span { width: 19px; height: 2px; background: #FAFAF8; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; } /* color fijo: el botón es oscuro y var(--text) resolvía a tinta negra (ícono invisible) */
 .menu-fab.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-fab.open span:nth-child(2) { opacity: 0; }
 .menu-fab.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -217,6 +217,8 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 .drawer.open .drawer-nav a:nth-child(4) { transition-delay: 0.21s; }
 .drawer.open .drawer-nav a:nth-child(5) { transition-delay: 0.26s; }
 .drawer.open .drawer-nav a:nth-child(6) { transition-delay: 0.31s; }
+.drawer.open .drawer-nav a:nth-child(7) { transition-delay: 0.36s; }
+.drawer.open .drawer-nav a:nth-child(8) { transition-delay: 0.41s; }
 .drawer-nav a:hover { color: var(--lime); padding-left: 8px; }
 .drawer-nav a .sub { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
 .drawer-cta { margin: 30px auto 0; max-width: 480px; width: 100%; }
@@ -2812,8 +2814,8 @@ h2 .lime, .entregables-title .lime {
 }
 .sticky-m-eyebrow { color: var(--gold); }
 
-/* Titulares con la voz nueva: pesados pero no gritones */
-h1, h2 { font-weight: 800; }
+/* Titulares con la voz nueva: pesados pero no gritones.
+   OJO: h1/h2 NO llevan peso acá — Anton solo existe en 400 y forzar 800 genera negrita sintética deforme. */
 h3, h4 { font-weight: 700; }
 
 /* Resultados en claro: cards blancas editoriales que combinan con la casa */
@@ -2868,8 +2870,8 @@ h3, h4 { font-weight: 700; }
   }
 }
 
-/* Botones: lima como matiz de conversión, tinta como estructura */
-.btn-lime { box-shadow: 0 10px 28px rgba(140, 170, 20, 0.25); }
+/* Botones: naranja como matiz de conversión, tinta como estructura */
+.btn-lime { box-shadow: 0 10px 28px rgba(236, 103, 48, 0.25); }
 .btn-ghost { border-width: 1.5px; }
 </style>
 </head>
@@ -2895,12 +2897,13 @@ h3, h4 { font-weight: 700; }
 <nav class="drawer" id="drawer" aria-label="Menú principal">
   <div class="drawer-nav">
     <a href="#resultados" class="drawer-link">Resultados <span class="sub">Casos reales</span></a>
-    <a href="#servicios" class="drawer-link">Inversión <span class="sub">Planes y precios</span></a>
+    <a href="/publicidad" class="drawer-link">Publicidad <span class="sub">La manejamos por vos</span></a>
+    <a href="/asesoria" class="drawer-link">Asesoría 1 a 1 <span class="sub">Aprendé a hacerlo vos</span></a>
+    <a href="/paginas-web" class="drawer-link">Páginas web <span class="sub">Que hacen que te escriban</span></a>
+    <a href="/automatizacion" class="drawer-link">Automatización <span class="sub">Respondé al instante</span></a>
     <a href="/recursos" class="drawer-link">Recursos <span class="sub">Guías y GPT gratis</span></a>
     <a href="/agenda" class="drawer-link">Agendar reunión <span class="sub">Por Google Meet</span></a>
     <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener" class="drawer-link">TikTok <span class="sub">@manu_estrategadigital ↗</span></a>
-    <a href="https://www.duomarketingdigital.com" target="_blank" rel="noopener" class="drawer-link">Agencia DÚO <span class="sub">contenido y producción ↗</span></a>
-    <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener" class="drawer-link">Instagram <span class="sub">@manubaldiviezo ↗</span></a>
   </div>
   <div class="drawer-cta">
     <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20agendar%20mi%20*reuni%C3%B3n%20estrat%C3%A9gica%20gratis*%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-lime" data-origen="menu_drawer">
@@ -2959,7 +2962,7 @@ h3, h4 { font-weight: 700; }
       <div class="sec-head reveal">
         <span class="eyebrow">el problema</span>
         <h2>Si esto te suena, <span class="lime">no es falta de plata.</span></h2>
-        <p>La mayoría de los negocios que pautan en Meta no tienen un problema de presupuesto — tienen un problema de sistema.</p>
+        <p>La mayoría de los negocios que invierten en anuncios no tienen un problema de presupuesto — tienen un problema de sistema.</p>
       </div>
 
       <ul class="sintomas-list reveal">
@@ -2978,7 +2981,7 @@ h3, h4 { font-weight: 700; }
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Resultados</span>
-      <h2>La misma estrategia en Meta <span class="lime">El mismo sistema.</span></h2>
+      <h2>Distintos rubros. <span class="lime">El mismo sistema.</span></h2>
       <p>Negocios de Bolivia, Chile y Ecuador. Distintos rubros, una sola metodología.</p>
     </div>
 
@@ -2997,7 +3000,7 @@ h3, h4 { font-weight: 700; }
           <div class="caso-title">+US$50.000 gestionados con <b>retorno de 10.55x</b> durante 7 meses</div>
           <div class="caso-metrics">
             <div class="caso-metric"><b>US$50K+</b><span>gestionados</span></div>
-            <div class="caso-metric"><b>10.55x</b><span>ROAS</span></div>
+            <div class="caso-metric"><b>10,55x</b><span>de retorno</span></div>
             <div class="caso-metric"><b>+7 meses</b><span>escalando</span></div>
           </div>
         </div>
@@ -3164,7 +3167,7 @@ h3, h4 { font-weight: 700; }
         <ul class="servicio-list">
           <li>Revisamos tus campañas y tu estrategia en vivo</li>
           <li>Armamos un plan de acción concreto para tu caso</li>
-          <li>Te llevas un Agente Estratega en ChatGPT para tu planificación</li>
+          <li>Te llevás un Agente Estratega en ChatGPT para tu planificación</li>
         </ul>
         <div class="servicio-foot">
           <div class="servicio-price-label">Modalidad Virtual</div>
@@ -3262,7 +3265,7 @@ h3, h4 { font-weight: 700; }
           <span>¿Cuánto cuesta trabajar con ustedes?</span>
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $195 USD / Bs 1.950 al mes (la pauta va directo a Meta, aparte). Asesoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Gestión de Meta Ads: desde $195 USD / Bs 1.950 al mes (lo que se le paga a Facebook por mostrar tus anuncios va aparte — lo definimos juntos según tu bolsillo). Asesoría práctica: $69 USD / Bs 690, 2 sesiones de 45 min. Ambos servicios empiezan con una reunión de diagnóstico, gratis.</div></div>
       </div>
 
     </div>
@@ -3303,7 +3306,7 @@ h3, h4 { font-weight: 700; }
       </figure>
       <div class="quien-social-txt">
         <h3>Mirá cómo trabajo <span class="lime">antes de escribirme</span></h3>
-        <p>Llevo más de un año creciendo en orgánico — captando clientes con y sin pauta, aplicando la misma metodología que uso con mis clientes, en mi propia agencia.</p>
+        <p>Llevo más de un año creciendo mi propia cuenta — captando clientes con y sin anuncios, aplicando la misma metodología que uso con mis clientes, en mi propia agencia.</p>
       </div>
     </div>
   </div>
@@ -3313,7 +3316,7 @@ h3, h4 { font-weight: 700; }
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">empecemos</span>
-      <h2>Dejá de pautar a ciegas. <span class="lime">Empezá con un sistema que mide.</span></h2>
+      <h2>Dejá de anunciar a ciegas. <span class="lime">Empezá con un sistema que mide.</span></h2>
       <p>La reunión de diagnóstico es gratis — la hacemos antes de cobrarte un peso.</p>
     </div>
     <div class="cta-final-cta reveal">

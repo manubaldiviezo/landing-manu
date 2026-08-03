@@ -168,7 +168,7 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
   transition: border-color 0.25s ease;
 }
 .menu-fab:hover { border-color: var(--lime-line); }
-.menu-fab span { width: 19px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+.menu-fab span { width: 19px; height: 2px; background: #FAFAF8; border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; } /* color fijo: el botón es oscuro y var(--text) resolvía a tinta negra (ícono invisible) */
 .menu-fab.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-fab.open span:nth-child(2) { opacity: 0; }
 .menu-fab.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -217,6 +217,8 @@ p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
 .drawer.open .drawer-nav a:nth-child(4) { transition-delay: 0.21s; }
 .drawer.open .drawer-nav a:nth-child(5) { transition-delay: 0.26s; }
 .drawer.open .drawer-nav a:nth-child(6) { transition-delay: 0.31s; }
+.drawer.open .drawer-nav a:nth-child(7) { transition-delay: 0.36s; }
+.drawer.open .drawer-nav a:nth-child(8) { transition-delay: 0.41s; }
 .drawer-nav a:hover { color: var(--lime); padding-left: 8px; }
 .drawer-nav a .sub { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
 .drawer-cta { margin: 30px auto 0; max-width: 480px; width: 100%; }
@@ -2812,8 +2814,8 @@ h2 .lime, .entregables-title .lime {
 }
 .sticky-m-eyebrow { color: var(--gold); }
 
-/* Titulares con la voz nueva: pesados pero no gritones */
-h1, h2 { font-weight: 800; }
+/* Titulares con la voz nueva: pesados pero no gritones.
+   OJO: h1/h2 NO llevan peso acá — Anton solo existe en 400 y forzar 800 genera negrita sintética deforme. */
 h3, h4 { font-weight: 700; }
 
 /* Resultados en claro: cards blancas editoriales que combinan con la casa */
@@ -2868,8 +2870,8 @@ h3, h4 { font-weight: 700; }
   }
 }
 
-/* Botones: lima como matiz de conversión, tinta como estructura */
-.btn-lime { box-shadow: 0 10px 28px rgba(140, 170, 20, 0.25); }
+/* Botones: naranja como matiz de conversión, tinta como estructura */
+.btn-lime { box-shadow: 0 10px 28px rgba(236, 103, 48, 0.25); }
 .btn-ghost { border-width: 1.5px; }
 
 /* ═══════════ EXTRAS DE LANDINGS POR SERVICIO ═══════════
@@ -2910,6 +2912,16 @@ h3, h4 { font-weight: 700; }
 .vsl-dur { position: absolute; right: 14px; bottom: 12px; z-index: 2; background: rgba(11, 11, 13, 0.78); color: #F7F4EC; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
 .vsl-embed { aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(22, 20, 12, 0.22); }
 .vsl-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ── Tarjeta de oferta única: centrada en TODOS los anchos (el margin del grid base recién entra a 900px) ── */
+.servicios-grid.solo { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+/* ── Caso único (prueba real en automatización): centrado, sin grilla multi-columna ── */
+.casos-scroll.solo { grid-template-columns: 1fr !important; max-width: 680px; margin-left: auto; margin-right: auto; }
+
+/* ── El cierre oscuro lleva el universo de la marca de fondo ── */
+.cta-final { position: relative; overflow: hidden; }
+.cta-final .container { position: relative; z-index: 1; }
 
 /* ── Microcopy de justificación bajo preguntas sensibles del formulario ── */
 .lead-hint { display: block; font-size: 11px; font-weight: 500; color: var(--text-3); text-transform: none; letter-spacing: 0; margin: 3px 0 8px; }
@@ -2972,6 +2984,24 @@ h3, h4 { font-weight: 700; }
           <span class="hero-foto-tag"><em>manu</em> — estratega</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VSL — oculto hasta que Manu pegue el ID de YouTube en VSL_YOUTUBE_ID ═══════════ -->
+<section class="vsl claro" id="vsl" hidden>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">mirá esto primero</span>
+      <h2>Te lo explico <span class="lime">en dos minutos</span></h2>
+    </div>
+    <div class="vsl-frame reveal">
+      <div class="vsl-poster" id="vsl-poster" role="button" tabindex="0" aria-label="Reproducir video: cómo trabajamos">
+        <img src="/images/manu-hero-estudio.jpg" alt="Manu explica cómo trabaja DÚO" decoding="async">
+        <span class="vsl-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="vsl-dur">2 min</span>
+      </div>
+      <div class="vsl-embed" id="vsl-embed" hidden></div>
     </div>
   </div>
 </section>
@@ -3089,7 +3119,7 @@ h3, h4 { font-weight: 700; }
       <h2>Qué incluye <span class="lime">y cuánto cuesta</span></h2>
     </div>
 
-    <div class="servicios-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+    <div class="servicios-grid solo">
       <div class="servicio destacado reveal">
         <span class="servicio-badge">Asesoría 1 a 1</span>
         <span class="servicio-tag">Por videollamada · En vivo</span>
@@ -3231,6 +3261,7 @@ h3, h4 { font-weight: 700; }
 
 <!-- ═══════════ CIERRE ═══════════ -->
 <section class="cta-final oscuro" aria-label="Agendá tu asesoría">
+  <canvas class="cosmic-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">la decisión</span>
@@ -3254,7 +3285,11 @@ h3, h4 { font-weight: 700; }
       <p class="footer-tagline">Publicidad que se nota en el WhatsApp, no solo en los likes.</p>
     </div>
     <nav class="footer-links" aria-label="Navegación">
-      <a href="/">← Volver a manubaldiviezo.lat</a>
+      <a href="/">Inicio</a>
+      <a href="/publicidad">Publicidad</a>
+      <a href="/asesoria">Asesoría</a>
+      <a href="/paginas-web">Páginas de venta</a>
+      <a href="/automatizacion">Automatización</a>
     </nav>
     <div class="footer-contact">
       <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener" data-origen="footer_telefono">+591 75175144</a>
