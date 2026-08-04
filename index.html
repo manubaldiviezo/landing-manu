@@ -158,36 +158,6 @@ input{ font-family:inherit; }
 }
 .micro{ font-size:.82rem; color:var(--suave); margin-top:.85rem; }
 
-/* ══════════ BARRA MÍNIMA ══════════ */
-.topbar{
-  position:sticky; top:0; z-index:60;
-  background:var(--crema);
-  border-bottom:1.5px solid rgba(22,21,15,.14);
-}
-.topbar .wrap{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:1rem; min-height:50px;
-}
-.topbar__marca{ display:flex; align-items:center; gap:.6rem; text-decoration:none; }
-.topbar__marca img{ height:26px; width:26px; }
-.topbar__marca span{
-  font-size:.68rem; font-weight:700;
-  letter-spacing:.22em; text-transform:uppercase;
-  color:var(--suave);
-}
-.topbar__cta{
-  font-size:.74rem; font-weight:700;
-  letter-spacing:.12em; text-transform:uppercase;
-  text-decoration:none;
-  color:var(--tinta);
-  border:1.5px solid rgba(22,21,15,.35);
-  padding:.4rem .85rem;
-  background:var(--papel);
-  white-space:nowrap;
-  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
-}
-@media (hover:hover){ .topbar__cta:hover{ background:var(--tinta); color:var(--crema); border-color:var(--tinta); } }
-
 /* ══════════ HERO ══════════ */
 .hero{ padding: clamp(2rem, 6vw, 4.2rem) 0 clamp(2.4rem, 6vw, 3.8rem); }
 .hero .hoja{
@@ -265,9 +235,8 @@ input{ font-family:inherit; }
 
 /* polaroid + post-it del hero */
 .hero__visual{
-  position:relative;
-  padding: .5rem .2rem 3.6rem;
-  max-width:420px;
+  display:grid; gap:1rem; justify-items:center;
+  max-width:340px;
   margin-inline:auto;
   width:100%;
 }
@@ -307,16 +276,42 @@ input{ font-family:inherit; }
   text-align:center;
 }
 .hero__visual .postit--cupos{
-  position:absolute;
-  right:-.3rem; bottom:0;
-  width:min(230px, 74%);
+  width:min(230px, 82%);
   rotate:2.6deg;
-  z-index:4;
 }
 .postit--cupos__tit{ font-family:Caveat, cursive; font-weight:700; font-size:1.85rem; line-height:1.1; }
 .postit--cupos__tit strong{ font-size:2.3rem; }
 .postit--cupos__tit span{ display:block; font-size:1rem; margin-top:.2rem; letter-spacing:.06em; font-weight:700; }
 .postit--cupos .caveat{ font-size:1.15rem; display:block; margin-top:.45rem; color:#ffd9a8; rotate:-1.5deg; }
+
+/* ══════════ VSL (oculta hasta pegar el ID de YouTube) ══════════ */
+.vsl-sec{ padding: clamp(1rem, 3vw, 2rem) 0 clamp(2.2rem, 6vw, 3.6rem); }
+.vsl-sec .hoja{
+  max-width:760px; margin-inline:auto;
+  padding: clamp(1.8rem, 4vw, 2.6rem) clamp(1.3rem, 4vw, 2.4rem) 2.2rem;
+  rotate:-.3deg;
+}
+.vsl-sec h2{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin:.3rem 0 1.2rem;
+}
+.vsl-frame{
+  position:relative; aspect-ratio:16/9;
+  background:#000; overflow:hidden; cursor:pointer;
+  border:1px solid rgba(22,21,15,.08);
+}
+.vsl-frame img{ width:100%; height:100%; object-fit:cover; opacity:.82; }
+.vsl-play{
+  position:absolute; top:50%; left:50%; translate:-50% -50%;
+  width:64px; height:64px; border-radius:999px;
+  background:var(--naranja); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem;
+  box-shadow:0 14px 30px -8px rgba(236,103,48,.65);
+}
+.vsl-embed{ aspect-ratio:16/9; }
+.vsl-embed iframe{ width:100%; height:100%; border:0; display:block; }
 
 /* ══════════ CABECERAS DE SECCIÓN ══════════ */
 .sec-head{ margin: clamp(3rem, 8vw, 5.2rem) 0 clamp(1.8rem, 4vw, 2.8rem); }
@@ -557,7 +552,7 @@ input{ font-family:inherit; }
 /* ══════════ OFERTA ══════════ */
 .oferta__grid{ display:grid; gap:2.6rem; align-items:start; }
 @media (min-width:920px){
-  .oferta__grid{ grid-template-columns: 1.15fr .85fr; gap:2.8rem; }
+  .oferta__grid{ grid-template-columns: 1fr .92fr; gap:2.4rem; align-items:center; }
 }
 .cotiza{
   padding: clamp(1.8rem, 4.5vw, 2.8rem) clamp(1.3rem, 4vw, 2.6rem) 3.2rem;
@@ -657,16 +652,8 @@ input{ font-family:inherit; }
 @media (min-width:920px){
   .manu__grid{ grid-template-columns: .9fr 1.1fr; gap:4rem; }
 }
-.polaroids{ position:relative; padding-bottom:2.8rem; max-width:460px; }
-.polaroids .polaroid{ width:min(360px, 86%); }
-.polaroid--chica{
-  position:absolute;
-  right:0; bottom:0;
-  width:min(200px, 46%) !important;
-  rotate:3.5deg;
-  z-index:2;
-}
-.polaroid--chica figcaption{ font-size:1.1rem; padding:.5rem .3rem .7rem; }
+.polaroids{ max-width:460px; margin-inline:auto; }
+.polaroids .polaroid{ width:min(360px, 86%); margin-inline:auto; }
 .manu__texto h2{
   font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
   font-size: clamp(1.85rem, 5vw, 2.9rem);
@@ -982,18 +969,6 @@ footer{
 </head>
 <body>
 
-<!-- ═════════ 1 · BARRA MÍNIMA ═════════ -->
-<header class="topbar">
-  <div class="wrap">
-    <a class="topbar__marca" href="/" aria-label="Inicio — Manu Baldiviezo, DÚO Marketing Digital">
-      <img src="/images/duo-icon.png?v=2" alt="DÚO" width="512" height="512">
-      <span>Manu Baldiviezo</span>
-    </a>
-    <a class="topbar__cta" data-origen="topbar"
-       href="https://wa.me/59175175144?text=Hola%20Manu%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis%20de%20*Meta%20Ads*%20para%20mi%20negocio.">Escribime por WhatsApp</a>
-  </div>
-</header>
-
 <main>
 
 <!-- ═════════ 2 · HERO CUADERNO ═════════ -->
@@ -1017,8 +992,7 @@ footer{
           </h1>
           <p class="hero__sub">Gestiono tu publicidad en Facebook e Instagram con una condición: <strong>primero entendemos tu negocio, después invertimos</strong> — y cada resultado lo ves en tu WhatsApp.</p>
           <div class="cta-fila">
-            <a class="btn btn--pri" data-origen="hero"
-               href="https://wa.me/59175175144?text=Hola%20Manu%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis%20de%20*Meta%20Ads*%20para%20mi%20negocio.">
+            <a class="btn btn--pri" href="#oferta">
               Quiero mi diagnóstico gratis
             </a>
             <a class="btn btn--sec" href="#resultados">Ver resultados reales ↓</a>
@@ -1029,7 +1003,6 @@ footer{
           <figure class="polaroid">
             <span class="tape tape--top"></span>
             <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo en su estudio, frente al micrófono." width="739" height="739">
-            <figcaption>el que está detrás de estos números</figcaption>
           </figure>
           <aside class="postit postit--cupos" aria-label="Cupos disponibles este mes">
             <p class="postit--cupos__tit">Quedan <strong data-cupos-count>3</strong> cupos <span>para <span data-cupos-mes>agosto</span></span></p>
@@ -1038,6 +1011,22 @@ footer{
         </div>
       </div>
       <span class="pag">hoja 01</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ VSL — oculta hasta pegar el ID de YouTube en VSL_YOUTUBE_ID ═════════ -->
+<section class="vsl-sec" id="vsl" hidden>
+  <div class="wrap">
+    <div class="hoja r">
+      <span class="tape tape--top"></span>
+      <span class="sec-head__num">mirá esto primero</span>
+      <h2>Te lo explico en dos minutos</h2>
+      <div class="vsl-frame" id="vsl-poster" role="button" tabindex="0" aria-label="Reproducir video">
+        <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo explicando cómo trabaja" loading="lazy">
+        <span class="vsl-play" aria-hidden="true">▶</span>
+      </div>
+      <div class="vsl-embed" id="vsl-embed" hidden></div>
     </div>
   </div>
 </section>
@@ -1063,16 +1052,13 @@ footer{
           <figure class="captura" style="--rot:-1.1deg">
             <span class="tape tape--izq"></span>
             <img src="/images/01-femmeninas-ads-manager-roas.webp"
-                 alt="Captura real del panel de resultados de Femmeninas: por cada Bs 1 invertido volvieron Bs 10,55 en ventas."
+                 alt="Captura real del panel de resultados de Femmeninas: por cada $1 invertido volvieron $10,55 en ventas."
                  width="1807" height="832" loading="lazy">
-            <svg class="circulo" style="--ct:34%; --cl:54%; --cw:38%; --ch:30%" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M12,52 C10,24 58,6 104,9 C158,12 190,30 187,54 C184,82 132,95 84,92 C41,90 15,79 13,56 C12,47 22,40 34,36"/>
-            </svg>
             <figcaption><span>captura real de su cuenta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
         <aside class="margen">
-          <p class="nota">acá está: cada Bs 1 invertido volvió como <strong>Bs 10,55</strong> — 7 meses seguidos
+          <p class="nota">acá está: cada $1 invertido volvió como <strong>$10,55</strong> — 7 meses seguidos
             <svg class="flecha" viewBox="0 0 80 80" aria-hidden="true"><path d="M70,70 C56,48 42,30 14,14 M14,14 l5,17 M14,14 l17,3"/></svg>
           </p>
           <ul class="apuntes">
@@ -1098,9 +1084,6 @@ footer{
             <img src="/images/04-nanitos-ads-manager-manychat.webp"
                  alt="Captura real del panel de resultados de Juguetería Ñañitos: más de 5.000 mensajes de compradores."
                  width="1801" height="830" loading="lazy">
-            <svg class="circulo" style="--ct:14%; --cl:30%; --cw:40%; --ch:28%" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M14,54 C10,26 56,8 102,9 C156,10 190,28 188,52 C186,80 134,96 86,93 C43,90 16,80 14,58 C13,48 21,41 32,37"/>
-            </svg>
             <figcaption><span>exportado directo de Meta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
@@ -1131,9 +1114,6 @@ footer{
             <img src="/images/02-vision-arq-ads-manager.webp"
                  alt="Captura real del panel de resultados de Vision Arq Studio: más de 300 personas escribieron en su primer mes."
                  width="1802" height="836" loading="lazy">
-            <svg class="circulo" style="--ct:28%; --cl:12%; --cw:42%; --ch:30%" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M16,50 C18,22 64,7 108,10 C160,14 188,32 185,56 C182,83 128,96 82,91 C42,87 14,76 15,54 C16,45 26,39 38,36"/>
-            </svg>
             <figcaption><span>captura real, sin filtros</span><span>sin editar</span></figcaption>
           </figure>
         </div>
@@ -1169,9 +1149,6 @@ footer{
             <img src="/images/03-climere-ads-manager-consultas.webp"
                  alt="Captura real del panel de resultados de Climere, clínica estética: consultas llegando de forma constante."
                  width="1803" height="836" loading="lazy">
-            <svg class="circulo" style="--ct:30%; --cl:44%; --cw:40%; --ch:30%" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M13,50 C12,23 60,6 106,9 C158,12 189,31 186,55 C183,83 130,95 83,92 C42,89 15,78 14,55 C13,46 23,39 35,36"/>
-            </svg>
             <figcaption><span>así se ve en su cuenta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
@@ -1218,44 +1195,40 @@ footer{
     </header>
     <div class="hoja hoja--lineada r">
       <span class="tape tape--top"></span>
-      <p class="metodo__intro">Apretar «promocionar» es apostar. Esto otro es un <em>sistema</em>: cuatro pasos, siempre en este orden, para cada negocio que tomo.</p>
+      <p class="metodo__intro">Apretar «Promocionar» es una apuesta. Nuestro sistema es otra cosa: cuatro pasos, siempre en este orden, para cada negocio que tomamos.</p>
       <ol class="pasos">
         <li class="paso">
           <span class="paso__num" aria-hidden="true">01</span>
           <h3>Diagnóstico</h3>
-          <p>Entendemos tu negocio, tu cliente y tus números. Qué vendés, a quién, con qué margen.</p>
+          <p>Entendemos tu negocio: qué vendés, a quién, con qué margen.</p>
         </li>
         <li class="paso">
           <span class="paso__num" aria-hidden="true">02</span>
           <h3>Estrategia</h3>
-          <p>Decidimos a quién hablarle, con qué mensaje y con cuánto. Recién ahí se invierte un peso.</p>
+          <p>Decidimos a quién hablarle y con qué mensaje. Recién ahí invertimos.</p>
         </li>
         <li class="paso">
           <span class="paso__num" aria-hidden="true">03</span>
           <h3>Comunicación</h3>
-          <p>Anuncios que hablan como habla tu cliente — no como hablan las agencias.</p>
+          <p>Anuncios que hablan como tu cliente — no como una agencia.</p>
         </li>
         <li class="paso">
           <span class="paso__num" aria-hidden="true">04</span>
           <h3>Medición continua</h3>
-          <p>Cada semana sabés exactamente qué volvió: cuánta gente escribió, cuánto costó, qué sigue.</p>
+          <p>Cada semana sabés qué volvió: cuánta gente escribió, cuánto costó.</p>
         </li>
       </ol>
-      <div class="metodo__sello">
-        <span class="sello">entender → invertir</span>
-        <p class="caveat">este sello va en todo lo que hago: primero entender, después invertir.</p>
-      </div>
       <span class="pag">hoja 03</span>
     </div>
   </div>
 </section>
 
 <!-- ═════════ 5 · OFERTA ÚNICA ═════════ -->
-<section class="oferta">
+<section class="oferta" id="oferta">
   <div class="wrap">
     <header class="sec-head r">
       <span class="sec-head__num">la hoja de cotización</span>
-      <h2>Lo que cuesta que yo lo maneje</h2>
+      <h2>Lo que cuesta que nuestro equipo lo maneje</h2>
       <p class="sec-head__nota caveat">sin letra chica: todo lo que incluye, tal cual ↓</p>
     </header>
     <div class="oferta__grid">
@@ -1268,7 +1241,7 @@ footer{
           <li><strong>Creación y gestión de tus campañas</strong> en Facebook e Instagram, de punta a punta.</li>
           <li><strong>Informes claros a tu WhatsApp</strong> — en tus palabras, no en términos raros.</li>
           <li><strong>Optimización semanal</strong>: lo que funciona crece, lo que no, se corta.</li>
-          <li><strong>Trato directo conmigo</strong> — sin intermediarios ni encargados de turno.</li>
+          <li><strong>Comunicación directa con nuestro equipo</strong> — sin vueltas ni tercerizar tu cuenta.</li>
         </ul>
         <div class="cotiza__fila">
           <span class="cotiza__monto">$195</span>
@@ -1277,14 +1250,14 @@ footer{
               <path d="M2,7 Q26,3 50,6 T98,5"/>
             </svg>
           </span>
-          <span class="cotiza__correccion caveat">precio corregido ✏</span>
+          <span class="cotiza__correccion caveat" aria-hidden="true">✏</span>
           <span class="cotiza__desde">USD / mes</span>
         </div>
         <p class="cotiza__bs">Bs 1.950 al mes</p>
         <p class="cotiza__aclara">La inversión publicitaria va aparte, directo a Meta. Ese monto lo definimos juntos según tu negocio.</p>
         <a class="btn btn--pri" data-origen="oferta"
            href="https://wa.me/59175175144?text=Hola%20Manu%2C%20me%20interesa%20la%20Gesti%C3%B3n%20de%20*Meta%20Ads*%20de%20%24195%20al%20mes.">
-          Quiero que lo manejes vos
+          Quiero empezar con la gestión
         </a>
         <p class="micro">Garantía: si no superamos tus resultados en el mes 1, el mes 2 no lo pagás.</p>
         <span class="pag">hoja 04</span>
@@ -1314,12 +1287,6 @@ footer{
         <figure class="polaroid">
           <span class="tape tape--top"></span>
           <img src="/images/manu-celebrando.jpg" alt="Manu Baldiviezo celebrando un resultado con su equipo." width="1000" height="1333" loading="lazy">
-          <figcaption>cuando los números de un cliente salen bien</figcaption>
-        </figure>
-        <figure class="polaroid polaroid--chica">
-          <span class="tape tape--top"></span>
-          <img src="/images/manu-detras-de-camara.jpg" alt="Manu Baldiviezo detrás de cámara, grabando contenido." width="960" height="958" loading="lazy">
-          <figcaption>grabando para clientes</figcaption>
         </figure>
       </div>
       <div class="manu__texto r">
@@ -1537,6 +1504,24 @@ var CUPOS_MES = 'agosto';
 document.querySelectorAll('[data-cupos-count]').forEach(function(el){ el.textContent = CUPOS_DISPONIBLES; });
 document.querySelectorAll('[data-cupos-mes]').forEach(function(el){ el.textContent = CUPOS_MES; });
 
+/* VSL — pegá acá el ID de YouTube cuando esté grabado; la sección aparece sola */
+var VSL_YOUTUBE_ID = '';
+(function(){
+  var sec = document.getElementById('vsl');
+  if (!sec || !VSL_YOUTUBE_ID) return;
+  sec.hidden = false;
+  var poster = document.getElementById('vsl-poster');
+  var embed = document.getElementById('vsl-embed');
+  if (!poster || !embed) return;
+  function reproducir(){
+    embed.innerHTML = '<iframe src="https://www.youtube.com/embed/' + VSL_YOUTUBE_ID + '?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen title="Video de Manu Baldiviezo"></iframe>';
+    embed.hidden = false;
+    poster.hidden = true;
+  }
+  poster.addEventListener('click', reproducir);
+  poster.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reproducir(); } });
+})();
+
 /* Año del footer */
 (function(){
   var y = document.getElementById('year');
@@ -1569,7 +1554,7 @@ function dispararEventosWa(c, extra){
 
 /* Título del modal según el botón que lo abrió */
 var WA_TITULOS = {
-  ConsultaGestion:  'Querés que gestione tus anuncios',
+  ConsultaGestion:  'Querés que gestionemos tus anuncios',
   ConsultaAsesoria: 'Querés la asesoría 1 a 1'
 };
 
