@@ -164,10 +164,7 @@ input{ font-family:inherit; }
   padding: clamp(2rem, 5.5vw, 3.6rem) clamp(1.3rem, 4.5vw, 3.6rem) clamp(2.8rem, 5vw, 3.4rem) clamp(1.9rem, 6.5vw, 4.4rem);
   rotate:-.35deg;
 }
-.hero__grid{ display:grid; gap:2.6rem; align-items:center; }
-@media (min-width:960px){
-  .hero__grid{ grid-template-columns: 1fr auto; align-items:start; gap: clamp(2rem, 4vw, 3.6rem); }
-}
+.hero__grid{ display:grid; gap:2.6rem; align-items:center; max-width:640px; }
 .hero__etiqueta{
   display:inline-block;
   font-size:.68rem; font-weight:700;
@@ -997,12 +994,6 @@ footer{
           </div>
           <p class="micro">Reunión de 30 minutos · te llevás un plan, trabajemos juntos o no.</p>
         </div>
-        <div class="hero__visual">
-          <figure class="polaroid">
-            <span class="tape tape--top"></span>
-            <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo en su estudio, frente al micrófono." width="739" height="739">
-          </figure>
-        </div>
       </div>
       <span class="pag">hoja 01</span>
     </div>
@@ -1031,7 +1022,7 @@ footer{
     <header class="sec-head r">
       <span class="sec-head__num">mi cuaderno de resultados</span>
       <h2>Mirá cómo venimos trabajando</h2>
-      <p class="sec-head__nota caveat">capturas reales, tal cual salen de cada cuenta ↓</p>
+      <p class="sec-head__nota caveat">esto pasó en sus cuentas ↓</p>
     </header>
 
     <!-- CASO 01 · CLIMERE -->
@@ -1048,7 +1039,6 @@ footer{
             <img src="/images/03-climere-ads-manager-consultas.webp"
                  alt="Captura real del panel de resultados de Climere, clínica estética: consultas llegando de forma constante."
                  width="1803" height="836" loading="lazy">
-            <figcaption><span>así se ve en su cuenta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
         <aside class="margen">
@@ -1082,7 +1072,6 @@ footer{
             <img src="/images/01-femmeninas-ads-manager-roas.webp"
                  alt="Captura real del panel de resultados de Femmeninas: por cada $1 invertido volvieron $10,55 en ventas."
                  width="1807" height="832" loading="lazy">
-            <figcaption><span>captura real de su cuenta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
         <aside class="margen">
@@ -1112,7 +1101,6 @@ footer{
             <img src="/images/04-nanitos-ads-manager-manychat.webp"
                  alt="Captura real del panel de resultados de Juguetería Ñañitos: más de 5.000 mensajes de compradores."
                  width="1801" height="830" loading="lazy">
-            <figcaption><span>exportado directo de Meta</span><span>sin editar</span></figcaption>
           </figure>
         </div>
         <aside class="margen">
@@ -1142,7 +1130,6 @@ footer{
             <img src="/images/02-vision-arq-ads-manager.webp"
                  alt="Captura real del panel de resultados de Vision Arq Studio: más de 300 personas escribieron en su primer mes."
                  width="1802" height="836" loading="lazy">
-            <figcaption><span>captura real, sin filtros</span><span>sin editar</span></figcaption>
           </figure>
         </div>
         <aside class="margen">
@@ -1280,7 +1267,7 @@ footer{
       <div class="polaroids r">
         <figure class="polaroid">
           <span class="tape tape--top"></span>
-          <img src="/images/manu-celebrando.jpg" alt="Manu Baldiviezo celebrando un resultado con su equipo." width="1000" height="1333" loading="lazy">
+          <img src="/images/manu-hero-estudio.jpg" alt="Manu Baldiviezo en su estudio, frente al micrófono." width="739" height="739" loading="lazy">
         </figure>
       </div>
       <div class="manu__texto r">
