@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-<meta name="theme-color" content="#0B0B0D">
+<meta name="theme-color" content="#F7F4EC">
+
 <title>Recursos DÚO · Guías y herramientas | Manu Baldiviezo</title>
-<meta name="description" content="EL SISTEMA gratis, el Agente Estratega Digital y las guías premium DÚO: estrategia de contenido, guionización y optimización de campañas.">
+<meta name="description" content="El Sistema gratis, el Agente Estratega Digital y las guías premium DÚO: estrategia de contenido, guionización y optimización de campañas de Meta Ads.">
+
+<link rel="canonical" href="https://www.manubaldiviezo.lat/recursos">
 <meta property="og:title" content="Recursos DÚO · Manu Baldiviezo">
-<meta property="og:description" content="La metodología DÚO en tus manos: guías, GPT y plantillas para vender con Meta Ads.">
+<meta property="og:description" content="La metodología DÚO en tus manos: guías, GPT y plantillas para vender más con Meta Ads.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.manubaldiviezo.lat/recursos">
 <meta property="og:image" content="https://www.manubaldiviezo.lat/images/og-cover.jpg">
@@ -15,11 +18,13 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.manubaldiviezo.lat/images/og-cover.jpg">
-<link rel="canonical" href="https://www.manubaldiviezo.lat/recursos">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<link rel="icon" type="image/png" href="/images/duo-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&family=Bitter:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter:ital,wght@1,700&family=Caveat:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -33,2190 +38,920 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '987679140929122');
 fbq('track', 'PageView');
 </script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=987679140929122&ev=PageView&noscript=1"
+alt=""></noscript>
 <!-- End Meta Pixel Code -->
+
 <style>
-:root {
-  /* Crema editorial + colores oficiales del manual de marca DÚO — sin verde neón */
-  --bg: #F7F4EC;
-  --bg-2: #F1EDE1;
-  --bg-3: #EAE4D6;
-  --lime: #EC6730;
-  --lime-soft: rgba(236, 103, 48, 0.12);
-  --lime-line: rgba(236, 103, 48, 0.4);
-  --gold: #F9B233;
-  --ember: #EC6730;
-  --carbon: #1D1D1B;
-  --grad-premium: linear-gradient(92deg, #F9B233, #EC6730);
-  --card: #FFFFFF;
-  --card-hover: #FFFEF9;
-  --line: rgba(22, 20, 12, 0.16);
-  --line-soft: rgba(22, 20, 12, 0.09);
-  --text: #16150F;
-  --text-2: #45443B;
-  --text-3: #837F71;
-  --green: #34D27B;
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 22px;
-  --radius-xl: 30px;
-  --max-width: 1180px;
-  --pad: clamp(18px, 4vw, 32px);
+/* ══════════ BASE — idéntico al sistema de index.html ══════════ */
+:root{
+  --crema:#F7F4EC;
+  --papel:#FFFDF6;
+  --tinta:#16150F;
+  --negro:#0B0B0D;
+  --naranja:#EC6730;
+  --ambar:#F9B233;
+  --suave:rgba(22,21,15,.62);
+  --linea:rgba(22,21,15,.08);
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  font-family:"DM Sans", system-ui, -apple-system, sans-serif;
+  font-size:1rem;
+  line-height:1.65;
+  color:var(--tinta);
+  background-color:var(--crema);
+  background-image:
+    radial-gradient(rgba(22,21,15,.030) 1px, transparent 1.4px),
+    repeating-linear-gradient(0deg, transparent 0 7px, rgba(22,21,15,.009) 7px 8px);
+  background-size:5px 5px, auto;
+  overflow-x:hidden;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
+button{ font-family:inherit; cursor:pointer; }
+input{ font-family:inherit; }
+::selection{ background:var(--ambar); color:var(--tinta); }
+:focus-visible{ outline:3px solid var(--naranja); outline-offset:2px; }
+
+.anton{ font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.015em; line-height:.98; }
+.bitter{ font-family:Bitter, Georgia, serif; font-weight:700; font-style:italic; }
+.caveat{ font-family:Caveat, cursive; font-weight:700; }
+
+.wrap{ width:min(1140px, 100% - 2.2rem); margin-inline:auto; }
+
+/* ══════════ HOJAS DE PAPEL ══════════ */
+.hoja{
+  position:relative;
+  background:var(--papel);
+  border:1px solid var(--linea);
+  box-shadow:
+    0 1px 2px rgba(22,21,15,.05),
+    0 16px 38px -20px rgba(22,21,15,.32);
+}
+.hoja--lineada{
+  background-image: repeating-linear-gradient(
+    transparent 0 2.1rem,
+    rgba(22,21,15,.05) 2.1rem calc(2.1rem + 1px)
+  );
+}
+.hoja--lineada::before{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  left: clamp(1.1rem, 4vw, 2.6rem);
+  width:1.5px;
+  background: rgba(236,103,48,.28);
+  pointer-events:none;
+}
+.pag{
+  position:absolute;
+  bottom:.75rem; right:1.1rem;
+  font-size:.66rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(22,21,15,.4);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ══════════ CINTA ADHESIVA ══════════ */
+.tape{
+  position:absolute;
+  width:104px; height:28px;
+  background: rgba(236,220,170,.62);
+  box-shadow: inset 0 0 8px rgba(255,255,255,.55), 0 1px 3px rgba(22,21,15,.14);
+  clip-path: polygon(0 8%, 3% 0, 97% 3%, 100% 12%, 99% 90%, 96% 100%, 4% 97%, 1% 86%);
+  pointer-events:none;
+  z-index:3;
+}
+.tape--top{ top:-13px; left:50%; margin-left:-52px; rotate:-3deg; }
+.tape--izq{ top:-11px; left:8%; rotate:-7deg; }
+.tape--der{ top:-11px; right:8%; rotate:5deg; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* ══════════ BOTONES ══════════ */
+.btn{
+  display:inline-block;
+  font-family:Anton, Impact, sans-serif; font-weight:400;
+  text-transform:uppercase; letter-spacing:.07em;
+  font-size:.95rem;
+  text-decoration:none;
+  text-align:center;
+  padding:.95rem 1.55rem;
+  border-radius:999px;
+  border:0;
+  transition: translate .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
+}
+.btn--pri{
+  background:var(--naranja); color:var(--crema);
+  box-shadow: 0 12px 24px -12px rgba(236,103,48,.65);
+}
+.btn--sec{
+  background:transparent;
+  border:2px solid var(--tinta);
+  color:var(--tinta);
+}
+@media (hover:hover){
+  .btn--pri:hover{ background:#d5541f; translate:0 -2px; }
+  .btn--sec:hover{ background:var(--tinta); color:var(--crema); }
+}
+.micro{ font-size:.82rem; color:var(--suave); margin-top:.85rem; }
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+/* ══════════ HERO ══════════ */
+.hero{ padding: clamp(2rem, 6vw, 4.2rem) 0 clamp(2.4rem, 6vw, 3.8rem); }
+.hero .hoja{
+  padding: clamp(2rem, 5.5vw, 3.6rem) clamp(1.3rem, 4.5vw, 3.6rem) clamp(2.8rem, 5vw, 3.4rem) clamp(1.9rem, 6.5vw, 4.4rem);
+  rotate:-.35deg;
+}
+.hero__grid{ display:grid; gap:2.6rem; align-items:center; }
+@media (min-width:960px){
+  .hero__grid{ grid-template-columns: 1fr auto; align-items:start; gap: clamp(2rem, 4vw, 3.6rem); }
+}
+.hero__etiqueta{
+  display:inline-block;
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--suave);
+  border:1px solid rgba(22,21,15,.18);
+  padding:.3rem .7rem;
+  margin-bottom:1.5rem;
+  background:var(--papel);
+}
+.hero__kicker{
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  color:var(--suave);
+  rotate:-1.2deg;
+  margin-bottom:.55rem;
+  max-width:30ch;
+}
+.hero h1{ font-weight:400; }
+.hero__pre{
+  display:block;
+  font-family:Bitter, Georgia, serif; font-weight:700; font-style:italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  margin-bottom:.35rem;
+}
+.hero__grito{
+  display:block;
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size: clamp(2.35rem, 8vw, 4.9rem);
+  line-height:.96;
+  letter-spacing:.01em;
+  max-width:15ch;
+}
+.hero__giro{
+  display:inline-block;
+  position:relative;
+  font-family:Bitter, Georgia, serif; font-weight:700; font-style:italic;
+  font-size: clamp(1.55rem, 4.4vw, 2.8rem);
+  color:var(--naranja);
+  margin-top:.55rem;
+  padding-bottom:.4rem;
+}
+.hero__giro svg{
+  position:absolute; left:0; bottom:-4px;
+  width:100%; height:14px;
+}
+.hero__sub{
+  max-width:52ch;
+  margin-top:1.4rem;
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  color:rgba(22,21,15,.8);
+}
+.hero__sub strong{ font-weight:700; }
+.cta-fila{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.8rem; align-items:center; }
+@media (max-width:640px){
+  .hero__etiqueta{ display:none; }
+  .hero{ padding-top:1.1rem; }
+  .hero .hoja{ padding-top:1.2rem; padding-bottom:2.2rem; }
+  .hero__kicker{ font-size:1.1rem; margin-bottom:.4rem; max-width:26ch; }
+  .hero__grito{ font-size:2.05rem; }
+  .hero__giro{ font-size:1.35rem; margin-top:.35rem; }
+  .hero__sub{ margin-top:1rem; font-size:.96rem; line-height:1.45; }
+  .cta-fila{ margin-top:1.1rem; }
 }
 
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-input { font-family: inherit; }
+/* polaroid + post-it */
+.hero__visual{
+  display:grid; gap:1rem; justify-items:center;
+  max-width:190px;
+  margin-inline:auto;
+  width:100%;
+}
+.polaroid{
+  position:relative;
+  background:#fff;
+  padding:13px 13px 0;
+  box-shadow: 0 2px 4px rgba(22,21,15,.08), 0 20px 40px -18px rgba(22,21,15,.38);
+  border:1px solid rgba(22,21,15,.06);
+  rotate:-2.2deg;
+}
+.polaroid img{ width:100%; background:#e8e4d8; object-fit:cover; }
+.polaroid figcaption{
+  font-family:Caveat, cursive; font-weight:700;
+  font-size:1.45rem;
+  text-align:center;
+  padding:.65rem .4rem .85rem;
+}
+.postit{
+  position:relative;
+  padding:1.3rem 1.3rem 2.1rem;
+  box-shadow: 0 2px 3px rgba(22,21,15,.08), 0 16px 30px -14px rgba(22,21,15,.35);
+}
+.postit::after{
+  content:"";
+  position:absolute;
+  bottom:0; right:0;
+  width:0; height:0;
+  border-style:solid;
+  border-width:22px 22px 0 0;
+  border-color: var(--pfold) transparent transparent transparent;
+}
+.postit--cupos{
+  --pfold:#b8481a;
+  background: linear-gradient(315deg, rgba(0,0,0,0) 0 22px, var(--naranja) 22px);
+  color:var(--crema);
+  text-align:center;
+}
+.hero__visual .postit--cupos{
+  width:min(230px, 82%);
+  rotate:2.6deg;
+}
+.postit--cupos__tit{ font-family:Caveat, cursive; font-weight:700; font-size:1.85rem; line-height:1.1; }
+.postit--cupos__tit strong{ font-size:2.3rem; }
+.postit--cupos__tit span{ display:block; font-size:1rem; margin-top:.2rem; letter-spacing:.06em; font-weight:700; }
+.postit--cupos .caveat{ font-size:1.15rem; display:block; margin-top:.45rem; color:#ffd9a8; rotate:-1.5deg; }
 
-::selection { background: rgba(236, 103, 48, 0.4); color: #0B0B0D; }
+/* ══════════ CABECERAS DE SECCIÓN ══════════ */
+.sec-head{ margin: clamp(3rem, 8vw, 5.2rem) 0 clamp(1.8rem, 4vw, 2.8rem); }
+.sec-head__num{
+  font-size:.7rem; font-weight:700; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--naranja);
+  display:block; margin-bottom:.5rem;
+}
+.sec-head h2{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size: clamp(1.85rem, 5.2vw, 3.3rem);
+  line-height:1;
+  max-width:20ch;
+}
+.sec-head__nota{ font-size: clamp(1.35rem, 2.4vw, 1.65rem); color:var(--suave); rotate:-1deg; margin-top:.6rem; }
 
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--pad); }
+/* ══════════ CAPTURAS / FOTOS PEGADAS ══════════ */
+.captura{
+  position:relative;
+  background:#fff;
+  padding:10px 10px 12px;
+  border:1px solid rgba(22,21,15,.08);
+  box-shadow:
+    0 1px 2px rgba(22,21,15,.08),
+    0 18px 36px -16px rgba(22,21,15,.35);
+  rotate: var(--rot, -1deg);
+  margin:0;
+}
+.captura img{
+  width:100%; height:auto;
+  background:#efece1;
+  border:1px solid rgba(22,21,15,.07);
+  cursor:zoom-in;
+}
+.captura figcaption{
+  display:flex; justify-content:space-between; gap:.8rem;
+  font-size:.67rem; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--suave);
+  padding-top:.55rem;
+}
+.captura figcaption span:last-child{ color:var(--naranja); white-space:nowrap; }
+.margen{ padding-top:.4rem; }
+.nota{
+  font-family:Caveat, cursive; font-weight:700;
+  font-size: clamp(1.45rem, 2.6vw, 1.8rem);
+  line-height:1.12;
+  rotate:-1.6deg;
+  max-width:22ch;
+  margin-bottom:1.1rem;
+}
+.nota strong{ color:var(--naranja); font-weight:700; }
+.apuntes{ list-style:none; margin-bottom:1.3rem; }
+.apuntes li{
+  position:relative;
+  padding-left:1.7rem;
+  margin-bottom:.55rem;
+  font-size:1rem;
+  color:rgba(22,21,15,.84);
+}
+.apuntes li::before{
+  content:"✓";
+  position:absolute; left:0; top:-.28rem;
+  font-family:Caveat, cursive; font-weight:700;
+  font-size:1.45rem;
+  color:var(--naranja);
+}
+.apuntes strong{ font-weight:700; }
 
-h1, h2, h3 {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-  color: var(--text);
-  text-transform: uppercase;
+/* ══════════ OFERTA / COTIZACIÓN (reusado para las guías) ══════════ */
+.cotiza{
+  padding: clamp(1.8rem, 4.5vw, 2.8rem) clamp(1.3rem, 4vw, 2.6rem) 3.2rem;
+  rotate:-.5deg;
+}
+.cotiza__tipo{
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.24em; text-transform:uppercase;
+  color:var(--suave);
+  display:block;
+  margin-bottom:.4rem;
+}
+.cotiza h3{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size: clamp(1.4rem, 3.6vw, 1.9rem);
+  line-height:1.05;
+  margin-bottom:1rem;
+}
+.cotiza .apuntes{ margin-bottom:1.5rem; }
+.cotiza__fila{
+  display:flex; align-items:baseline; flex-wrap:wrap;
+  gap:.35rem .75rem;
+  margin-bottom:.2rem;
+}
+.cotiza__monto{
+  font-family:Anton, Impact, sans-serif; font-weight:400;
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  line-height:1;
+}
+.cotiza__desde{ font-family:"DM Sans", sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-transform:uppercase; color:var(--suave); }
+.cotiza__aclara{
+  font-size:.85rem; color:var(--suave);
+  border-left:3px solid var(--ambar);
+  padding-left:.8rem;
+  margin-bottom:1.6rem;
+  max-width:40ch;
 }
 
-h1 { font-size: clamp(34px, 7.5vw, 72px); }
-h2 { font-family: 'Anton', 'DM Sans', sans-serif; font-weight: 400; font-size: clamp(28px, 4.6vw, 48px); }
-h3 { font-size: clamp(17px, 2.2vw, 22px); letter-spacing: -0.01em; }
+/* ══════════ NOTA AL MARGEN ══════════ */
+.margenal{
+  margin: clamp(3rem, 8vw, 5rem) 0 0;
+  display:flex; flex-wrap:wrap; gap:1.6rem 3rem;
+  justify-content:center;
+  align-items:flex-start;
+}
+.margenal__nota{
+  font-family:Caveat, cursive; font-weight:700;
+  font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+  line-height:1.2;
+  max-width:42ch;
+  text-align:center;
+  rotate:-1.2deg;
+  position:relative;
+  padding-left:1.4rem;
+}
+.margenal__nota::before{
+  content:"→";
+  position:absolute; left:0; top:0;
+  color:var(--naranja);
+}
+.margenal__nota a{ color:var(--naranja); text-decoration-thickness:2px; text-underline-offset:3px; }
 
-p { color: var(--text-2); font-size: clamp(15px, 1.6vw, 17px); }
-
-.lime { color: var(--lime); }
-
-.eyebrow {
-  font-family: 'Bitter', Georgia, serif !important;
-  font-style: italic; font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: 0.01em;
-  color: var(--ember);
-  background: none !important; border: none !important; padding: 0 !important;
+/* ══════════ FOOTER ══════════ */
+footer{
+  background:var(--negro);
+  color:rgba(247,244,236,.8);
+  padding: clamp(2.4rem, 5vw, 3.4rem) 0 3rem;
+  font-size:.88rem;
+}
+.footer__grid{
+  display:grid; gap:2rem;
+  padding-bottom:1.8rem;
+  border-bottom:1px solid rgba(247,244,236,.14);
+}
+@media (min-width:760px){ .footer__grid{ grid-template-columns: 1.2fr 1fr 1fr; gap:2.5rem; } }
+.footer__marca img{ height:34px; width:auto; margin-bottom:.8rem; }
+.footer__marca p{ max-width:34ch; color:rgba(247,244,236,.6); font-size:.85rem; }
+.footer__tit{
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(247,244,236,.5);
+  margin-bottom:.8rem;
+}
+.footer__lista{ list-style:none; }
+.footer__lista li{ margin-bottom:.45rem; }
+.footer__lista a{ text-decoration:none; color:rgba(247,244,236,.85); }
+@media (hover:hover){ .footer__lista a:hover{ color:var(--ambar); } }
+.footer__base{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:.6rem 1.5rem;
+  padding-top:1.4rem;
+  font-size:.78rem;
+  color:rgba(247,244,236,.55);
 }
 
-/* ── Scroll progress ── */
-.progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 2.5px;
-  width: 0%;
-  background: var(--lime);
-  z-index: 200;
-  transition: width 0.1s linear;
+/* ══════════ OVERLAYS ══════════ */
+.overlay{
+  position:fixed; inset:0;
+  z-index:120;
+  background:rgba(11,11,13,.82);
+  display:none;
+  align-items:center; justify-content:center;
+  padding:1rem;
+}
+.overlay.active{ display:flex; }
+.overlay-close{
+  position:absolute;
+  top:-44px; right:0;
+  width:38px; height:38px;
+  background:var(--crema);
+  border:0; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--tinta);
+}
+.overlay-close svg{ width:16px; height:16px; }
+.lightbox-img{
+  max-width:94vw; max-height:88vh;
+  width:auto; height:auto;
+  object-fit:contain;
+  background:#fff;
+  padding:8px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+  cursor:zoom-out;
 }
 
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 17px 30px;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 6px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  letter-spacing: 0.01em;
+/* modal — estilo hoja de cuaderno */
+.wa-box{
+  position:relative;
+  width:min(480px, 100%);
+  max-height:92vh;
+  overflow-y:auto;
+  background:var(--papel);
+  border:1px solid var(--linea);
+  box-shadow: 0 2px 4px rgba(22,21,15,.1), 0 40px 90px -30px rgba(0,0,0,.7);
+  padding:2rem 1.5rem 1.8rem;
 }
-
-.btn-lime {
-  background: var(--lime);
-  color: #0B0B0D;
-  box-shadow: 0 8px 32px rgba(236, 103, 48, 0.22);
+@media (min-width:520px){ .wa-box{ padding:2.3rem 2.2rem 2rem; } }
+.wa-box .lead-close{
+  position:absolute;
+  top:.8rem; right:.8rem;
+  width:36px; height:36px;
+  background:transparent;
+  border:0; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--suave);
 }
-
-.btn-lime:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(236, 103, 48, 0.35); }
-
-.btn-ghost {
-  border: 1.5px solid var(--line);
-  color: var(--text);
+.wa-box .lead-close svg{ width:16px; height:16px; }
+.wa-pill{
+  display:inline-block;
+  font-family:Caveat, cursive; font-weight:700;
+  font-size:1.2rem;
+  color:var(--naranja);
+  rotate:-1.5deg;
+  margin-bottom:.3rem;
 }
-
-.btn-ghost:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
-
-.btn-premium {
-  background: var(--grad-premium);
-  color: #0B0B0D;
-  box-shadow: 0 8px 30px rgba(236, 103, 48, 0.28);
+.wa-box h3{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size:1.45rem; line-height:1.05;
+  margin-bottom:.5rem;
 }
-
-.btn-premium:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(236, 103, 48, 0.4); }
-
-.btn svg { width: 17px; height: 17px; flex-shrink: 0; }
-
-/* ── Header ── */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(11, 11, 13, 0.78);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease;
+.wa-box > .lead-form-side > p{ font-size:.92rem; color:var(--suave); margin-bottom:1.3rem; }
+.lead-field{ margin-bottom:1.05rem; }
+.lead-field label{
+  display:block;
+  font-size:.82rem; font-weight:700;
+  margin-bottom:.45rem;
 }
-
-@media (max-width: 767px) { header { position: absolute; } }
-
-header.scrolled { border-bottom-color: var(--line-soft); }
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  gap: 18px;
+.lead-field input[type="text"],
+.lead-field input[type="email"]{
+  width:100%;
+  background:var(--crema);
+  border:1.5px solid rgba(22,21,15,.25);
+  padding:.7rem .85rem;
+  font-size:16px; /* evita zoom automático en iOS */
+  color:var(--tinta);
 }
-
-.logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.logo img { height: 30px; width: auto; }
-
-.logo-sep { width: 1px; height: 22px; background: rgba(247, 244, 236, 0.22); }
-
-.logo-role {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(247, 244, 236, 0.66);
-  line-height: 1.4;
+.lead-field input:focus{ outline:2px solid var(--naranja); outline-offset:1px; border-color:var(--naranja); }
+.lead-submit{
+  width:100%;
+  margin-top:.4rem;
+  font-size:.92rem;
 }
+.lead-privacy{ font-size:.76rem; color:var(--suave); margin-top:.8rem; text-align:center; }
+.lead-success h3{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size:1.3rem; margin-bottom:.6rem;
+}
+.lead-success p{ font-size:.92rem; color:var(--suave); margin-bottom:1.2rem; }
 
-.header-nav { display: none; }
-
-@media (min-width: 900px) {
-  .header-nav { display: flex; align-items: center; gap: 26px; margin-left: auto; }
-  .header-nav a {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(247, 244, 236, 0.78);
-    transition: color 0.2s ease;
+/* ══════════ ANIMACIONES (solo mejora) ══════════ */
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior:smooth; }
+  .anim .r{
+    opacity:0;
+    translate:0 20px;
+    transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1);
   }
-  .header-nav a:hover { color: var(--lime); }
-}
-
-.header-cta { display: none; }
-
-@media (min-width: 768px) {
-  .header-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 20px;
-    background: var(--lime);
-    color: #0B0B0D;
-    font-family: 'DM Sans', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 12.5px;
-    letter-spacing: 0.02em;
-    border-radius: 5px;
-    transition: all 0.25s ease;
-    flex-shrink: 0;
-  }
-  .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(236, 103, 48, 0.3); }
-}
-
-/* ── Hero ── */
-.hero {
-  padding-top: 72px;
-  padding-bottom: 72px;
-  position: relative;
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .hero {
-    padding-top: 48px;
-  }
-}
-
-.hero-lines {
-  position: absolute;
-  top: 0; right: 0;
-  width: 55%; height: 70%;
-  background: repeating-linear-gradient(-45deg, transparent, transparent 22px, rgba(255,255,255,0.028) 22px, rgba(255,255,255,0.028) 23px);
-  mask-image: linear-gradient(215deg, black 20%, transparent 70%);
-  -webkit-mask-image: linear-gradient(215deg, black 20%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-glow {
-  position: absolute;
-  bottom: -260px; left: -160px;
-  width: 620px; height: 620px;
-  background: radial-gradient(circle, rgba(236, 103, 48, 0.07), transparent 68%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Fondo universo/pixeles premium animado */
-.hero,
-.problema,
-#servicios {
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.cosmic-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.72;
-  mix-blend-mode: screen;
-}
-
-.problem-cosmos { opacity: 0.38; }
-.services-cosmos { opacity: 0.52; }
-
-.hero::after,
-.problema::after,
-#servicios::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.46;
-  background:
-    radial-gradient(circle at 18% 72%, rgba(236, 103, 48, 0.12), transparent 23%),
-    radial-gradient(circle at 78% 18%, rgba(249, 178, 51, 0.08), transparent 20%),
-    linear-gradient(120deg, transparent 0%, rgba(236, 103, 48, 0.035) 42%, transparent 68%);
-  animation: cosmicGlowPulse 8s ease-in-out infinite alternate;
-}
-
-.problema::after { opacity: 0.34; }
-#servicios::after { opacity: 0.36; }
-
-.section-funnel-bg {
-  position: absolute;
-  top: 50%;
-  right: clamp(-120px, 3vw, 80px);
-  width: min(48vw, 560px);
-  height: min(34vw, 380px);
-  min-height: 260px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.23;
-  filter: drop-shadow(0 0 36px rgba(236, 103, 48, 0.12));
-  transform: translateY(-50%);
-  mix-blend-mode: screen;
-}
-
-.hero .container,
-.problema .container,
-#servicios .container {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes cosmicGlowPulse {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.28; }
-  100% { transform: translate3d(0, -12px, 0) scale(1.035); opacity: 0.54; }
-}
-
-@media (max-width: 767px) {
-  .cosmic-canvas { opacity: 0.56; }
-  .problem-cosmos { opacity: 0.32; }
-  .services-cosmos { opacity: 0.46; }
-
-  .section-funnel-bg {
-    top: 56%;
-    left: 50%;
-    right: auto;
-    width: 118vw;
-    height: 330px;
-    opacity: 0.16;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 52px;
-  align-items: center;
-}
-
-@media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.2fr 0.8fr; gap: 64px; } }
-
-.hero h1 { margin-bottom: 24px; }
-.hero h1 .lime { display: inline; }
-
-.hero-sub {
-  font-size: clamp(16px, 2vw, 19px);
-  color: var(--text-2);
-  line-height: 1.6;
-  max-width: 520px;
-  margin-bottom: 34px;
-}
-
-.hero-sub strong { color: var(--text); font-weight: 600; }
-
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 26px; }
-
-.hero-micro {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 13px;
-  color: var(--text-3);
-  font-weight: 500;
-}
-
-.dot {
-  width: 8px; height: 8px;
-  background: var(--green);
-  border-radius: 50%;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.dot::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: var(--green);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.7); opacity: 0; }
-}
-
-.hero-visual { position: relative; max-width: 420px; margin: 0 auto; width: 100%; }
-
-.hero-photo {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-
-.hero-photo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 52%, rgba(11, 11, 13, 0.92) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-photo::after {
-  content: '';
-  position: absolute;
-  top: 14px; left: 14px; right: 14px; bottom: 14px;
-  border: 1px solid rgba(236, 103, 48, 0.25);
-  border-radius: 10px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-photo img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; }
-
-.hero-caption {
-  position: absolute;
-  bottom: 24px; left: 26px; right: 26px;
-  z-index: 2;
-}
-
-.hero-caption-name {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 17px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-}
-
-.hero-caption-role { font-size: 12px; color: var(--lime); margin-top: 3px; font-weight: 600; }
-
-.hero-chip {
-  position: absolute;
-  background: rgba(16, 16, 19, 0.94);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 11px 16px;
-  z-index: 3;
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5);
-}
-
-.hero-chip-value {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 19px;
-  font-weight: 900;
-  color: var(--lime);
-  line-height: 1.15;
-}
-
-.hero-chip-label { font-size: 10px; color: var(--text-3); font-weight: 600; letter-spacing: 0.03em; }
-
-.hero-chip.c1 { top: 22px; right: -12px; animation: float 5.5s ease-in-out infinite; }
-.hero-chip.c2 { bottom: 92px; left: -16px; animation: float 6.5s ease-in-out 0.9s infinite; }
-
-@media (max-width: 500px) {
-  .hero-chip.c1 { right: 6px; }
-  .hero-chip.c2 { left: 6px; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* ── Marquee ── */
-.marquee {
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-  background: var(--bg-2);
-  overflow: hidden;
-  padding: 18px 0;
-}
-
-.marquee-track {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 28px;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 13.5px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-2);
-  white-space: nowrap;
-}
-
-.marquee-item b { color: var(--lime); font-weight: 900; }
-
-.marquee-item::after {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--lime);
-  transform: rotate(45deg);
-  margin-left: 28px;
-}
-
-/* ── Sections ── */
-section { padding: 92px 0; position: relative; }
-@media (min-width: 768px) { section { padding: 112px 0; } }
-
-/* Ajuste de aire entre Servicios y Método */
-#servicios {
-  padding-bottom: 54px;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-#metodo { padding-top: 62px; }
-
-@media (min-width: 768px) {
-  #servicios { padding-bottom: 64px; }
-  #metodo { padding-top: 74px; }
-}
-
-.sec-head { max-width: 780px; margin: 0 auto 56px; text-align: center; }
-.sec-head h2 { margin-bottom: 18px; }
-.sec-head p { font-size: clamp(15px, 1.8vw, 17.5px); max-width: 620px; margin: 0 auto; }
-
-/* ── Stats ── */
-.stats { padding: 0; background: var(--bg); }
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-left: 1px solid var(--line-soft);
-}
-
-@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-
-.stat {
-  padding: 46px 22px;
-  border-right: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-  text-align: center;
-}
-
-@media (min-width: 768px) { .stat { border-bottom: none; padding: 56px 24px; } }
-
-.stat-value {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(27px, 3.8vw, 42px);
-  font-weight: 900;
-  color: var(--lime);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin-bottom: 10px;
-}
-
-.stat-label { font-size: 12px; color: var(--text-3); font-weight: 500; line-height: 1.5; max-width: 210px; margin: 0 auto; }
-
-/* ── Problema ── */
-.problema { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
-
-.problema-inner { max-width: 820px; margin: 0 auto; text-align: center; }
-
-.problema h2 { margin-bottom: 28px; }
-
-.problema-quote {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(17px, 2.4vw, 23px);
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.45;
-  padding: 26px 30px;
-  background: var(--lime-soft);
-  border: 1px solid var(--lime-line);
-  border-radius: var(--radius-md);
-  margin: 0 auto 26px;
-  max-width: 680px;
-}
-
-.problema p { max-width: 640px; margin: 0 auto; }
-
-/* ── Método ── */
-.metodo-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-@media (min-width: 640px) { .metodo-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .metodo-grid { grid-template-columns: repeat(4, 1fr); } }
-
-.pilar {
-  background: var(--card);
-  padding: 32px 26px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line-soft);
-  position: relative;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.pilar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--lime);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.pilar:hover { background: var(--card-hover); border-color: var(--lime-line); transform: translateY(-5px); }
-.pilar:hover::before { transform: scaleX(1); }
-
-.pilar-num {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  color: var(--lime);
-  margin-bottom: 18px;
-  display: block;
-}
-
-.pilar h3 { margin-bottom: 8px; }
-
-.pilar p { font-size: 14px; line-height: 1.6; }
-
-.metodo-footer { max-width: 620px; margin: 44px auto 0; text-align: center; }
-
-/* ── Casos ── */
-.casos { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
-
-.casos-scroll {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min(86%, 380px);
-  gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 4px 4px 22px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--lime) transparent;
-}
-
-.casos-scroll::-webkit-scrollbar { height: 4px; }
-.casos-scroll::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 2px; }
-.casos-scroll::-webkit-scrollbar-track { background: rgba(22, 20, 12, 0.05); }
-
-@media (min-width: 1024px) {
-  .casos-scroll {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-columns: unset;
-    overflow: visible;
-    padding-bottom: 4px;
-  }
-}
-
-.caso {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-}
-
-.caso:hover { transform: translateY(-5px); border-color: var(--lime-line); }
-
-.caso-img {
-  position: relative;
-  aspect-ratio: 16 / 9.5;
-  background: var(--bg-3);
-  overflow: hidden;
-  cursor: zoom-in;
-}
-
-.caso-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.caso:hover .caso-img img { transform: scale(1.04); }
-
-.caso-zoom {
-  position: absolute;
-  top: 10px; right: 10px;
-  width: 34px; height: 34px;
-  background: rgba(11, 11, 13, 0.8);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: all 0.25s ease;
-}
-
-.caso-zoom:hover { border-color: var(--lime); }
-.caso-zoom svg { width: 15px; height: 15px; color: var(--text); }
-
-.caso-body { padding: 24px; display: flex; flex-direction: column; flex: 1; gap: 14px; }
-
-.caso-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-
-.caso-brand { font-family: 'DM Sans', 'Inter', sans-serif; font-size: 13px; font-weight: 800; color: var(--text); }
-
-.caso-tag {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-3);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border: 1px solid var(--line-soft);
-  border-radius: 4px;
-}
-
-.caso-title {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(16px, 1.9vw, 19px);
-  font-weight: 800;
-  line-height: 1.32;
-  letter-spacing: -0.01em;
-  text-transform: none;
-}
-
-.caso-title b { color: var(--lime); font-weight: 800; }
-
-.caso-metrics { display: flex; gap: 8px; flex-wrap: wrap; }
-
-.caso-metric {
-  flex: 1;
-  min-width: 90px;
-  padding: 12px 14px;
-  background: rgba(22, 20, 12, 0.03);
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-}
-
-.caso-metric b {
-  display: block;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 17px;
-  font-weight: 900;
-  color: var(--lime);
-  line-height: 1.15;
-  margin-bottom: 3px;
-}
-
-.caso-metric span { font-size: 10.5px; color: var(--text-3); font-weight: 500; line-height: 1.3; display: block; }
-
-.caso-video {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: auto;
-  align-self: flex-start;
-  padding: 9px 16px;
-  border: 1.5px solid var(--lime-line);
-  color: var(--lime);
-  font-size: 12.5px;
-  font-weight: 700;
-  border-radius: 6px;
-  transition: all 0.25s ease;
-}
-
-.caso-video:hover { background: var(--lime); color: #0B0B0D; }
-.caso-video svg { width: 12px; height: 12px; }
-
-.casos-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--text-3);
-}
-
-@media (min-width: 1024px) { .casos-hint { display: none; } }
-
-/* ── Servicios ── */
-.servicios-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-@media (min-width: 900px) { .servicios-grid { grid-template-columns: 1.16fr 1fr 1fr; align-items: start; } }
-
-.servicio {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-md);
-  padding: 36px 30px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 0.35s ease;
-}
-
-.servicio:hover { transform: translateY(-5px); background: var(--card-hover); }
-
-.servicio.destacado {
-  border-color: var(--lime-line);
-  background: linear-gradient(180deg, rgba(236, 103, 48, 0.055) 0%, var(--card) 40%);
-  box-shadow: 0 0 0 1px rgba(236, 103, 48, 0.22), 0 14px 48px rgba(236, 103, 48, 0.10);
-}
-
-.servicio-sub {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--lime);
-  line-height: 1.5;
-  margin: -6px 0 12px;
-}
-
-.servicios-riesgo {
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-3);
-  max-width: 560px;
-  margin: 30px auto 0;
-  line-height: 1.6;
-}
-
-.servicio-badge {
-  position: absolute;
-  top: -12px; left: 28px;
-  background: var(--lime);
-  color: #0B0B0D;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 4px;
-}
-
-.servicio-tag {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 14px;
-}
-
-.servicio h3 { margin-bottom: 12px; font-size: clamp(19px, 2.3vw, 23px); }
-
-.servicio-desc { font-size: 14px; line-height: 1.6; margin-bottom: 22px; }
-
-.servicio-list { list-style: none; margin-bottom: 28px; }
-
-.servicio-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  padding: 8px 0;
-  font-size: 13.5px;
-  color: var(--text-2);
-  line-height: 1.5;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.servicio-list li:last-child { border-bottom: none; }
-
-.servicio-list li::before {
-  content: '';
-  width: 14px; height: 14px;
-  min-width: 14px;
-  margin-top: 4px;
-  background: var(--lime);
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-}
-
-.servicio-foot { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line-soft); }
-
-.servicio-price-label {
-  font-size: 10px;
-  color: var(--text-3);
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.servicio-price {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(19px, 2.3vw, 23px);
-  font-weight: 900;
-  margin-bottom: 3px;
-}
-
-.servicio-note { font-size: 12.5px; color: var(--text-3); margin-bottom: 20px; }
-
-.servicio .btn { width: 100%; padding: 15px 20px; font-size: 14px; }
-
-/* ── Recursos ── */
-.recursos { background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; }
-
-.rec-sub {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 54px 0 22px;
-}
-
-.rec-sub:first-of-type { margin-top: 0; }
-.rec-sub::after { content: ''; flex: 1; height: 1px; background: var(--line-soft); }
-.rec-sub.free { color: var(--lime); }
-.rec-sub.premium {
-  background: var(--grad-premium);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.rec-sub.premium::after { background: linear-gradient(90deg, rgba(236, 103, 48,0.3), var(--line-soft)); }
-
-.rec-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-@media (min-width: 820px) { .rec-grid { grid-template-columns: 1fr 1fr; } }
-
-.rec-card {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  display: grid;
-  gap: 24px;
-  transition: all 0.35s ease;
-  align-items: start;
-}
-
-@media (min-width: 560px) { .rec-card { grid-template-columns: 168px 1fr; } }
-
-.rec-card:hover { background: var(--card-hover); transform: translateY(-4px); }
-.rec-card.free-card:hover { border-color: var(--lime-line); }
-.rec-card.premium-card:hover { border-color: rgba(249, 178, 51, 0.4); }
-
-.rec-cover {
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.25s ease;
-  max-width: 200px;
-  margin: 0 auto;
-}
-
-.rec-cover img { width: 100%; display: block; }
-
-/* Mini book covers (réplica fiel de las portadas reales) */
-.mini-cover {
-  aspect-ratio: 210 / 297;
-  background: #0A0A0A;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 18px 12px;
-  max-width: 200px;
-  margin: 0 auto;
-  width: 100%;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.25s ease;
-}
-
-.mini-cover::before {
-  content: '';
-  position: absolute;
-  top: -30px; right: -30px;
-  width: 110px; height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 178, 51, 0.18) 0%, transparent 70%);
-}
-
-.mini-cover::after {
-  content: '';
-  position: absolute;
-  bottom: -30px; left: -30px;
-  width: 100px; height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(236, 103, 48, 0.14) 0%, transparent 70%);
-}
-
-.mc-logo { height: 14px; width: auto; margin-bottom: 14px; position: relative; z-index: 1; }
-
-.mc-eye {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 5.5px;
-  font-weight: 700;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
-}
-
-.mc-title {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 1.02;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
-  color: #fff;
-}
-
-.mc-title .g {
-  background: linear-gradient(135deg, var(--gold), var(--ember));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.mc-sub {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 7px;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.mc-div {
-  width: 26px; height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--ember));
-  border-radius: 2px;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.mc-desc {
-  font-size: 6.5px;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.6;
-  max-width: 140px;
-  position: relative;
-  z-index: 1;
-}
-
-.mc-foot {
-  position: absolute;
-  bottom: 10px; left: 14px; right: 14px;
-  display: flex;
-  justify-content: space-between;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 4.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  z-index: 1;
-}
-
-/* GPT chat preview */
-.gpt-preview {
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: var(--bg-3);
-  overflow: hidden;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-  max-width: 200px;
-  margin: 0 auto;
-  aspect-ratio: 168 / 218;
-  display: flex;
-  flex-direction: column;
-}
-
-.gpt-head {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 11px;
-  border-bottom: 1px solid var(--line-soft);
-  background: rgba(22, 20, 12, 0.03);
-}
-
-.gpt-ava {
-  width: 20px; height: 20px;
-  background: var(--lime);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 8px;
-  font-weight: 900;
-  color: #0B0B0D;
-}
-
-.gpt-name { font-size: 8.5px; font-weight: 700; color: var(--text); line-height: 1.2; }
-.gpt-status { font-size: 7px; color: var(--green); }
-
-.gpt-msgs { padding: 10px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-
-.gpt-msg {
-  font-size: 8.5px;
-  line-height: 1.45;
-  padding: 7px 9px;
-  border-radius: 8px;
-  max-width: 88%;
-}
-
-.gpt-msg.user {
-  background: rgba(22, 20, 12, 0.07);
-  color: var(--text-2);
-  align-self: flex-end;
-  border-bottom-right-radius: 2px;
-}
-
-.gpt-msg.bot {
-  background: var(--lime-soft);
-  border: 1px solid rgba(236, 103, 48, 0.2);
-  color: var(--text);
-  align-self: flex-start;
-  border-bottom-left-radius: 2px;
-}
-
-.gpt-typing { display: flex; gap: 3px; padding: 6px 9px; align-self: flex-start; }
-.gpt-typing i {
-  width: 4px; height: 4px;
-  background: var(--lime);
-  border-radius: 50%;
-  animation: typing 1.2s ease-in-out infinite;
-}
-.gpt-typing i:nth-child(2) { animation-delay: 0.2s; }
-.gpt-typing i:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes typing {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
-  30% { transform: translateY(-3px); opacity: 1; }
-}
-
-.rec-body { display: flex; flex-direction: column; min-width: 0; }
-
-.rec-pills { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-
-.rec-pill {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 9.5px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 4px;
-}
-
-.rec-pill.gratis { color: var(--lime); background: var(--lime-soft); border: 1px solid var(--lime-line); }
-.rec-pill.tipo { color: var(--text-3); border: 1px solid var(--line-soft); }
-.rec-pill.precio {
-  font-size: 12px;
-  color: #0B0B0D;
-  background: var(--grad-premium);
-  box-shadow: 0 4px 16px rgba(236, 103, 48, 0.3);
-}
-
-.rec-body h3 { margin-bottom: 10px; font-size: clamp(17px, 2vw, 20px); }
-
-.rec-body > p { font-size: 13.5px; line-height: 1.6; margin-bottom: 16px; }
-
-.rec-feats { list-style: none; margin-bottom: 22px; }
-
-.rec-feats li {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  padding: 4.5px 0;
-  font-size: 12.5px;
-  color: var(--text-2);
-  line-height: 1.45;
-}
-
-.rec-feats li::before {
-  content: '';
-  width: 4px; height: 4px;
-  min-width: 4px;
-  background: var(--lime);
-  margin-top: 7px;
-  transform: rotate(45deg);
-}
-
-.premium-card .rec-feats li::before { background: var(--gold); }
-
-.rec-body .btn { align-self: flex-start; margin-top: auto; padding: 13px 24px; font-size: 13.5px; }
-
-.rec-note {
-  margin-top: 30px;
-  padding: 20px 26px;
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-left: 3px solid var(--lime);
-  border-radius: 8px;
-}
-
-.rec-note p { font-size: 13.5px; line-height: 1.65; }
-.rec-note strong { color: var(--text); font-weight: 600; }
-
-/* ── Web strip ── */
-.web-strip {
-  padding: 0;
-  background: var(--lime);
-}
-
-.web-strip-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 26px var(--pad);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.web-strip-text {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-weight: 900;
-  font-size: clamp(16px, 2.2vw, 22px);
-  color: #0B0B0D;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
-
-.web-strip-sub { font-size: 13px; color: rgba(11, 11, 13, 0.7); font-weight: 600; margin-top: 3px; }
-
-.web-strip .btn {
-  background: #0B0B0D;
-  color: var(--lime);
-  flex-shrink: 0;
-}
-
-.web-strip .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(11, 11, 13, 0.4); }
-
-/* ── Agenda ── */
-.agenda-micro {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 16px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--text-2);
-  margin-bottom: 22px;
-}
-
-.calendly-wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: var(--bg-2);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-
-.calendly-inline-widget { min-width: 320px; height: 720px; width: 100%; }
-@media (max-width: 767px) { .calendly-inline-widget { height: 700px; } }
-
-/* ── FAQ ── */
-.faq { background: var(--bg-2); border-top: 1px solid var(--line-soft); }
-
-.faq-list { max-width: 780px; margin: 0 auto; }
-
-.faq-item { border-bottom: 1px solid var(--line-soft); }
-.faq-item:first-child { border-top: 1px solid var(--line-soft); }
-
-.faq-q {
-  width: 100%;
-  padding: 24px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 22px;
-  text-align: left;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(14.5px, 1.8vw, 16.5px);
-  font-weight: 800;
-  transition: color 0.2s ease;
-}
-
-.faq-q:hover { color: var(--lime); }
-
-.faq-chev { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.3s ease; color: var(--text-3); }
-.faq-item.active .faq-chev { transform: rotate(180deg); color: var(--lime); }
-
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-.faq-item.active .faq-a { max-height: 400px; }
-.faq-a-inner { padding-bottom: 24px; color: var(--text-2); line-height: 1.7; font-size: 14px; }
-
-/* ── Footer ── */
-footer {
-  background: #0B0B0D;
-  padding: 60px 0 104px;
-}
-
-@media (min-width: 768px) { footer { padding-bottom: 48px; } }
-
-.footer-inner { display: grid; grid-template-columns: 1fr; gap: 34px; }
-
-@media (min-width: 768px) { .footer-inner { grid-template-columns: 1.5fr 1fr; align-items: start; } }
-
-.footer-logo { height: 26px; width: auto; margin-bottom: 18px; }
-
-.footer-tagline { font-size: 13.5px; color: rgba(247, 244, 236, 0.62); max-width: 320px; margin-bottom: 18px; }
-
-.footer-contact p { color: rgba(247, 244, 236, 0.62); font-size: 14px; line-height: 1.85; }
-.footer-contact a:hover { color: var(--lime); }
-
-.footer-nav { display: flex; flex-direction: column; gap: 10px; }
-@media (min-width: 768px) { .footer-nav { align-items: flex-end; } }
-.footer-nav a { font-size: 14px; color: rgba(247, 244, 236, 0.66); transition: color 0.2s ease; }
-.footer-nav a:hover { color: var(--lime); }
-
-.footer-bottom {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(247, 244, 236, 0.14);
-  font-size: 12px;
-  color: rgba(247, 244, 236, 0.5);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-between;
-}
-
-/* ── Sticky mobile CTA ── */
-.sticky-m {
-  position: fixed;
-  bottom: 12px; left: 12px; right: 12px;
-  z-index: 90;
-  background: rgba(16, 16, 19, 0.97);
-  backdrop-filter: blur(16px);
-  border-radius: 12px;
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid var(--line);
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6);
-  transform: translateY(130%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sticky-m.visible { transform: translateY(0); }
-@media (min-width: 768px) { .sticky-m { display: none; } }
-
-.sticky-m-text { flex: 1; min-width: 0; }
-.sticky-m-eyebrow { font-size: 9.5px; font-weight: 700; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; }
-.sticky-m-title { font-size: 13px; font-weight: 700; margin-top: 2px; }
-
-.sticky-m-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 11px 18px;
-  background: var(--lime);
-  color: #0B0B0D;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 900;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-/* ── Modals ── */
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 210;
-  background: rgba(5, 5, 6, 0.94);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-}
-
-.overlay.active { opacity: 1; visibility: visible; transition: opacity 0.3s ease, visibility 0s; }
-
-.video-box {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 9 / 16;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #000;
-  border: 1px solid var(--line);
-}
-
-.overlay-close {
-  position: absolute;
-  top: -46px; right: 0;
-  width: 38px; height: 38px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease;
-}
-
-.overlay-close:hover { background: rgba(255, 255, 255, 0.2); }
-.overlay-close svg { width: 18px; height: 18px; }
-.video-box iframe { width: 100%; height: 100%; border: none; }
-
-.lightbox-img { max-width: 94vw; max-height: 88vh; object-fit: contain; border-radius: 10px; border: 1px solid var(--line); cursor: zoom-out; }
-
-/* Lead modal */
-.lead-box {
-  position: relative;
-  width: 100%;
-  max-width: 780px;
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: grid;
-}
-
-@media (min-width: 700px) { .lead-box { grid-template-columns: 300px 1fr; } }
-
-.lead-cover-side {
-  display: none;
-  background: #0B0B0D;
-  padding: 34px;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid var(--line-soft);
-}
-
-@media (min-width: 700px) { .lead-cover-side { display: flex; } }
-
-.lead-cover-side img {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-  transform: rotate(-3deg);
-}
-
-.lead-form-side { padding: 38px 34px; }
-
-.lead-close {
-  position: absolute;
-  top: 14px; right: 14px;
-  width: 34px; height: 34px;
-  border-radius: 8px;
-  background: rgba(22, 20, 12, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: background 0.2s ease;
-}
-
-.lead-close:hover { background: rgba(255, 255, 255, 0.14); }
-.lead-close svg { width: 16px; height: 16px; }
-
-.lead-pill {
-  display: inline-block;
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 9.5px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #0B0B0D;
-  background: var(--lime);
-  padding: 5px 12px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-}
-
-.lead-form-side h3 { font-size: 22px; margin-bottom: 8px; }
-.lead-form-side > p { font-size: 13.5px; margin-bottom: 24px; line-height: 1.6; }
-
-.lead-field { margin-bottom: 14px; }
-
-.lead-field label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 7px;
-}
-
-.lead-field input {
-  width: 100%;
-  padding: 14px 16px;
-  background: rgba(22, 20, 12, 0.04);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 15px;
-  transition: border-color 0.2s ease;
-}
-
-.lead-field input:focus { outline: none; border-color: var(--lime); }
-.lead-field input::placeholder { color: var(--text-3); }
-
-.lead-field select {
-  width: 100%;
-  padding: 14px 40px 14px 16px;
-  background: rgba(22, 20, 12, 0.04);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 15px;
-  transition: border-color 0.2s ease;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%237D7D78' stroke-width='2.5' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-}
-.lead-field select:focus { outline: none; border-color: var(--lime); }
-.lead-field select:invalid { color: var(--text-3); }
-.lead-field select option { background: var(--bg-2); color: var(--text); }
-
-.wa-box { max-width: 470px; }
-@media (min-width: 700px) { .wa-box { grid-template-columns: 1fr; } }
-.wa-box .lead-form-side { padding: 34px 32px; }
-.lead-pill.wa { background: rgba(37, 211, 102, 0.14); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3); }
-
-.lead-submit { width: 100%; margin-top: 8px; }
-
-.lead-privacy { font-size: 11.5px; color: var(--text-3); text-align: center; margin-top: 14px; }
-
-.lead-success { text-align: center; padding: 20px 0; display: none; }
-
-.lead-success-icon {
-  width: 60px; height: 60px;
-  background: var(--lime-soft);
-  border: 1.5px solid var(--lime-line);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 18px;
-}
-
-.lead-success-icon svg { width: 26px; height: 26px; color: var(--lime); }
-.lead-success h3 { font-size: 20px; margin-bottom: 8px; }
-.lead-success p { font-size: 13.5px; margin-bottom: 20px; }
-
-/* ── Grano / textura premium ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  pointer-events: none;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ── Marca DÚO (4 cuadros) ── */
-
-/* ── Hero editorial ── */
-.hero-frame { position: relative; max-width: 384px; margin: 0 auto; }
-.hero-frame::before {
-  content: '';
-  position: absolute;
-  inset: 22px -16px -16px 22px;
-  border: 1.5px solid var(--lime-line);
-  border-radius: 18px;
-  z-index: 0;
-}
-.hero-frame .hero-photo { position: relative; z-index: 1; border-radius: 16px; }
-.hero-frame .hero-photo img {
-  filter: grayscale(0.18) contrast(1.06) brightness(0.95);
-  object-position: center 15%;
-  aspect-ratio: 4 / 4.7;
-}
-.hero-grade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(130% 85% at 100% 0%, rgba(236, 103, 48, 0.22), transparent 44%);
-  mix-blend-mode: screen;
-}
-.duo-stamp {
-  position: absolute;
-  top: -15px; left: -15px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 10px 14px;
-  background: rgba(16, 16, 19, 0.95);
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
-  animation: float 6s ease-in-out infinite;
-}
-.duo-stamp span {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-2);
-  line-height: 1.3;
-}
-.hero-side-label {
-  position: absolute;
-  top: 50%; right: -34px;
-  z-index: 2;
-  transform: translateY(-50%) rotate(90deg);
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.36em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  white-space: nowrap;
-}
-@media (max-width: 1023px) { .hero-side-label { display: none; } }
-
-/* ── Embudo DÚO flotante (hero) ── */
-.ufloat {
-  width: fit-content;
-  margin: 12px 0 36px;
-  position: relative;
-  animation: uFloat 5.8s ease-in-out infinite;
-  transform-origin: center center;
-  overflow: visible;
-}
-
-.ufloat::before {
-  content: '';
-  position: absolute;
-  inset: -10px -12px -8px -12px;
-  background: radial-gradient(circle, rgba(236, 103, 48, 0.14), transparent 68%);
-  filter: blur(18px);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.ufloat canvas {
-  width: 136px;
-  height: 154px;
-  display: block;
-  position: relative;
-  z-index: 1;
-  filter:
-    drop-shadow(0 18px 32px rgba(236, 103, 48, 0.18))
-    drop-shadow(0 0 16px rgba(249, 178, 51, 0.09));
-}
-
-@keyframes uFloat {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
-  50% { transform: translate3d(0, -6px, 0) rotate(1deg); }
-}
-
-@media (max-width: 767px) {
-  .ufloat {
-    margin: 18px auto 34px;
-  }
-}
-
-@media (max-width: 520px) {
-  .ufloat {
-    margin: 18px auto 34px;
-  }
-
-  .ufloat canvas {
-    width: 132px;
-    height: 150px;
-  }
-}
-
-/* ── Preview Notion ── */
-.notion-prev { background: #1A1A1A; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5); width: 100%; }
-.notion-bar { display: flex; align-items: center; gap: 5px; padding: 8px 11px; border-bottom: 1px solid rgba(22, 20, 12, 0.06); }
-.notion-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
-.notion-body { padding: 15px 15px 17px; }
-.notion-title { display: flex; align-items: center; gap: 8px; font-family: 'DM Sans', 'Inter', sans-serif; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 13px; text-transform: none; }
-.notion-title .emoji { font-size: 16px; }
-.notion-q { border-left: 2.5px solid var(--lime); background: rgba(22, 20, 12, 0.03); border-radius: 0 6px 6px 0; padding: 8px 11px; margin-bottom: 8px; }
-.notion-q:last-child { margin-bottom: 0; }
-.notion-q.q2 { border-left-color: var(--gold); }
-.notion-q.q3 { border-left-color: var(--ember); }
-.notion-q b { display: block; font-size: 10.5px; color: #fff; margin-bottom: 2px; font-weight: 700; }
-.notion-q span { font-size: 9.5px; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
-
-/* ── Tienda de recursos: tarjetas verticales (trío premium) ── */
-.rec-grid.trio { grid-template-columns: 1fr; gap: 18px; }
-@media (min-width: 820px) { .rec-grid.trio { grid-template-columns: repeat(3, 1fr); } }
-.rec-card.v { display: flex; flex-direction: column; padding: 0; gap: 0; overflow: hidden; align-items: stretch; }
-.rec-preview {
-  position: relative;
-  aspect-ratio: 4 / 3.05;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line-soft);
-  background: #0A0A0A;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-.rec-preview.center { align-items: center; padding: 16px; }
-.rec-preview .mini-cover { max-width: none; width: 80%; margin: 18px 0 0; border-radius: 6px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5); transform: none; }
-.rec-preview .notion-prev { width: 100%; }
-.rec-card.v .rec-body { padding: 24px 24px 28px; }
-.rec-card.v .rec-body .btn { width: 100%; }
-
-/* ── Iconos personalizados DÚO ── */
-.duo-stamp-logo {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-
-.gpt-ava {
-  width: 28px;
-  height: 28px;
-  background: #000;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.gpt-ava-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* ── WhatsApp float ── */
-.wa-float {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  z-index: 95;
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(18px) scale(0.92);
-  transition:
-    opacity 0.35s ease,
-    visibility 0s linear 0.35s,
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.wa-float.visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-  transition:
-    opacity 0.35s ease,
-    visibility 0s,
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.wa-float svg { width: 29px; height: 29px; color: #fff; }
-.wa-float.visible:hover { transform: translateY(0) scale(1.08); }
-
-.wa-float::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid #25D366;
-  animation: ripple 2.2s ease-out infinite;
-}
-
-@keyframes ripple {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.5); opacity: 0; }
-}
-
-@media (max-width: 767px) {
-  .wa-float { bottom: 86px; right: 14px; width: 50px; height: 50px; }
-  .wa-float svg { width: 25px; height: 25px; }
-}
-
-/* ── Reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
-}
-</style>
-<style>
-section.recursos { padding-top: 148px; }
-@media (max-width: 767px) { section.recursos { padding-top: 128px; } }
+  .anim .r.in{ opacity:1; translate:0 0; }
+}
+
+/* ══════════ ESPECÍFICO DE /recursos ══════════ */
+.rec-back{
+  display:inline-block;
+  font-size:.78rem; font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase;
+  color:var(--suave);
+  text-decoration:underline; text-underline-offset:3px;
+  margin-bottom:1.2rem;
+}
+@media (hover:hover){ .rec-back:hover{ color:var(--naranja); } }
+
+.rec-gratis-postit__tit{ font-size:1.35rem; }
+.rec-gratis-postit__tit strong{ font-size:1.55rem; }
+
+.rec-grat__grid{ display:grid; gap:2.6rem; }
+@media (min-width:820px){ .rec-grat__grid{ grid-template-columns:1fr 1fr; gap:2.8rem; } }
+.rec-item{ display:grid; gap:1.3rem; justify-items:center; text-align:center; }
+@media (min-width:560px){ .rec-item{ justify-items:start; text-align:left; } }
+.rec-item__foto{ width:100%; max-width:220px; }
+.rec-item__texto{ width:100%; }
+.rec-item__texto h3{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height:1.05;
+  margin-bottom:.6rem;
+}
+.rec-item__texto > p{ margin-bottom:1rem; color:rgba(22,21,15,.84); max-width:42ch; }
+.rec-item__texto .apuntes{ margin-bottom:1.4rem; text-align:left; display:inline-block; }
+
+/* pantallazo del Agente Estratega, montado como una captura más */
+.captura .rec-chat{ width:100%; display:grid; gap:.5rem; }
+.rec-chat__msg{ font-size:.76rem; line-height:1.35; padding:.5rem .65rem; }
+.rec-chat__msg--user{ background:var(--crema); color:var(--tinta); justify-self:end; max-width:88%; }
+.rec-chat__msg--bot{ background:rgba(236,103,48,.1); border:1px solid rgba(236,103,48,.25); color:var(--tinta); justify-self:start; max-width:92%; }
+
+/* portadas dibujadas de las guías (montadas dentro de .captura) */
+.captura .guia-tapa{
+  width:100%; aspect-ratio:3/4;
+  background:var(--negro); color:var(--crema);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; gap:.45rem;
+  padding:1.3rem 1rem;
+}
+.guia-tapa__eyebrow{ font-family:Caveat, cursive; font-weight:700; font-size:1rem; color:var(--ambar); }
+.guia-tapa__tit{
+  font-family:Anton, Impact, sans-serif; font-weight:400; text-transform:uppercase;
+  font-size:1.35rem; line-height:1.05;
+}
+.guia-tapa__tit em{ font-style:normal; color:var(--naranja); }
+.guia-tapa__sub{ font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(247,244,236,.65); }
+.guia-tapa__desc{ font-size:.72rem; line-height:1.4; color:rgba(247,244,236,.55); max-width:20ch; }
+.captura .guia-tapa--claro{
+  background:var(--papel); color:var(--tinta);
+  background-image: repeating-linear-gradient(transparent 0 1.4rem, rgba(22,21,15,.06) 1.4rem calc(1.4rem + 1px));
+}
+.guia-tapa--claro .guia-tapa__tit{ color:var(--tinta); }
+.guia-tapa__preg{ font-size:.66rem; line-height:1.35; text-align:left; color:rgba(22,21,15,.72); max-width:20ch; }
+.guia-tapa__preg b{ display:block; color:var(--naranja); font-weight:700; }
+
+.guias__grid{ display:grid; gap:2.2rem; }
+@media (min-width:900px){ .guias__grid{ grid-template-columns:repeat(3,1fr); gap:1.8rem; align-items:start; } }
+.guia__cover{ max-width:180px; margin:0 auto 1.4rem; }
+.guias__grid .cotiza:nth-child(2){ rotate:.4deg; }
+.guias__grid .cotiza:nth-child(3){ rotate:-.2deg; }
 </style>
 </head>
 <body>
 
-<!-- Meta Pixel Code noscript -->
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=987679140929122&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code noscript -->
+<main>
 
-<header id="header">
-  <div class="container header-inner">
-    <a href="/" class="logo" aria-label="Volver al inicio">
-      <img src="/images/duo-icon.png?v=2" alt="DUO Marketing">
-      <span class="logo-sep"></span>
-      <span class="logo-role">Manu Baldiviezo<br>Estratega Digital</span>
-    </a>
-    <nav class="header-nav" aria-label="Navegacion">
-      <a href="/">Inicio</a>
-      <a href="/#resultados">Resultados</a>
-      <a href="/#servicios">Servicios</a>
-    </nav>
-    <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20quiero%20mejorar%20mis%20ventas%20con%20Meta%20Ads." target="_blank" rel="noopener" class="header-cta">Escribime</a>
-  </div>
-</header>
-
-<section class="recursos" id="recursos">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Recursos DÚO</span>
-      <h2>La metodología, <span class="lime">en tus manos</span></h2>
-      <p>Si llegaste desde TikTok o Instagram, esto es para vos. Lo que uso todos los días con clientes, listo para aplicar.</p>
-    </div>
-
-    <div class="rec-sub free reveal">▸ Gratis para seguidores</div>
-
-    <div class="rec-grid">
-
-      <div class="rec-card free-card reveal">
-        <div class="rec-cover tilt">
-          <img src="/images/portada-el-sistema.png" alt="Portada del PDF EL SISTEMA de DÚO" loading="lazy">
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill gratis">Gratis</span>
-            <span class="rec-pill tipo">PDF · Meta Ads</span>
-          </div>
-          <h3>El Sistema</h3>
-          <p>La estructura de 2 campañas con la que gestionamos más de $50.000 USD en Meta Ads — y por qué la mayoría la usa al revés.</p>
-          <ul class="rec-feats">
-            <li>La estructura exacta, paso a paso</li>
-            <li>Por qué la mayoría anuncia al revés</li>
-            <li>El método detrás de los casos de arriba</li>
-          </ul>
-          <button class="btn btn-lime" id="open-lead">
-            Descargar gratis
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="rec-card free-card reveal">
-        <div class="gpt-preview">
-          <div class="gpt-head">
-            <span class="gpt-ava">
-              <img src="/images/duo-icon.png?v=2" alt="DÚO" class="gpt-ava-logo">
+<!-- ═════════ 1 · HERO ═════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hoja hoja--lineada r">
+      <span class="tape tape--top"></span>
+      <p class="rec-back"><a href="/">&larr; volver a la página principal</a></p>
+      <div class="hero__grid">
+        <div>
+          <h1>
+            <span class="hero__pre">recursos gratis y guías premium</span>
+            <span class="hero__grito">La metodología</span>
+            <span class="hero__giro">en tus manos.
+              <svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M4,9 Q22,2 40,8 T76,8 T112,8 T148,8 T184,8 T220,8 T256,8 T294,7"
+                      fill="none" stroke="#EC6730" stroke-width="4" stroke-linecap="round"/>
+              </svg>
             </span>
-            <div>
-              <div class="gpt-name">Agente Estratega | DÚO</div>
-              <div class="gpt-status">● en línea</div>
-            </div>
+          </h1>
+          <p class="hero__sub">Si llegaste desde TikTok o Instagram, esto es para vos: lo mismo que uso todos los días con mis clientes de <strong>Meta Ads</strong>, listo para que lo apliques en tu negocio.</p>
+          <div class="cta-fila">
+            <a class="btn btn--pri" href="#gratis">Quiero lo gratis primero ↓</a>
+            <a class="btn btn--sec" href="#premium">Ver las guías premium</a>
           </div>
-          <div class="gpt-msgs">
-            <div class="gpt-msg user">¿Qué contenido publico esta semana para vender más?</div>
-            <div class="gpt-msg bot">Primero definamos tu pilar. ¿Tu objetivo es captar mensajes o venta directa? Te armo la estrategia →</div>
-            <div class="gpt-typing"><i></i><i></i><i></i></div>
-          </div>
+          <p class="micro">El PDF y el GPT no cuestan nada. Las guías se compran directo por WhatsApp.</p>
         </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill gratis">Gratis</span>
-            <span class="rec-pill tipo">GPT · ChatGPT</span>
-          </div>
-          <h3>Agente Estratega Digital</h3>
-          <p>Mi GPT entrenado con la metodología DÚO. Piensa tu estrategia, contenido y anuncios como un estratega — disponible 24/7.</p>
-          <ul class="rec-feats">
-            <li>Entrenado con los frameworks DÚO</li>
-            <li>Potenciado al máximo con las guías premium</li>
-            <li>Gratis con tu cuenta de ChatGPT</li>
-          </ul>
-          <a href="https://chatgpt.com/g/g-68489f37706881918afe718012412a33-duo-agente-estratega-digital" target="_blank" rel="noopener" class="btn btn-ghost">
-            Probar el agente
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M7 7h10v10"/></svg>
-          </a>
+        <div class="hero__visual">
+          <figure class="polaroid">
+            <span class="tape tape--top"></span>
+            <img src="/images/portada-el-sistema.png" alt="Portada del PDF El Sistema, recurso gratuito de DÚO">
+            <figcaption>El Sistema · gratis</figcaption>
+          </figure>
+          <aside class="postit postit--cupos">
+            <span class="postit--cupos__tit rec-gratis-postit__tit">100% <strong>gratis</strong></span>
+            <span class="caveat">sin tarjeta, sin letra chica ✌️</span>
+          </aside>
         </div>
       </div>
-
-    </div>
-
-    <div class="rec-sub premium reveal">▸ Guías premium</div>
-
-    <div class="rec-grid trio">
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview">
-          <div class="mini-cover" role="img" aria-label="Portada de la guía Estrategia de Contenido DÚO">
-            <img src="/images/duo-logo-1.png" alt="" class="mc-logo">
-            <div class="mc-title"><span class="g">ESTRATEGIA</span> DE<br>CONTENIDO</div>
-            <div class="mc-div"></div>
-            <div class="mc-eye">Guía Completa · DÚO3X</div>
-            <div class="mc-desc">El paso a paso para una estrategia de contenido que sostiene tus ventas.</div>
-            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 15</span></div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 15</span>
-            <span class="rec-pill tipo">Guía PDF</span>
-          </div>
-          <h3>Estrategia de Contenido DÚO</h3>
-          <p>Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en tu contenido y en tus anuncios.</p>
-          <ul class="rec-feats">
-            <li>El árbol de coherencia: pilares, líneas y formatos</li>
-            <li>Investigación de referentes y detonadores virales</li>
-            <li>Cómo identificar ideas ganadoras antes de grabar</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview">
-          <div class="mini-cover" role="img" aria-label="Portada de la guía FÓRMULA DÚO3X de guionización estratégica">
-            <div class="mc-eye">Guía Estratégica · Guionización</div>
-            <div class="mc-title"><span class="g">FÓRMULA<br>DÚO3X</span></div>
-            <div class="mc-sub">Guionización Estratégica</div>
-            <div class="mc-div"></div>
-            <div class="mc-desc">El sistema de 8 pasos para crear guiones que capturan atención y convierten.</div>
-            <div class="mc-foot"><span>DÚO Marketing</span><span>USD 25</span></div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 25</span>
-            <span class="rec-pill tipo">Guía PDF</span>
-          </div>
-          <h3>FÓRMULA DÚO3X</h3>
-          <p>Guionizá con método, no con inspiración. El sistema de 8 pasos para videos que enganchan y venden.</p>
-          <ul class="rec-feats">
-            <li>+20 estructuras narrativas para venta, valor y viralidad</li>
-            <li>+25 estilos de ganchos verbales, visuales y textuales</li>
-            <li>Sirve para tu contenido y tus anuncios · potencia al Agente DÚO</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="rec-card v premium-card reveal">
-        <div class="rec-preview center">
-          <div class="notion-prev" role="img" aria-label="Vista previa de la Bitácora 3Q en Notion">
-            <div class="notion-bar"><i></i><i></i><i></i></div>
-            <div class="notion-body">
-              <div class="notion-title"><span class="emoji">📊</span> Bitácora de Campañas</div>
-              <div class="notion-q q1"><b>1 · ¿Qué pasó?</b><span>Entendé el resultado mirando los números que importan.</span></div>
-              <div class="notion-q q2"><b>2 · ¿Por qué pasó?</b><span>Medí qué lo causó, con los datos detrás de ese resultado.</span></div>
-              <div class="notion-q q3"><b>3 · ¿Qué hacer?</b><span>Pasos accionables de optimización de anuncios.</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="rec-body">
-          <div class="rec-pills">
-            <span class="rec-pill precio">USD 15</span>
-            <span class="rec-pill tipo">Notion</span>
-          </div>
-          <h3>Bitácora 3Q · Optimización</h3>
-          <p>Una plantilla en Notion para entender tus métricas con método y no a ojo, campaña por campaña.</p>
-          <ul class="rec-feats">
-            <li>Metodología 3Q: qué pasó, por qué pasó y qué hacer</li>
-            <li>Parámetros para leer cada métrica y decidir</li>
-            <li>Historial de decisiones · lista para duplicar</li>
-          </ul>
-          <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener" class="btn btn-premium">Comprar por WhatsApp</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rec-note reveal">
-      <p><strong>El ecosistema DÚO:</strong> las guías te dan la metodología, el <strong>Agente Estratega</strong> te ayuda a ejecutarla 24/7, y en la <strong>Asesoría 1:1</strong> te explico todo el sistema aplicado a tu negocio.</p>
+      <span class="pag">hoja 01</span>
     </div>
   </div>
 </section>
 
+<!-- ═════════ 2 · RECURSOS GRATIS ═════════ -->
+<section id="gratis">
+  <div class="wrap">
+    <header class="sec-head r">
+      <span class="sec-head__num">para empezar, sin pagar nada</span>
+      <h2>El PDF y el GPT que uso yo mismo</h2>
+      <p class="sec-head__nota caveat">tocá un botón y ya los tenés ↓</p>
+    </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <img src="/images/duo-logo-1.png" alt="DÚO Marketing Digital" class="footer-logo">
-        <p class="footer-tagline">Sistemas de venta medibles con Meta Ads para negocios de Latinoamérica.</p>
-        <div class="footer-contact">
-          <p>
-            <a href="https://www.tiktok.com/@manu_estrategadigital" target="_blank" rel="noopener">TikTok · @manu_estrategadigital</a><br>
-            <a href="https://instagram.com/manubaldiviezo" target="_blank" rel="noopener">Instagram · @manubaldiviezo</a><br>
-            <a href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20info%20sobre%20*Meta%20Ads*." target="_blank" rel="noopener">+591 75175144</a><br>
-            <a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a>
-          </p>
-        </div>
+    <div class="hoja hoja--lineada r">
+      <span class="tape tape--top"></span>
+      <div class="rec-grat__grid">
+
+        <!-- EL SISTEMA -->
+        <article class="rec-item">
+          <figure class="captura rec-item__foto" style="--rot:-1.6deg">
+            <span class="tape tape--izq"></span>
+            <img src="/images/portada-el-sistema.png" alt="Portada del PDF El Sistema" loading="lazy">
+            <figcaption><span>PDF gratuito</span><span>Meta Ads</span></figcaption>
+          </figure>
+          <div class="rec-item__texto">
+            <h3>El Sistema</h3>
+            <p>La estructura de 2 campañas con la que gestionamos más de $50.000 USD en <strong>Meta Ads</strong> — y por qué la mayoría la usa al revés.</p>
+            <ul class="apuntes">
+              <li>La estructura exacta, paso a paso.</li>
+              <li>Por qué la mayoría anuncia al revés.</li>
+              <li>El mismo método detrás de los casos reales de la página principal.</li>
+            </ul>
+            <button type="button" class="btn btn--pri" id="open-lead">Descargar gratis</button>
+          </div>
+        </article>
+
+        <!-- AGENTE ESTRATEGA -->
+        <article class="rec-item">
+          <figure class="captura rec-item__foto" style="--rot:1.3deg">
+            <span class="tape tape--der"></span>
+            <div class="rec-chat" role="img" aria-label="Vista previa de una conversación con el Agente Estratega Digital">
+              <p class="rec-chat__msg rec-chat__msg--user">¿Qué contenido publico esta semana para vender más?</p>
+              <p class="rec-chat__msg rec-chat__msg--bot">Primero definamos tu pilar: ¿querés más mensajes o venta directa? Te armo la estrategia →</p>
+            </div>
+            <figcaption><span>GPT gratuito</span><span>ChatGPT</span></figcaption>
+          </figure>
+          <div class="rec-item__texto">
+            <h3>Agente Estratega Digital</h3>
+            <p>Mi GPT entrenado con la metodología DÚO. Piensa tu estrategia, tu contenido y tus anuncios de <strong>Meta Ads</strong> como un estratega — disponible las 24 horas.</p>
+            <ul class="apuntes">
+              <li>Entrenado con los mismos criterios que uso yo.</li>
+              <li>Rinde más si ya tenés las guías premium.</li>
+              <li>Gratis, con tu cuenta de ChatGPT.</li>
+            </ul>
+            <a class="btn btn--sec" href="https://chatgpt.com/g/g-68489f37706881918afe718012412a33-duo-agente-estratega-digital" target="_blank" rel="noopener">Probar el agente ↗</a>
+          </div>
+        </article>
+
       </div>
+      <span class="pag">hoja 02</span>
+    </div>
+  </div>
+</section>
 
-      <nav class="footer-nav" aria-label="Navegación del pie de página">
-        <a href="/">Inicio</a>
-        <a href="/publicidad">Publicidad</a>
-        <a href="/asesoria">Asesoría 1 a 1</a>
-        <a href="/paginas-web">Páginas web</a>
-        <a href="/automatizacion">Automatización</a>
-        <a href="/agenda">Agendar reunión</a>
-      </nav>
+<!-- ═════════ 3 · GUÍAS PREMIUM ═════════ -->
+<section id="premium">
+  <div class="wrap">
+    <header class="sec-head r">
+      <span class="sec-head__num">la hoja de las guías</span>
+      <h2>Para cuando querés ir más profundo</h2>
+      <p class="sec-head__nota caveat">se pagan una vez, directo por WhatsApp ↓</p>
+    </header>
+
+    <div class="guias__grid">
+
+      <!-- GUÍA 1 · ESTRATEGIA DE CONTENIDO -->
+      <article class="hoja hoja--lineada cotiza r">
+        <span class="tape tape--izq"></span>
+        <figure class="captura guia__cover" style="--rot:-2deg">
+          <div class="guia-tapa">
+            <span class="guia-tapa__eyebrow">guía completa · DÚO3X</span>
+            <span class="guia-tapa__tit">Estrategia <em>de Contenido</em></span>
+            <span class="guia-tapa__sub">DÚO Marketing</span>
+            <span class="guia-tapa__desc">El paso a paso para una estrategia que sostiene tus ventas.</span>
+          </div>
+          <figcaption><span>Guía PDF</span><span>USD 15</span></figcaption>
+        </figure>
+        <span class="cotiza__tipo">Guía PDF · pago único</span>
+        <h3>Estrategia de Contenido DÚO</h3>
+        <p style="margin-bottom:1rem; color:rgba(22,21,15,.84);">Dejá de publicar por publicar. El paso a paso para una estrategia que sostiene tus ventas, en tu contenido y en tus anuncios de <strong>Meta Ads</strong>.</p>
+        <ul class="apuntes">
+          <li>El árbol de coherencia: pilares, líneas y formatos.</li>
+          <li>Investigación de referentes y detonadores virales.</li>
+          <li>Cómo identificar ideas ganadoras antes de grabar.</li>
+        </ul>
+        <div class="cotiza__fila">
+          <span class="cotiza__monto">$15</span>
+          <span class="cotiza__desde">USD</span>
+        </div>
+        <p class="cotiza__aclara">Pago único, directo por WhatsApp. Sin suscripción.</p>
+        <a class="btn btn--pri" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*Estrategia%20de%20Contenido%20D%C3%9AO*%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener">Comprar por WhatsApp</a>
+        <span class="pag">hoja 03</span>
+      </article>
+
+      <!-- GUÍA 2 · FÓRMULA DÚO3X -->
+      <article class="hoja hoja--lineada cotiza r">
+        <span class="tape tape--top"></span>
+        <figure class="captura guia__cover" style="--rot:1.8deg">
+          <div class="guia-tapa">
+            <span class="guia-tapa__eyebrow">guionización estratégica</span>
+            <span class="guia-tapa__tit">Fórmula <em>DÚO3X</em></span>
+            <span class="guia-tapa__sub">DÚO Marketing</span>
+            <span class="guia-tapa__desc">El sistema de 8 pasos para guiones que capturan atención y venden.</span>
+          </div>
+          <figcaption><span>Guía PDF</span><span>USD 25</span></figcaption>
+        </figure>
+        <span class="cotiza__tipo">Guía PDF · pago único</span>
+        <h3>FÓRMULA DÚO3X</h3>
+        <p style="margin-bottom:1rem; color:rgba(22,21,15,.84);">Guionizá con método, no con inspiración. El sistema de 8 pasos para videos que enganchan y venden, en contenido y en anuncios de <strong>Meta Ads</strong>.</p>
+        <ul class="apuntes">
+          <li>+20 estructuras narrativas para venta, valor y viralidad.</li>
+          <li>+25 estilos de ganchos verbales, visuales y textuales.</li>
+          <li>Sirve para tu contenido y potencia al Agente Estratega.</li>
+        </ul>
+        <div class="cotiza__fila">
+          <span class="cotiza__monto">$25</span>
+          <span class="cotiza__desde">USD</span>
+        </div>
+        <p class="cotiza__aclara">Pago único, directo por WhatsApp. Sin suscripción.</p>
+        <a class="btn btn--pri" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20gu%C3%ADa%20*F%C3%93RMULA%20D%C3%9AO3X*%20(USD%2025).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener">Comprar por WhatsApp</a>
+        <span class="pag">hoja 04</span>
+      </article>
+
+      <!-- GUÍA 3 · BITÁCORA 3Q -->
+      <article class="hoja hoja--lineada cotiza r">
+        <span class="tape tape--der"></span>
+        <figure class="captura guia__cover" style="--rot:-1.2deg">
+          <div class="guia-tapa guia-tapa--claro">
+            <span class="guia-tapa__eyebrow">plantilla en Notion</span>
+            <span class="guia-tapa__tit">Bitácora <em>3Q</em></span>
+            <p class="guia-tapa__preg"><b>1 · ¿Qué pasó?</b>Mirá los números que importan.</p>
+            <p class="guia-tapa__preg"><b>2 · ¿Por qué pasó?</b>Los datos detrás del resultado.</p>
+            <p class="guia-tapa__preg"><b>3 · ¿Qué hacer?</b>Pasos concretos para optimizar.</p>
+          </div>
+          <figcaption><span>Plantilla Notion</span><span>USD 15</span></figcaption>
+        </figure>
+        <span class="cotiza__tipo">Notion · pago único</span>
+        <h3>Bitácora 3Q · Optimización</h3>
+        <p style="margin-bottom:1rem; color:rgba(22,21,15,.84);">Una plantilla en Notion para entender tus métricas con método y no a ojo, campaña de <strong>Meta Ads</strong> por campaña.</p>
+        <ul class="apuntes">
+          <li>Metodología 3Q: qué pasó, por qué pasó y qué hacer.</li>
+          <li>Parámetros para leer cada resultado y decidir.</li>
+          <li>Historial de decisiones, lista para duplicar.</li>
+        </ul>
+        <div class="cotiza__fila">
+          <span class="cotiza__monto">$15</span>
+          <span class="cotiza__desde">USD</span>
+        </div>
+        <p class="cotiza__aclara">Pago único, directo por WhatsApp. Sin suscripción.</p>
+        <a class="btn btn--pri" href="https://wa.me/59175175144?text=Hola%20Manu%20%F0%9F%91%8B%20Quiero%20comprar%20la%20*Bit%C3%A1cora%203Q*%20en%20Notion%20(USD%2015).%20La%20vi%20en%20tu%20p%C3%A1gina%20de%20*Meta%20Ads*." target="_blank" rel="noopener">Comprar por WhatsApp</a>
+        <span class="pag">hoja 05</span>
+      </article>
+
     </div>
 
-    <div class="footer-bottom">
+    <!-- ═════════ NOTA AL MARGEN ═════════ -->
+    <div class="margenal r">
+      <p class="margenal__nota">las guías te dan la metodología, el <a href="https://chatgpt.com/g/g-68489f37706881918afe718012412a33-duo-agente-estratega-digital" target="_blank" rel="noopener">Agente Estratega</a> te ayuda a ejecutarla las 24 horas, y en la <a href="/asesoria">asesoría 1 a 1</a> te explico todo el sistema aplicado a tu negocio.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__marca">
+        <img src="/images/duo-logo-1.png" alt="DÚO Agencia de Marketing" width="908" height="678">
+        <p>Gestión de publicidad en Facebook e Instagram con estrategia detrás, para negocios que quieren vender más.</p>
+      </div>
+      <nav aria-label="Enlaces del sitio">
+        <p class="footer__tit">Explorar</p>
+        <ul class="footer__lista">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/publicidad">Publicidad</a></li>
+          <li><a href="/asesoria">Asesoría 1 a 1</a></li>
+          <li><a href="/paginas-web">Páginas web</a></li>
+          <li><a href="/automatizacion">Automatización</a></li>
+          <li><a href="/agenda">Agendar reunión</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer__tit">Contacto</p>
+        <ul class="footer__lista">
+          <li><a href="https://www.tiktok.com/@manu_estrategadigital" rel="noopener" target="_blank">TikTok</a></li>
+          <li><a href="https://instagram.com/manubaldiviezo" rel="noopener" target="_blank">Instagram</a></li>
+          <li><a href="https://wa.me/59175175144?text=Hola%20Manu%2C%20te%20escribo%20desde%20tu%20p%C3%A1gina%20de%20recursos%20por%20*Meta%20Ads*.">+591 75175144</a></li>
+          <li><a href="mailto:emanuelbaldiviezoc@gmail.com">emanuelbaldiviezoc@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
       <span>© <span id="year">2026</span> Manu Baldiviezo · DÚO Marketing Digital</span>
       <span>Hecho en Bolivia · De Yacuiba para el Mundo</span>
     </div>
   </div>
 </footer>
 
+<!-- LIGHTBOX DE PORTADAS -->
+<div class="overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Portada ampliada">
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
 
+<!-- MODAL DE DESCARGA: EL SISTEMA -->
 <div class="overlay" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title">
-  <div class="lead-box">
-    <button class="lead-close" id="lead-close" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <div class="wa-box">
+    <button type="button" class="lead-close" id="lead-close" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div class="lead-cover-side">
-      <img src="/images/portada-el-sistema.png" alt="Portada de EL SISTEMA">
-    </div>
-    <div class="lead-form-side">
-      <div id="lead-form-view">
-        <span class="lead-pill">Recurso gratuito</span>
-        <h3 id="lead-title">Descargá EL SISTEMA</h3>
-        <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en Meta Ads. Contame a dónde te lo envío:</p>
-        <form id="lead-form" novalidate>
-          <div class="lead-field">
-            <label for="lead-name">Tu nombre</label>
-            <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamás?" required autocomplete="name">
-          </div>
-          <div class="lead-field">
-            <label for="lead-email">Tu email</label>
-            <input type="email" id="lead-email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
-          </div>
-          <button type="submit" class="btn btn-lime lead-submit" id="lead-submit">
-            Descargar el PDF ahora
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          </button>
-        </form>
-        <p class="lead-privacy">Cero spam. Solo recursos y estrategias que funcionan.</p>
-      </div>
-      <div class="lead-success" id="lead-success">
-        <div class="lead-success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+    <div class="lead-form-side" id="lead-form-view">
+      <span class="wa-pill">recurso gratuito</span>
+      <h3 id="lead-title">Descargá El Sistema</h3>
+      <p>La estructura de 2 campañas con la que gestionamos +$50.000 USD en <strong>Meta Ads</strong>. Contame a dónde te lo mando:</p>
+      <form id="lead-form" novalidate>
+        <div class="lead-field">
+          <label for="lead-name">Tu nombre</label>
+          <input type="text" id="lead-name" name="name" placeholder="¿Cómo te llamás?" required autocomplete="name">
         </div>
-        <h3>¡Listo! Descargando…</h3>
-        <p>Si no inicia sola, tocalo acá abajo. Nos vemos dentro del sistema 🚀</p>
-        <a href="/recursos/EL-SISTEMA-DUO.pdf" download class="btn btn-lime">Descargar EL SISTEMA</a>
-      </div>
+        <div class="lead-field">
+          <label for="lead-email">Tu email</label>
+          <input type="email" id="lead-email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+        </div>
+        <button type="submit" class="btn btn--pri lead-submit" id="lead-submit">Descargar el PDF ahora</button>
+      </form>
+      <p class="lead-privacy">Cero spam. Solo recursos que sirven.</p>
+    </div>
+    <div class="lead-form-side lead-success" id="lead-success" hidden>
+      <h3>¡Listo! Descargando…</h3>
+      <p>Si no arrancó solo, tocá el botón de acá abajo. Nos vemos dentro del sistema 🚀</p>
+      <a href="/recursos/EL-SISTEMA-DUO.pdf" download class="btn btn--pri">Descargar El Sistema</a>
     </div>
   </div>
 </div>
 
 <script>
-/* ══════════ CONFIG: Supabase (opcional) ══════════ */
-const SUPABASE_URL = 'https://bdihmagqncipbohcbgjr.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_heuN0KYsF_holhMKB9H5Fw_CLQFDfKH';
+/* ══════════ CONFIG: Supabase ══════════ */
+var SUPABASE_URL = 'https://bdihmagqncipbohcbgjr.supabase.co';
+var SUPABASE_ANON_KEY = 'sb_publishable_heuN0KYsF_holhMKB9H5Fw_CLQFDfKH';
 </script>
 <script>
-/* Meta Pixel events + Calendly */
-function trackMetaEvent(eventName, params = {}) {
-  if (typeof window.fbq === 'function') {
-    window.fbq('track', eventName, params);
-  }
+/* Año del footer */
+(function(){
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+/* ══════════ PIXEL DE META (con guard) ══════════ */
+function trackMetaEvent(eventName, params){
+  if (typeof window.fbq === 'function') window.fbq('track', eventName, params || {});
+}
+function trackMetaCustomEvent(eventName, params){
+  if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, params || {});
 }
 
-function trackMetaCustomEvent(eventName, params = {}) {
-  if (typeof window.fbq === 'function') {
-    window.fbq('trackCustom', eventName, params);
-  }
-}
+/* ══════════ MODAL DE DESCARGA: EL SISTEMA ══════════ */
+var leadModal = document.getElementById('lead-modal');
+var leadForm = document.getElementById('lead-form');
+var leadFormView = document.getElementById('lead-form-view');
+var leadSuccess = document.getElementById('lead-success');
+var leadSubmit = document.getElementById('lead-submit');
+var openLeadBtn = document.getElementById('open-lead');
 
-
-/* Reveal on scroll */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-
-/* 3D tilt on covers (desktop pointers only) */
-if (window.matchMedia('(hover: hover)').matches) {
-  document.querySelectorAll('.tilt').forEach(el => {
-    el.addEventListener('pointermove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.03)`;
-    });
-    el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-  });
-}
-
-/* Lead capture modal */
-const leadModal = document.getElementById('lead-modal');
-const leadForm = document.getElementById('lead-form');
-const leadFormView = document.getElementById('lead-form-view');
-const leadSuccess = document.getElementById('lead-success');
-const leadSubmit = document.getElementById('lead-submit');
-
-document.getElementById('open-lead').addEventListener('click', () => {
+if (openLeadBtn) openLeadBtn.addEventListener('click', function(){
   leadModal.classList.add('active');
   document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('lead-name').focus(), 300);
+  setTimeout(function(){
+    var n = document.getElementById('lead-name');
+    if (n) n.focus();
+  }, 300);
 });
 
-function closeLead() {
+function closeLead(){
   leadModal.classList.remove('active');
   document.body.style.overflow = '';
 }
+var leadCloseBtn = document.getElementById('lead-close');
+if (leadCloseBtn) leadCloseBtn.addEventListener('click', closeLead);
+if (leadModal) leadModal.addEventListener('click', function(e){ if (e.target === leadModal) closeLead(); });
 
-document.getElementById('lead-close').addEventListener('click', closeLead);
-leadModal.addEventListener('click', (e) => { if (e.target === leadModal) closeLead(); });
-
-leadForm.addEventListener('submit', async (e) => {
+if (leadForm) leadForm.addEventListener('submit', async function(e){
   e.preventDefault();
-  const name = document.getElementById('lead-name').value.trim();
-  const email = document.getElementById('lead-email').value.trim();
+  var name = document.getElementById('lead-name').value.trim();
+  var email = document.getElementById('lead-email').value.trim();
   if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     leadForm.reportValidity();
     return;
@@ -2224,32 +959,35 @@ leadForm.addEventListener('submit', async (e) => {
   leadSubmit.disabled = true;
   leadSubmit.style.opacity = '0.6';
 
-  if (SUPABASE_URL.startsWith('https://')) {
+  /* Registro en Supabase — SOLO columnas reales de la tabla (id, created_at, name, phone,
+     business, city, invested_ads, intent, source). Todavía no hay dónde guardar el email:
+     no se manda, así el insert no falla en silencio. La descarga NUNCA depende de este resultado. */
+  if (typeof SUPABASE_URL === 'string' && SUPABASE_URL.indexOf('https://') === 0) {
     try {
-      await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      await fetch(SUPABASE_URL + '/rest/v1/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
           'Prefer': 'return=minimal'
         },
-        body: JSON.stringify({ name, email, resource: 'el-sistema', source: 'recursos', origen: 'recursos_elsistema' })
+        body: JSON.stringify({ name: name, source: 'recursos' })
       });
     } catch (err) { /* la descarga no se bloquea si falla el registro */ }
   }
 
-  leadFormView.style.display = 'none';
-  leadSuccess.style.display = 'block';
+  leadFormView.hidden = true;
+  leadSuccess.hidden = false;
 
-  // Evento personalizado granular por recurso descargado.
+  /* Evento personalizado granular por recurso descargado. */
   trackMetaCustomEvent('DescargaElSistema', {
     content_name: 'Descarga EL SISTEMA',
     content_type: 'lead_magnet',
     source: 'landing_manu',
     resource: 'el_sistema'
   });
-  // Evento estándar para optimización de campañas.
+  /* Evento estándar para optimización de campañas. */
   trackMetaEvent('CompleteRegistration', {
     content_name: 'Descarga EL SISTEMA',
     content_type: 'lead_magnet',
@@ -2257,7 +995,7 @@ leadForm.addEventListener('submit', async (e) => {
     resource: 'el_sistema'
   });
 
-  const a = document.createElement('a');
+  var a = document.createElement('a');
   a.href = '/recursos/EL-SISTEMA-DUO.pdf';
   a.download = 'EL-SISTEMA-DUO.pdf';
   document.body.appendChild(a);
@@ -2265,21 +1003,53 @@ leadForm.addEventListener('submit', async (e) => {
   a.remove();
 });
 
+/* Esc cierra el modal */
+document.addEventListener('keydown', function(e){
+  if (e.key !== 'Escape') return;
+  if (leadModal && leadModal.classList.contains('active')) closeLead();
+  var lb = document.getElementById('lightbox');
+  if (lb && lb.classList.contains('active') && typeof window.cerrarLightbox === 'function') window.cerrarLightbox();
+});
 
-/* Tracking de recursos: compras -> InitiateCheckout, WhatsApp general -> Contact.
-   En esta pagina NADA dispara "Lead": el Lead queda reservado para la landing de campana. */
-function clasificarCompra(href) {
-  const h = decodeURIComponent(href);
-  if (h.includes('Estrategia de Contenido')) return { custom: 'CompraEstrategiaContenido', nombre: 'Estrategia de Contenido DUO', valor: 15 };
-  if (h.includes('FÓRMULA') || h.includes('FORMULA')) return { custom: 'CompraFormulaDuo3x', nombre: 'FORMULA DUO3X', valor: 25 };
-  if (h.includes('Bitácora') || h.includes('Bitacora')) return { custom: 'CompraBitacora3Q', nombre: 'Bitacora 3Q', valor: 15 };
+/* ══════════ LIGHTBOX DE PORTADAS ══════════ */
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  if (!lightbox || !lightboxImg) return;
+
+  document.querySelectorAll('.captura img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  window.cerrarLightbox = function(){
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  };
+  lightbox.addEventListener('click', window.cerrarLightbox);
+})();
+
+/* ══════════ TRACKING DE CLICS ══════════
+   Compras -> InitiateCheckout. Agente -> ViewContent. WhatsApp general -> Contact.
+   En esta página nada dispara "Lead": eso queda reservado para la landing de campaña. */
+function clasificarCompra(href){
+  var h = href;
+  try { h = decodeURIComponent(href); } catch (err) { /* href malformado: se clasifica igual */ }
+  if (h.indexOf('Estrategia de Contenido') !== -1) return { custom:'CompraEstrategiaContenido', nombre:'Estrategia de Contenido DUO', valor:15 };
+  if (h.indexOf('FÓRMULA') !== -1 || h.indexOf('FORMULA') !== -1) return { custom:'CompraFormulaDuo3x', nombre:'FORMULA DUO3X', valor:25 };
+  if (h.indexOf('Bitácora') !== -1 || h.indexOf('Bitacora') !== -1) return { custom:'CompraBitacora3Q', nombre:'Bitacora 3Q', valor:15 };
   return null;
 }
 document.querySelectorAll('a[href*="wa.me"]').forEach(function(link){
   link.addEventListener('click', function(){
-    const c = clasificarCompra(link.href);
+    var c = clasificarCompra(link.href);
     if (c) {
-      const params = { content_name: c.nombre, content_type: 'digital_product', value: c.valor, currency: 'USD', source: 'pagina_recursos' };
+      var params = { content_name: c.nombre, content_type: 'digital_product', value: c.valor, currency: 'USD', source: 'pagina_recursos' };
       trackMetaCustomEvent(c.custom, params);
       trackMetaEvent('InitiateCheckout', params);
     } else {
@@ -2294,10 +1064,19 @@ document.querySelectorAll('a[href*="chatgpt.com/g/"]').forEach(function(link){
   });
 });
 
-/* Esc cierra el modal */
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape' && leadModal.classList.contains('active')) closeLead();
-});
+/* ══════════ ANIMACIONES DE ENTRADA (solo mejora) ══════════ */
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (rm.matches || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('anim');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
+})();
 </script>
+
 </body>
 </html>
