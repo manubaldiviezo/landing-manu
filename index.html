@@ -166,7 +166,7 @@ input{ font-family:inherit; }
 }
 .hero__grid{ display:grid; gap:2.6rem; align-items:center; }
 @media (min-width:960px){
-  .hero__grid{ grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 4vw, 3.6rem); }
+  .hero__grid{ grid-template-columns: 1fr auto; align-items:start; gap: clamp(2rem, 4vw, 3.6rem); }
 }
 .hero__etiqueta{
   display:inline-block;
@@ -236,7 +236,7 @@ input{ font-family:inherit; }
 /* polaroid + post-it del hero */
 .hero__visual{
   display:grid; gap:1rem; justify-items:center;
-  max-width:340px;
+  max-width:190px;
   margin-inline:auto;
   width:100%;
 }
@@ -978,8 +978,6 @@ footer{
       <span class="tape tape--top"></span>
       <div class="hero__grid">
         <div>
-          <span class="hero__etiqueta">Cuaderno de trabajo · Manu Baldiviezo</span>
-          <p class="hero__kicker caveat">«invierto en anuncios… y no sé si vuelve algo de eso»</p>
           <h1>
             <span class="hero__pre">si eso te suena, anotá esto:</span>
             <span class="hero__grito">Tus anuncios no necesitan más presupuesto.</span>
@@ -995,7 +993,7 @@ footer{
             <a class="btn btn--pri" href="#oferta">
               Quiero mi diagnóstico gratis
             </a>
-            <a class="btn btn--sec" href="#resultados">Ver resultados reales ↓</a>
+            <a class="btn btn--sec" href="#resultados">Ver resultados ↓</a>
           </div>
           <p class="micro">Reunión de 30 minutos · te llevás un plan, trabajemos juntos o no.</p>
         </div>
@@ -1036,17 +1034,51 @@ footer{
       <p class="sec-head__nota caveat">capturas reales, tal cual salen de cada cuenta ↓</p>
     </header>
 
-    <!-- CASO 01 · FEMMENINAS -->
+    <!-- CASO 01 · CLIMERE -->
     <article class="caso r">
       <div class="caso__head">
         <span class="caso__num">CASO 01</span>
-        <h3>Femmeninas</h3>
-        <span class="caso__meta">tienda online · Chile</span>
+        <h3>Climere</h3>
+        <span class="caso__meta">clínica estética · Bolivia</span>
       </div>
       <div class="caso__grid">
         <div class="captura-col">
           <figure class="captura" style="--rot:-1.1deg">
             <span class="tape tape--izq"></span>
+            <img src="/images/03-climere-ads-manager-consultas.webp"
+                 alt="Captura real del panel de resultados de Climere, clínica estética: consultas llegando de forma constante."
+                 width="1803" height="836" loading="lazy">
+            <figcaption><span>así se ve en su cuenta</span><span>sin editar</span></figcaption>
+          </figure>
+        </div>
+        <aside class="margen">
+          <p class="nota">ventas <strong>+30% a +50%</strong> · más de <strong>1 año</strong> juntos
+            <svg class="flecha" viewBox="0 0 80 80" aria-hidden="true"><path d="M70,70 C56,48 42,30 14,14 M14,14 l5,17 M14,14 l17,3"/></svg>
+          </p>
+          <ul class="apuntes">
+            <li>Las consultas entran de forma constante, todos los meses.</li>
+            <li>Cuando algo funciona, el cliente se queda. Así de simple.</li>
+          </ul>
+          <p class="caso__cierre">La mejor prueba no es un buen mes: es que sigamos juntos un año después.</p>
+          <button type="button" class="btn-video" data-video="4rR8Nwn9Slw">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Ver testimonio en video
+          </button>
+        </aside>
+      </div>
+    </article>
+
+    <!-- CASO 02 · FEMMENINAS -->
+    <article class="caso caso--rev r">
+      <div class="caso__head">
+        <span class="caso__num">CASO 02</span>
+        <h3>Femmeninas</h3>
+        <span class="caso__meta">tienda online · Chile</span>
+      </div>
+      <div class="caso__grid">
+        <div class="captura-col">
+          <figure class="captura" style="--rot:.9deg">
+            <span class="tape tape--der"></span>
             <img src="/images/01-femmeninas-ads-manager-roas.webp"
                  alt="Captura real del panel de resultados de Femmeninas: por cada $1 invertido volvieron $10,55 en ventas."
                  width="1807" height="832" loading="lazy">
@@ -1066,17 +1098,17 @@ footer{
       </div>
     </article>
 
-    <!-- CASO 02 · JUGUETERÍA ÑAÑITOS -->
-    <article class="caso caso--rev r">
+    <!-- CASO 03 · JUGUETERÍA ÑAÑITOS -->
+    <article class="caso r">
       <div class="caso__head">
-        <span class="caso__num">CASO 02</span>
+        <span class="caso__num">CASO 03</span>
         <h3>Juguetería Ñañitos</h3>
         <span class="caso__meta">venta mayorista · Bolivia</span>
       </div>
       <div class="caso__grid">
         <div class="captura-col">
-          <figure class="captura" style="--rot:.9deg">
-            <span class="tape tape--der"></span>
+          <figure class="captura" style="--rot:-.8deg">
+            <span class="tape tape--izq"></span>
             <img src="/images/04-nanitos-ads-manager-manychat.webp"
                  alt="Captura real del panel de resultados de Juguetería Ñañitos: más de 5.000 mensajes de compradores."
                  width="1801" height="830" loading="lazy">
@@ -1096,17 +1128,17 @@ footer{
       </div>
     </article>
 
-    <!-- CASO 03 · VISION ARQ -->
-    <article class="caso r">
+    <!-- CASO 04 · VISION ARQ -->
+    <article class="caso caso--rev r">
       <div class="caso__head">
-        <span class="caso__num">CASO 03</span>
+        <span class="caso__num">CASO 04</span>
         <h3>Vision Arq Studio</h3>
         <span class="caso__meta">arquitectura · Bolivia</span>
       </div>
       <div class="caso__grid">
         <div class="captura-col">
-          <figure class="captura" style="--rot:-.8deg">
-            <span class="tape tape--izq"></span>
+          <figure class="captura" style="--rot:1.2deg">
+            <span class="tape tape--der"></span>
             <img src="/images/02-vision-arq-ads-manager.webp"
                  alt="Captura real del panel de resultados de Vision Arq Studio: más de 300 personas escribieron en su primer mes."
                  width="1802" height="836" loading="lazy">
@@ -1124,40 +1156,6 @@ footer{
           </ul>
           <p class="caso__cierre">De cero anuncios a agenda llena, en 30 días.</p>
           <button type="button" class="btn-video" data-video="uJaNMf92w10">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            Ver testimonio en video
-          </button>
-        </aside>
-      </div>
-    </article>
-
-    <!-- CASO 04 · CLIMERE -->
-    <article class="caso caso--rev r">
-      <div class="caso__head">
-        <span class="caso__num">CASO 04</span>
-        <h3>Climere</h3>
-        <span class="caso__meta">clínica estética · Bolivia</span>
-      </div>
-      <div class="caso__grid">
-        <div class="captura-col">
-          <figure class="captura" style="--rot:1.2deg">
-            <span class="tape tape--der"></span>
-            <img src="/images/03-climere-ads-manager-consultas.webp"
-                 alt="Captura real del panel de resultados de Climere, clínica estética: consultas llegando de forma constante."
-                 width="1803" height="836" loading="lazy">
-            <figcaption><span>así se ve en su cuenta</span><span>sin editar</span></figcaption>
-          </figure>
-        </div>
-        <aside class="margen">
-          <p class="nota">ventas <strong>+30% a +50%</strong> · más de <strong>1 año</strong> juntos
-            <svg class="flecha" viewBox="0 0 80 80" aria-hidden="true"><path d="M70,70 C56,48 42,30 14,14 M14,14 l5,17 M14,14 l17,3"/></svg>
-          </p>
-          <ul class="apuntes">
-            <li>Las consultas entran de forma constante, todos los meses.</li>
-            <li>Cuando algo funciona, el cliente se queda. Así de simple.</li>
-          </ul>
-          <p class="caso__cierre">La mejor prueba no es un buen mes: es que sigamos juntos un año después.</p>
-          <button type="button" class="btn-video" data-video="4rR8Nwn9Slw">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             Ver testimonio en video
           </button>
