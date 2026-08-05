@@ -1227,7 +1227,7 @@ footer{
           <blockquote>&ldquo;Si no superamos tus resultados actuales en el primer mes, no me pagás el siguiente.&rdquo;</blockquote>
           <span class="firma">— Manu</span>
         </aside>
-        <p class="oferta__nota r">tomo pocos clientes por mes para atender bien cada cuenta — por eso los <span data-cupos-count>3</span> cupos de <span data-cupos-mes>agosto</span></p>
+        <p class="oferta__nota r">tomamos pocas cuentas nuevas a la vez, para no perder calidad en ninguna — hoy quedan <span data-cupos-count>3</span> cupos disponibles</p>
       </div>
     </div>
   </div>
@@ -1410,7 +1410,7 @@ footer{
 <!-- STICKY BAR MOBILE -->
 <div class="sticky-wa" id="sticky-wa">
   <div class="sticky-wa__texto">
-    <span class="sticky-wa__cupos caveat">quedan <span data-cupos-count>3</span> cupos para <span data-cupos-mes>agosto</span></span>
+    <span class="sticky-wa__cupos caveat">quedan <span data-cupos-count>3</span> cupos disponibles</span>
     <span class="sticky-wa__tit">Diagnóstico gratis de 30 min</span>
   </div>
   <a class="btn btn--pri" data-origen="sticky"
@@ -1493,12 +1493,10 @@ footer{
 var SUPABASE_URL = 'https://bdihmagqncipbohcbgjr.supabase.co';
 var SUPABASE_ANON_KEY = 'sb_publishable_heuN0KYsF_holhMKB9H5Fw_CLQFDfKH';
 
-/* Escasez honesta: UNA sola variable — Manu la actualiza acá cada mes.
-   Los fallbacks ("3" / "agosto") ya están escritos en el HTML. */
+/* Escasez honesta por capacidad, sin fecha: Manu actualiza esta única variable cuando cambia
+   la cantidad real de cupos — no hace falta tocarla mes a mes. Fallback "3" ya en el HTML. */
 var CUPOS_DISPONIBLES = 3;
-var CUPOS_MES = 'agosto';
 document.querySelectorAll('[data-cupos-count]').forEach(function(el){ el.textContent = CUPOS_DISPONIBLES; });
-document.querySelectorAll('[data-cupos-mes]').forEach(function(el){ el.textContent = CUPOS_MES; });
 
 /* VSL — pegá acá el ID de YouTube cuando esté grabado; la sección aparece sola */
 var VSL_YOUTUBE_ID = '';
